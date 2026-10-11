@@ -1,0 +1,13 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+
+# Python
+__pycache__/
+*.pyc
+
+# Local only: papers and the advisor's working notes
+articles/
+kb/
