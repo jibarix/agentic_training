@@ -21,13 +21,13 @@ COURSES = [
          url="https://www.cmu-agents.com/#/schedule",
          level="Graduate; assumes you have trained neural LMs",
          archetype="Systems + training (build, evaluate, RL-train)",
-         slides="L1--13", video="L1--9", codepub="A1--A3 public",
+         slides="L1--14", video="L1--9", codepub="A1--A3 public",
          best="The backbone course: harness engineering, evals, SFT/RL, safety, search.",
          overview=r"""The most complete public agents course in the collection, and the one this guide is built around.
 It goes from capabilities (tool use, long-context management, skills and memory, planning) to domains (coding, computer use, deep research), then to training (SFT, RL basics, advanced RL, RL systems), safety and observability, frameworks (OpenHands, LangGraph), interaction and search.
 The readings are taken from production systems: harness source code, provider KV-cache pricing pages and the MCP spec.
 The three assignments form one pipeline: build a harness (A1), evaluate an agent with an LLM judge (A2), then RL-train an agentic policy (A3).
-Slides for lectures 1--13 and recordings for lectures 1--9 are public on the schedule page."""),
+Slides for lectures 1--14 and recordings for lectures 1--9 are public on the schedule page."""),
     dict(code="STAN26", short="Stanford '26", file="stanford-cs146s-fall2026-verified.md", kind="stan26",
          asg_file="stanford-cs146s.md", asg_section="Fall 2026",
          title="CS146S The Modern Software Developer", inst="Stanford University", term="Fall 2026 (current)",
@@ -194,6 +194,20 @@ Code: \href{https://github.com/SqueezeAILab/TinyAgent}{SqueezeAILab/TinyAgent} (
     dict(key="sup-notion", name="Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)",
          url="https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee", tags=["MEM", "DEPLOY", "EVAL", "APP"],
          body=r"""A production case study of Data Scout, an internal agent that answers plain-language questions from governed Snowflake data through MCP. Each user signs in with their own credentials, so existing access controls apply. A curated, owned library separates data context (metrics, sources, filters), business context and routing guidance. Queries carry structured metadata so traces show which definitions were used. A nightly review agent records missing, stale or conflicting context; a separate triage agent deduplicates findings, applies authorised fixes, and sends ambiguous or higher-risk changes to a person. The post's main lesson is that a query can run cleanly and still answer the wrong question, through wrong meaning, routing, measurement or interpretation. Notion reports that weekly requests to its data team fell by about 80\% within two months and that about half of its employees use the agent. These figures are self-reported, and the post says its evaluation is still maturing: usage and query success do not prove accuracy. Read it with [[M:MEM]] for context engineering and [[M:DEPLOY]] for operations."""),
+    dict(key="sup-barkley", name="Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)",
+         url="https://github.com/jabarkle", tags=["ARCH", "TOOL", "MEM", "RSN", "MULTI"],
+         body=r"""Five small repositories written as office-hours support for Carnegie Mellon's executive program \emph{Agentic AI: Building Autonomous Systems for Real-World Applications}. They are teaching demos by one instructor, not a course, and they are the only place in this guide where one system grows in stages. Everything runs on a laptop through Ollama with a 3--4B model, with no API key.
+\begin{itemize}
+\item \href{https://github.com/jabarkle/EmeritusMCP}{\texttt{EmeritusMCP}}: the smallest useful MCP example. A 32-line server with one read-only tool, and an agent that answers the same question with and without it. Dependencies are pinned.
+\item \href{https://github.com/jabarkle/Local-Agent-Demo}{\texttt{Local-Agent-Demo}}: a ``teacher's assistant'' agent. The loop is written out by hand, with a cap of three tool steps. Because the model has no native tool calling, each step is a schema-constrained JSON decision followed by a separate answer call, so you can see that a tool call is text the harness parses. Tools live in a separate MCP server that the agent discovers at start-up. Long-term memory is a JSON file searched by embedding similarity, and two \texttt{SKILL.md} procedures load only when a request needs them. A trace panel shows what the model sees at each step.
+\item \href{https://github.com/jabarkle/Agent-with-Subagent}{\texttt{Agent-with-Subagent}}: the same system plus one subagent that starts with an empty context and receives a written briefing. Its README states the delegation test plainly: big input, small output, no need to remember the middle.
+\item \href{https://github.com/jabarkle/Agent-with-subagent-and-langgraph}{\texttt{Agent-with-subagent-and-langgraph}}: the same system again as a LangGraph \texttt{StateGraph} with five nodes (recall, decide, act, answer, reflect). Read it beside the hand-written loop to see what the framework adds and hides.
+\item \href{https://github.com/jabarkle/EmeritusAgenticAIStarterCode}{\texttt{EmeritusAgenticAIStarterCode}}: Tree of Thoughts as a 75-line beam search in plain Python, then the same search in LangGraph and in CrewAI. The evaluator is the model scoring its own partial paths, so apply the caution in [[M:RSN]]: check that the score carries information before trusting the search.
+\end{itemize}
+\textbf{Caveats.} The MCP code uses version~2 of the official Python SDK (\texttt{MCPServer}, \texttt{Client}) over stdio. The code was read for this guide but not run. No repository states a licence, there are no tests beyond a set-up check, compiled caches and a filled memory file are committed, and three of the five leave dependency versions open (\texttt{>=}). Under your install policy, pin and vet the packages before installing. Do them in the order listed, after [[M:ARCH]]."""),
+    dict(key="sup-cadsmith", name="CADSmith: multi-agent CAD generation with programmatic geometric validation (Barkley, Loghmani and Barati Farimani, 2026)",
+         url="https://arxiv.org/abs/2603.26512", tags=["MULTI", "EVAL", "APP"],
+         body=r"""A worked example of a fixed multi-agent pipeline whose feedback is a real measurement, not a model's opinion of its own work. A planner writes a design specification, a coder generates CadQuery code with retrieval over the API documentation, an executor runs it in a subprocess and reads exact geometry from the OpenCASCADE kernel, a validator combines those measurements with a vision-language judge that sees three rendered views, and a refiner repairs the code. An inner loop retries execution errors up to three times and an outer loop retries geometric errors up to five. The judge is a stronger model than the coder. The authors report results on their own benchmark of 100 hand-written prompts with hand-written reference scripts, against a single-call baseline and an ablation without vision: mean Chamfer distance falls from 28.37 (single call) to 18.19 (pipeline without vision) to 0.74 (with vision). They also show a part that passed every check with visible gaps. These figures are self-reported and were not reproduced here. Note that it is a workflow in the sense of [[M:ARCH]]: the code fixes the order of the roles. \href{https://github.com/jabarkle/CADSmith}{Code} (no licence stated). Read it with [[M:MULTI]] for roles and with [[M:EVAL]] for the baseline-and-ablation design."""),
     dict(key="sup-colab", name="Google Colab", url="https://colab.research.google.com/", tags=["DEPLOY"],
          body=r"""A hosted Jupyter runtime. Use it to run course notebooks (UChicago, Northeastern, Mannheim, UVA) without a local setup, and to keep experiments with downloaded code off your own machine."""),
 ]
@@ -278,12 +292,14 @@ sequence=[("[[CMU:1]]", "What an agent is, the agent loop and the course map (sl
           ("[[UW:2]]", "Instructor walkthrough with a demo notebook. Then do the UW assignment below."),
           ("[[NEU:4]] and [[NEU:6]]", "From a simple tools-and-memory agent to LangGraph state, nodes, edges and cycles."),
           ("[[UVA:3]]", "LangGraph lab: routing, parallel models, checkpointing and crash recovery."),
-          ("[[CMU:14]] and [[CMU:15]]", "Two production frameworks compared: OpenHands and LangGraph.")],
+          ("[[CMU:14]] and [[CMU:15]]", "Two production frameworks compared: OpenHands and LangGraph."),
+          ("Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}", "The same small agent as a hand-written loop and as a LangGraph graph, on a local 4B model.")],
 readings=["Anthropic, \\href{https://www.anthropic.com/engineering/building-effective-agents}{\\emph{Building Effective Agents}}",
           "Yao et al., \\href{https://arxiv.org/abs/2210.03629}{\\emph{ReAct}} (2022)", "Sumers et al., \\href{https://arxiv.org/abs/2309.02427}{\\emph{CoALA: Cognitive Architectures for Language Agents}} (2023)",
           "Chip Huyen, \\href{https://huyenchip.com/2025/01/07/agents.html}{\\emph{Agents}} (2025)",
           "Wang et al., \\href{https://arxiv.org/abs/2308.11432}{\\emph{A Survey on LLM-based Autonomous Agents}} (2024)"],
-handson=["[[A:UW:Build a Coding Agent]]", "[[A:CMU:A1]]", "[[A:UVA:Topic 2]]", "[[A:UB:Lab 3]]", "[[A:UB:Lab 1]]"]),
+handson=["[[A:UW:Build a Coding Agent]]", "[[A:CMU:A1]]", "[[A:UVA:Topic 2]]", "[[A:UB:Lab 3]]", "[[A:UB:Lab 1]]",
+         "Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}. Run \\texttt{Local-Agent-Demo}, read \\texttt{agent.py}, then compare it with the LangGraph version."]),
 
 dict(key="TOOL", num=3, title="Tool Use and Function Calling", tags=["TOOL"], mcp=False,
 objectives=["Explain how tool calls are encoded in chat templates and parsed by the harness.",
@@ -326,12 +342,14 @@ sequence=[("Supplement: \\hyperref[sup-mcp]{MCP docs}", "Architecture, primitive
           ("[[JHU:8]] and [[JHU:9]]", "Two MCP lectures in a PL/synthesis context (slides)."),
           ("[[NEU:16]] and [[NEU:17]]", "MCP spec, the security landscape, remote MCP and agent auth."),
           ("[[UVA:12]]", "MCP clients for AI2 Asta tools, then A2A agents, a registry and ngrok."),
-          ("Supplement: \\hyperref[sup-codeexec]{Code execution with MCP}", "Then [[CU:24]] for the empirical study.")],
+          ("Supplement: \\hyperref[sup-codeexec]{Code execution with MCP}", "Then [[CU:24]] for the empirical study."),
+          ("Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}", "A 32-line stdio server on version~2 of the Python SDK, and the same question asked with and without it.")],
 readings=["MCP specification and \\href{https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices}{security best practices}",
           "Anthropic, \\href{https://www.anthropic.com/engineering/code-execution-with-mcp}{\\emph{Code execution with MCP}} (2025)",
           "Felendler et al., \\href{https://arxiv.org/abs/2602.15945}{\\emph{From Tool Orchestration to Code Execution: MCP Design Choices}} (2026)",
           "\\href{https://arxiv.org/abs/2503.23278}{\\emph{MCP Landscape \\& Security}} (arXiv 2503.23278)"],
-handson=["[[A:STAN26:Week 2]]", "[[A:STAN25:Week 3]]", "[[A:UVA:Topic 7]]", "[[A:MANN:Exercise: Agent Programming]]"]),
+handson=["[[A:STAN26:Week 2]]", "[[A:STAN25:Week 3]]", "[[A:UVA:Topic 7]]", "[[A:MANN:Exercise: Agent Programming]]",
+         "Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}. Start with \\texttt{EmeritusMCP}: add a second tool to the server and watch the agent discover it."]),
 
 dict(key="MEM", num=5, title="Memory, Retrieval and Context Engineering", tags=["MEM"], mcp=None,
 objectives=["Manage a finite context window: selection, compression/compaction, offloading and persistence.",
@@ -356,7 +374,8 @@ readings=["Lewis et al., \\href{https://arxiv.org/abs/2005.11401}{\\emph{Retriev
           "Packer et al., \\href{https://arxiv.org/abs/2310.08560}{\\emph{MemGPT}} (2023)", "Park et al., \\href{https://arxiv.org/abs/2304.03442}{\\emph{Generative Agents}} (2023)",
           "Anthropic, \\href{https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents}{\\emph{Effective context engineering for AI agents}}",
           "Asai et al., \\href{https://arxiv.org/abs/2310.11511}{\\emph{Self-RAG}} (2023); Yan et al., \\href{https://arxiv.org/abs/2401.15884}{\\emph{Corrective RAG}} (2024)"],
-handson=["[[A:UVA:Topic 5]]", "[[A:UB:Lab 2]]", "[[A:STAN26:Week 3]]", "[[A:NEU:Husky]]", "[[A:MANN:Exercise: RAG]]"]),
+handson=["[[A:UVA:Topic 5]]", "[[A:UB:Lab 2]]", "[[A:STAN26:Week 3]]", "[[A:NEU:Husky]]", "[[A:MANN:Exercise: RAG]]",
+         "Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}. In \\texttt{Local-Agent-Demo}, change the short-term window and the similarity threshold in \\texttt{config.py} and watch what the model is shown."]),
 
 dict(key="RSN", num=6, title="Reasoning, Planning, Reflection and Search", tags=["RSN"], mcp=None,
 objectives=["Choose between ReAct-style interleaving, plan-then-execute and decomposition strategies.",
@@ -379,7 +398,8 @@ readings=["Wang et al., \\href{https://arxiv.org/abs/2203.11171}{\\emph{Self-Con
           "Shinn et al., \\href{https://arxiv.org/abs/2303.11366}{\\emph{Reflexion}} (2023); Madaan et al., \\href{https://arxiv.org/abs/2303.17651}{\\emph{Self-Refine}} (2023)",
           "Zhou et al., \\href{https://arxiv.org/abs/2205.10625}{\\emph{Least-to-Most Prompting}} (2022)", "Zhou et al., \\href{https://arxiv.org/abs/2310.04406}{\\emph{LATS}} (2023)",
           "Kim et al., \\href{https://arxiv.org/abs/2312.04511}{\\emph{LLMCompiler}} (2023)"],
-handson=["[[A:JHU:A1]]", "[[A:STAN25:Week 1]]", "[[A:NEU:Husky]]"]),
+handson=["[[A:JHU:A1]]", "[[A:STAN25:Week 1]]", "[[A:NEU:Husky]]",
+         "Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}. Wire a model into \\texttt{tot\\_minimal.py}, then replace the model-scored evaluator with a code check and compare."]),
 
 dict(key="MULTI", num=7, title="Multi-Agent Systems", tags=["MULTI"], mcp=None,
 objectives=["Implement handoffs, routers, orchestrator--worker and debate patterns.",
@@ -394,11 +414,13 @@ sequence=[("[[NEU:12]]--[[NEU:14|short]]", "Three sessions: failure modes and ha
           ("[[CMU:18]]", "Multi-agent interaction (guest lecture)."),
           ("[[UW:19]] and [[UW:20]]", "Generative Agents/CAMEL, then AutoGen and the scaling science of agent systems."),
           ("[[CU:14]] and [[CU:15]]", "AutoGen/MetaGPT, then debate and Agentless."),
-          ("[[UCHI:3]]", "Prompted multi-agent social simulation (notebook with AutoGen and Concordia).")],
+          ("[[UCHI:3]]", "Prompted multi-agent social simulation (notebook with AutoGen and Concordia)."),
+          ("Supplements: \\hyperref[sup-barkley]{Barkley local agent demos}, \\hyperref[sup-cadsmith]{CADSmith}", "One subagent with its own context and a briefing; then a five-role pipeline checked by a geometry kernel.")],
 readings=["Wu et al., \\href{https://arxiv.org/abs/2308.08155}{\\emph{AutoGen}} (2023)", "Hong et al., \\href{https://arxiv.org/abs/2308.00352}{\\emph{MetaGPT}} (2023)", "Li et al., \\href{https://arxiv.org/abs/2303.17760}{\\emph{CAMEL}} (2023)",
           "Du et al., \\href{https://arxiv.org/abs/2305.14325}{\\emph{Multiagent Debate}} (2023)", "Cemri et al., \\href{https://arxiv.org/abs/2503.13657}{\\emph{Why Do Multi-Agent LLM Systems Fail?}} (2025)",
           "Anthropic, \\href{https://www.anthropic.com/engineering/multi-agent-research-system}{\\emph{How we built our multi-agent research system}}"],
-handson=["[[A:UVA:Topic 7]]", "[[A:UCHI:Week 3]]", "[[A:MANN:Project topic 1]]", "[[A:STAN25:Week 5]]"]),
+handson=["[[A:UVA:Topic 7]]", "[[A:UCHI:Week 3]]", "[[A:MANN:Project topic 1]]", "[[A:STAN25:Week 5]]",
+         "Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}. In \\texttt{Agent-with-Subagent}, untick delegation and compare the main agent's context with and without the subagent."]),
 
 dict(key="CODE", num=8, title="Coding Agents", tags=["CODE"], mcp=None,
 objectives=["Explain the architecture of production coding agents (system prompt, core tools, sandbox, context management, sub-agents).",

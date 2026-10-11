@@ -65,13 +65,13 @@
 CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Snapshot compiled October 9, 2026 from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Snapshot compiled October 9, 2026 and updated October 11, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}
 \hypertarget{toc}{}\tableofcontents
 \part{Orientation}
 \chapter{How to Use This Guide}
-This guide compiles 15 public university courses on LLM agents and agentic systems, plus 8 supplementary resources, into one curriculum you can navigate. Most come from your \emph{CMU-Agentic} bookmarks folder; the rest were added after a targeted search for courses strong in evaluation, training and security.
+This guide compiles 15 public university courses on LLM agents and agentic systems, plus 10 supplementary resources, into one curriculum you can navigate. Most come from your \emph{CMU-Agentic} bookmarks folder; the rest were added after a targeted search for courses strong in evaluation, training and security.
 Every one of the 283 catalogued lectures and 98 assignments is classified with one shared set of topic tags, so the same subject can be followed across courses.
 \begin{infobox}[title=One set of three documents]
 \begin{enumerate}
@@ -130,7 +130,7 @@ The courses fall into a few archetypes, and knowing which kind you are reading t
 \end{itemize}
 {\footnotesize\begin{longtable}{P{2.2cm} P{3.0cm} P{2.9cm} P{1.6cm} P{5.2cm}}
 \toprule Course & Archetype / level & Public materials & Lectures / assignments & Best for\\ \midrule\endhead
-\hyperlink{course-CMU}{\textbf{CMU}}\newline 11-768 AI Agents & Systems + training (build, evaluate, RL-train)\newline\emph{Graduate; assumes you have trained neural LMs} & Slides: L1--13\newline Video: L1--9\newline Code: A1--A3 public & 23 / 5 & The backbone course: harness engineering, evals, SFT/RL, safety, search.\\ \midrule
+\hyperlink{course-CMU}{\textbf{CMU}}\newline 11-768 AI Agents & Systems + training (build, evaluate, RL-train)\newline\emph{Graduate; assumes you have trained neural LMs} & Slides: L1--14\newline Video: L1--9\newline Code: A1--A3 public & 23 / 5 & The backbone course: harness engineering, evals, SFT/RL, safety, search.\\ \midrule
 \hyperlink{course-STAN26}{\textbf{Stanford '26}}\newline CS146S The Modern Software Developer & Coding-agent practice (practitioner)\newline\emph{Undergrad/grad; CS111/CS161-level programming} & Slides: Weeks 1--3 so far\newline Video: none\newline Code: Weeks 1--3 assignments & 20 / 3 & How production coding agents work and how to set up a repo and a team around them.\\ \midrule
 \hyperlink{course-STAN25}{\textbf{Stanford '25}}\newline CS146S The Modern Software Developer (archive) & Coding-agent practice (practitioner)\newline\emph{Undergrad/grad} & Slides: Most lectures (Google Slides)\newline Video: none\newline Code: 8 weekly assignments (branch fall2025) & 20 / 9 & Slide decks on prompting, building a coding agent, MCP servers, AI testing/security, code review, SRE.\\ \midrule
 \hyperlink{course-NEU}{\textbf{Northeastern}}\newline Agentic AI & Builder (LangChain/LangGraph stack)\newline\emph{Gentle on-ramp (Python primer provided)} & Slides: 2 HTML decks\newline Video: none\newline Code: Notebooks W02b--W05b, DADA1 & 19 / 4 & Best guided, notebook-by-notebook path from an LLM API call to a deployed LangGraph agent.\\ \midrule
@@ -320,12 +320,13 @@ Anthropic's \emph{Building Effective Agents}, assigned by Northeastern, Buffalo 
 \item \hyperlink{lec-NEU-4}{Northeastern~4 \emph{Simple Agent Architecture}} and \hyperlink{lec-NEU-6}{Northeastern~6 \emph{Short-term \& Long-term Memory}} --- From a simple tools-and-memory agent to LangGraph state, nodes, edges and cycles.
 \item \hyperlink{lec-UVA-3}{UVA~3 \emph{Topic 2: Agent Frameworks}} --- LangGraph lab: routing, parallel models, checkpointing and crash recovery.
 \item \hyperlink{lec-CMU-14}{CMU~14 \emph{Frameworks 1: OpenHands}} and \hyperlink{lec-CMU-15}{CMU~15 \emph{Frameworks 2: LangGraph}} --- Two production frameworks compared: OpenHands and LangGraph.
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos} --- The same small agent as a hand-written loop and as a LangGraph graph, on a local 4B model.
 \end{enumerate}
 \section{Lecture map (45 lectures)}
 {\footnotesize\begin{longtable}{P{1.75cm} P{0.4cm} P{5.75cm} P{4.2cm} P{2.65cm}}
 \toprule Course & \# & Title (links to catalogue row) & Materials & Tags\\ \midrule\endhead
 \hyperlink{course-CMU}{CMU} & 1 & $\star$\,\hyperlink{lec-CMU-1}{Course Overview: What Is an Agent?} & \href{https://www.cmu-agents.com/slides/lecture-01-agents.pdf}{[slides]} \href{https://www.cmu-agents.com/\#/schedule}{[video]} & \tg{ORG} \hyperlink{mod-ARCH}{\tg{ARCH}}\\
-\hyperlink{course-CMU}{CMU} & 14 & $\star$\,\hyperlink{lec-CMU-14}{Frameworks 1: OpenHands} & -- & \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-CODE}{\tg{CODE}}\\
+\hyperlink{course-CMU}{CMU} & 14 & $\star$\,\hyperlink{lec-CMU-14}{Frameworks 1: OpenHands} & \href{https://www.cmu-agents.com/slides/lecture-14-openhands.pdf}{[slides]} & \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-CODE}{\tg{CODE}}\\
 \hyperlink{course-CMU}{CMU} & 15 & $\star$\,\hyperlink{lec-CMU-15}{Frameworks 2: LangGraph} & -- & \hyperlink{mod-ARCH}{\tg{ARCH}}\\
 \hyperlink{course-STAN26}{Stanford '26} & 1 & $\star$\,\hyperlink{lec-STAN26-1}{Course intro + build Claude Code in 200 lines} & \href{https://themodernsoftware.dev/}{[course site]} & \hyperlink{mod-CODE}{\tg{CODE}} \hyperlink{mod-ARCH}{\tg{ARCH}}\\
 \hyperlink{course-STAN26}{Stanford '26} & 15 & \hyperlink{lec-STAN26-15}{Background agents: launching tasks asynchronously} & \href{https://themodernsoftware.dev/}{[course site]} & \hyperlink{mod-DEPLOY}{\tg{DEPLOY}} \hyperlink{mod-ARCH}{\tg{ARCH}}\\
@@ -385,8 +386,9 @@ Anthropic's \emph{Building Effective Agents}, assigned by Northeastern, Buffalo 
 \item \hyperlink{asg-UVA-2}{\textbf{UVA: Topic 2 portfolio: LangGraph agents}} --- Routed, parallel, multi-model LangGraph chat with history and crash recovery; optional web summarizer. \textit{Starter code:} \href{https://www.cs.virginia.edu/\%7Ermw7my/Courses/AgenticAISpring2026/Topic2Frameworks/Agent\%20Control\%20Flow\%20Frameworks.html}{[cs.virginia.edu]}
 \item \hyperlink{asg-UB-3}{\textbf{Buffalo: Lab 3: Workflow Graphs and State Machines}} --- Agentic workflow as a graph/state machine with explicit states, transitions, failure handling and logging. \textit{(spec only)}
 \item \hyperlink{asg-UB-1}{\textbf{Buffalo: Lab 1: A Minimal Tool-Using Agent}} --- Python agent choosing among a calculator, a file reader and a search/lookup tool. Submit a design note and successful/failed runs. \textit{(spec only)}
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos}. Run \texttt{Local-Agent-Demo}, read \texttt{agent.py}, then compare it with the LangGraph version.
 \end{itemize}
-\textbf{Related supplements:} \hyperref[sup-mcp]{Model Context Protocol docs (version 2026-07-28)}, \hyperref[sup-openclaw]{OpenClaw documentation}, \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}.
+\textbf{Related supplements:} \hyperref[sup-mcp]{Model Context Protocol docs (version 2026-07-28)}, \hyperref[sup-openclaw]{OpenClaw documentation}, \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}, \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}.
 \chapter{Module 3: Tool Use and Function Calling}\hypertarget{mod-TOOL}{}
 {\small Tag: \tg{TOOL} (MCP-focused lectures are in \hyperlink{mod-MCP}{Module 4})}
 \section{Learning objectives}
@@ -452,7 +454,7 @@ The research lineage runs from Toolformer (self-taught API calls) to Gorilla (AP
 \item \hyperlink{asg-NEU-1}{\textbf{Northeastern: DADA1: The Trip Planner Agent}} --- A conversational day-trip planner with tools: get\_\allowbreak{}weather (Open-Meteo), find\_\allowbreak{}attractions/restaurants/transit (Tavily), find\_\allowbreak{}events (Ticketmaster). It has memory-based plan revision, a structured Itinerary/DayPlan output, 8 test prompts, and a Gradio app deployed on Render. Graded on tool routing, honesty at data limits, sources and memory. Optional extra credit: a find\_\allowbreak{}performer\_\allowbreak{}events chained tool. \textit{Starter code:} \href{https://github.com/agenticllms/lecture-files/tree/main/DADA1}{[GitHub]}
 \item \hyperlink{asg-UVA-4}{\textbf{UVA: Topic 4: 2-Hour Agent Project}} --- Partner-built mini agent using LangGraph/third-party tools. \textit{Starter code:} \href{https://www.cs.virginia.edu/\%7Ermw7my/Courses/AgenticAISpring2026/Topic4Exploring/exploring.html}{[cs.virginia.edu]}
 \end{itemize}
-\textbf{Related supplements:} \hyperref[sup-codeexec]{Anthropic Engineering: Code execution with MCP}, \hyperref[sup-tinyagent]{Berkeley BAIR: TinyAgent, Function Calling at the Edge}, \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}, \hyperref[sup-anthauto]{Anthropic: Building effective agent automations (Martin and Avilla, October 2026)}.
+\textbf{Related supplements:} \hyperref[sup-codeexec]{Anthropic Engineering: Code execution with MCP}, \hyperref[sup-tinyagent]{Berkeley BAIR: TinyAgent, Function Calling at the Edge}, \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}, \hyperref[sup-anthauto]{Anthropic: Building effective agent automations (Martin and Avilla, October 2026)}, \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}.
 \chapter{Module 4: MCP and Agent Interoperability}\hypertarget{mod-MCP}{}
 {\small Tag: \tg{TOOL} (lectures tagged \tg{TOOL} whose title or topics mention MCP or A2A)}
 \section{Learning objectives}
@@ -479,6 +481,7 @@ The \textbf{Model Context Protocol} standardizes how tools and context reach an 
 \item \hyperlink{lec-NEU-16}{Northeastern~16 \emph{Model Context Protocol}} and \hyperlink{lec-NEU-17}{Northeastern~17 \emph{MCP in Agentic Systems}} --- MCP spec, the security landscape, remote MCP and agent auth.
 \item \hyperlink{lec-UVA-12}{UVA~12 \emph{Topic 7: MCP and A2A}} --- MCP clients for AI2 Asta tools, then A2A agents, a registry and ngrok.
 \item Supplement: \hyperref[sup-codeexec]{Code execution with MCP} --- Then \hyperlink{lec-CU-24}{CU Boulder~24 \emph{Swiss Cheese safety \& MCP design (students)}} for the empirical study.
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos} --- A 32-line stdio server on version~2 of the Python SDK, and the same question asked with and without it.
 \end{enumerate}
 \section{Lecture map (11 lectures)}
 {\footnotesize\begin{longtable}{P{1.75cm} P{0.4cm} P{5.75cm} P{4.2cm} P{2.65cm}}
@@ -508,8 +511,9 @@ The \textbf{Model Context Protocol} standardizes how tools and context reach an 
 \item \hyperlink{asg-STAN25-3}{\textbf{Stanford '25: Week 3 --- Build a Custom MCP Server}} --- MCP server wrapping a real external API: at least 2 typed tools, robust error and rate-limit handling, STDIO or remote HTTP, optional OAuth2. \textit{Starter code:} \href{https://github.com/mihail911/modern-software-dev-assignments/tree/fall2025/week3}{[GitHub]}
 \item \hyperlink{asg-UVA-7}{\textbf{UVA: Topic 7: MCP + A2A}} --- MCP client for AI2 Asta tools; A2A agents, registry and trivia tournament over ngrok. \textit{Starter code:} \href{https://www.cs.virginia.edu/\%7Ermw7my/Courses/AgenticAISpring2026/Topic7MCP/mcp.html}{[cs.virginia.edu]}
 \item \hyperlink{asg-MANN-3}{\textbf{Mannheim: Exercise: Agent Programming with LangChain + MCP}} --- Tool-using agents with LangChain and MCP. \textit{Starter code:} \href{https://www.uni-mannheim.de/media/Einrichtungen/dws/Files_Teaching/Large_Language_Models_and_Agents/FSS2026/IE685_LA_EX_Agent_Programming_LangChain_MCP.ipynb.zip}{[notebook zip]}
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos}. Start with \texttt{EmeritusMCP}: add a second tool to the server and watch the agent discover it.
 \end{itemize}
-\textbf{Related supplements:} \hyperref[sup-mcp]{Model Context Protocol docs (version 2026-07-28)}, \hyperref[sup-codeexec]{Anthropic Engineering: Code execution with MCP}, \hyperref[sup-tinyagent]{Berkeley BAIR: TinyAgent, Function Calling at the Edge}, \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}, \hyperref[sup-anthauto]{Anthropic: Building effective agent automations (Martin and Avilla, October 2026)}.
+\textbf{Related supplements:} \hyperref[sup-mcp]{Model Context Protocol docs (version 2026-07-28)}, \hyperref[sup-codeexec]{Anthropic Engineering: Code execution with MCP}, \hyperref[sup-tinyagent]{Berkeley BAIR: TinyAgent, Function Calling at the Edge}, \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}, \hyperref[sup-anthauto]{Anthropic: Building effective agent automations (Martin and Avilla, October 2026)}, \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}.
 \chapter{Module 5: Memory, Retrieval and Context Engineering}\hypertarget{mod-MEM}{}
 {\small Tag: \tg{MEM}}
 \section{Learning objectives}
@@ -583,8 +587,9 @@ Apart from what the model learned in training, everything an agent can use at st
 \item \hyperlink{asg-STAN26-3}{\textbf{Stanford '26: Week 3 --- Author a Skill}} --- A SKILL.md (Agent Skills standard) for a repeatable workflow on a real OSS repo (htmx, dayjs, yt-dlp, etc.), with trigger tests including a near-miss and an end-to-end run. \textit{Starter code:} \href{https://github.com/mihail911/modern-software-dev-assignments/blob/master/week3/assignment.md}{[GitHub]}
 \item \hyperlink{asg-NEU-2}{\textbf{Northeastern: Husky Tech Customer Support Agent}} --- A support agent with 4 tools and ticket filing. It is built as a notebook, then a project skeleton, then deployed to HF Spaces, then rewritten in LangGraph, then given RAG over husky\_\allowbreak{}policy.md, then a reflection/self-grading loop. \textit{Starter code:} \href{https://github.com/agenticllms/lecture-files/tree/main/W03b}{[GitHub]}
 \item \hyperlink{asg-MANN-4}{\textbf{Mannheim: Exercise: RAG}} --- RAG pipeline notebook. \textit{Starter code:} \href{https://www.uni-mannheim.de/media/Einrichtungen/dws/Files_Teaching/Large_Language_Models_and_Agents/FSS2026/IE685_LA_EX_Retrieval_Augmented_Generation.zip}{[zip]}
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos}. In \texttt{Local-Agent-Demo}, change the short-term window and the similarity threshold in \texttt{config.py} and watch what the model is shown.
 \end{itemize}
-\textbf{Related supplements:} \hyperref[sup-codeexec]{Anthropic Engineering: Code execution with MCP}, \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}.
+\textbf{Related supplements:} \hyperref[sup-codeexec]{Anthropic Engineering: Code execution with MCP}, \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}, \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}.
 \chapter{Module 6: Reasoning, Planning, Reflection and Search}\hypertarget{mod-RSN}{}
 {\small Tag: \tg{RSN}}
 \section{Learning objectives}
@@ -676,7 +681,9 @@ Apart from what the model learned in training, everything an agent can use at st
 \item \hyperlink{asg-JHU-1}{\textbf{JHU: A1: Inductive Synthesis}} --- A bottom-up enumerative synthesizer for a geometric-shape DSL (grow / eliminate observational equivalents / search); your own string DSL and synthesizer; then prompts plus output parsing so Claude Sonnet 4.6 (via Bedrock) solves at least 80\% of string tasks. \textit{Starter code:} \href{https://github.com/machine-programming/assignment-1}{[GitHub]}
 \item \hyperlink{asg-STAN25-1}{\textbf{Stanford '25: Week 1 --- Prompting Techniques}} --- Fill in prompts for K-shot, chain-of-thought, tool calling, self-consistency, RAG, and reflexion until the test scripts pass, using local Ollama models (mistral-nemo:12b, llama3.1:8b). \textit{Starter code:} \href{https://github.com/mihail911/modern-software-dev-assignments/tree/fall2025/week1}{[GitHub]}
 \item \hyperlink{asg-NEU-2}{\textbf{Northeastern: Husky Tech Customer Support Agent}} --- A support agent with 4 tools and ticket filing. It is built as a notebook, then a project skeleton, then deployed to HF Spaces, then rewritten in LangGraph, then given RAG over husky\_\allowbreak{}policy.md, then a reflection/self-grading loop. \textit{Starter code:} \href{https://github.com/agenticllms/lecture-files/tree/main/W03b}{[GitHub]}
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos}. Wire a model into \texttt{tot\_minimal.py}, then replace the model-scored evaluator with a code check and compare.
 \end{itemize}
+\textbf{Related supplements:} \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}.
 \chapter{Module 7: Multi-Agent Systems}\hypertarget{mod-MULTI}{}
 {\small Tag: \tg{MULTI}}
 \section{Learning objectives}
@@ -698,6 +705,7 @@ Multiple agents can parallelize work, isolate context (sub-agents with fresh win
 \item \hyperlink{lec-UW-19}{UW-Madison~19 \emph{Multi-agent systems I}} and \hyperlink{lec-UW-20}{UW-Madison~20 \emph{Multi-agent systems II}} --- Generative Agents/CAMEL, then AutoGen and the scaling science of agent systems.
 \item \hyperlink{lec-CU-14}{CU Boulder~14 \emph{AutoGen \& MetaGPT (students)}} and \hyperlink{lec-CU-15}{CU Boulder~15 \emph{Multiagent debate \& Agentless (students)}} --- AutoGen/MetaGPT, then debate and Agentless.
 \item \hyperlink{lec-UCHI-3}{UChicago~3 \emph{LLMs Prompted for Multi-Agent Simulation}} --- Prompted multi-agent social simulation (notebook with AutoGen and Concordia).
+\item Supplements: \hyperref[sup-barkley]{Barkley local agent demos}, \hyperref[sup-cadsmith]{CADSmith} --- One subagent with its own context and a briefing; then a five-role pipeline checked by a geometry kernel.
 \end{enumerate}
 \section{Lecture map (27 lectures)}
 {\footnotesize\begin{longtable}{P{1.75cm} P{0.4cm} P{5.75cm} P{4.2cm} P{2.65cm}}
@@ -745,7 +753,9 @@ Multiple agents can parallelize work, isolate context (sub-agents with fresh win
 \item \hyperlink{asg-UCHI-3}{\textbf{UChicago: Week 3 notebook}} --- Prompting (0-shot, few-shot, chain-of-reasoning) via the OpenAI API; simulated survey and social-media respondents compared with human data; AutoGen multi-agent dialogues with reflection; Concordia situated simulation; RAG over 5-10 documents vs. a vanilla model. \textit{Starter code:} \href{https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026/blob/main/Tutorials-Homework_Notebooks/Week_3.ipynb}{[GitHub]}
 \item \hyperlink{asg-MANN-6}{\textbf{Mannheim: Project topic 1: Multi-Agent Gaming}} --- Agent teams that cooperate in, or compete at, games (Codenames worked well before). \textit{Resources:} \href{https://github.com/THUDM/AgentBench}{[GitHub]} \href{https://github.com/microsoft/SmartPlay}{[GitHub]}
 \item \hyperlink{asg-STAN25-5}{\textbf{Stanford '25: Week 5 --- Agentic Development with Warp}} --- Warp Drive prompts, rules, or MCP integrations, plus multi-agent concurrent sessions working from a task list. \textit{Starter code:} \href{https://github.com/mihail911/modern-software-dev-assignments/tree/fall2025/week5}{[GitHub]}
+\item Supplement: \hyperref[sup-barkley]{Barkley local agent demos}. In \texttt{Agent-with-Subagent}, untick delegation and compare the main agent's context with and without the subagent.
 \end{itemize}
+\textbf{Related supplements:} \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}, \hyperref[sup-cadsmith]{CADSmith: multi-agent CAD generation with programmatic geometric validation (Barkley, Loghmani and Barati Farimani, 2026)}.
 \chapter{Module 8: Coding Agents}\hypertarget{mod-CODE}{}
 {\small Tag: \tg{CODE}}
 \section{Learning objectives}
@@ -777,7 +787,7 @@ Coding is the domain where agents work best today, because the environment provi
 {\footnotesize\begin{longtable}{P{1.75cm} P{0.4cm} P{5.75cm} P{4.2cm} P{2.65cm}}
 \toprule Course & \# & Title (links to catalogue row) & Materials & Tags\\ \midrule\endhead
 \hyperlink{course-CMU}{CMU} & 6 & $\star$\,\hyperlink{lec-CMU-6}{Domains 1: Coding Agents} & \href{https://www.cmu-agents.com/slides/lecture-06-coding-agents.pdf}{[slides]} \href{https://www.cmu-agents.com/\#/schedule}{[video]} & \hyperlink{mod-CODE}{\tg{CODE}}\\
-\hyperlink{course-CMU}{CMU} & 14 & \hyperlink{lec-CMU-14}{Frameworks 1: OpenHands} & -- & \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-CODE}{\tg{CODE}}\\
+\hyperlink{course-CMU}{CMU} & 14 & \hyperlink{lec-CMU-14}{Frameworks 1: OpenHands} & \href{https://www.cmu-agents.com/slides/lecture-14-openhands.pdf}{[slides]} & \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-CODE}{\tg{CODE}}\\
 \hyperlink{course-STAN26}{Stanford '26} & 1 & $\star$\,\hyperlink{lec-STAN26-1}{Course intro + build Claude Code in 200 lines} & \href{https://themodernsoftware.dev/}{[course site]} & \hyperlink{mod-CODE}{\tg{CODE}} \hyperlink{mod-ARCH}{\tg{ARCH}}\\
 \hyperlink{course-STAN26}{Stanford '26} & 2 & $\star$\,\hyperlink{lec-STAN26-2}{How SOTA coding agents are designed: deep dive into system prompts} & \href{https://themodernsoftware.dev/}{[course site]} & \hyperlink{mod-CODE}{\tg{CODE}} \hyperlink{mod-FND}{\tg{FND}}\\
 \hyperlink{course-STAN26}{Stanford '26} & 7 & $\star$\,\hyperlink{lec-STAN26-7}{CLAUDE.md, AGENTS.md, hooks; subagent patterns (planner/implementer/reviewer)} & \href{https://themodernsoftware.dev/}{[course site]} & \hyperlink{mod-CODE}{\tg{CODE}} \hyperlink{mod-MULTI}{\tg{MULTI}}\\
@@ -972,7 +982,7 @@ Evaluation separates agent engineering from demo-building, and every serious cou
 \item \hyperlink{asg-UB-4}{\textbf{Buffalo: Lab 4: Evaluation Harness}} --- Eval suite for a bounded task: test cases, success criteria, metrics, failure taxonomy, reproducible script. \textit{(spec only)}
 \item \hyperlink{asg-UVA-5}{\textbf{UVA: Topic 5: RAG experiments}} --- 11 controlled RAG experiments (RAG vs no-RAG, top-K, chunking, prompts, unanswerable questions). \textit{Starter code:} \href{https://www.cs.virginia.edu/\%7Ermw7my/Courses/AgenticAISpring2026/Topic5RAG/rag.html}{[cs.virginia.edu]}
 \end{itemize}
-\textbf{Related supplements:} \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}.
+\textbf{Related supplements:} \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}, \hyperref[sup-cadsmith]{CADSmith: multi-agent CAD generation with programmatic geometric validation (Barkley, Loghmani and Barati Farimani, 2026)}.
 \chapter{Module 11: Training and Optimizing Agents}\hypertarget{mod-TRAIN}{}
 {\small Tag: \tg{TRAIN}}
 \section{Learning objectives}
@@ -1256,7 +1266,7 @@ An agent with tools is a confused-deputy risk. Simon Willison's \textbf{lethal t
 \item \hyperlink{asg-UB-10}{\textbf{Buffalo: Final Team Project: Useful Bounded Agent}} --- Working agent for a bounded task. Deliverables: problem statement, environment/tool inventory, architecture diagram, repo, eval dataset/script, results and error analysis, security/privacy/ethics risk assessment, demo, final report. \textit{(spec only)}
 \item \hyperlink{asg-UCHI-11}{\textbf{UChicago: Final project}} --- Agent project for social insight, solo or teams of up to 4: at least 3 data types and 3 model types from 3 weeks, qualitatively validated; Substack/Medium post (3,600 words and 13 visuals solo; 5,000 and 17 for groups) with an open repo, plus an Ignite talk. \textit{(spec only)}
 \end{itemize}
-\textbf{Related supplements:} \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}.
+\textbf{Related supplements:} \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}, \hyperref[sup-cadsmith]{CADSmith: multi-agent CAD generation with programmatic geometric validation (Barkley, Loghmani and Barati Farimani, 2026)}.
 \part{Course Catalogue}\hypertarget{catalog}{}
 \chapter{CMU: 11-768 AI Agents}\hypertarget{course-CMU}{}
 {\small\begin{tabularx}{\linewidth}{@{}>{\bfseries}l X@{}}\toprule
@@ -1266,7 +1276,7 @@ Instructors & Graham Neubig, Daniel Fried\\
 Website & \href{https://www.cmu-agents.com/\#/schedule}{https://www.cmu-agents.com/\#/schedule}\\
 Level & Graduate; assumes you have trained neural LMs\\
 Archetype & Systems + training (build, evaluate, RL-train)\\
-Public materials & Slides: L1--13; video: L1--9; code: A1--A3 public\\
+Public materials & Slides: L1--14; video: L1--9; code: A1--A3 public\\
 Best for & The backbone course: harness engineering, evals, SFT/RL, safety, search.\\
 \bottomrule\end{tabularx}}
 
@@ -1274,7 +1284,7 @@ The most complete public agents course in the collection, and the one this guide
 It goes from capabilities (tool use, long-context management, skills and memory, planning) to domains (coding, computer use, deep research), then to training (SFT, RL basics, advanced RL, RL systems), safety and observability, frameworks (OpenHands, LangGraph), interaction and search.
 The readings are taken from production systems: harness source code, provider KV-cache pricing pages and the MCP spec.
 The three assignments form one pipeline: build a harness (A1), evaluate an agent with an LLM judge (A2), then RL-train an agentic policy (A3).
-Slides for lectures 1--13 and recordings for lectures 1--9 are public on the schedule page.
+Slides for lectures 1--14 and recordings for lectures 1--9 are public on the schedule page.
 \section{Lectures}
 {\scriptsize\setlength{\tabcolsep}{2.5pt}\begin{longtable}{P{0.45cm} P{1.2cm} P{2.5cm} P{3.6cm} P{3.6cm} P{3.3cm} P{1.5cm}}
 \toprule \# & Date & Title & Key topics & Readings & Materials & Tags\\ \midrule\endhead
@@ -1291,7 +1301,7 @@ Slides for lectures 1--13 and recordings for lectures 1--9 are public on the sch
 \hypertarget{lec-CMU-11}{}11 & Tue Sep 29 & \textbf{Training 3: Advanced RL Algorithms} & Module: Training & (refs: InstructGPT, GAE, Let's Verify Step by Step, AReaL) & \href{https://www.cmu-agents.com/slides/lecture-11-rl-advanced.pdf}{slides} & \hyperlink{mod-TRAIN}{\tg{TRAIN}}\\ \midrule
 \hypertarget{lec-CMU-12}{}12 & Thu Oct 1 & \textbf{Training 4: RL Systems} & Module: Training; lecturer: Apurva Gandhi & -- & \href{https://www.cmu-agents.com/slides/lecture-12-rl-systems.pdf}{slides} & \hyperlink{mod-TRAIN}{\tg{TRAIN}} \hyperlink{mod-DEPLOY}{\tg{DEPLOY}}\\ \midrule
 \hypertarget{lec-CMU-13}{}13 & Tue Oct 6 & \textbf{Safety 1: Agent Safety} & Module: Agent Safety & (refs: OpenClaw incident report, CVE-2025-32711, Cline supply-chain postmortem) & \href{https://www.cmu-agents.com/slides/lecture-13-agent-safety.pdf}{slides} & \hyperlink{mod-SAFE}{\tg{SAFE}}\\ \midrule
-\hypertarget{lec-CMU-14}{}14 & Thu Oct 8 & \textbf{Frameworks 1: OpenHands} & Module: Agent Frameworks & -- & -- & \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-CODE}{\tg{CODE}}\\ \midrule
+\hypertarget{lec-CMU-14}{}14 & Thu Oct 8 & \textbf{Frameworks 1: OpenHands} & Module: Agent Frameworks; lecturer: Graham Neubig & OpenHands Software Agent SDK report; SWE-agent; OpenDevin CodeAct 1.0; Don't Sleep on Single-agent Systems; OpenHands-Versa (refs: HumanEval, SWE-bench, CodeR, MetaGPT) & \href{https://www.cmu-agents.com/slides/lecture-14-openhands.pdf}{slides} & \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-CODE}{\tg{CODE}}\\ \midrule
 \hypertarget{lec-CMU-15}{}15 & Tue Oct 20 & \textbf{Frameworks 2: LangGraph} & Module: Agent Frameworks & -- & -- & \hyperlink{mod-ARCH}{\tg{ARCH}}\\ \midrule
 \hypertarget{lec-CMU-16}{}16 & Thu Oct 22 & \textbf{Safety 2: Observability and Monitoring} & Module: Frameworks \& Safety; lecturer: Eric Wallace & -- & -- & \hyperlink{mod-SAFE}{\tg{SAFE}} \hyperlink{mod-DEPLOY}{\tg{DEPLOY}}\\ \midrule
 \hypertarget{lec-CMU-17}{}17 & Tue Oct 27 & \textbf{Agents and the Future of Work} & Module: Interaction \& Projects; lecturer: Zora Wang & -- & -- & \hyperlink{mod-APP}{\tg{APP}}\\ \midrule
@@ -1992,7 +2002,7 @@ The starter branch linked from the handout no longer exists; an updated version 
 \hypertarget{asg-S329T-2}{}\textbf{Course project (70\%, teams of 2-3)} & Team-built agentic AI application with evaluation: proposal presentation (week 3), mid-term presentations (weeks 7-8), semi-final dry-runs (week 9), final presentation and poster/demo fair (week 10), written report due at final exam time & Project scoping, agent building, evaluation design, presenting & -- & \hyperlink{mod-APP}{\tg{APP}} \hyperlink{mod-EVAL}{\tg{EVAL}} \tg{ORG}\\ \midrule
 \end{longtable}}
 \chapter{Supplementary Resources}\hypertarget{supplements}{}
-These non-course resources (from the bookmarks folder, plus the MIT agent-security lecture added later) are referenced throughout the modules.
+These non-course resources (from the bookmarks folder, plus later additions) are referenced throughout the modules.
 \section{Model Context Protocol docs (version 2026-07-28)}\label{sup-mcp}
 {\small \href{https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro}{https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro} \quad \hyperlink{mod-TOOL}{\tg{TOOL}} \hyperlink{mod-ARCH}{\tg{ARCH}}}\par
 MCP is the open standard for connecting an AI application (the \emph{host}) to external context and tools. The host creates one \emph{client} per \emph{server}. Servers expose \emph{tools} (callable functions with JSON-Schema inputs), \emph{resources} (contextual data) and \emph{prompts} (templates), over \emph{stdio} for local servers or \emph{Streamable HTTP} for remote ones, with OAuth recommended.
@@ -2016,6 +2026,20 @@ A worked example of an unattended, scheduled agent (``daily-brief'', on Claude M
 \section{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}\label{sup-notion}
 {\small \href{https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee}{https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee} \quad \hyperlink{mod-MEM}{\tg{MEM}} \hyperlink{mod-DEPLOY}{\tg{DEPLOY}} \hyperlink{mod-EVAL}{\tg{EVAL}} \hyperlink{mod-APP}{\tg{APP}}}\par
 A production case study of Data Scout, an internal agent that answers plain-language questions from governed Snowflake data through MCP. Each user signs in with their own credentials, so existing access controls apply. A curated, owned library separates data context (metrics, sources, filters), business context and routing guidance. Queries carry structured metadata so traces show which definitions were used. A nightly review agent records missing, stale or conflicting context; a separate triage agent deduplicates findings, applies authorised fixes, and sends ambiguous or higher-risk changes to a person. The post's main lesson is that a query can run cleanly and still answer the wrong question, through wrong meaning, routing, measurement or interpretation. Notion reports that weekly requests to its data team fell by about 80\% within two months and that about half of its employees use the agent. These figures are self-reported, and the post says its evaluation is still maturing: usage and query success do not prove accuracy. Read it with \hyperlink{mod-MEM}{Module~5 (Memory, Retrieval and Context Engineering)} for context engineering and \hyperlink{mod-DEPLOY}{Module~13 (Deployment, Efficiency and Operations)} for operations.
+\section{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}\label{sup-barkley}
+{\small \href{https://github.com/jabarkle}{https://github.com/jabarkle} \quad \hyperlink{mod-ARCH}{\tg{ARCH}} \hyperlink{mod-TOOL}{\tg{TOOL}} \hyperlink{mod-MEM}{\tg{MEM}} \hyperlink{mod-RSN}{\tg{RSN}} \hyperlink{mod-MULTI}{\tg{MULTI}}}\par
+Five small repositories written as office-hours support for Carnegie Mellon's executive program \emph{Agentic AI: Building Autonomous Systems for Real-World Applications}. They are teaching demos by one instructor, not a course, and they are the only place in this guide where one system grows in stages. Everything runs on a laptop through Ollama with a 3--4B model, with no API key.
+\begin{itemize}
+\item \href{https://github.com/jabarkle/EmeritusMCP}{\texttt{EmeritusMCP}}: the smallest useful MCP example. A 32-line server with one read-only tool, and an agent that answers the same question with and without it. Dependencies are pinned.
+\item \href{https://github.com/jabarkle/Local-Agent-Demo}{\texttt{Local-Agent-Demo}}: a ``teacher's assistant'' agent. The loop is written out by hand, with a cap of three tool steps. Because the model has no native tool calling, each step is a schema-constrained JSON decision followed by a separate answer call, so you can see that a tool call is text the harness parses. Tools live in a separate MCP server that the agent discovers at start-up. Long-term memory is a JSON file searched by embedding similarity, and two \texttt{SKILL.md} procedures load only when a request needs them. A trace panel shows what the model sees at each step.
+\item \href{https://github.com/jabarkle/Agent-with-Subagent}{\texttt{Agent-with-Subagent}}: the same system plus one subagent that starts with an empty context and receives a written briefing. Its README states the delegation test plainly: big input, small output, no need to remember the middle.
+\item \href{https://github.com/jabarkle/Agent-with-subagent-and-langgraph}{\texttt{Agent-with-subagent-and-langgraph}}: the same system again as a LangGraph \texttt{StateGraph} with five nodes (recall, decide, act, answer, reflect). Read it beside the hand-written loop to see what the framework adds and hides.
+\item \href{https://github.com/jabarkle/EmeritusAgenticAIStarterCode}{\texttt{EmeritusAgenticAIStarterCode}}: Tree of Thoughts as a 75-line beam search in plain Python, then the same search in LangGraph and in CrewAI. The evaluator is the model scoring its own partial paths, so apply the caution in \hyperlink{mod-RSN}{Module~6 (Reasoning, Planning, Reflection and Search)}: check that the score carries information before trusting the search.
+\end{itemize}
+\textbf{Caveats.} The MCP code uses version~2 of the official Python SDK (\texttt{MCPServer}, \texttt{Client}) over stdio. The code was read for this guide but not run. No repository states a licence, there are no tests beyond a set-up check, compiled caches and a filled memory file are committed, and three of the five leave dependency versions open (\texttt{>=}). Under your install policy, pin and vet the packages before installing. Do them in the order listed, after \hyperlink{mod-ARCH}{Module~2 (The Agent Loop and Agent Architectures)}.
+\section{CADSmith: multi-agent CAD generation with programmatic geometric validation (Barkley, Loghmani and Barati Farimani, 2026)}\label{sup-cadsmith}
+{\small \href{https://arxiv.org/abs/2603.26512}{https://arxiv.org/abs/2603.26512} \quad \hyperlink{mod-MULTI}{\tg{MULTI}} \hyperlink{mod-EVAL}{\tg{EVAL}} \hyperlink{mod-APP}{\tg{APP}}}\par
+A worked example of a fixed multi-agent pipeline whose feedback is a real measurement, not a model's opinion of its own work. A planner writes a design specification, a coder generates CadQuery code with retrieval over the API documentation, an executor runs it in a subprocess and reads exact geometry from the OpenCASCADE kernel, a validator combines those measurements with a vision-language judge that sees three rendered views, and a refiner repairs the code. An inner loop retries execution errors up to three times and an outer loop retries geometric errors up to five. The judge is a stronger model than the coder. The authors report results on their own benchmark of 100 hand-written prompts with hand-written reference scripts, against a single-call baseline and an ablation without vision: mean Chamfer distance falls from 28.37 (single call) to 18.19 (pipeline without vision) to 0.74 (with vision). They also show a part that passed every check with visible gaps. These figures are self-reported and were not reproduced here. Note that it is a workflow in the sense of \hyperlink{mod-ARCH}{Module~2 (The Agent Loop and Agent Architectures)}: the code fixes the order of the roles. \href{https://github.com/jabarkle/CADSmith}{Code} (no licence stated). Read it with \hyperlink{mod-MULTI}{Module~7 (Multi-Agent Systems)} for roles and with \hyperlink{mod-EVAL}{Module~10 (Evaluating Agents)} for the baseline-and-ablation design.
 \section{Google Colab}\label{sup-colab}
 {\small \href{https://colab.research.google.com/}{https://colab.research.google.com/} \quad \hyperlink{mod-DEPLOY}{\tg{DEPLOY}}}\par
 A hosted Jupyter runtime. Use it to run course notebooks (UChicago, Northeastern, Mannheim, UVA) without a local setup, and to keep experiments with downloaded code off your own machine.
@@ -2189,6 +2213,8 @@ Repositories, frameworks, benchmarks and tools referenced by each course (as rec
 \item \hyperref[sup-agentsec]{MIT 6.566 guest lecture: AI Agent Security (Anish Athalye, April 2026)}: \href{https://github.com/anishathalye/ai-agent-security-lecture}{https://github.com/anishathalye/ai-agent-security-lecture}
 \item \hyperref[sup-anthauto]{Anthropic: Building effective agent automations (Martin and Avilla, October 2026)}: \href{https://claude.dev/blog/building-effective-agent-automations/}{https://claude.dev/blog/building-effective-agent-automations/}
 \item \hyperref[sup-notion]{Notion: How we built a personal data scientist for every Notion employee (David Thomas, October 2026)}: \href{https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee}{https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee}
+\item \hyperref[sup-barkley]{Jesse Barkley: local agent demos for the CMU executive Agentic AI program (2026)}: \href{https://github.com/jabarkle}{https://github.com/jabarkle}
+\item \hyperref[sup-cadsmith]{CADSmith: multi-agent CAD generation with programmatic geometric validation (Barkley, Loghmani and Barati Farimani, 2026)}: \href{https://arxiv.org/abs/2603.26512}{https://arxiv.org/abs/2603.26512}
 \item \hyperref[sup-colab]{Google Colab}: \href{https://colab.research.google.com/}{https://colab.research.google.com/}
 \item TinyAgent code: \href{https://github.com/SqueezeAILab/TinyAgent}{github.com/SqueezeAILab/TinyAgent}
 \end{itemize}}
@@ -2354,7 +2380,7 @@ These are the notes recorded while each course was being researched.
 \subsection{CMU}
 {\small\begin{itemize}
 \item \textbf{Lecture schedule verified.} The lecture rows in the guide come from cmu-11768-verified.md, read from the official schedule (\href{https://www.cmu-agents.com/\#/schedule}{[cmu-agents.com]}) rendered in Chrome on 2026-10-09. It lists 23 lectures with dates, modules, lecturers where named, and readings. The lecture table in this file was reconstructed earlier from secondary sources (a blog post, beri.net and YouTube titles) and is superseded wherever the two disagree.
-\item \textbf{Materials.} Slide PDFs are posted for lectures 1-13 (\href{https://www.cmu-agents.com/slides/}{[cmu-agents.com]}). Lectures 14-23 had no slides yet on 2026-10-09. The schedule marks recordings for lectures 1-9; the guide links them through the schedule page because the individual YouTube links were not extracted.
+\item \textbf{Materials.} Slide PDFs are posted for lectures 1-14 (\href{https://www.cmu-agents.com/slides/}{[cmu-agents.com]}); lecture 14 was added between 2026-10-09 and 2026-10-11. Lectures 15-23 had no slides yet on 2026-10-11. The schedule marks recordings for lectures 1-9; the guide links them through the schedule page because the individual YouTube links were not extracted.
 \item \textbf{Guest lectures.} Lectures 22 and 23 are guest lectures (Karthik Narasimhan, Sasha Rush) with no announced topic.
 \item \textbf{A2/A3 visibility.} A2 and A3 repos are now public, last updated Sep 20 and Oct 7, 2026 respectively. Earlier summaries called them enrollment-only.
 \item Neubig's X announcement (\href{https://x.com/gneubig/status/2072730570304430183}{[x.com]}) could not be fetched (HTTP 402). Its text is known only from search snippets.

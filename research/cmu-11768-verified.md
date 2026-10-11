@@ -1,4 +1,4 @@
-# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09)
+# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11)
 
 Authoritative; supersedes the lecture table in cmu-11768.md where they disagree.
 Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L9; links on https://www.cmu-agents.com/#/schedule
@@ -18,7 +18,7 @@ Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for
 | 11 | Tue Sep 29 | Training 3: Advanced RL Algorithms | Training | | (refs: InstructGPT, GAE, Let's Verify Step by Step, AReaL) | lecture-11-rl-advanced.pdf | N | TRAIN |
 | 12 | Thu Oct 1 | Training 4: RL Systems | Training | Apurva Gandhi | | lecture-12-rl-systems.pdf | N | TRAIN, DEPLOY |
 | 13 | Tue Oct 6 | Safety 1: Agent Safety | Agent Safety | | (refs: OpenClaw incident report, CVE-2025-32711, Cline supply-chain postmortem) | lecture-13-agent-safety.pdf | N | SAFE |
-| 14 | Thu Oct 8 | Frameworks 1: OpenHands | Agent Frameworks | | | – | N | ARCH, CODE |
+| 14 | Thu Oct 8 | Frameworks 1: OpenHands | Agent Frameworks | Graham Neubig | OpenHands Software Agent SDK report; SWE-agent; OpenDevin CodeAct 1.0; Don't Sleep on Single-agent Systems; OpenHands-Versa (refs: HumanEval, SWE-bench, CodeR, MetaGPT) | lecture-14-openhands.pdf | N | ARCH, CODE |
 | – | Oct 13/15 | Fall break | | | | | | |
 | 15 | Tue Oct 20 | Frameworks 2: LangGraph | Agent Frameworks | | | – | | ARCH |
 | 16 | Thu Oct 22 | Safety 2: Observability and Monitoring | Frameworks & Safety | Eric Wallace | | – | | SAFE, DEPLOY |

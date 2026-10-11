@@ -770,7 +770,7 @@ def part_catalog(D):
                     md2tex(dash(a["starter"]), c["code"]), tag_boxes(a["tags"])))
             D(r"\end{longtable}}")
     D(r"\chapter{Supplementary Resources}\hypertarget{supplements}{}")
-    D(r"These non-course resources (from the bookmarks folder, plus the MIT agent-security lecture added later) are referenced throughout the modules.")
+    D(r"These non-course resources (from the bookmarks folder, plus later additions) are referenced throughout the modules.")
     for s in C.SUPPLEMENTS:
         D(r"\section{%s}\label{%s}" % (esc(s["name"]), s["key"]),
           r"{\small \href{%s}{%s} \quad %s}\par" % (url_esc(s["url"]), esc(s["url"]), tag_boxes(s["tags"])),
@@ -861,7 +861,7 @@ def main():
 CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Snapshot compiled October 9, 2026 from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Snapshot compiled October 9, 2026 and updated October 11, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}""" % ((len(C.COURSES),) + stats()))
     D(r"\hypertarget{toc}{}\tableofcontents")
