@@ -49,7 +49,7 @@
 \title{\textbf{Screening Tasks for Agentic Automation}\\[4pt]
 \large A companion to the Agentic System Design Process: what to check between Phase~1 and Phase~2}
 \author{J. A. Arroyo}
-\date{Version 0.9 --- 10 October 2026}
+\date{Version 0.9.1 --- 12 October 2026}
 
 \begin{document}
 \maketitle
@@ -173,7 +173,7 @@ Take three to five finished pieces of real work and mark each point where a pers
 Expect most of the surrounding work to be mechanical.
 
 \textbf{A2. The operations can run under your constraints.}
-List the operations on each side of the connecting step and how each is reached, including any wrapper, screen interaction or human handoff. Record licence, cost, data access and delay, and which actions the model would be allowed to take. Some physical steps stay with people: RocketSmith leaves fabrication, assembly and flight-readiness work to them, and the laser-sintering study\p{5} leaves handling and physical testing to them alongside its machine-control tools\p{2, pp.\,19--20,\,31; 5, pp.\,11--12}.
+List the operations on each side of the connecting step and how each is reached, including any wrapper, screen interaction or human handoff. Record licence, cost, data access and delay, and which actions the model would be allowed to take. Some physical steps stay with people: RocketSmith leaves fabrication, assembly and flight-readiness work to them, and the laser-sintering study\p{5} leaves handling and physical testing to them alongside its machine-control tools\p{2, pp.\,19--21,\,27,\,31; 5, pp.\,11--13}.
 
 \textbf{A3. Something checks the result.}
 Name two things, which may differ: the feedback available \emph{while the system runs}, and the \emph{final acceptance check}.
@@ -186,7 +186,7 @@ The kind of check limits what the finished system can claim.
 \end{example}
 
 \begin{example}{a strong check and a weak one}
-The \textbf{Pufibara} benchmark\p{22} tests its private evaluator on known-valid reference models and deliberately off-target submissions. The agent cannot reach that evaluator while revising, or use its verdict for another attempt\p{22, p.\,10}. \textbf{Catalyst-Agent}\p{9} screens catalysts against predicted adsorption energies; when three selected materials were rechecked with a physics calculation, one fell outside the target window\p{9, p.\,32}. Both systems loop successfully, but they support different claims. Agreement is not enough either: in \textbf{GAMESS modernization}\p{18}, matching outputs could share the same build error\p{18, p.\,8}.
+For its generation and tuning tasks, the \textbf{Pufibara} benchmark\p{22} tests its private behavioral evaluator on known-valid answers and deliberately off-target submissions. Its 132 repair tasks, of 232, are checked on interface, model checking and simulation, without a separate behavioral check. The agent cannot reach the evaluator while revising, or use its verdict for another attempt\p{22, pp.\,9--10}. \textbf{Catalyst-Agent}\p{9} screens catalysts against predicted adsorption energies; when three selected materials were rechecked with a physics calculation, one fell outside the target window\p{9, p.\,32}. Both systems loop successfully, but they support different claims. Agreement is not enough either: in \textbf{GAMESS modernization}\p{18}, matching outputs could share the same build error\p{18, p.\,8}.
 \end{example}
 
 \begin{gate}
@@ -197,7 +197,7 @@ You can name the connecting step, the operations on either side of it, and a che
 
 Passing the first question makes a model somewhere in the loop worth trying.
 It does not justify an agent.
-The published systems give less to go on here: each signal below is drawn from a few cases and has a counterexample in the same set \inferred.
+The published systems give less to go on here: the cases motivate the questions below, but they do not validate them as predictive signals or show what letting the model choose is worth \inferred.
 
 \textbf{B1. Results create decisions that a fixed procedure does not resolve.}
 In the same work samples, mark decisions that could not have been made from the original request: looking at a different artifact, asking for a new diagnostic, writing a test, changing approach, stopping, escalating.
@@ -219,7 +219,7 @@ Rare cases with large consequences can matter more than frequent minor ones.
 \end{example}
 
 \begin{example}{where simpler control remains a credible alternative}
-\textbf{Scaling Reproducibility}\p{12} calls its adaptive coordinator when a validation gate fails. Failure patterns that recur are written into deterministic rules or routing branches, through reviewed updates between versions of the pipeline\p{12, pp.\,7,\,9--10}. \textbf{Catalyst-Agent}\p{9} concedes that one of its showcase decisions ``could be interpreted as exhaustive search over a binary parameter''\p{9, p.\,23}. \textbf{SubDGuide}'s refinement stage improves both the output-to-target and the target-to-output P95 distances in 6 of 20 cases and leaves 14 outputs unchanged. It keeps an earlier verified state unless a proposal passes verification and improves the comparison score, which prevents a worse result under that score, not under every measure of quality\p{19, pp.\,5,\,7}. \textbf{TDFlow} reports the simpler Agentless system at \$0.53 per issue and 61.0\% success, against its own \$1.51 and 88.8\%\p{8, pp.\,5,\,11}; the two systems are equipped differently, so this is not a measure of what choosing the next step is worth.
+\textbf{Scaling Reproducibility}\p{12} calls its adaptive coordinator when a validation gate fails. Failure patterns that recur are written into deterministic rules or routing branches, through reviewed updates between versions of the pipeline\p{12, pp.\,7,\,9--10}. \textbf{Catalyst-Agent}\p{9} concedes that one of its showcase decisions ``could be interpreted as exhaustive search over a binary parameter''\p{9, p.\,23}. Its ablations still favor the agent's choices over random ones: 41\% success on the oxygen reduction reaction, against 25.0\% with random candidates, 23.3\% with random modifications and 13.3\% with both\p{9, pp.\,29--30}. They do not compare the agent with a strong fixed policy under a matched budget. \textbf{SubDGuide}'s refinement stage improves both the output-to-target and the target-to-output P95 distances in 6 of 20 cases and leaves 14 outputs unchanged. It keeps an earlier verified state unless a proposal passes verification and improves the comparison score, which prevents a worse result under that score, not under every measure of quality\p{19, pp.\,5,\,7}. \textbf{TDFlow} reports the simpler Agentless system at \$0.53 per issue and 61.0\% success, against its own \$1.51 and 88.8\%\p{8, pp.\,5,\,11}; the two systems are equipped differently, so this is not a measure of what choosing the next step is worth.
 \end{example}
 
 \textbf{B4. Settle it with a matched comparison.}
@@ -329,7 +329,7 @@ Reading the result \inferred:
 \begin{itemize}
 \item \emph{Selection.} The 22 are systems reported in papers and preprints, chosen by me from one group's publication list and from title and abstract searches. They are not a sample of attempted projects and include no failures that went unpublished.
 \item \emph{No clean test of the second question.} None of the 22 holds tools, information and budget constant while changing only who selects the next step. SubDGuide comes closest: its rule-based controller shares the evidence and repair tools but also changes initial planning, and its one-shot variant has no feedback stage at all\p{19, pp.\,6--7}. TDFlow compares complete systems with different tools and costs. Gains reported elsewhere could come from better tools, more information, verification or human specification.
-\item \emph{Reading depth.} The classifications in the appendix come from text extractions of the methods, evaluation and limitations sections. Figures, code repositories, execution traces and separately hosted supplements were not inspected, and no experiment was rerun.
+\item \emph{Reading depth.} The classifications in the appendix come from text extractions of the full papers, in which some tables did not extract cleanly. One figure was checked against its PDF. Other figures, code repositories, execution traces and separately hosted supplements were not inspected, and no experiment was rerun.
 \item \emph{Not validated.} The screen has not been applied prospectively. Treat a pass as a reason to run the comparison, not as a prediction of its result.
 \end{itemize}
 
@@ -379,7 +379,7 @@ These assignments are my reading of each paper's methods section, not the author
 1 & Material Database Agent & Reading papers, tables and charts into database rows & Human-built databases, at evaluation only & Four prescribed stages; model-directed delegation and tool-use sessions inside them (agent inside a fixed workflow) \\
 2 & RocketSmith & Iterating between flight simulation, CAD and slicer & Simulated stability, slicer mass, four physical flights & Agent tool use inside a prescribed skill sequence; heavy human involvement \\
 3 & Pepti-Agent & Choosing the next sequence edit from predictor output & Three learned property classifiers (proxy) & Agent: a single loop with a turn cap \\
-4 & AgentsCAD & Choosing a geometry repair for a printing defect & Deterministic overhang recheck and solid validity; a vision-model verifier & Fixed workflow: its agents run ``in a fixed phase order''\p{4, p.\,10} \\
+4 & AgentsCAD & Choosing a geometry repair for a printing defect & Deterministic overhang recheck and solid validity; a vision-model verifier & Fixed outer workflow: its agents run ``in a fixed phase order''\p{4, p.\,10}, with a tool-using design reasoner inside; the verifier-to-repair loop is not specified enough to classify \\
 5 & SLS process optimization & Choosing process parameters from past builds & Tensile and flexural tests on printed parts & Agent within a session; people start each build round \\
 6 & AgentD & Chaining retrieval, molecule generation and property prediction & Predicted properties and rule filters (proxy) & Fixed workflow in the reported end-to-end run \\
 7 & MatSciAgent & Turning a request into database queries or simulations & Tool outputs and repeat-run consistency; little independent validation of correctness & Router plus a per-task model loop (agent) \\
@@ -390,16 +390,16 @@ These assignments are my reading of each paper's methods section, not the author
 10 & Symbolic discovery for fundamental analysis & Proposing valuation equations & Forecast error on held-out quarters & Fixed workflow: a propose--fit--evaluate loop \\
 11 & Deploy-Master & Inferring a build environment from documentation & Container build and a minimal run command & Fixed outer pipeline; control inside its refinement step not specified enough to classify \\
 12 & Scaling Reproducibility & Running replication packages and matching coefficients & Published coefficients & Fixed outer workflow; an agent diagnoses and repairs on failure \\
-13 & HLER & Proposing feasible questions and analyses for a dataset & Two researchers on feasibility; a model reviewer on drafts & Fixed workflow with human gates \\
+13 & HLER & Proposing feasible questions and analyses for a dataset & Two researchers on question feasibility, at evaluation; a model reviewer on drafts; a person approves the final output & Fixed stage sequence with human gates; a model reviewer can request further analysis and another revision round \\
 14 & Causal inference workflow & Turning a causal plan into estimators and diagnostics & Known effects in synthetic benchmarks; diagnostics & Fixed notebook workflow; model-directed control inside it not established \\
 15 & Schwartz, Andrews \& Shapiro & Reproducing, speeding up and extending published calculations & Published values, reruns, numerical references; adversarial model judgments for extensions & Fixed outer workflow \\
 16 & FinNextAssist & Gathering and reconciling financial evidence & Reference answers; rubric and model-judge grading & Fixed stages with an agent reasoning loop inside \\
 17 & CAi Copilot & Choosing molecular generation, filtering and evaluation steps & Rule checks; predicted properties; a blinded model judge & Agent \\
 18 & GAMESS modernization & Rewriting legacy Fortran and diagnosing breakage & Compilation, reference outputs, regression tests & Fixed per-file protocol with agent work inside \\
 19 & SubDGuide & Planning a control cage, then inspecting and repairing it & Geometric distance to the input mesh; topology gates & Single model call for the plan, then agent refinement \\
-20 & Quantum research system & Formalizing a protocol and implementing its calculations & Fixed tests and classical reference calculations & Fixed, approved project graph with agent modules \\
+20 & Quantum research system & Formalizing a protocol and implementing its calculations & Fixed tests and classical reference calculations & Project graph built progressively, with agent modules and human approval gates; protocol and tests locked before implementation \\
 21 & Oncology feature extraction & Mapping clinical documents to a structured schema & Clinician-reviewed values on an annotated subset & Fixed workflow: set routing over code steps and single model calls \\
-22 & Pufibara (Modelica) & Deciding what simulation evidence or repair to pursue & Private scenario-based evaluator & Agent \\
+22 & Pufibara (Modelica) & Deciding what simulation evidence or repair to pursue & Private final evaluator: interface, model checking and simulation for repair tasks; behavioral checks as well for generation and tuning & Agent \\
 \end{longtable}
 }
 
