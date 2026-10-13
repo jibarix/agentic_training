@@ -858,10 +858,10 @@ def main():
 {\large J. A. Arroyo\par}\vspace{0.8cm}
 {\large %d courses $\cdot$ %d lectures $\cdot$ %d assignments $\cdot$ 15 modules $\cdot$ 3 learning tracks\par}\vspace{1.5cm}
 \begin{minipage}{0.8\linewidth}\centering\small
-CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
+CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Harvard CS 2680 $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Snapshot compiled October 9, 2026 and updated October 11, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Snapshot compiled October 9, 2026 and updated October 11 and 12, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}""" % ((len(C.COURSES),) + stats()))
     D(r"\hypertarget{toc}{}\tableofcontents")

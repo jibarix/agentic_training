@@ -58,6 +58,20 @@ The lecture dates come from an authorized translation and may be off by a day, s
 One running example, the ``Husky Tech'' customer-support agent, grows week by week: a notebook prototype, then a project skeleton, then a Hugging Face Spaces deployment, a LangGraph rewrite, RAG, and finally a self-grading retrieval loop.
 Later sessions cover planning, agentic RAG, three multi-agent sessions, MCP and its security, evaluation, and optimization with DSPy and cost controls.
 Sessions after F~11/13 were not posted when this guide was compiled."""),
+    dict(code="HARV", short="Harvard", file="harvard-cs2680.md", kind="std",
+         title="CS 2680 Modern AI Systems: Agents and System Optimizations", inst="Harvard University (SEAS, MaDSys)",
+         term="Fall 2026 (in progress)",
+         people="Juncheng Yang", url="https://cs2680.seas.harvard.edu/",
+         level="Graduate systems course; CS61 plus a graduate systems course",
+         archetype="Agent systems and serving (use, build, optimize, serve)",
+         slides="8 decks (Part I)", video="none (not recorded)", codepub="A2--A3 starter repo (no license); A4--A5 unreleased",
+         best="Treating an agent as a system to measure: harness design, evaluation, and cost per solved task, then the serving stack underneath.",
+         overview=r"""Follows one agentic system from the agent loop down through the serving stack.
+Part~I uses a coding agent (Claude Code), then designs one: context management and tool design, multi-agent architecture and communication, memory and reliability, evaluation, and cost and performance. Part~II, from October~19, covers LLM serving: batching and scheduling, speculative decoding, prefix caching, quantization, GPUs and kernels, and routing.
+The annotated reading pages and the two reference notes (agent evaluation and benchmarks, cost-effective agents) are worth reading on their own.
+The five assignments take one system apart in steps: watch the agent, build the loop, make every token count, serve the model yourself, optimize the full stack.
+\textbf{Access:} assignments 2 and 3 call a course model API whose keys go to enrolled students only. Outside the course you can run assignment~2 only against your own OpenAI-compatible endpoint, and assignment~3's leaderboard scoring is not available.
+No Part~II slides or readings, and no specs for assignments 4 and 5, were posted when this guide was last updated (October~12, 2026)."""),
     dict(code="UB", short="Buffalo", file="buffalo-cse410.md", kind="std",
          title="CSE 410/510 Introduction to Agentic Engineering", inst="University at Buffalo", term="Fall 2026",
          people="Joaquin Carbonara, David Doermann",
@@ -439,13 +453,14 @@ sequence=[("[[CMU:6]]", "Agents for coding and software development (slides + vi
           ("[[UW:5]] and [[UW:6]]", "SWE-bench, SWE-agent, OpenHands, BaxBench."),
           ("[[CU:13]]", "SWE-agent and AutoCodeRover (agent--computer interfaces, repository repair)."),
           ("[[JHU:7]] and [[JHU:10]]", "Iterative refinement and agentic frameworks for code (slides)."),
+          ("[[HARV:2]] and [[HARV:4]]", "How Claude Code works, then the design space of search, edit and shell tools and of context management (slides)."),
           ("[[STAN26:7]], [[STAN26:9|short]], [[STAN26:11|short]], [[STAN26:15|short]]", "Customizing the agent, agent-ready repos, code review, background agents."),
           ("[[UVA:17]]", "History, Claude Code architecture, skills files and evolutionary programming.")],
 readings=["Jimenez et al., \\href{https://arxiv.org/abs/2310.06770}{\\emph{SWE-bench}} (2023)", "Yang et al., \\href{https://arxiv.org/abs/2405.15793}{\\emph{SWE-agent}} (2024)",
           "Wang et al., \\href{https://arxiv.org/abs/2407.16741}{\\emph{OpenHands}} (2024)", "Xia et al., \\href{https://arxiv.org/abs/2407.01489}{\\emph{Agentless}} (2024)",
           "Zhang et al., \\href{https://arxiv.org/abs/2404.05427}{\\emph{AutoCodeRover}} (2024)", "Hassan et al., \\href{https://arxiv.org/abs/2509.06216}{\\emph{Agentic Software Engineering}} roadmap (2025)",
           "Anthropic, \\href{https://www.anthropic.com/engineering/claude-code-best-practices}{\\emph{Claude Code best practices}}"],
-handson=["[[A:UW:Build a Coding Agent]]", "[[A:JHU:A3]]", "[[A:CMU:A1]]", "[[A:STAN26:Week 1]]",
+handson=["[[A:UW:Build a Coding Agent]]", "[[A:JHU:A3]]", "[[A:CMU:A1]]", "[[A:HARV:A2]]", "[[A:STAN26:Week 1]]",
          "[[A:STAN25:Week 4]]", "[[A:STAN25:Week 7]]"]),
 
 dict(key="WEB", num=9, title="Web, GUI, Computer-Use and Multimodal Agents", tags=["WEB"], mcp=None,
@@ -478,6 +493,7 @@ concepts=r"""Evaluation separates agent engineering from demo-building, and ever
 sequence=[("[[A:CMU:A2]]", "The single best exercise here: author tasks, label runs, build and score a judge."),
           ("[[NEU:18]]", "SWE-bench, $\\tau$-bench, LLM-as-a-judge, LangSmith evaluation."),
           ("[[UB:9]]", "From single-prompt to task-level evals (then Lab~4)."),
+          ("[[HARV:8]]", "Benchmark by benchmark: what each one tests and what its grader inspects, plus leakage and saturation (slides and a reference note)."),
           ("[[A:JHU:A2]]", "A rigorous pass@k study across languages, models and prompting strategies."),
           ("[[CMU:20]]", "Critic models: evaluation used at inference time."),
           ("[[UW:22]]", "Includes METR's \\emph{Measuring AI Ability to Complete Long Tasks}.")],
@@ -485,7 +501,7 @@ readings=["Zheng et al., \\href{https://arxiv.org/abs/2306.05685}{\\emph{Judging
           "Liu et al., \\href{https://arxiv.org/abs/2308.03688}{\\emph{AgentBench}} (2023)", "Kapoor et al., \\href{https://arxiv.org/abs/2407.01502}{\\emph{AI Agents That Matter}} (2024)",
           "Mohammadi et al., \\href{https://arxiv.org/abs/2507.21504}{\\emph{Evaluation and Benchmarking of LLM Agents}} (KDD 2025)",
           "METR, \\href{https://arxiv.org/abs/2503.14499}{\\emph{Measuring AI Ability to Complete Long Tasks}} (2025)"],
-handson=["[[A:CMU:A2]]", "[[A:JHU:A2]]", "[[A:UB:Lab 4]]", "[[A:UVA:Topic 5]]"]),
+handson=["[[A:CMU:A2]]", "[[A:JHU:A2]]", "[[A:UB:Lab 4]]", "[[A:UVA:Topic 5]]", "[[A:HARV:A2]]"]),
 
 dict(key="TRAIN", num=11, title="Training and Optimizing Agents", tags=["TRAIN"], mcp=None,
 objectives=["Fine-tune a model on agent trajectories (SFT, LoRA/QLoRA) and know when fine-tuning beats prompting or RAG.",
@@ -540,12 +556,14 @@ objectives=["Deploy an agent as a service and operate it (logging, tracing, cost
             "Understand long-running and background agent architectures."],
 concepts=r"""\begin{itemize}
 \item \textbf{Shipping.} Northeastern deploys agents to Hugging Face Spaces and Render. Buffalo adds CI and observability. Stanford '25 covers SRE and incident response with agents.
-\item \textbf{Cost and latency.} Prompt and KV caching (keep a stable prefix), model routing and gateways (Stanford '26 week~10), fallbacks and spend policies (Northeastern's optimization session), shorter contexts through tool retrieval or code execution, and small or quantized models on device (TinyAgent, UVA Topic~1).
+\item \textbf{Cost and latency.} Prompt and KV caching (keep a stable prefix), model routing and gateways (Stanford '26 week~10), fallbacks and spend policies (Northeastern's optimization session), shorter contexts through tool retrieval or code execution, and small or quantized models on device (TinyAgent, UVA Topic~1). Harvard CS~2680 breaks an agent's cost into turns per task, steps per turn, tokens per step and price per token, and treats completion time as a critical path ([[HARV:10|short]]); its second half goes down into the serving stack (batching, scheduling, speculative decoding, prefix caching, quantization, routing).
 \item \textbf{Long-running agents.} Background and asynchronous agents (Stanford '26 week~8) and always-on gateways with channels, cron jobs and hooks (OpenClaw) need durable state, idempotent tools and resumability (checkpointing in [[M:ARCH]]).
 \item \textbf{Observability.} Traces of every step are the raw material for evaluation ([[M:EVAL]]), debugging and safety monitoring ([[M:SAFE]]).
 \end{itemize}""",
 sequence=[("[[NEU:5]] and [[NEU:6]]", "Deploy to Hugging Face Spaces, then Render."),
           ("[[NEU:19]]", "DSPy plus cost tracking, caching, fallbacks and spend policies."),
+          ("[[HARV:10]]", "Where an agent's cost and latency come from and how to cut each part (slides and the cost-effective agents note)."),
+          ("[[HARV:12|short]]--[[HARV:23|short]]", "LLM serving, from basics to routing and load balancing. Scheduled from October~19, 2026; no materials were posted at the last update."),
           ("[[STAN26:15]] and [[STAN26:19]]", "Background agents, then coding agents in big teams (gateways, routing, cost)."),
           ("[[STAN25:17]]", "Incident response and DevOps with agents (slides)."),
           ("[[CMU:12]]", "RL systems: the systems side of agent training."),
@@ -556,7 +574,7 @@ readings=["Google, \\href{https://sre.google/sre-book/introduction/}{\\emph{SRE 
           "Gao \\& Peng, \\href{https://arxiv.org/abs/2510.16786}{\\emph{More with Less}} (2025)",
           "Anthropic, \\href{https://claude.dev/blog/building-effective-agent-automations/}{\\emph{Building effective agent automations}} (2026)",
           "Notion, \\href{https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee}{\\emph{How we built a personal data scientist for every Notion employee}} (2026)"],
-handson=["[[A:NEU:DADA1]]", "[[A:UVA:Topic 1]]"]),
+handson=["[[A:NEU:DADA1]]", "[[A:UVA:Topic 1]]", "[[A:HARV:A3]]"]),
 
 dict(key="APP", num=14, title="Applications: Deep Research, Science and Society", tags=["APP"], mcp=None,
 objectives=["Understand how deep-research and scientific-discovery agents are built and evaluated.",
@@ -591,7 +609,7 @@ TRACKS = [
       who="You want to build or deeply customize coding agents and agent-ready workflows.",
       path=["SETUP", "ARCH", "TOOL", "MCP", "MEM", "CODE", "EVAL", "SAFE"],
       spine=r"Stanford '26 for practice, CMU for harness internals, UW and CU Boulder for the research context.",
-      capstone=r"[[A:UW:Build a Coding Agent]] without frameworks, then extend it to pass the [[A:JHU:A3]] tasks and evaluate it like [[A:JHU:A2]]."),
+      capstone=r"[[A:UW:Build a Coding Agent]] without frameworks, then extend it to pass the [[A:JHU:A3]] tasks and evaluate it like [[A:JHU:A2]]. An adapted alternative: [[A:HARV:A2]], a harness scored on SWE-bench Pro tasks plus four tasks you write yourself, run against your own model endpoint because the course API is closed to outsiders."),
  dict(name="Track C: Agent Researcher / Trainer",
       who="You want to train agentic models and do research-grade evaluation.",
       path=["FND", "ARCH", "TOOL", "MEM", "RSN", "EVAL", "TRAIN", "MULTI", "SAFE", "APP"],
