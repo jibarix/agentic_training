@@ -1,6 +1,6 @@
 # Agentic System Design Process
 
-- `design_process.pdf`: the document. It covers nine phases from problem framing to production, each with its goal, questions, cited evidence and a "done when" gate. It has four diagrams (the process map, the Phase 2 ladder, Phase 3 ownership and the Phase 7 loop) and ends with the source disagreements and the document's limits.
+- `design_process.pdf`: the document. It covers nine phases from problem framing to production, each with its goal, questions, cited evidence and a "done when" gate. Its main text has four diagrams (the process map, the Phase 2 ladder, Phase 3 ownership and the Phase 7 loop). It ends with the source disagreements, the document's limits and an appendix of three worked examples, each with a diagram.
 - `design_process.tex`: the source, maintained by hand. Unlike the guide, there is no generator; edit this file directly.
 
 The evidence base is three independent research passes over the 15 courses and the Anthropic, OpenAI and Google guides; every practice cites its source in the document.
