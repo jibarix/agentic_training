@@ -34,7 +34,7 @@ Slides for lectures 1--14 and recordings for lectures 1--9 are public on the sch
          people="Mihail Eric", url="https://themodernsoftware.dev/",
          level="Undergrad/grad; CS111/CS161-level programming",
          archetype="Coding-agent practice (practitioner)",
-         slides="Weeks 1--3 so far", video="none", codepub="Weeks 1--3 assignments",
+         slides="Weeks 1--3 and week 4 Tue so far", video="none", codepub="Weeks 1--3 assignments",
          best="How production coding agents work and how to set up a repo and a team around them.",
          overview=r"""A practitioner course about building software with coding agents, with an industry guest in most weeks.
 The Fall 2026 version focuses on agents. Week~1 builds ``Claude Code in 200 lines'' and dissects production system prompts. Later weeks cover context engineering and MCP, agent skills, CLAUDE.md/AGENTS.md and hooks, agent-ready codebases, agentic code review, security, background agents, and the ``software factory''.
@@ -52,10 +52,10 @@ The lecture dates come from an authorized translation and may be off by a day, s
          title="Agentic AI", inst="Northeastern University (Khoury)", term="Fall 2026 (in progress)",
          people="Caglar Yildirim", url="https://agenticllms.github.io/",
          level="Gentle on-ramp (Python primer provided)", archetype="Builder (LangChain/LangGraph stack)",
-         slides="2 HTML decks", video="none", codepub="Notebooks W02b--W05b, DADA1",
+         slides="2 HTML decks", video="none", codepub="Notebooks W02b--W06b, DADA1",
          best="Best guided, notebook-by-notebook path from an LLM API call to a deployed LangGraph agent.",
          overview=r"""Pairs one seminal paper with the matching LangChain/LangGraph documentation in every session.
-One running example, the ``Husky Tech'' customer-support agent, grows week by week: a notebook prototype, then a project skeleton, then a Hugging Face Spaces deployment, a LangGraph rewrite, RAG, and finally a self-grading retrieval loop.
+One running example, the ``Husky Tech'' customer-support agent, grows week by week: a notebook prototype, then a project skeleton, then a Hugging Face Spaces deployment, a LangGraph rewrite, RAG, a self-grading retrieval loop, and then a plan-search-review-replan loop and agentic RAG behind its policy-search tool.
 Later sessions cover planning, agentic RAG, three multi-agent sessions, MCP and its security, evaluation, and optimization with DSPy and cost controls.
 Sessions after F~11/13 were not posted when this guide was compiled."""),
     dict(code="HARV", short="Harvard", file="harvard-cs2680.md", kind="std",
@@ -71,7 +71,7 @@ Part~I uses a coding agent (Claude Code), then designs one: context management a
 The annotated reading pages and the two reference notes (agent evaluation and benchmarks, cost-effective agents) are worth reading on their own.
 The five assignments take one system apart in steps: watch the agent, build the loop, make every token count, serve the model yourself, optimize the full stack.
 \textbf{Access:} assignments 2 and 3 call a course model API whose keys go to enrolled students only. Outside the course you can run assignment~2 only against your own OpenAI-compatible endpoint, and assignment~3's leaderboard scoring is not available.
-No Part~II slides or readings, and no specs for assignments 4 and 5, were posted when this guide was last updated (October~12, 2026)."""),
+When this guide was last updated (October~16, 2026), annotated reading pages for most Part~II sessions were online but not linked from the home page; no Part~II slides and no specs for assignments 4 and 5 were posted."""),
     dict(code="UB", short="Buffalo", file="buffalo-cse410.md", kind="std",
          title="CSE 410/510 Introduction to Agentic Engineering", inst="University at Buffalo", term="Fall 2026",
          people="Joaquin Carbonara, David Doermann",
@@ -106,11 +106,11 @@ The repository is MIT-licensed."""),
          title="EN.601.727 Machine Programming", inst="Johns Hopkins University", term="Fall 2026 (in progress)",
          people="Ziyang Li", url="https://machine-programming.github.io/",
          level="Graduate (PL + ML)", archetype="Program synthesis to coding agents",
-         slides="L1--12", video="none", codepub="A1--A3 public",
+         slides="L1--14", video="none", codepub="A1--A3 public",
          best="Ties classic program synthesis to LLM coding agents, with two MCP lectures and a strong web-app agent assignment.",
          overview=r"""Treats code generation from both the symbolic side (enumerative search, types, specifications) and the LLM side (decoding, prompting, iterative refinement, agentic frameworks, MCP, pre- and post-training of code models).
-The assignments are the main attraction: an enumerative synthesizer with an LLM step (A1), a rigorous pass@k evaluation of coding LLMs across three languages and four prompting strategies (A2), and a tool-calling web-app agent with secure file tools (A3).
-The second half covers formal verification, security, HPC, neurosymbolic programming and student presentations."""),
+The assignments are the main attraction: an enumerative synthesizer with an LLM step (A1), a rigorous pass@k evaluation of coding LLMs across three languages and four prompting strategies (A2), and a tool-calling web-app agent with secure file tools that builds a chat room, a Tetris variant and a creative app (A3).
+The second half covers formal verification, security, HPC, neurosymbolic programming and six student-led paper sessions in which two students defend and attack each paper."""),
     dict(code="CU", short="CU Boulder", file="colorado-csci7000.md", kind="std",
          title="CSCI 7000-005 Building AI Agents", inst="University of Colorado Boulder", term="Spring 2026",
          people="Danny Dig", url="https://danny.cs.colorado.edu/courses/csci7000-005_Sp26/index.html",

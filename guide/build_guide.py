@@ -348,8 +348,8 @@ def load_courses():
         ctext = atext if c["kind"] in ("cmu", "stan26") else text
         c["codebases"] = bullets(section(ctext, r"Codebases"))
         c["notes"] = bullets(section(text if c["kind"] == "std" else ctext, r"Notes"))
-        if c["kind"] == "stan26":  # shares stanford-cs146s.md with STAN25; avoid duplicating its lists
-            c["codebases"], c["notes"] = [], []
+        if c["kind"] == "stan26":  # shares stanford-cs146s.md with STAN25; take notes from its own verified file
+            c["codebases"], c["notes"] = [], bullets(section(text, r"Notes"))
     return {c["code"]: c for c in C.COURSES}
 
 
@@ -783,8 +783,8 @@ def part_catalog(D):
 PROVENANCE = r"""\begin{itemize}
 \item \textbf{Method.} The 20 links in the Chrome bookmarks folder \emph{CMU-Agentic} were each visited. Static pages were fetched directly. The JavaScript-rendered sites (CMU, Stanford) were read in a live browser. Course repositories were read through GitHub. Four more courses (Stanford CS329A, Berkeley Agentic AI Fall 2025, Berkeley Advanced LLM Agents Spring 2025, Stanford CS329T) and the MIT agent-security lecture were added on the same date from a targeted search for open 2025--2026 courses, with candidates found by a Codex consultant and each one then read directly. Each course was summarised into a Markdown table in \texttt{research/}, and this PDF is generated from those tables by \texttt{guide/build\_guide.py}.
 \item \textbf{Classification.} Tags were assigned from session titles, listed topics and readings. They are a navigation aid, not ground truth, and some sessions could reasonably be tagged differently.
-\item \textbf{CMU.} The lecture table comes from the rendered schedule (October 9, 2026). The milestone dates on that page (A1 Sep~14, A2 Oct~1, A3 Oct~29) take precedence over the due dates in the assignment table, which come from the handouts. Recordings are linked from the schedule page because individual video URLs could not be extracted, and the YouTube playlist ID was not verified.
-\item \textbf{Stanford.} Fall 2026 is current: only weeks 1--3 have slides and assignments so far, and most Thursday sessions from week 3 on are guest talks. Fall 2025 dates come from a translated copy of the syllabus and may be off by a day.
+\item \textbf{CMU.} The lecture table comes from the rendered schedule (October 9, 2026). The assignment due dates (A1 Sep~14, A2 Oct~1, A3 Oct~29) come from the course site; the handouts give none. The site was rechecked on October 16, 2026. Recordings are linked from the schedule page because individual video URLs could not be extracted, and the YouTube playlist ID was not verified.
+\item \textbf{Stanford.} Fall 2026 is current: as of October 16, 2026, slides are posted for weeks 1--3 and the week~4 Tuesday session, and assignments for weeks 1--3. Most Thursday sessions from week 3 on are guest talks. Fall 2025 dates come from a translated copy of the syllabus and may be off by a day.
 \item \textbf{In-progress courses} (CMU, Stanford '26, Northeastern, JHU, Buffalo) will publish more material after this snapshot. Re-run the research step to refresh.
 \item \textbf{Unread items.} Some large slide decks could not be text-extracted (several Mannheim PDFs, a few UVA PPTX files), so their topics are inferred from titles. The UChicago week 6 and 8 notebooks were too large to inspect.
 \item \textbf{Licences.} Only some repositories state a licence (UW CS 839: MIT; TinyAgent: MIT; OpenClaw: MIT). Before redistributing course material in your own repository, check each licence. Linking is always safe.
@@ -861,7 +861,7 @@ def main():
 CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Harvard CS 2680 $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Snapshot compiled October 9, 2026 and updated October 11 and 12, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Snapshot compiled October 9, 2026 and updated October 11, 12 and 16, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}""" % ((len(C.COURSES),) + stats()))
     D(r"\hypertarget{toc}{}\tableofcontents")

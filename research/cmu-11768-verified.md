@@ -1,4 +1,4 @@
-# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11)
+# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes)
 
 Authoritative; supersedes the lecture table in cmu-11768.md where they disagree.
 Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L9; links on https://www.cmu-agents.com/#/schedule
