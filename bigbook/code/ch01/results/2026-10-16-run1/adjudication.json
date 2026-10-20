@@ -1,0 +1,760 @@
+{
+ "method": "Every final answer read in full by the author (with AI assistance) on 2026-10-16. A label is correct only if the answer states the expected value, in the right unit, and states no conflicting value as the answer. Information-missing replies are incorrect.",
+ "labels": [
+  {
+   "cond": "no_tools",
+   "id": "denver",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "boston2",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "mileage",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Says the information is missing or uncertain, then gives a number anyway.",
+   "kind": "caveat_then_number"
+  },
+  {
+   "cond": "no_tools",
+   "id": "roundtrip",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "chicago",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "headcount",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "monitors",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "laptop",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "wrongfile",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Replies only 'No'. Does not say the information is missing; gives no number.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "leave",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "v1",
+   "id": "denver",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "States a different value."
+  },
+  {
+   "cond": "v1",
+   "id": "boston2",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "mileage",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "roundtrip",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "chicago",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "headcount",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "monitors",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "laptop",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "wrongfile",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "leave",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "denver",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "boston2",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "mileage",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "roundtrip",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "chicago",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "headcount",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "monitors",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "States a different value."
+  },
+  {
+   "cond": "v2",
+   "id": "laptop",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "wrongfile",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "leave",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "no_tools",
+   "id": "denver",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "boston2",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "mileage",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "roundtrip",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "chicago",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "headcount",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Says the information is missing or uncertain, then gives a number anyway.",
+   "kind": "caveat_then_number"
+  },
+  {
+   "cond": "no_tools",
+   "id": "monitors",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Says the information is missing or uncertain, then gives a number anyway.",
+   "kind": "caveat_then_number"
+  },
+  {
+   "cond": "no_tools",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Says the information is missing or uncertain, then gives a number anyway.",
+   "kind": "caveat_then_number"
+  },
+  {
+   "cond": "no_tools",
+   "id": "wrongfile",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Says the information is missing or uncertain, then gives a number anyway.",
+   "kind": "caveat_then_number"
+  },
+  {
+   "cond": "no_tools",
+   "id": "leave",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "v1",
+   "id": "denver",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "boston2",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "mileage",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "roundtrip",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "chicago",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "headcount",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "monitors",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "States a different value."
+  },
+  {
+   "cond": "v1",
+   "id": "wrongfile",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "leave",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "denver",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "boston2",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "mileage",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "roundtrip",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "chicago",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "headcount",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "monitors",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "States a different value."
+  },
+  {
+   "cond": "v2",
+   "id": "wrongfile",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "leave",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "no_tools",
+   "id": "denver",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "boston2",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "mileage",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Says the handbook information is missing and gives no number.",
+   "kind": "declined"
+  },
+  {
+   "cond": "no_tools",
+   "id": "roundtrip",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Says the information is missing or uncertain, then gives a number anyway.",
+   "kind": "caveat_then_number"
+  },
+  {
+   "cond": "no_tools",
+   "id": "chicago",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "headcount",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "monitors",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "laptop",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Says the handbook information is missing and gives no number.",
+   "kind": "declined"
+  },
+  {
+   "cond": "no_tools",
+   "id": "wrongfile",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "no_tools",
+   "id": "leave",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Does not say the handbook information is missing; gives an answer it has no evidence for.",
+   "kind": "no_missing_statement"
+  },
+  {
+   "cond": "v1",
+   "id": "denver",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "boston2",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "States a different value."
+  },
+  {
+   "cond": "v1",
+   "id": "mileage",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "roundtrip",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "chicago",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "headcount",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "monitors",
+   "seed": 3,
+   "auto": true,
+   "label": false,
+   "reason": "Headline answer is $2,322; a later sentence says $2,300. Contradictory, so incorrect. The old any-number scorer passed it."
+  },
+  {
+   "cond": "v1",
+   "id": "laptop",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "wrongfile",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v1",
+   "id": "leave",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "denver",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "boston2",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "mileage",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "roundtrip",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "chicago",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "headcount",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "monitors",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "laptop",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "wrongfile",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  },
+  {
+   "cond": "v2",
+   "id": "leave",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value without a conflicting answer."
+  }
+ ],
+ "kinds": {
+  "declined": "Says the handbook information is missing and gives no number.",
+  "caveat_then_number": "Says the information is missing or uncertain, then gives a number anyway.",
+  "no_missing_statement": "Never says the information is missing. Covers bare figures, figures presented as 'standard' or 'typical' policy, figures attributed to the ACME handbook, and one bare 'No'."
+ }
+}

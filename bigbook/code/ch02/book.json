@@ -1,0 +1,2 @@
+{"run": "results/2026-10-16-run1",
+ "traces": ["local:laptop:1", "mcp:laptop:1", "mcp_two:wrongfile:3", "mcp_two:leave:1"]}

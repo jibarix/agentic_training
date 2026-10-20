@@ -1,0 +1,822 @@
+{
+ "method": "Every final answer read in full by the author (with AI assistance) on 2026-10-16. A label is correct only if the answer states the expected value, in the right unit, and states no conflicting value as the answer.",
+ "kinds": {
+  "correct": "Correct, and the scorer agreed.",
+  "no_final_line": "Correct, but without the 'Final answer:' line the scorer needs (left unscored).",
+  "scorer_too_strict": "Correct; the scorer allows one unit word and rejected 'paid holidays'.",
+  "retrieval": "Wrong because the needed fact never reached the model.",
+  "reasoning": "Wrong although the needed facts were in the observations."
+ },
+ "labels": [
+  {
+   "cond": "local",
+   "id": "denver",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "boston2",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "mileage",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "roundtrip",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "chicago",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "headcount",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "monitors",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Answers 1,800 USD, the laptop alone. The lookup did not return the monitors line and the model did not open equipment.md.",
+   "kind": "retrieval"
+  },
+  {
+   "cond": "local",
+   "id": "laptop",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "wrongfile",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "leave",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "denver",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "boston2",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "mileage",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "roundtrip",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "chicago",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "headcount",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "monitors",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "laptop",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "wrongfile",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "leave",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "denver",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "boston2",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "mileage",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "roundtrip",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "chicago",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "headcount",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "monitors",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "laptop",
+   "seed": 1,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "wrongfile",
+   "seed": 1,
+   "auto": null,
+   "label": true,
+   "reason": "States 320 USD for 5 days of Austin meals; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "leave",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 13 paid holidays. Correct; the scorer rejects the two-word unit.",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "local",
+   "id": "denver",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "boston2",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "mileage",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "roundtrip",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "chicago",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "headcount",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "monitors",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Applies two raises (1800 * 1.04 ** 2 = 1946.88); 2029 has had three.",
+   "kind": "reasoning"
+  },
+  {
+   "cond": "local",
+   "id": "wrongfile",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "leave",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "denver",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "boston2",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "mileage",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "roundtrip",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "chicago",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "headcount",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "monitors",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Applies two raises (1800 * 1.04 ** 2 = 1946.88); 2029 has had three.",
+   "kind": "reasoning"
+  },
+  {
+   "cond": "mcp",
+   "id": "wrongfile",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "leave",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "denver",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "boston2",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "mileage",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "roundtrip",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "chicago",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "headcount",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "monitors",
+   "seed": 2,
+   "auto": null,
+   "label": true,
+   "reason": "States 2,300 USD (1,800 + 2 x 250); no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "laptop",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "wrongfile",
+   "seed": 2,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "leave",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 13 paid holidays. Correct; the scorer rejects the two-word unit.",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "local",
+   "id": "denver",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "boston2",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Finds 79 USD/day, then answers 158 USD (two days for one person, or one day for two); the task needs 2 x 3 x 79 = 474.",
+   "kind": "reasoning"
+  },
+  {
+   "cond": "local",
+   "id": "mileage",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "roundtrip",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "chicago",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "headcount",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "monitors",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "laptop",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "wrongfile",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "local",
+   "id": "leave",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "denver",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "boston2",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "mileage",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "roundtrip",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "chicago",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "headcount",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "monitors",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "laptop",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "wrongfile",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp",
+   "id": "leave",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "denver",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "boston2",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "mileage",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "roundtrip",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "chicago",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "headcount",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "monitors",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "laptop",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "wrongfile",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  },
+  {
+   "cond": "mcp_two",
+   "id": "leave",
+   "seed": 3,
+   "auto": true,
+   "label": true,
+   "reason": "States the expected value in a task unit and no conflicting value.",
+   "kind": "correct"
+  }
+ ]
+}

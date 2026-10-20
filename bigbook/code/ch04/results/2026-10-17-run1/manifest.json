@@ -1,0 +1,110 @@
+{
+ "run": "2026-10-17-run1",
+ "started": "2026-10-17T22:17:01",
+ "model": {
+  "tag": "qwen3.5:4b-q4_K_M",
+  "version": "0.40.1",
+  "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "details": {
+   "parent_model": "model.gguf",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "4.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 2560,
+   "runner": "llamacpp"
+  }
+ },
+ "server": {
+  "base_url": "http://localhost:11434/v1",
+  "window": 32768
+ },
+ "machine": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+ },
+ "settings": {
+  "temperature": 0.7,
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "extra": {
+   "reasoning_effort": "none"
+  },
+  "budget": 1500,
+  "conds": [
+   "full",
+   "drop",
+   "compact"
+  ],
+  "tasks": [
+   "meals_emp0103",
+   "meals_emp0106",
+   "meals_emp0110",
+   "meals_emp0112",
+   "meals_emp0116",
+   "meals_emp0117",
+   "lodging_emp0122",
+   "lodging_emp0130",
+   "lodging_emp0131",
+   "lodging_emp0134",
+   "lodging_emp0138",
+   "lodging_emp0139",
+   "mileage_emp0143",
+   "mileage_emp0146",
+   "mileage_emp0149",
+   "mileage_emp0152",
+   "mileage_emp0157",
+   "mileage_emp0161",
+   "full_emp0104",
+   "full_emp0105",
+   "full_emp0111",
+   "full_emp0114",
+   "full_emp0115",
+   "full_emp0118",
+   "billed_emp0101",
+   "billed_emp0102",
+   "billed_emp0107",
+   "billed_emp0108",
+   "billed_emp0109",
+   "billed_emp0113"
+  ],
+  "max_steps": 30,
+  "max_tokens": 120000,
+  "max_obs_chars": 2000,
+  "hints": true
+ },
+ "prompts": {
+  "agent_system": "You answer questions about the ACME company handbook.\nFind facts with the tools; never guess a number. Do every calculation with the calculator.\nWhen you have the answer, reply in plain text with the final number and its unit.\nEnd with one last line of the form: Final answer: <number> <unit>",
+  "summary": "You compress the earlier steps of an agent's task so that it can continue.\nWrite a checkpoint with these headings, and write \"None\" under a heading that has nothing:\nObjective: the task, in one line.\nConstraints: every condition the task or the handbook puts on the answer.\nFacts found: every value found so far, with what it is and where it came from (file, row, trip id).\nCalculations: every calculation done so far and its exact result.\nFailed attempts: calls that failed or found nothing, so they are not repeated.\nNext step: what the agent was about to do.\nCopy numbers, names and identifiers exactly. Do not round. Do not answer the task. At most 250 words."
+ },
+ "sha256": {
+  "ch01/agent.py": "7fd666a9924f90119c86d02c6d902e2367173d8000b32678892eff75bcf764bb",
+  "ch01/tools.py": "b1d9046941deb0d9aecfd131310072ac7777adfb0266127ca6e86002da17c851",
+  "ch01/llm.py": "943d33ab994287922fb97ce7c1f3020affa94b5b260cac7eeac191e78630db6a",
+  "ch01/experiment.py": "69068250f5ea534e17f49705093c07046cccbc88a3df3a7fd92e41eec10f4820",
+  "ch03/score.py": "04080f1686104fb1823451924bd557e0e615e13147d036584d93dd3b63f4c777",
+  "ch04/experiment.py": "5e7a2b5e62afa519e5979ca5b5e33fd94cf17f06f5f33de29ee06467567eacaa",
+  "ch04/context.py": "3586b461d8d0cb3ed5a477db696ddd690391f0678070494a175f77f77f8f55db",
+  "ch04/handbook_tools.py": "a13271c24cc11fefdaab0ae71e6b0827a556e07df91378df367886686d9d1374",
+  "ch04/make_handbook.py": "3b7be3fad5f9b0e99c981dd051779b3bfa351982ec1210f8b35cfb436d36d82d",
+  "ch04/tasks_long.json": "d5a27bb84d2f6b7463592a949d67aa6c49776e34d83fdaf6ab91143c0188b49c",
+  "handbook/equipment.md": "2480701d1ab33dd63fa9bb4ff657d6c7658ab8e45c9674cd3b45928c21761ba2",
+  "handbook/leave.md": "1202260d7f668321df5be72f3272e74f137797165815dd3680b9f779741f7cbc",
+  "handbook/mileage.md": "e82320d895cc26434325be2c36f22416e1c45f955a499cfa3bd644427abdd5ab",
+  "handbook/offices.md": "cfe6cadd8869eefc075aca43af135b617d4016786061081c0929abd19624efff",
+  "handbook/per_diem.md": "690adeee935c284ceb0108e7ff7e40b6b2b0f648c09d4e88c8100645666d10f7",
+  "handbook/remote_work.md": "cab08a34b1e24e81a1c604ce40ef59c1045bf007f179d985f7f804a019592631",
+  "handbook/security.md": "78094db74c99e4f8336fb4c66ea044d2fdb388bf300262e9748433c230778de2",
+  "handbook/travel_policy.md": "9051578856ba3401bf69a6466fe829776b18c4c69ad03ec3f5262a078b1b12e3",
+  "handbook/trips_2026q1.md": "b71d2d19b348426ebc609a1c07c2148caa3d343b1427a8077a2beebf0d82a572"
+ },
+ "finished": "2026-10-18T01:43:02"
+}

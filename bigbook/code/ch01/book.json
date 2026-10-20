@@ -1,0 +1,4 @@
+{
+ "run": "results/2026-10-16-run1",
+ "traces": ["v1:denver:1", "v2:denver:1", "v2:wrongfile:1", "v2:monitors:1", "v1:laptop:2", "v1:monitors:3"]
+}

@@ -1,0 +1,65 @@
+{
+ "run": "2026-10-16-run1",
+ "finished": "2026-10-16T20:15",
+ "note": "Manifest written after the run, on 2026-10-16. The run itself saved no manifest; that was a gap the review found. Model digest, server version and hardware were read from the same machine the same day; the model tag was not re-pulled in between.",
+ "model": {
+  "tag": "qwen3.5:4b-q4_K_M",
+  "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "parameters": "4.2B",
+  "quantization": "Q4_K_M"
+ },
+ "server": {
+  "name": "Ollama",
+  "version": "0.40.1",
+  "endpoint": "http://localhost:11434/v1/chat/completions"
+ },
+ "hardware": {
+  "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU, 8192 MiB",
+  "driver": "572.16"
+ },
+ "python": "3.13.5",
+ "settings": {
+  "temperature": 0.7,
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "extra": {
+   "reasoning_effort": "none"
+  },
+  "max_steps": 8,
+  "max_tokens": 20000,
+  "max_obs_chars": 2000,
+  "hints": true
+ },
+ "conditions": {
+  "no_tools": "one call, NO_TOOLS prompt, no handbook",
+  "v1": "agent, lookup_v1",
+  "v2": "agent, lookup (v2)"
+ },
+ "prompts": {
+  "agent_system": "see code/agent.py SYSTEM",
+  "no_tools_system": "You answer questions about the ACME company handbook. Reply with the final number and its unit."
+ },
+ "scoring": {
+  "automatic": "any number in the answer within 0.011 of the expected value (experiment.correct, superseded)",
+  "authoritative": "adjudication.json"
+ },
+ "code": "code/ holds the agent, tools, client, experiment, tasks and handbook, kept as they were when the run finished; long lines in tools.py were later re-wrapped. The sha256 hashes below identify these archived files as they are now. That they are the code that ran, and that the model and environment did not change, rests on my own record. Replaying the 147 recorded tool calls through the archived tools reproduces all 147 observations: that shows the tools behave as recorded on those calls, not that the files are byte-identical to what ran.",
+ "sha256": {
+  "code/agent.py": "b36f4f7f6c13b1698759a7a3a571309c002dd73241ce2819adf4b5dc149650c2",
+  "code/experiment.py": "7f8f3b111a55b13575d7be8d33255bc1687c4cd600700daa75a89a82a8fd2249",
+  "code/handbook/equipment.md": "7961dea6066e3edef8e34e055b5ea536457cc3be09849205a36784689fafdd74",
+  "code/handbook/holidays.md": "4039c476db933e9b67498cd14f0753ad7227fe8cff442f9ed74f64ae34846517",
+  "code/handbook/mileage.md": "a3e4ccffbcc5baba2ff25b4a5a49d6d96449122f87abd9b3743eb28e482b68d6",
+  "code/handbook/offices.md": "cf5b3c1814c6ba8f3859f4df6e2fa44119bb810e356aff9c68562e0d5f019163",
+  "code/handbook/per_diem.md": "010ca8b1352e7ecb449f6bacf3c6852b55cb80023e082244c82037a055cbe8fe",
+  "code/llm.py": "81179902436bf916263fb86fb7a3ddbaf4fa0ae2cc748b87039779213e7afbb0",
+  "code/tasks.json": "97212b8c19886f5ae6bb4e62f26ab38e79d5f7f94a14255f400210354c06b640",
+  "code/tools.py": "32361c89ad4d93f3d140b58aa9af15a646df01367e5a0851f4c1a9565fa27a94",
+  "run.log": "1626fd0c501e983387653f02fee5434d808303beb0a7d311b3ee1a0d3d9fc9ac",
+  "runs.json": "0c906ddf8159ceae7c3a4c14f4982e2d43a9195c833cbfa22e5291e1a2de3dc9",
+  "traces.jsonl": "014ee136d6833c9566cccd80af749d3585fa89dbb2bdbc4178f5fac74e66000a"
+ }
+}

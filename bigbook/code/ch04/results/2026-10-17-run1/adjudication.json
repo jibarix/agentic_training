@@ -1,0 +1,2117 @@
+{
+ "method": "Every answer the scorer did not pass (204 failed, 30 unscored) was read and labelled by Claude (AI assistance) on 2026-10-18, for the author to check, with Chapter 3's criteria. A label is correct only if the answer states the expected value, in the right unit or with no unit, and states no conflicting value as the answer; a wrong unit makes it incorrect. An answer that stops, reaches a limit, asks for more data or gives no number is incorrect. Every unpassed answer was also searched for the expected value anywhere in its text: it appears in only the four labelled correct. The 36 answers the scorer passed were audited the same way on 2026-10-18 (Claude, for the author to check): their 18 distinct pairs of task and final line were read against the expected values, and every one states the expected value in USD, so none is labelled here.",
+ "kinds": {
+  "no_final_line": "Correct, but without a 'Final answer:' line at the start of a line (left unscored).",
+  "scorer_too_strict": "Correct; the scorer rejected the form of the final line (a backslash before the dollar sign).",
+  "wrong_value": "States a different value.",
+  "no_answer": "Gives no final value."
+ },
+ "labels": [
+  {
+   "cond": "full",
+   "id": "meals_emp0103",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 422 USD. Expected 710. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0103",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 676 USD. Expected 710. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0103",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 593 USD. Expected 710. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0106",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 736 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0106",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 970. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0106",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 568 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0110",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 625 USD. Expected 1197. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0110",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $805. Expected 1197. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0112",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 USD. Expected 1095. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0112",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 USD. Expected 1095. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0112",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 USD. Expected 1095. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0116",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 695 USD. Expected 641. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0116",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $605. Expected 641. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0117",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $551 USD. Expected 542. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0122",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "1 * 275 + 3 * 270 + 3 * 300 = 275 + 810 + 900 = 1985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0122",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "1 * 275 + 3 * 270 + 3 * 300 = 275 + 810 + 900 = 1985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0122",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "1 * 275 + 3 * 270 + 3 * 300 = 275 + 810 + 900 = 1985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0130",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1280 USD. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0130",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 USD. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0130",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: NP. Expected 1160. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0131",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Total reimbursement for EMP0131's lodging in Q1 2026: $1,470 USD. Expected 1470. Correct, but without a 'Final answer:' line at the start of a line (left unscored).",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0131",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Total reimbursement for EMP0131's lodging in Q1 2026: $1,470 USD. Expected 1470. Correct, but without a 'Final answer:' line at the start of a line (left unscored).",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0131",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Total reimbursement for EMP0131's lodging in Q1 2026: $1,470 USD. Expected 1470. Correct, but without a 'Final answer:' line at the start of a line (left unscored).",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0134",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1160 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0134",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1160 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0134",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1160 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0138",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2765 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0138",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2765 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0138",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2765 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0139",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0139",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0139",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0143",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0143",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0143",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0146",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: \\$394.60. Expected 394.6. Correct; the scorer rejected the form of the final line (a backslash before the dollar sign).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0149",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total = 182 + 236 + 0 + 0 + 182. Expected 413.86. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0149",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total = 182 + 236 + 0 + 0 + 182. Expected 413.86. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0149",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total = 182 + 236 + 0 + 0 + 182. Expected 413.86. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0152",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0152",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0152",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0157",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total: 1036 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0157",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total: 1036 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0157",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total: 1036 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0161",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0161",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0161",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0104",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1150.88. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0104",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $895.80. Expected 1150.88. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0105",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,124.40. Expected 1774.4. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0105",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1671.40 USD. Expected 1774.4. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0111",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $460.70. Expected 3077.85. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0111",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3295.85 USD. Expected 3077.85. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0114",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2942.90 USD. Expected 1798.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0114",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: \\$1,652.14. Expected 1798.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0114",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2992.90. Expected 1798.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0115",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Tool calls: find per diem and lodging rules for EMP0115's trips (Philadelphia and Portland).. Expected 1611.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0115",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Tool calls: find per diem and lodging rules for EMP0115's trips (Philadelphia and Portland).. Expected 1611.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0115",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Tool calls: find per diem and lodging rules for EMP0115's trips (Philadelphia and Portland).. Expected 1611.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0118",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status token_limit). Expected 1018.6. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0118",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "<tool_code>_Q_</tool_code>. Expected 1018.6. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0118",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1263.60 USD. Expected 1018.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0101",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "I need the specific trip details to calculate the reimbursement amount. Could you please provide EMP0101's travel itinerary for Q1 2026?. Expected 1314. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0101",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "I need the specific trip details to calculate the reimbursement amount. Could you please provide EMP0101's travel itinerary for Q1 2026?. Expected 1314. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0101",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "I need the specific trip details to calculate the reimbursement amount. Could you please provide EMP0101's travel itinerary for Q1 2026?. Expected 1314. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0102",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: not provided. Expected 2634. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0102",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Total reimbursement for EMP0102 in Q1 2026 = $2814. Expected 2634. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0107",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,455. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0107",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,455. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0107",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,455. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0108",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2440 USD. Expected 1500. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0108",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: Q1 2026 per-diem and lodging caps are $85/day meals and $195/night lodging for Austin, $71/day meals and $160/night lodging for New York, $84/day . Expected 1500. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0108",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $0. Expected 1500. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0109",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,925. Expected 2548. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0109",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,925. Expected 2548. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0109",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,925. Expected 2548. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0113",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $4,085. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0113",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $4,085. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0113",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $4,085. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0103",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status token_limit). Expected 710. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0103",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 710. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0103",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2110 USD. Expected 710. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0106",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 736 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0106",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 736 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0106",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 736 dollars. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0110",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1197. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0110",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $549. Expected 1197. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0112",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,245 USD. Expected 1095. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0116",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 550 USD. Expected 641. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0116",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 USD. Expected 641. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0117",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 575 USD. Expected 542. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0122",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0122",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0122",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0130",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,280. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0130",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,280. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0130",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,280. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0134",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,710 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0134",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,710. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0134",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,710 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0138",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2575 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0138",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2575 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0138",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2575 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0139",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0139",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0139",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0143",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0143",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0143",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0146",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 653 miles. Expected 394.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0146",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 653 miles. Expected 394.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0146",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 653 miles. Expected 394.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0149",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 418 miles. Expected 413.86. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0149",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 418 miles. Expected 413.86. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0149",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 418 miles. Expected 413.86. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0152",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0152",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0152",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0157",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 927 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0157",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 927 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0157",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 927 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0161",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0161",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0161",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0104",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Total reimbursement: $915 + $480 + $91.12 + $610 + $240 + $25.46 = $2361.58. Expected 1150.88. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0104",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Total reimbursement: $915 + $480 + $91.12 + $610 + $240 + $25.46 = $2361.58. Expected 1150.88. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0104",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Total reimbursement: $915 + $480 + $91.12 + $610 + $240 + $25.46 = $2361.58. Expected 1150.88. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0105",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,333.40 USD. Expected 1774.4. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0105",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1774.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0105",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1774.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0111",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1607.85 USD. Expected 3077.85. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0111",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Could you provide the actual rate values from per_diem.md and any information about EMP0111's specific trip costs?. Expected 3077.85. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0111",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 3077.85. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0114",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1798.9. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0114",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1798.9. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0115",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1611.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0115",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1638 USD. Expected 1611.4. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0118",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1018.6. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0118",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1018.6. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0101",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3060 USD. Expected 1314. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0101",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: N/A. Expected 1314. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0101",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,575. Expected 1314. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0102",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1071 USD meals and 2075 USD lodging. Expected 2634. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0102",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "I have read the per-diem and lodging rates for EMP0102 in the first quarter of 2026. However, I need to know the specific cities to calculate the reimbursement.. Expected 2634. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0102",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: Unable to calculate due to missing data. Expected 2634. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0107",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,407 meals per-diem and $3,460 lodging. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0107",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 245 USD per-diem, 805 USD lodging. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0107",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 4382 USD. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0108",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,520 USD. Expected 1500. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0108",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "I have read the per-diem and lodging rates table. However, I need to know which specific cities EMP0108 visited in the first quarter of 2026 to calculate the re. Expected 1500. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0108",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1500. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0109",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1118 USD. Expected 2548. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0109",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 2548. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0109",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Now let me sum these totals: $411 + $618 + $397 + $515. Expected 2548. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0113",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,935 USD. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0113",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,935 USD. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0113",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,935 USD. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0103",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 782 USD. Expected 710. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0103",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 710. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0103",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $0. Expected 710. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0106",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 736 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0106",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 736 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0106",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $736 USD. Expected 970. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "meals_emp0110",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,073 USD. Expected 1197. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0110",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $174 USD. Expected 1197. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0110",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,275. Expected 1197. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0112",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1095. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "meals_emp0116",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 641. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0116",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $369 USD. Expected 641. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "meals_emp0117",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 542. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0122",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0122",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0122",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1985 USD. Expected 1580. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0130",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,280 USD. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0130",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,280 USD. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0130",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,280 USD. Expected 1160. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0134",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3710 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0134",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3710 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0134",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3710 USD. Expected 3955. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0138",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,575 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0138",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,575 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0138",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,575 USD. Expected 2385. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "lodging_emp0139",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "lodging_emp0139",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "lodging_emp0139",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,365 USD. Expected 2515. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0143",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0143",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0143",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 960 miles. Expected 672. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0146",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 653 miles. Expected 394.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0146",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 653 miles. Expected 394.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0146",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 653 miles. Expected 394.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0149",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 418 miles. Expected 413.86. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0149",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 418 miles. Expected 413.86. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0149",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 418 miles. Expected 413.86. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0152",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0152",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0152",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 350 miles. Expected 219.5. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0157",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 927 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0157",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 927 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0157",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 927 miles. Expected 687.05. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "mileage_emp0161",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "mileage_emp0161",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "mileage_emp0161",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 354 miles. Expected 300.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0104",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1150.88. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0104",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $970.60. Expected 1150.88. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0105",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,129.40. Expected 1774.4. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0105",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1774.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0111",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3986.17 USD. Expected 3077.85. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0111",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $3,556.85. Expected 3077.85. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0114",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1798.9. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0114",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1870.8 USD. Expected 1798.9. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0115",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1611.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0115",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1611.4. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "full_emp0118",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1458. Expected 1018.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "full_emp0118",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1458. Expected 1018.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "full_emp0118",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1458. Expected 1018.6. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0101",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: No information available. Expected 1314. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0101",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final Answer: $1196 USD. Expected 1314. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0102",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,844 USD. Expected 2634. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0102",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1629 USD. Expected 2634. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0102",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2594. Expected 2634. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0107",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1407 USD (meals per-diem) and 3460 USD (lodging). Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0107",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $4,867 USD. Expected 4567. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0107",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 4567. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0108",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 556 USD meals per-diem and 1385 USD lodging. Expected 1500. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0108",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1500. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0108",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 1500. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0109",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1118 USD. Expected 2548. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0109",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 2548. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0109",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "(empty) (status step_limit). Expected 2548. Gives no final value.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "full",
+   "id": "billed_emp0113",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Therefore, the explicit reimbursement amount shown in the trip data is **$3,170** for lodging. Meals would be reimbursed at the applicable per-diem rate for eac. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "drop",
+   "id": "billed_emp0113",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Therefore, the explicit reimbursement amount shown in the trip data is **$3,170** for lodging. Meals would be reimbursed at the applicable per-diem rate for eac. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "compact",
+   "id": "billed_emp0113",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Therefore, the explicit reimbursement amount shown in the trip data is **$3,170** for lodging. Meals would be reimbursed at the applicable per-diem rate for eac. Expected 3240. States a different value.",
+   "kind": "wrong_value"
+  }
+ ]
+}

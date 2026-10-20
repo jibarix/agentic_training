@@ -1,0 +1,128 @@
+{
+ "run": "2026-10-16-run1",
+ "started": "2026-10-16T22:43:39",
+ "model": {
+  "tag": "qwen3.5:4b-q4_K_M",
+  "version": "0.40.1",
+  "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "details": {
+   "parent_model": "model.gguf",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "4.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 2560,
+   "runner": "llamacpp"
+  }
+ },
+ "server": {
+  "base_url": "http://localhost:11434/v1"
+ },
+ "machine": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+ },
+ "settings": {
+  "temperature": 0.7,
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "v2_again_seeds": [
+   101,
+   102,
+   103,
+   104,
+   105
+  ],
+  "extra": {
+   "reasoning_effort": "none"
+  },
+  "tasks": [
+   "pd_seattle3",
+   "pd_chicago_cap",
+   "pd_austin_team",
+   "pd_boston_max",
+   "pd_diff",
+   "pd_denver_hotel",
+   "pd_lowest_cap",
+   "pd_seattle_week",
+   "mi_75",
+   "mi_rt30",
+   "mi_10",
+   "mi_two_rt",
+   "mi_commute",
+   "mi_week",
+   "mi_miles",
+   "mi_chicago",
+   "of_boston",
+   "of_total",
+   "of_diff",
+   "of_hours",
+   "of_week",
+   "of_largest",
+   "of_bos_sea",
+   "of_laptops",
+   "ho_public",
+   "ho_floating",
+   "ho_carry",
+   "ho_3years",
+   "ho_seattle",
+   "ho_two",
+   "ho_more",
+   "ho_austin",
+   "eq_2026",
+   "eq_2027",
+   "eq_2028",
+   "eq_monitor",
+   "eq_monitors",
+   "eq_three",
+   "eq_rise",
+   "eq_boston",
+   "denver",
+   "boston2",
+   "mileage",
+   "roundtrip",
+   "chicago",
+   "headcount",
+   "monitors",
+   "laptop",
+   "wrongfile",
+   "leave"
+  ],
+  "max_steps": 8,
+  "max_tokens": 20000,
+  "max_obs_chars": 2000,
+  "hints": true
+ },
+ "prompts": {
+  "agent_system": "You answer questions about the ACME company handbook.\nFind facts with the tools; never guess a number. Do every calculation with the calculator.\nWhen you have the answer, reply in plain text with the final number and its unit.\nEnd with one last line of the form: Final answer: <number> <unit>"
+ },
+ "sha256": {
+  "ch01/agent.py": "7fd666a9924f90119c86d02c6d902e2367173d8000b32678892eff75bcf764bb",
+  "ch01/tools.py": "b1d9046941deb0d9aecfd131310072ac7777adfb0266127ca6e86002da17c851",
+  "ch01/llm.py": "943d33ab994287922fb97ce7c1f3020affa94b5b260cac7eeac191e78630db6a",
+  "ch01/experiment.py": "69068250f5ea534e17f49705093c07046cccbc88a3df3a7fd92e41eec10f4820",
+  "ch01/tasks.json": "c7a6395549724be07c9e724d3e8724475dce0f329ff87828d8b6bc4a75bbb555",
+  "ch03/experiment.py": "9e80f5a8a77c99411fe1e3a034f3b95218fa5b4dec1d0a18459986d1afb3b3c6",
+  "ch03/score.py": "04080f1686104fb1823451924bd557e0e615e13147d036584d93dd3b63f4c777",
+  "ch03/tasks_heldout.json": "0f603d33d20f0c82b4957ffbe036c493b0bc3980eeb1d115d4dd793c692f1d81",
+  "handbook/equipment.md": "7961dea6066e3edef8e34e055b5ea536457cc3be09849205a36784689fafdd74",
+  "handbook/holidays.md": "4039c476db933e9b67498cd14f0753ad7227fe8cff442f9ed74f64ae34846517",
+  "handbook/mileage.md": "a3e4ccffbcc5baba2ff25b4a5a49d6d96449122f87abd9b3743eb28e482b68d6",
+  "handbook/offices.md": "cf5b3c1814c6ba8f3859f4df6e2fa44119bb810e356aff9c68562e0d5f019163",
+  "handbook/per_diem.md": "010ca8b1352e7ecb449f6bacf3c6852b55cb80023e082244c82037a055cbe8fe"
+ },
+ "resumed": [
+  "2026-10-17T19:33:27"
+ ],
+ "finished": "2026-10-17T21:16:35"
+}

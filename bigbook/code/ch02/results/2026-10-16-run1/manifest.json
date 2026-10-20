@@ -1,0 +1,339 @@
+{
+ "run": "2026-10-16-run1",
+ "started": "2026-10-16T21:18:18",
+ "model": {
+  "tag": "qwen3.5:4b-q4_K_M",
+  "version": "0.40.1",
+  "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "details": {
+   "parent_model": "model.gguf",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "4.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 2560,
+   "runner": "llamacpp"
+  }
+ },
+ "server": {
+  "base_url": "http://localhost:11434/v1"
+ },
+ "machine": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+ },
+ "settings": {
+  "temperature": 0.7,
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "extra": {
+   "reasoning_effort": "none"
+  },
+  "conditions": [
+   "local",
+   "mcp",
+   "mcp_two"
+  ],
+  "tasks": [
+   "denver",
+   "boston2",
+   "mileage",
+   "roundtrip",
+   "chicago",
+   "headcount",
+   "monitors",
+   "laptop",
+   "wrongfile",
+   "leave"
+  ],
+  "tool_timeout": 10.0,
+  "max_steps": 8,
+  "max_tokens": 20000,
+  "max_obs_chars": 2000,
+  "hints": true
+ },
+ "prompts": {
+  "agent_system": "You answer questions about the ACME company handbook.\nFind facts with the tools; never guess a number. Do every calculation with the calculator.\nWhen you have the answer, reply in plain text with the final number and its unit.\nEnd with one last line of the form: Final answer: <number> <unit>"
+ },
+ "tools": {
+  "local": [
+   {
+    "type": "function",
+    "function": {
+     "name": "lookup",
+     "description": "Keyword search over the company handbook. Returns 'file: matching line' pairs.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "query"
+      ],
+      "properties": {
+       "query": {
+        "type": "string",
+        "description": "One or two keywords, e.g. 'per diem Denver'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_file",
+     "description": "Read one handbook file in full.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "path"
+      ],
+      "properties": {
+       "path": {
+        "type": "string",
+        "description": "File name as returned by lookup, e.g. 'mileage.md'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "calculator",
+     "description": "Evaluate an arithmetic expression with exact decimal arithmetic. A result that does not terminate (1 / 3) is rounded and marked. Use it for every calculation.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "expression"
+      ],
+      "properties": {
+       "expression": {
+        "type": "string",
+        "description": "Arithmetic only, e.g. '4 * 68'."
+       }
+      }
+     }
+    }
+   }
+  ],
+  "mcp": [
+   {
+    "type": "function",
+    "function": {
+     "name": "lookup",
+     "description": "Keyword search over the company handbook. Returns 'file: matching line' pairs.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "query"
+      ],
+      "properties": {
+       "query": {
+        "type": "string",
+        "description": "One or two keywords, e.g. 'per diem Denver'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "read_file",
+     "description": "Read one handbook file in full.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "path"
+      ],
+      "properties": {
+       "path": {
+        "type": "string",
+        "description": "File name as returned by lookup, e.g. 'mileage.md'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "calculator",
+     "description": "Evaluate an arithmetic expression with exact decimal arithmetic. A result that does not terminate (1 / 3) is rounded and marked. Use it for every calculation.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "expression"
+      ],
+      "properties": {
+       "expression": {
+        "type": "string",
+        "description": "Arithmetic only, e.g. '4 * 68'."
+       }
+      }
+     }
+    }
+   }
+  ],
+  "mcp_two": [
+   {
+    "type": "function",
+    "function": {
+     "name": "handbook__lookup",
+     "description": "Keyword search over the company handbook. Returns 'file: matching line' pairs.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "query"
+      ],
+      "properties": {
+       "query": {
+        "type": "string",
+        "description": "One or two keywords, e.g. 'per diem Denver'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "handbook__read_file",
+     "description": "Read one handbook file in full.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "path"
+      ],
+      "properties": {
+       "path": {
+        "type": "string",
+        "description": "File name as returned by lookup, e.g. 'mileage.md'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "handbook__calculator",
+     "description": "Evaluate an arithmetic expression with exact decimal arithmetic. A result that does not terminate (1 / 3) is rounded and marked. Use it for every calculation.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "expression"
+      ],
+      "properties": {
+       "expression": {
+        "type": "string",
+        "description": "Arithmetic only, e.g. '4 * 68'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "archive__lookup",
+     "description": "ARCHIVE (2024 edition, superseded): Keyword search over the company handbook. Returns 'file: matching line' pairs.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "query"
+      ],
+      "properties": {
+       "query": {
+        "type": "string",
+        "description": "One or two keywords, e.g. 'per diem Denver'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "archive__read_file",
+     "description": "ARCHIVE (2024 edition, superseded): Read one handbook file in full.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "path"
+      ],
+      "properties": {
+       "path": {
+        "type": "string",
+        "description": "File name as returned by lookup, e.g. 'mileage.md'."
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "archive__calculator",
+     "description": "Evaluate an arithmetic expression with exact decimal arithmetic. A result that does not terminate (1 / 3) is rounded and marked. Use it for every calculation.",
+     "parameters": {
+      "type": "object",
+      "required": [
+       "expression"
+      ],
+      "properties": {
+       "expression": {
+        "type": "string",
+        "description": "Arithmetic only, e.g. '4 * 68'."
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "sha256": {
+  "mcp_server.py": "51bfce90739bec59c4c8487828caaf985927f7e5a9f631a3d6783184ca7dfe3c",
+  "handbook_server.py": "5931591187c4c26849344cdd2d2ef219d6ab830177050947c7efaa275410ef23",
+  "mcp_client.py": "890d73ae9049944fd587ad0b2c28c6a7a0a47fc5a85f0ecbf98a74b20c4f93fa",
+  "bridge.py": "00060e40ec7842e5e5f67914e09f9a72318115445d52ea0837a124c8b01d2b6c",
+  "experiment.py": "29e33291dc9c212261d84794aa684262e3e74ea36e20c6a53632bcc217e87e18",
+  "ch01/agent.py": "7fd666a9924f90119c86d02c6d902e2367173d8000b32678892eff75bcf764bb",
+  "ch01/tools.py": "b1d9046941deb0d9aecfd131310072ac7777adfb0266127ca6e86002da17c851",
+  "ch01/llm.py": "943d33ab994287922fb97ce7c1f3020affa94b5b260cac7eeac191e78630db6a",
+  "ch01/experiment.py": "69068250f5ea534e17f49705093c07046cccbc88a3df3a7fd92e41eec10f4820",
+  "ch01/tasks.json": "c7a6395549724be07c9e724d3e8724475dce0f329ff87828d8b6bc4a75bbb555",
+  "ch01/handbook/equipment.md": "7961dea6066e3edef8e34e055b5ea536457cc3be09849205a36784689fafdd74",
+  "ch01/handbook/holidays.md": "4039c476db933e9b67498cd14f0753ad7227fe8cff442f9ed74f64ae34846517",
+  "ch01/handbook/mileage.md": "a3e4ccffbcc5baba2ff25b4a5a49d6d96449122f87abd9b3743eb28e482b68d6",
+  "ch01/handbook/offices.md": "cf5b3c1814c6ba8f3859f4df6e2fa44119bb810e356aff9c68562e0d5f019163",
+  "ch01/handbook/per_diem.md": "010ca8b1352e7ecb449f6bacf3c6852b55cb80023e082244c82037a055cbe8fe",
+  "archive/equipment.md": "900e222fb453555e4d950bffe1d8ed7b593529f2b967c034b4577f2bee2238e0",
+  "archive/holidays.md": "9c79e35b28ddf11014b360ef0a88e33e8fb8784a403e2b08817d0b82348cf04a",
+  "archive/mileage.md": "a8a4b4add7237d9f7917d9f877d9aea55cb3977679e5327bcf8484fff1053af7",
+  "archive/offices.md": "54c997fcf4f1d60d2cc74fbf55db8c51a42d038624495cec6a4e80c57f5b41f7",
+  "archive/per_diem.md": "2e1f2c2ef87554c35708b9be57559cde28924b5059dd66f94cf94ad78ebf409b"
+ },
+ "finished": "2026-10-16T22:24:13",
+ "servers": {
+  "handbook": {
+   "restarts": 0,
+   "junk_lines": [],
+   "dropped": 0,
+   "calls": 131
+  },
+  "archive": {
+   "restarts": 0,
+   "junk_lines": [],
+   "dropped": 0,
+   "calls": 0
+  }
+ }
+}

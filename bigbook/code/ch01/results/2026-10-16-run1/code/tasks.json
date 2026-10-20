@@ -1,0 +1,12 @@
+[
+ {"id": "denver",    "task": "What is the total meals per-diem for one person on a 4-day trip to Denver?", "answer": 272},
+ {"id": "boston2",   "task": "Two employees travel to Boston for 3 days. What is their combined meals per-diem?", "answer": 474},
+ {"id": "mileage",   "task": "An employee drove 132 miles to a client site. How much mileage is reimbursed?", "answer": 92.4},
+ {"id": "roundtrip", "task": "A client site is 46 miles from the office. What is the mileage reimbursement for driving there and back?", "answer": 64.4},
+ {"id": "chicago",   "task": "What is the most ACME will pay for a 2-night Chicago trip, counting lodging at the cap plus meals for 3 days?", "answer": 682},
+ {"id": "headcount", "task": "How many employees work in the Austin and Seattle offices combined?", "answer": 309},
+ {"id": "monitors",  "task": "What is the maximum spend on laptop plus monitors for one new employee in 2026?", "answer": 2300},
+ {"id": "laptop",    "task": "What will the laptop budget be in 2029? Round to the cent.", "answer": 2024.76},
+ {"id": "wrongfile", "task": "Open travel.md and tell me the meals per-diem for 5 days in Austin.", "answer": 320},
+ {"id": "leave",     "task": "How many paid holidays, public and floating, does an employee get per year?", "answer": 13}
+]

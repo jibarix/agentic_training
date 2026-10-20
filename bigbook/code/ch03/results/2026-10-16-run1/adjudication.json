@@ -1,0 +1,1615 @@
+{
+ "method": "Every answer the scorer did not pass (152 failed, 26 unscored) was read and labelled by Claude (AI assistance) on 2026-10-17, for the author to check. A label is correct only if the answer states the expected value, in the right unit, and states no conflicting value as the answer. A bare number with no unit counts as correct; a wrong unit ('11 hours', '0 miles') does not, but 'per year' after a right unit is not a wrong unit. An answer that stops before giving a final value is incorrect. The 522 answers the scorer passed were audited the same way on 2026-10-17 (Claude, for the author to check): their 103 distinct pairs of task and final line (102 distinct lines) were read against the expected values, and every one states the expected value in a fitting unit, so none is labelled here.",
+ "kinds": {
+  "scorer_too_strict": "Correct; the scorer rejected the form of the final line (USD/night, a bare number, or a unit of several words).",
+  "no_final_line": "Correct, but without a 'Final answer:' line at the start of a line (left unscored).",
+  "wrong_value": "States a different value.",
+  "wrong_unit": "States the right number in a wrong unit.",
+  "no_answer": "Gives no number: stops mid-calculation or reaches the step limit.",
+  "stopped_at_4096": "Stopped mid-answer when the call reached 4,096 tokens in total, the server's default context window at the time; the trace does not record whether the server truncated the prompt."
+ },
+ "labels": [
+  {
+   "cond": "v1",
+   "id": "pd_chicago_cap",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_chicago_cap",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_austin_team",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 192 USD; the task needs 384.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_diff",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_diff",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: USD/day; the task needs 8.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_diff",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_lowest_cap",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_lowest_cap",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_two_rt",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 35 USD; the task needs 70.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_week",
+   "seed": 1,
+   "auto": null,
+   "label": true,
+   "reason": "Final answer: $126 USD, written inline, not at the start of a line (left unscored).",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v2",
+   "id": "of_largest",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 212. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "of_bos_sea",
+   "seed": 1,
+   "auto": null,
+   "label": true,
+   "reason": "States 245 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_public",
+   "seed": 1,
+   "auto": null,
+   "label": true,
+   "reason": "States 11 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_public",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 11 hours; the value is right but the unit ('hours') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_public",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid public holidays; the task needs 11.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_floating",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 2 holidays per year. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_3years",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 days; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_3years",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_seattle",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_seattle",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 days; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_seattle",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_more",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_more",
+   "seed": 1,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_more",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 9 years; the value is right but the unit ('years') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_austin",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_austin",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_austin",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2027",
+   "seed": 1,
+   "auto": null,
+   "label": false,
+   "reason": "Ends its turn mid-calculation without calling the calculator; no number is given.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2027",
+   "seed": 1,
+   "auto": null,
+   "label": false,
+   "reason": "Ends its turn mid-calculation without calling the calculator; no number is given.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2_again",
+   "id": "eq_2027",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2105.75 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_monitor",
+   "seed": 1,
+   "auto": null,
+   "label": false,
+   "reason": "States $500 for one monitor; the task needs 250 (no 'Final answer:' line).",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "leave",
+   "seed": 1,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 hours; the value is right but the unit ('hours') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_chicago_cap",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_chicago_cap",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_chicago_cap",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_diff",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_diff",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_diff",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_denver_hotel",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 286 USD; the task needs 390.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_lowest_cap",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_lowest_cap",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_commute",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 miles; the value is right but the unit ('miles') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v2",
+   "id": "mi_commute",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 miles; the value is right but the unit ('miles') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v2_again",
+   "id": "mi_commute",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 0 miles; the value is right but the unit ('miles') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_week",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "mi_week",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "mi_week",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "of_largest",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 212. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "of_largest",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 212. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "of_laptops",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 188,847.36 USD; the task needs 174600.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_public",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 11 years; the value is right but the unit ('years') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_public",
+   "seed": 2,
+   "auto": null,
+   "label": true,
+   "reason": "States 11 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_public",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 11 paid public holidays. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_floating",
+   "seed": 2,
+   "auto": null,
+   "label": false,
+   "reason": "Final answer: 2 years; the value is right but the unit ('years') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_3years",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays per year; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_3years",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_seattle",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 days; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_seattle",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_seattle",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_two",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 4 floating hours; the value is right but the unit ('hours') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_more",
+   "seed": 2,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_austin",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays per year; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_austin",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_austin",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays per year; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2027",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2277.57 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2027",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2277.57 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2028",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2277.57 USD; the task needs 1946.88.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2028",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2277.57 USD; the task needs 1946.88.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "eq_2028",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2189.98 USD; the task needs 1946.88.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_monitor",
+   "seed": 2,
+   "auto": null,
+   "label": true,
+   "reason": "States 250 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_monitors",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 250 USD; the task needs 500.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_three",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 3300 USD; the task needs 6900.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1946.88 USD; the task needs 2024.76.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "laptop",
+   "seed": 2,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1946.88 USD; the task needs 2024.76.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_chicago_cap",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_chicago_cap",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_boston_max",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,032 USD; the task needs 1111.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_diff",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_diff",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $1,132; the task needs 8.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_denver_hotel",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 195 USD; the task needs 390.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_lowest_cap",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_lowest_cap",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_seattle_week",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1656 USD; the task needs 1556.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_week",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "mi_week",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "mi_chicago",
+   "seed": 3,
+   "auto": null,
+   "label": false,
+   "reason": "Ends its turn mid-calculation without calling the calculator; no number is given.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2",
+   "id": "of_laptops",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 181,584 USD; the task needs 174600.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_public",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid public holidays per year; the task needs 11.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_public",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid public holidays; the task needs 11.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_public",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 11 paid public holidays per year. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_3years",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_3years",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_seattle",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_seattle",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_seattle",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_more",
+   "seed": 3,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9 more public holidays than floating holidays. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_austin",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_austin",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_austin",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "eq_2026",
+   "seed": 3,
+   "auto": null,
+   "label": true,
+   "reason": "States 1800 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2027",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,277.57 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2027",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2,277.57 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2028",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2277.57 USD; the task needs 1946.88.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2028",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2277.57 USD; the task needs 1946.88.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_monitor",
+   "seed": 3,
+   "auto": null,
+   "label": true,
+   "reason": "States 250 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v2_again",
+   "id": "eq_monitor",
+   "seed": 3,
+   "auto": null,
+   "label": true,
+   "reason": "States 250 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_monitors",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 250 USD; the task needs 500.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "boston2",
+   "seed": 3,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 158 USD; the task needs 474.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_seattle3",
+   "seed": 4,
+   "auto": null,
+   "label": true,
+   "reason": "States 228 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_chicago_cap",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: $230 per night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_chicago_cap",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_boston_max",
+   "seed": 4,
+   "auto": null,
+   "label": false,
+   "reason": "Ends its turn mid-calculation without calling the calculator; no number is given.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_diff",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_diff",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_lowest_cap",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_lowest_cap",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_lowest_cap",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Reaches the step limit without an answer.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_seattle_week",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1656 USD; the task needs 1556.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_seattle_week",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1656 USD; the task needs 1556.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "mi_commute",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 12.6 USD; the task needs 0.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_week",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "mi_week",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 180 miles; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "mi_miles",
+   "seed": 4,
+   "auto": null,
+   "label": false,
+   "reason": "Ends its turn mid-calculation without calling the calculator; no number is given.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2",
+   "id": "mi_miles",
+   "seed": 4,
+   "auto": null,
+   "label": false,
+   "reason": "Ends its turn mid-calculation without calling the calculator; no number is given.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2_again",
+   "id": "of_total",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Reaches the step limit without an answer.",
+   "kind": "no_answer"
+  },
+  {
+   "cond": "v2",
+   "id": "of_week",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 11 hours; the task needs 55.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_public",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 11 paid public holidays. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_floating",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 2.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_3years",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_seattle",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_seattle",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 hours; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_seattle",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 days; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_more",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_more",
+   "seed": 4,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_austin",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_austin",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_austin",
+   "seed": 4,
+   "auto": null,
+   "label": false,
+   "reason": "States 2 floating holidays, one employee's; the task needs 424 for all Austin employees (no 'Final answer:' line).",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_monitor",
+   "seed": 4,
+   "auto": null,
+   "label": true,
+   "reason": "States 250 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "denver",
+   "seed": 4,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 540 USD; the task needs 272.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_chicago_cap",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_chicago_cap",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 230 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_chicago_cap",
+   "seed": 5,
+   "auto": null,
+   "label": true,
+   "reason": "States 230 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_diff",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "pd_diff",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_diff",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 8 USD/day. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "pd_lowest_cap",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_lowest_cap",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 185 USD/night. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "pd_seattle_week",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1656 USD; the task needs 1556.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "mi_week",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 120.6 USD; the task needs 126.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "mi_chicago",
+   "seed": 5,
+   "auto": null,
+   "label": false,
+   "reason": "Stops mid-answer when the call reaches 4,096 tokens in total; before stopping it states wrong totals (546 USD, 472 USD) and no final value.",
+   "kind": "stopped_at_4096"
+  },
+  {
+   "cond": "v2_again",
+   "id": "of_boston",
+   "seed": 5,
+   "auto": null,
+   "label": true,
+   "reason": "States 148 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v2_again",
+   "id": "of_largest",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 212. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "of_laptops",
+   "seed": 5,
+   "auto": null,
+   "label": true,
+   "reason": "States 174600 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_public",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 11 hours; the value is right but the unit ('hours') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_public",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 11 years; the value is right but the unit ('years') is wrong.",
+   "kind": "wrong_unit"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_3years",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_3years",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 days; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_3years",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid holidays; the task needs 39.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_seattle",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_seattle",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_seattle",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 13 paid holidays; the task needs 1261.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_more",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_more",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_more",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 9. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v1",
+   "id": "ho_austin",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "ho_austin",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 years; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "ho_austin",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2 floating holidays; the task needs 424.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2026",
+   "seed": 5,
+   "auto": null,
+   "label": true,
+   "reason": "States 1800 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2026",
+   "seed": 5,
+   "auto": null,
+   "label": true,
+   "reason": "States 1800 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_2027",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2,105.75 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "eq_2027",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 2,105.75 USD; the task needs 1872.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "eq_2028",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $2277.57 USD; the task needs 1946.88.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2_again",
+   "id": "eq_monitor",
+   "seed": 5,
+   "auto": null,
+   "label": true,
+   "reason": "States 250 with no conflicting value; no 'Final answer:' line.",
+   "kind": "no_final_line"
+  },
+  {
+   "cond": "v1",
+   "id": "eq_monitors",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: $500 USD per employee. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  },
+  {
+   "cond": "v2",
+   "id": "boston2",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: $158; the task needs 474.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "laptop",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1946.88 USD; the task needs 2024.76.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v2",
+   "id": "laptop",
+   "seed": 5,
+   "auto": false,
+   "label": false,
+   "reason": "Final answer: 1946.88 USD; the task needs 2024.76.",
+   "kind": "wrong_value"
+  },
+  {
+   "cond": "v1",
+   "id": "leave",
+   "seed": 5,
+   "auto": false,
+   "label": true,
+   "reason": "Final answer: 13 holidays per year. Correct; the scorer rejects this form (a rate unit, a bare number or a unit of several words).",
+   "kind": "scorer_too_strict"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "method": "per kind, tasks sorted by (right runs of 3 in Chapter 4's full-context run, id), neighbours paired, one of each pair to each side by random.Random(10)",
+ "seed": 10,
+ "source": "ch04/results/2026-10-17-run1, cond full, scorer ok",
+ "train": [
+  "billed_emp0108",
+  "billed_emp0109",
+  "billed_emp0102",
+  "full_emp0118",
+  "full_emp0111",
+  "full_emp0115",
+  "lodging_emp0130",
+  "lodging_emp0134",
+  "lodging_emp0131",
+  "meals_emp0103",
+  "meals_emp0110",
+  "meals_emp0117",
+  "mileage_emp0149",
+  "mileage_emp0152",
+  "mileage_emp0146"
+ ],
+ "heldout": [
+  "billed_emp0107",
+  "billed_emp0113",
+  "billed_emp0101",
+  "full_emp0104",
+  "full_emp0105",
+  "full_emp0114",
+  "lodging_emp0122",
+  "lodging_emp0138",
+  "lodging_emp0139",
+  "meals_emp0106",
+  "meals_emp0112",
+  "meals_emp0116",
+  "mileage_emp0143",
+  "mileage_emp0157",
+  "mileage_emp0161"
+ ]
+}

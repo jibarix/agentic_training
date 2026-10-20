@@ -1,0 +1,423 @@
+[
+ {
+  "id": "pd_seattle3",
+  "cluster": "per_diem",
+  "task": "What is the meals per-diem for one person on a 3-day trip to Seattle?",
+  "answer": 228,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_chicago_cap",
+  "cluster": "per_diem",
+  "task": "What is the nightly lodging cap in Chicago?",
+  "answer": 230,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_austin_team",
+  "cluster": "per_diem",
+  "task": "Three employees travel to Austin for 2 days. What is their combined meals per-diem?",
+  "answer": 384,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_boston_max",
+  "cluster": "per_diem",
+  "task": "What is the most ACME will reimburse for a 3-night Boston stay, counting lodging at the cap plus meals for 4 days?",
+  "answer": 1111,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_diff",
+  "cluster": "per_diem",
+  "task": "How much more is the daily meals per-diem in Seattle than in Denver?",
+  "answer": 8,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_denver_hotel",
+  "cluster": "per_diem",
+  "task": "A Denver hotel costs 210 USD per night. How much of a 2-night stay is reimbursed?",
+  "answer": 390,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_lowest_cap",
+  "cluster": "per_diem",
+  "task": "What is the lowest nightly lodging cap among the cities in the handbook?",
+  "answer": 185,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "pd_seattle_week",
+  "cluster": "per_diem",
+  "task": "An employee stays 5 nights in Seattle at a hotel costing 220 USD per night and claims meals for 6 days. What is the total reimbursement?",
+  "answer": 1556,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_75",
+  "cluster": "mileage",
+  "task": "An employee drove 75 miles on company business. How much mileage is reimbursed?",
+  "answer": 52.5,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_rt30",
+  "cluster": "mileage",
+  "task": "A client is 30 miles from the office. What is the mileage reimbursement for the trip there and back?",
+  "answer": 42,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_10",
+  "cluster": "mileage",
+  "task": "What is the mileage reimbursement for a 10-mile business drive?",
+  "answer": 7,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_two_rt",
+  "cluster": "mileage",
+  "task": "An employee made two round trips to a site 25 miles away. How much mileage is reimbursed?",
+  "answer": 70,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_commute",
+  "cluster": "mileage",
+  "task": "An employee drove 18 miles from home to their usual office. How much mileage is reimbursed?",
+  "answer": 0,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_week",
+  "cluster": "mileage",
+  "task": "In one week an employee drove 40, 55 and 85 miles on company business. What is the total mileage reimbursement?",
+  "answer": 126,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "mi_miles",
+  "cluster": "mileage",
+  "task": "An employee was reimbursed 91 USD for mileage. How many miles did they drive?",
+  "answer": 130,
+  "units": [
+   "mile"
+  ]
+ },
+ {
+  "id": "mi_chicago",
+  "cluster": "mileage",
+  "task": "An employee drives 120 miles each way to Chicago and stays one night at the lodging cap. What is the reimbursement for mileage plus lodging?",
+  "answer": 398,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "of_boston",
+  "cluster": "offices",
+  "task": "How many employees work in the Boston office?",
+  "answer": 148,
+  "units": [
+   "employee",
+   "people"
+  ]
+ },
+ {
+  "id": "of_total",
+  "cluster": "offices",
+  "task": "How many employees work in all of ACME's offices combined?",
+  "answer": 457,
+  "units": [
+   "employee",
+   "people"
+  ]
+ },
+ {
+  "id": "of_diff",
+  "cluster": "offices",
+  "task": "How many more employees does the Austin office have than the Boston office?",
+  "answer": 64,
+  "units": [
+   "employee",
+   "people"
+  ]
+ },
+ {
+  "id": "of_hours",
+  "cluster": "offices",
+  "task": "For how many hours a day are the offices open?",
+  "answer": 11,
+  "units": [
+   "hour"
+  ]
+ },
+ {
+  "id": "of_week",
+  "cluster": "offices",
+  "task": "For how many hours a week is an office open?",
+  "answer": 55,
+  "units": [
+   "hour"
+  ]
+ },
+ {
+  "id": "of_largest",
+  "cluster": "offices",
+  "task": "How many employees work in ACME's largest office?",
+  "answer": 212,
+  "units": [
+   "employee",
+   "people"
+  ]
+ },
+ {
+  "id": "of_bos_sea",
+  "cluster": "offices",
+  "task": "How many employees work in the Boston and Seattle offices combined?",
+  "answer": 245,
+  "units": [
+   "employee",
+   "people"
+  ]
+ },
+ {
+  "id": "of_laptops",
+  "cluster": "offices",
+  "task": "What would it cost to give every Seattle employee a laptop at the 2026 laptop budget?",
+  "answer": 174600,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "ho_public",
+  "cluster": "holidays",
+  "task": "How many paid public holidays does an employee get per year?",
+  "answer": 11,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_floating",
+  "cluster": "holidays",
+  "task": "How many floating holidays does an employee get per year?",
+  "answer": 2,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_carry",
+  "cluster": "holidays",
+  "task": "An employee used none of their floating holidays last year. How many floating holidays can they take this year?",
+  "answer": 2,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_3years",
+  "cluster": "holidays",
+  "task": "How many paid holidays, public and floating, does an employee get over three years?",
+  "answer": 39,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_seattle",
+  "cluster": "holidays",
+  "task": "How many paid holidays, public and floating, do all Seattle employees get in total per year?",
+  "answer": 1261,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_two",
+  "cluster": "holidays",
+  "task": "Two employees each take all of their floating holidays. How many floating holidays is that in total?",
+  "answer": 4,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_more",
+  "cluster": "holidays",
+  "task": "How many more public holidays than floating holidays does an employee get?",
+  "answer": 9,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "ho_austin",
+  "cluster": "holidays",
+  "task": "How many floating holidays do the Austin employees get per year in total?",
+  "answer": 424,
+  "units": [
+   "day",
+   "holiday"
+  ]
+ },
+ {
+  "id": "eq_2026",
+  "cluster": "equipment",
+  "task": "What is the laptop budget for a new employee in 2026?",
+  "answer": 1800,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_2027",
+  "cluster": "equipment",
+  "task": "What will the laptop budget be in 2027?",
+  "answer": 1872,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_2028",
+  "cluster": "equipment",
+  "task": "What will the laptop budget be in 2028? Round to the cent.",
+  "answer": 1946.88,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_monitor",
+  "cluster": "equipment",
+  "task": "What is the most ACME will pay for one monitor?",
+  "answer": 250,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_monitors",
+  "cluster": "equipment",
+  "task": "What is the maximum monitor spend for one employee?",
+  "answer": 500,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_three",
+  "cluster": "equipment",
+  "task": "Three new employees start in 2026. What is the most ACME will spend on their laptops and monitors combined?",
+  "answer": 6900,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_rise",
+  "cluster": "equipment",
+  "task": "By how much does the laptop budget rise from 2026 to 2027?",
+  "answer": 72,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ },
+ {
+  "id": "eq_boston",
+  "cluster": "equipment",
+  "task": "What is the maximum monitor spend if every Boston employee gets the maximum number of monitors?",
+  "answer": 74000,
+  "units": [
+   "USD",
+   "$",
+   "dollar"
+  ]
+ }
+]

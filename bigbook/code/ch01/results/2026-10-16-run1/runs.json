@@ -1,0 +1,902 @@
+[
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "denver",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 59,
+  "answer": "95"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "boston2",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 58,
+  "answer": "82"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "mileage",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 990,
+  "answer": "There isn't information in the provided context to calculate a specific reimbursement amount, as the standard business mileage rate (e.g., IRS rates) is not included in your query. However, based on the **ACME company handbook** typically associated with this type of prompt, the reimbursement is often calculated at a standard rate of **$0.52 per mile** (or similar fixed rate).\n\nAssuming the standard ACME reimbursement rate of **$0.52/mile**:\nCalculation: $132 \\text{ miles} \\times \\$0.52/\\text{mile} = \\$68.64$.\n\nIf you are looking for a simple integer answer based on older rates or specific simplified handbook rules often found in these datasets (like $0.70 or flat per mile), the exact number varies. However, without an explicit rate given in your prompt, I cannot provide the definitive dollar amount with certainty.\n\n**Wait**, re-reading standard \"ACME\" dataset examples for this specific question type:\nIn many common ACME handbook scenarios found in reasoning datasets, the rate is explicitly **$0.75 per mile** or similar. Let's assume the most common simplified rate used in such logic puzzles is **$0.75/mile**.\nCalculation: $132 \\times 0.75 = 99$.\n\nHowever, if this refers to the specific **ACME** dataset where the rate is **$0.65**? No, let's look for a simpler pattern. Often these questions have a rate of **$0.50/mile**.\nCalculation: $132 \\times 0.50 = 66$.\n\nLet's reconsider the standard IRS rate logic often mimicked here. The most common answer key for \"132 miles\" in ACME datasets is derived from a rate of **$0.75**.\n$132 \\times 0.75 = 99$.\n\nAlternatively, if the rate is **$0.48**?\nLet's try to infer the most likely intended answer based on typical dataset patterns for this specific question which often appears in logic tests derived from a handbook with a **$0.50** or **$0.60** rate.\n\nActually, there is a very common version of this ACME problem where the rate is **$0.75 per mile**.\n$132 \\times 0.75 = 99$.\n\nAnother possibility: The rate is **$0.52** (Current IRS). $132 * 0.52 = 68.64$.\n\nGiven the ambiguity without the handbook text, I will provide the answer based on the most frequently cited ACME dataset example for this specific mileage figure, which often uses a rate of **$0.75**.\n\nFinal Answer: **99 dollars** (assuming $0.75/mile).\n\n*Self-Correction*: If the prompt implies a generic \"ACME\" handbook without specifying the rate, it might be testing if I know the specific rate. The standard rate in many such simplified business problems is often **$0.50**.\n$132 \\times 0.50 = 66$.\n\nLet's look at the phrasing again. \"How much mileage is reimbursed?\" implies a calculation. Without the rate, I cannot give a single number definitively. However, in the context of typical LLM evaluation datasets (like BigBench or similar logic sets involving ACME), the rate is usually **$0.75**.\nLet's go with **99**.\n\n**Wait**, let me check if there is a fixed total mentioned? No.\nLet's assume the rate is **$0.52** as per current common sense, but for these specific \"ACME\" questions, they often use round numbers.\nIf the rate is **$0.75**, answer is **99**.\nIf the rate is **$0.65**, answer is **85.8**.\n\nLet's assume the question comes from a dataset where the rate is **$0.75**.\nCalculation: $132 \\times 0.75 = 99$.\n\nI will provide the answer assuming the standard rate of $0.75 per mile often used in these specific logic puzzles.\n\n**99 dollars**"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 204,
+  "answer": "For ACME reimbursements, the standard business mileage rate used for calculating driver costs is **$0.58 per mile** (as of the most common current rates referenced in general corporate handbooks like this one).\n\nTo calculate the total reimbursement:\n1.  Calculate the total distance driven: The client site is 46 miles away, so a round trip (there and back) is $46 \\times 2 = 92$ miles.\n2.  Multiply the total miles by the rate: $92 \\text{ miles} \\times \\$0.58/\\text{mile} = \\$53.36$.\n\n**53.36 dollars**"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "chicago",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 69,
+  "answer": "290 nights"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "headcount",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 56,
+  "answer": "630,000"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "monitors",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 61,
+  "answer": "9353"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "laptop",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 63,
+  "answer": "8646.50 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 56,
+  "answer": "No"
+ },
+ {
+  "seed": 1,
+  "cond": "no_tools",
+  "id": "leave",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 57,
+  "answer": "0.5 days"
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "denver",
+  "status": "answered",
+  "ok": false,
+  "steps": 3,
+  "tokens": 2107,
+  "answer": "$140"
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "boston2",
+  "status": "answered",
+  "ok": true,
+  "steps": 5,
+  "tokens": 4905,
+  "answer": "474 US dollars"
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "mileage",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 2895,
+  "answer": "For driving 132 miles, the reimbursed mileage is $92.4 USD."
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2384,
+  "answer": "64.4 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "chicago",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3834,
+  "answer": "For a 2-night Chicago trip with lodging at the cap plus meals for 3 days, ACME will pay $682."
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "headcount",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2302,
+  "answer": "In total, **309 employees** work in the Austin and Seattle offices combined."
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "monitors",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2081,
+  "answer": "2300 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "laptop",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3259,
+  "answer": "2,024.76 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2118,
+  "answer": "According to the **per_diem.md** file, the meals per-diem for Austin is **$64 USD/day**. For 5 days, this would be:\n\n64 * 5 = 320\n\nSo, the total for meals per-diem for 5 days in Austin is **320 USD**."
+ },
+ {
+  "seed": 1,
+  "cond": "v1",
+  "id": "leave",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 1925,
+  "answer": "The handbook states an employee receives 13 paid holidays per year."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "denver",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2129,
+  "answer": "$272 USD."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "boston2",
+  "status": "answered",
+  "ok": true,
+  "steps": 2,
+  "tokens": 1339,
+  "answer": "According to the policy, the meals per-diem for Boston is $79 USD/day per person. For two employees traveling for three days, the calculation is:\n\n$79 \\times 2 \\times 3 = 474$ USD\n\nThe combined meals per-diem for the two employees over three days is **474 USD**."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "mileage",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 2942,
+  "answer": "According to the employee handbook, personal cars are reimbursed at $0.70 per mile. For a trip of 132 miles, the reimbursement is:\n\n$132 \\times 0.70 = \\$92.40$\n\nThe total mileage reimbursement is **92.4 USD**."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2370,
+  "answer": "64.4 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "chicago",
+  "status": "answered",
+  "ok": true,
+  "steps": 5,
+  "tokens": 5195,
+  "answer": "$682 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "headcount",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2354,
+  "answer": "In the Austin and Seattle offices combined, there are 309 employees."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "monitors",
+  "status": "answered",
+  "ok": false,
+  "steps": 3,
+  "tokens": 3116,
+  "answer": "Maximum spend on laptop plus monitors for one new employee in 2026: $1,800."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "laptop",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2274,
+  "answer": "$2,024.76 USD"
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2118,
+  "answer": "According to the **per_diem.md** file, the meals per-diem for Austin is **$64 USD/day**. For 5 days, this would be:\n\n64 * 5 = 320\n\nSo, the total for meals per-diem for 5 days in Austin is **320 USD**."
+ },
+ {
+  "seed": 1,
+  "cond": "v2",
+  "id": "leave",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2075,
+  "answer": "The handbook states an employee gets 13 paid holidays per year (11 public and 2 floating)."
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "denver",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 183,
+  "answer": "Based on the standard **ACME Company Handbook** travel policy, the per-diem (per diem) rates are set according to the location's cost of living. For **Denver, Colorado**, which is designated as a **Tier 2** location (along with cities like San Diego, Portland, etc.), the daily meal allowance is **$30**.\n\nFor a trip lasting **4 days**, the calculation is:\n$30/\\text{day} \\times 4 \\text{ days} = \\$120$.\n\nFinal Number: 120\nUnit: USD (or $)"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "boston2",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 273,
+  "answer": "Based on the **ACME Company Handbook**, the standard per-diem (meal allowance) rates in Boston are:\n*   Breakfast: $10.00\n*   Lunch: $5.75\n*   Dinner: $9.00\n\nThe combined meal rate is calculated as follows:\n$10.00 + $5.75 + $9.00 = $24.75\n\nThis is the amount available per employee per day for meals. For **two** employees, you multiply the per-diem rate by 2:\n$24.75 \\times 2 = $49.50\n\nThe duration of the trip (3 days) does not change the *combined* meal allowance rate itself; it only determines the total cost over that period if multiplied further ($49.50/day \\times 3 days). However, the question specifically asks for their \"combined meals per-diem\" (daily combined rate).\n\nFinal Answer: **$49.50**"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "mileage",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 152,
+  "answer": "The amount reimbursed depends on the specific mileage rate established by the ACME company handbook, which typically follows the IRS standard for business travel in the United States. For the 2024 tax year, this rate is generally **67 cents per mile**.\n\nUsing that standard rate:\n132 miles \u00d7 $0.67/mile = $88.44\n\nTherefore, the reimbursed mileage is **$88.44**."
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 167,
+  "answer": "The mileage reimbursement for driving 46 miles to the office and back (92 miles total) is **$1,304** at the standard federal rate of $0.70 per mile or **$1,588** at the higher rate of $1.70 per mile; however, since most corporate handbooks default to the federal standard for general calculations unless specified otherwise, the final answer is typically based on $0.70/mile.\n\n**$1,304**"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "chicago",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 301,
+  "answer": "Based on the standard **ACME Company Handbook** (specifically referencing common corporate travel policy examples used in such datasets), the reimbursement limits are typically structured as follows:\n\n*   **Lodging**: The standard maximum rate for a hotel room is usually capped at **$150 per night**. For a 2-night stay, this equals $300.\n*   **Meals**: The meal allowance is generally calculated based on a daily maximum (often $65 per day in many policy versions) or a total trip cap. A common phrasing for this specific question implies a total trip meal budget of **$195** (which covers 3 days at $65/day).\n\nAdding these together:\n*   Lodging (2 nights): $150 $\\times$ 2 = $300\n*   Meals (3 days): $65 $\\times$ 3 = $195\n*   **Total**: $300 + $195 = **$495**\n\nTherefore, the most ACME will pay is **495 dollars**.\n\n495 dollars"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "headcount",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 195,
+  "answer": "Based on standard public records for **ACME Corporation** (a fictional company created by Douglas Adams as a placeholder in his novels), there is no specific employee count provided for the Austin and Seattle offices. The ACME handbook itself is not a real document with concrete personnel data, and these office locations are typically part of the fictional universe rather than a real-world corporate structure with verifiable headcounts.\n\nTherefore, it is impossible to provide a factual number from the source material. If this is a test question expecting a specific answer based on a specific text you might be reading (e.g., a specific puzzle or novel excerpt), please provide that context. However, as a general fact about the ACME company:\n\n**0**"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "monitors",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 166,
+  "answer": "Based on typical corporate budgeting trends and standard ACME Corporation handbook guidelines (often referenced in pop culture or hypothetical scenarios like those found in *The Office* or similar fictional contexts), there is no publicly available, up-to-date ACME company handbook specifying exact monetary figures for the year 2026. However, assuming this question refers to a standard scenario where such policies are defined as **$2,500** (a common figure in such problems involving laptops and monitors), the final number is:\n\n2500 dollars"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "laptop",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 142,
+  "answer": "The information required to calculate the 2029 laptop budget is not present in the provided ACME company handbook context. Without specific data regarding current budgets, growth rates, or relevant policy documents within the source text, it is impossible to derive a precise numerical answer.\n\nHowever, following standard protocol for missing data requests where no value can be computed: **0** (indicating an uncomputable result based on available context)."
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 157,
+  "answer": "The `travel.md` file is not accessible to me as an AI model, so I cannot directly read it or provide specific meal per-diem rates for Austin. Typically, ACME's travel policies specify a single rate that covers all meals for the duration of the trip (e.g., \"$75/day including breakfast, lunch, and dinner\"). However, without access to the document, I cannot give you the exact figure or confirm if it is listed as 5 days in Austin.\n\n100"
+ },
+ {
+  "seed": 2,
+  "cond": "no_tools",
+  "id": "leave",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 110,
+  "answer": "Based on the standard ACME Handbook (often referenced in pop culture like *The Office* or hypothetical corporate policies), an employee typically receives **15** paid holidays per year.\n\nThis breakdown is usually:\n*   10 Public Holidays\n*   5 Floating Holidays"
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "denver",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2214,
+  "answer": "The total meals per-diem for one person on a 4-day trip to Denver is 272 USD."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "boston2",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2309,
+  "answer": "The combined meals per-diem for two employees traveling to Boston for 3 days is calculated as follows:\n\n1.  **Meals per-diem for one employee in Boston**: $79 USD/day.\n2.  **Total for two employees**: $79 \\times 2 = 158$ USD/day.\n3.  **Total for 3 days**: $158 \\times 3$.\n\nCalculation:\n$158 \\times 3 = 474$\n\nThe combined meals per-diem is **474 USD**."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "mileage",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 1958,
+  "answer": "The reimbursement rate is $0.70 per mile. For 132 miles, the total mileage reimbursement is calculated as follows:\n\n$0.70 * 132 = 92.4$\n\nSo, the reimbursed mileage is **92.4 USD**."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3047,
+  "answer": "The reimbursement rate is $0.70 per mile. The total distance for a round trip from 46 miles away is 92 miles (46 * 2).\n\n$0.70 \\times 92 = 64.4$\n\nThe mileage reimbursement is $64.40."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "chicago",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3876,
+  "answer": "The most ACME will pay for a 2-night Chicago trip, counting lodging at the cap plus meals for 3 days is $682."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "headcount",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2209,
+  "answer": "309 employees."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "monitors",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3490,
+  "answer": "The maximum spend on laptop plus monitors for one new employee in 2026 is $2,300 USD."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "laptop",
+  "status": "answered",
+  "ok": false,
+  "steps": 4,
+  "tokens": 2751,
+  "answer": "The laptop budget in 2029 will be $1,946.88."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 2940,
+  "answer": "The total meals per-diem for 5 days in Austin is $320."
+ },
+ {
+  "seed": 2,
+  "cond": "v1",
+  "id": "leave",
+  "status": "answered",
+  "ok": true,
+  "steps": 2,
+  "tokens": 1214,
+  "answer": "An employee receives 13 paid holidays per year (11 public + 2 floating)."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "denver",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2132,
+  "answer": "The total meals per-diem for one person on a 4-day trip to Denver is $272."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "boston2",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2174,
+  "answer": "Their combined meals per-diem is $474."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "mileage",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 1958,
+  "answer": "The reimbursement rate is $0.70 per mile. For 132 miles, the total mileage reimbursement is calculated as follows:\n\n$0.70 * 132 = 92.4$\n\nSo, the reimbursed mileage is **92.4 USD**."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3087,
+  "answer": "The reimbursement rate is $0.70 per mile. The total distance for a round trip from 46 miles away is 92 miles (46 * 2).\n\n$0.70 * 92 = 64.4$\n\nThe mileage reimbursement for driving there and back is **$64.40**."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "chicago",
+  "status": "answered",
+  "ok": true,
+  "steps": 2,
+  "tokens": 1618,
+  "answer": "To find the total amount ACME will pay for a 2-night Chicago trip, I need to calculate the cost for meals for 3 days and lodging for 2 nights. Based on the information found:\n- Meals per-diem in Chicago is $74 per day.\n- Lodging cap in Chicago is $230 per night.\n\nFirst, I will calculate the total meal cost for 3 days:\n$74 \\times 3 = 222$\n\nNext, I will calculate the total lodging cost for 2 nights at the cap:\n$230 \\times 2 = 460$\n\nFinally, I will sum these two amounts to get the total payment:\n$222 + 460 = 682$\n\nThe most ACME will pay for a 2-night Chicago trip, counting lodging at the cap plus meals for 3 days, is $682."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "headcount",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2321,
+  "answer": "309 employees work in the Austin and Seattle offices combined."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "monitors",
+  "status": "answered",
+  "ok": true,
+  "steps": 5,
+  "tokens": 4136,
+  "answer": "The maximum spend on a laptop plus monitors for one new employee in 2026 is $2,300."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "laptop",
+  "status": "answered",
+  "ok": false,
+  "steps": 4,
+  "tokens": 2751,
+  "answer": "The laptop budget in 2029 will be $1,946.88."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 2940,
+  "answer": "The total meals per-diem for 5 days in Austin is $320."
+ },
+ {
+  "seed": 2,
+  "cond": "v2",
+  "id": "leave",
+  "status": "answered",
+  "ok": true,
+  "steps": 2,
+  "tokens": 1206,
+  "answer": "An employee receives 13 paid holidays per year."
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "denver",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 160,
+  "answer": "Based on standard corporate travel policies (such as those often found in ACME company handbooks), the per-meal rate is typically **$10**. A per-diem usually covers three meals per day (breakfast, lunch, and dinner). Therefore, the daily per-diem for one person is $30. For a 4-day trip, you would multiply the daily rate by the number of days: $30 \\times 4 = \\$120$.\n\n$120 USD"
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "boston2",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 141,
+  "answer": "Based on standard corporate travel policies (such as those often found in handbooks like ACME's), the per-diem meal allowance for a single employee is typically **$50**. Since there are two employees traveling together, you must multiply the individual rate by the number of travelers.\n\nCalculation: $50 \\times 2 = \\$100$.\n\nFinal Answer:\n**$100**"
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "mileage",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 151,
+  "answer": "The question asks for the reimbursement amount based on a specific distance (132 miles). However, the provided text does not include the company's standard mileage rate (e.g., cents per mile) or any other factors required to calculate a monetary value. Without this critical piece of information from the ACME company handbook, it is impossible to determine the exact reimbursement amount in dollars or cents. Therefore, no final number with a unit can be derived from the given context."
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 242,
+  "answer": "The standard mileage rate for business travel in the United States (as set by the IRS, which ACME often references) was **57.5 cents per mile** for the tax year 2023. If you assume a round trip:\n\n*   One way: 46 miles\n*   Round trip: 46 miles \u00d7 2 = **92 miles**\n*   Reimbursement: 92 miles \u00d7 $0.575/mile = **$52.90**\n\nHowever, without a specific year or exchange rate provided in your handbook snippet, it is impossible to give a definitive single dollar number. Assuming the most recent common rate ($0.575) and that you need the total cost: 92 * 0.575 = 52.9.\n\n**52.9 dollars**"
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "chicago",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 1623,
+  "answer": "Based on standard ACME (Acme Corporation) travel policy guidelines typically found in such company handbooks:\n\n1.  **Lodging**: The maximum per night is usually set at **$250**. For a 2-night trip, this equals $250 \\times 2 = \\$500$.\n2.  **Meals**: ACME policies commonly cap daily meal expenses at **$75** per person (or sometimes up to $100 depending on the specific handbook version). Assuming the standard stricter limit of $75 per adult for a group of three over 3 days: $75 \\times 3 \\text{ days} = \\$225$. Note that some policies allow one additional meal or have different calculations, but the core calculation usually sums the lodging cap and the total daily allowance.\n    *   *Correction/Refinement*: A common specific ACME handbook problem often calculates this as: Max Lodging ($250/night) + Meal Allowance ($75/day/person). However, the phrasing \"meals for 3 days\" usually implies the total per diem allowance. Let's re-evaluate the standard math found in these specific logic puzzles:\n    *   Lodging: $250 \\times 2 = \\$500$.\n    *   Meals: Often calculated as a daily rate applied to the number of people or days. If the limit is $75 per person per day for 3 days for 3 people, that's huge ($675). Usually, the question implies the total per diem cap or a specific simplified rule.\n    *   Let's look at the most common version of this specific ACME handbook trivia/question: The policy is often cited as $250/night lodging and $75/day meal allowance (total per person). But if it's \"meals for 3 days\" for a group, the total cost covered is typically derived from the sum of the max lodging and the max meal allowance.\n    *   Actually, the standard answer to this specific ACME handbook question relies on: **$250** (lodging) + **$75** (meals). Wait, that's just one day.\n    *   Let's re-read carefully: \"counting lodging at the cap plus meals for 3 days\".\n    *   Lodging Cap: $250/night $\\times$ 2 nights = $500$.\n    *   Meal Allowance: $75/day $\\times$ 3 days = $225$ (assuming per person, but often these questions assume the total allowance or a simplified context).\n    *   However, there is a specific known solution to this riddle which sums them directly in a way that suggests: $250 (lodging) + $75 (meals). This seems too low for 3 days.\n    *   Let's try the other common interpretation: The total max reimbursement is often capped at a specific figure in these handbooks.\n    *   Let's assume the standard ACME policy found in training materials: Max lodging is $250/night. Max meals are $75/day/person. For 3 people, 3 days: $75 \\times 3 \\times 3 = $675. Total = $1175.\n    *   BUT, often these questions have a simpler intended math based on the text provided in the prompt's source material. If the source implies \"meals for 3 days\" means the total meal cap is just one day's value added to lodging (unlikely), or perhaps the question implies the sum of the daily caps?\n    *   Let's reconsider the standard \"ACME Handbook\" math problem often seen in logic tests:\n        *   Lodging: $250 per night. 2 nights = $500.\n        *   Meals: $75 per day. The question asks for \"meals for 3 days\". Does it mean total meals? Yes. $75 \\times 3 = $225.\n        *   Total = $500 + $225 = $725.\n    *   Is there a different cap? Some versions say max lodging is $200, some $250. Let's stick with $250.\n    *   Wait, could the meal allowance be per person? \"meals for 3 days\" usually implies the total provision for the group. If the policy is $75/day/person and there are 3 people, it's $675. Total $1175.\n    *   However, without explicit mention of \"per person\", sometimes these questions simplify to: Max Lodging Rate + Max Meal Rate. But that would be $250 + $75 = $325 (for 1 night).\n    *   Let's look for the most distinct answer often associated with this query. A very common version of this question yields **$725**. This assumes: Lodging ($250 $\\times$ 2) + Meals ($75 $\\times$ 3). It treats the meal allowance as a flat rate per day regardless of the number of people (or assumes the \"trip\" covers a specific small amount), OR it assumes the question implies the total daily cap is applied to the duration.\n    *   Actually, looking at similar corporate policy questions online: The ACME policy often states: Lodging max $250/night, Meals max $75/day (per person). If the question doesn't specify per person, it might be a trick where \"meals for 3 days\" implies the total allowance is just the sum of the daily limit if it's a solo traveler, but the prompt says \"a trip\", implying multiple people.\n    *   Let's reconsider the math: $250 \\times 2 = 500$. If meals are $75/day for 3 days = 225. Sum = 725. This is a clean number often found in these datasets.\n    *   Alternative: Maybe the meal allowance is higher? No, $75 is standard conservative ACME.\n    *   Let's assume the question implies the total amount reimbursable is the sum of the lodging max and the meal max for the duration.\n    *   Calculation: $(250 \\times 2) + (75 \\times 3) = 500 + 225 = 725$.\n\nFinal Answer seems to be **$725**.\n\n**Step-by-step derivation:**\n1.  **Lodging**: The maximum rate is typically $250 per night. For a 2-night trip: $250 \\times 2 = \\$500$.\n2.  **Meals**: The standard daily meal allowance is typically $75 per day. For 3 days: $75 \\times 3 = \\$225$. (Note: In many simplified versions of this specific handbook question, the \"per person\" aspect is either omitted or assumed to be calculated on a total basis for the scenario provided).\n3.  **Total**: $\\$500 + \\$225 = \\$725$.\n\n**Final Answer:** $725"
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "headcount",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 127,
+  "answer": "Based on the **ACME Company Handbook**, the number of employees working in the **Austin** office is **150**, and the number of employees working in the **Seattle** office is **200**.\n\nTo find the combined total:\n$150 + 200 = 350$\n\nThe final answer is **350 employees**."
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "monitors",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 139,
+  "answer": "Based on standard ACME Company handbook guidelines (specifically referencing the \"ACME Inc. Handbook\" often used in AI training contexts), the maximum spend on a laptop and monitor for a **new** employee is typically capped at **$5,000**. This amount usually applies to the entry-level or standard role categories, while senior roles may have higher caps.\n\n**5000 dollars**"
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "laptop",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 118,
+  "answer": "The ACME company handbook does not contain information regarding a laptop budget for the year 2029, as it is currently impossible to determine future financial allocations based on available historical or projected data within such documents without specific, provided tables or text. Therefore, a numerical answer cannot be derived from the source material."
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 74,
+  "answer": "The meals per diem for 5 days in Austin is $2,500."
+ },
+ {
+  "seed": 3,
+  "cond": "no_tools",
+  "id": "leave",
+  "status": "answered",
+  "ok": false,
+  "steps": 1,
+  "tokens": 155,
+  "answer": "Based on standard employment practices for companies like ACME (often used as a placeholder or reflecting typical US corporate policies), employees typically receive **15** paid holidays per year. This breakdown usually consists of **7** fixed public holidays (such as New Year's Day, Martin Luther King Jr. Day, Presidents' Day, Memorial Day, Independence Day, Labor Day, and Columbus Day/Veterans Day) and **8** floating holidays that can be scheduled by the employee within the year.\n\n15"
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "denver",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2252,
+  "answer": "The meals per-diem for Denver is $68 per day. For a 4-day trip, the total is calculated as follows:\n\n$68 * 4 = 272$\n\nThe total meals per-diem for one person on a 4-day trip to Denver is $272."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "boston2",
+  "status": "answered",
+  "ok": false,
+  "steps": 3,
+  "tokens": 2034,
+  "answer": "The meals per-diem for Boston is $200."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "mileage",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 1948,
+  "answer": "The mileage reimbursement rate is $0.70 per mile. For 132 miles, the total reimbursement is:\n\n$132 \\times 0.70 = 92.40$\n\n**92.40 USD**"
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2149,
+  "answer": "The mileage reimbursement rate is $0.70 per mile. The round trip distance is 46 miles * 2 = 92 miles.\n\nThe total reimbursement is 92 * 0.70 = $64.40."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "chicago",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 3843,
+  "answer": "The most ACME will pay for a 2-night Chicago trip, counting lodging at the cap plus meals for 3 days, is $682."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "headcount",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2217,
+  "answer": "309 employees work in the Austin and Seattle offices combined."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "monitors",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2163,
+  "answer": "The maximum spend on a laptop plus monitors for one new employee in 2026 is **$2,322**. This is calculated by adding the base laptop budget of $1,800 to the cost of up to two monitors at $250 each ($250 * 2 = $500), resulting in a total of $2,300. However, since the laptop budget increases by 4% annually starting in 2027, and no increase is mentioned for 2026, the base laptop stays at $1,800 in 2026. Thus the sum is $1,800 + $500 = $2,300."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "laptop",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 2747,
+  "answer": "The laptop budget in 2029 will be $2,024.76."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2044,
+  "answer": "The meals per-diem for Austin is $64 per day. For 5 days, the total is:\n\n$64 \\times 5 = 320$\n\nThe total meals per-diem for 5 days in Austin is **320 USD**."
+ },
+ {
+  "seed": 3,
+  "cond": "v1",
+  "id": "leave",
+  "status": "answered",
+  "ok": true,
+  "steps": 2,
+  "tokens": 1210,
+  "answer": "An employee gets 13 paid holidays per year (11 public and 2 floating)."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "denver",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2123,
+  "answer": "The total meals per-diem for one person on a 4-day trip to Denver is $272."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "boston2",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2138,
+  "answer": "The combined meals per-diem for two employees traveling to Boston for 3 days is 474 USD."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "mileage",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 1948,
+  "answer": "The mileage reimbursement rate is $0.70 per mile. For 132 miles, the total reimbursement is:\n\n$132 \\times 0.70 = 92.40$\n\n**92.40 USD**"
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "roundtrip",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2237,
+  "answer": "The mileage reimbursement rate is $0.70 per mile. The round trip distance is 46 miles * 2 = 92 miles.\n\nCalculation: 92 * 0.70 = 64.4\n\nThe mileage reimbursement for driving there and back is **$64.40**."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "chicago",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2654,
+  "answer": "The total for meals is $222 and the total for lodging is $460. Adding these together: $222 + $460 = $682.\n\n**Total ACME will pay:** $682"
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "headcount",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2321,
+  "answer": "309 employees work in the Austin and Seattle offices combined."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "monitors",
+  "status": "answered",
+  "ok": true,
+  "steps": 5,
+  "tokens": 4089,
+  "answer": "The maximum spend on a laptop plus monitors for one new employee in 2026 is $2,300."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "laptop",
+  "status": "answered",
+  "ok": true,
+  "steps": 4,
+  "tokens": 2747,
+  "answer": "The laptop budget in 2029 will be $2,024.76."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "wrongfile",
+  "status": "answered",
+  "ok": true,
+  "steps": 3,
+  "tokens": 2044,
+  "answer": "The meals per-diem for Austin is $64 per day. For 5 days, the total is:\n\n$64 \\times 5 = 320$\n\nThe total meals per-diem for 5 days in Austin is **320 USD**."
+ },
+ {
+  "seed": 3,
+  "cond": "v2",
+  "id": "leave",
+  "status": "answered",
+  "ok": true,
+  "steps": 2,
+  "tokens": 1210,
+  "answer": "An employee gets 13 paid holidays per year (11 public and 2 floating)."
+ }
+]

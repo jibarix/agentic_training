@@ -11,3 +11,25 @@ __pycache__/
 # Local only: papers and the advisor's working notes
 articles/
 kb/
+
+# Third-party PDF kept locally
+big-book-data-engineering.pdf
+
+# Big Book: only the companion code, the draft PDF and the source manifest are published;
+# the text, figures, cover and build files stay local
+bigbook/*
+!bigbook/code/
+!bigbook/bigbook.pdf
+!bigbook/sources/
+# Big Book: third-party source copies stay local; only the manifest is published
+bigbook/sources/*
+!bigbook/sources/MANIFEST.md
+# Big Book: smoke runs stay local
+bigbook/code/*/results/smoke/
+bigbook/code/*/results/*smoke*/
+# Big Book: Chapter 5's run is added once it completes
+bigbook/code/ch05/results/2026-10-18-run1/
+bigbook/code/ch05/results/2026-10-18-run1.log
+# Big Book: the run logs of completed runs are kept
+!bigbook/code/ch02/results/run1.log
+!bigbook/code/ch04/results/run1.log
