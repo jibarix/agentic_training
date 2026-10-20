@@ -15,11 +15,12 @@ kb/
 # Third-party PDF kept locally
 big-book-data-engineering.pdf
 
-# Big Book: only the companion code, the draft PDF and the source manifest are published;
+# Big Book: only the README, the companion code, the draft PDF and the source manifest are published;
 # the text, figures, cover and build files stay local
 bigbook/*
 !bigbook/code/
 !bigbook/bigbook.pdf
+!bigbook/README.md
 !bigbook/sources/
 # Big Book: third-party source copies stay local; only the manifest is published
 bigbook/sources/*
