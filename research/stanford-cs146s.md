@@ -51,15 +51,16 @@ All schedule rows are from the **Fall 2025** offering. The official syllabus tab
 | Week 6 — Scan and Fix Vulnerabilities with Semgrep ("Writing Secure AI Code") | Run Semgrep on the app, triage findings, fix at least 3 issues (SQLi, unsafe DOM, CORS, etc.) | SAST, secrets and dependency scanning, remediation | https://github.com/mihail911/modern-software-dev-assignments/tree/fall2025/week6 | SAFE, CODE |
 | Week 7 — Exploring AI Code Review Using Graphite ("Code Review Reps") | Implement 4 tasks with one-shot agent prompts, open PRs, and compare manual review with Graphite Diamond AI review | AI code review, PR hygiene | https://github.com/mihail911/modern-software-dev-assignments/tree/fall2025/week7 | CODE, EVAL |
 | Week 8 — Multi-Stack AI-Accelerated Web App Build | Build the same CRUD app in 3 stacks, at least one with bolt.new and one with a non-JS language | AI app generation, stack comparison | https://github.com/mihail911/modern-software-dev-assignments/tree/fall2025/week8 | CODE, APP |
-| Final project | "Final project showcasing modern development practices" (details not public) | n/a | n/a | CODE, ORG |
 
-### Fall 2026 (branch `master`, weeks 1-3 published so far)
+### Fall 2026 (branch `master`, weeks 1-5 published so far)
 
 | Name | What you build | Skills | Starter code URL | Tags |
 |---|---|---|---|---|
 | Week 1 — Trace Dissection of a Real Claude Code Session | Capture a Claude Code session through a mitmproxy reverse proxy, then annotate the system prompt, `<system-reminder>`s, tool inventory and schemas, error recovery, planning, subagents, and context management | Reverse-engineering a production coding agent, prompt and tool design analysis | https://github.com/mihail911/modern-software-dev-assignments/blob/master/week1/assignment.md | CODE, ARCH, MEM |
 | Week 2 — Build an MCP Server for a Third-Party API | FastMCP server over an OAuth 2.0 API with at least 3 composing tools, a write tool with dry-run, structured errors, readOnlyHint, full auth-code flow with refresh, and a protocol-level test | Agent-ergonomic tool design, OAuth, MCP | https://github.com/mihail911/modern-software-dev-assignments/blob/master/week2/assignment.md | TOOL, SAFE |
 | Week 3 — Author a Skill | A SKILL.md (Agent Skills standard) for a repeatable workflow on a real OSS repo (htmx, dayjs, yt-dlp, etc.), with trigger tests including a near-miss and an end-to-end run | Skill authoring, trigger description design, eval of triggering | https://github.com/mihail911/modern-software-dev-assignments/blob/master/week3/assignment.md | CODE, MEM, EVAL |
+| Week 4 — Make a Messy Repo Agent-Ready | Write the missing AGENTS.md or CLAUDE.md for an unfamiliar OSS repo (htmx, dayjs, yt-dlp, etc.): what the project is, architecture, exact build/test/lint commands, conventions and guardrails, every line specific to the repo and about a page long; then run two small agent tasks with it and report one change | Repo orientation, agent context files, judging what belongs in always-loaded context | https://github.com/mihail911/modern-software-dev-assignments/blob/master/week4/assignment.md | CODE, MEM |
+| Week 5 — Agent-Readiness Report | Run Factory's Droid `/readiness-report` (eight pillars, five maturity levels) on three different repos, record the results in a comparable format, explain which pillars fail and why, pick the cheapest high-leverage fix per repo, and critique the framework | Assessing repos against a readiness framework, comparative analysis, scoping claims to a small sample | https://github.com/mihail911/modern-software-dev-assignments/blob/master/week5/assignment.md | CODE, EVAL |
 
 ## Codebases & tools referenced
 
@@ -74,14 +75,13 @@ All schedule rows are from the **Fall 2025** offering. The official syllabus tab
 - awesome-claude-agents: https://github.com/vijaythecoder/awesome-claude-agents ; SuperClaude: https://github.com/SuperClaude-Org/SuperClaude_Framework
 - Warp: https://www.warp.dev/ ; Semgrep: https://semgrep.dev/ ; Graphite: https://graphite.dev/ ; Vercel: https://vercel.com/ ; bolt.new ; Cursor ; Resolve.ai: https://resolve.ai/ ; Cognition/Devin: https://cognition.ai/
 - Fall 2026 partners: Browserbase https://www.browserbase.com , OpenHands https://www.openhands.dev , CrewAI https://www.crewai.com , CopilotKit https://www.copilotkit.ai , Milvus https://milvus.io , Marimo https://marimo.io , Phoenix https://phoenix.arize.com , Unsloth https://unsloth.ai , Anyscale https://www.anyscale.com , cmux https://cmux.dev , Pi https://pi.dev , HeyGen https://www.heygen.com
-- Paid 4-week Maven spin-off course (from a third-party source): https://maven.com/the-modern-software-developer/ai-course
 
 ## Notes
 
 - **The official syllabus did not load.** The "Syllabus" tab on themodernsoftware.dev and /fall2025 is rendered client-side, so WebFetch returned only the overview, team, and logistics. /syllabus returns 404. The Fall 2025 lecture table comes from the authorized Korean translation (discuss.pytorch.kr). The slide URLs are copied from that page; I did not open them individually.
 - **Day-of-week conflict:** the Korean source labels the sessions Mon/Fri (e.g. 9/22 Mon, 9/26 Fri), while the official site lists Tue/Thu 5:30-6:20 PM. The dates may belong to a different meeting pattern or be translation artifacts, so treat them as approximate.
-- **Fall 2026 schedule.** The Fall 2026 session list was later read from the rendered Syllabus tab in Chrome (2026-10-09); see stanford-cs146s-fall2026-verified.md. Slides are posted for weeks 1-3, and assignments for weeks 1-3 are on `master`.
-- **Assignment URL drift:** the Fall 2025 syllabus links to `master/week4..8`, but `master` now holds only the Fall 2026 weeks 1-3. Use the `fall2025` branch URLs given above, which I confirmed via the GitHub tree API. Names in parentheses are the syllabus names, which differ from the titles in the assignment.md files.
+- **Fall 2026 schedule.** The Fall 2026 session list was later read from the rendered Syllabus tab in Chrome (2026-10-09); see stanford-cs146s-fall2026-verified.md. Slides are posted for weeks 1-3, W4 Tue and W5 Tue, and assignments for weeks 1-5 are on `master` (weeks 4 and 5 added 2026-10-19 and 2026-10-26; checked 2026-10-26).
+- **Assignment URL drift:** the Fall 2025 syllabus links to `master/week4..8`, but `master` now holds only the Fall 2026 weeks (1-5 as of 2026-10-26). Use the `fall2025` branch URLs given above, which I confirmed via the GitHub tree API. Names in parentheses are the syllabus names, which differ from the titles in the assignment.md files.
 - Fall 2025 week 1 also included a `week1/README.md`, and week 5 and week 7 had README.md files plus `docs/TASKS.md`. I did not read those READMEs in full.
 - The Unit42 reading link on the source page is wrapped in a Google redirect; I extracted the underlying URL.
 - The Fall 2026 office-hours listing includes Vijay Daita, but the team grid lists one TA as "TBD".

@@ -52,26 +52,27 @@ The lecture dates come from an authorized translation and may be off by a day, s
          title="Agentic AI", inst="Northeastern University (Khoury)", term="Fall 2026 (in progress)",
          people="Caglar Yildirim", url="https://agenticllms.github.io/",
          level="Gentle on-ramp (Python primer provided)", archetype="Builder (LangChain/LangGraph stack)",
-         slides="2 HTML decks", video="none", codepub="Notebooks W02b--W06b, DADA1",
+         slides="2 HTML decks", video="none", codepub="Notebooks W02b--W06b, DADA1--DADA2",
          best="Best guided, notebook-by-notebook path from an LLM API call to a deployed LangGraph agent.",
          overview=r"""Pairs one seminal paper with the matching LangChain/LangGraph documentation in every session.
 One running example, the ``Husky Tech'' customer-support agent, grows week by week: a notebook prototype, then a project skeleton, then a Hugging Face Spaces deployment, a LangGraph rewrite, RAG, a self-grading retrieval loop, and then a plan-search-review-replan loop and agentic RAG behind its policy-search tool.
 Later sessions cover planning, agentic RAG, three multi-agent sessions, MCP and its security, evaluation, and optimization with DSPy and cost controls.
-Sessions after F~11/13 were not posted when this guide was compiled."""),
+The second take-home (DADA2) is an ablation study of agentic RAG over SEC filings: retrieval strategies measured one at a time with recall@k and MRR, then a routed agent with failure diagnosis compared against a baseline agent on accuracy, calls and time.
+Sessions after F~11/13 were not posted when this guide was compiled. Which notebooks belong to which session is inferred: Tuesday notebooks may run one session ahead of or behind the lecture topic."""),
     dict(code="HARV", short="Harvard", file="harvard-cs2680.md", kind="std",
          title="CS 2680 Modern AI Systems: Agents and System Optimizations", inst="Harvard University (SEAS, MaDSys)",
          term="Fall 2026 (in progress)",
          people="Juncheng Yang", url="https://cs2680.seas.harvard.edu/",
          level="Graduate systems course; CS61 plus a graduate systems course",
          archetype="Agent systems and serving (use, build, optimize, serve)",
-         slides="8 decks (Part I)", video="none (not recorded)", codepub="A2--A3 starter repo (no license); A4--A5 unreleased",
+         slides="8 decks (Part I)", video="none (not recorded)", codepub="A2--A3 starter archives (no license); A4--A5 unreleased",
          best="Treating an agent as a system to measure: harness design, evaluation, and cost per solved task, then the serving stack underneath.",
          overview=r"""Follows one agentic system from the agent loop down through the serving stack.
-Part~I uses a coding agent (Claude Code), then designs one: context management and tool design, multi-agent architecture and communication, memory and reliability, evaluation, and cost and performance. Part~II, from October~19, covers LLM serving: batching and scheduling, speculative decoding, prefix caching, quantization, GPUs and kernels, and routing.
+Part~I uses a coding agent (Claude Code), then designs one: context management and tool design, multi-agent architecture and communication, memory and reliability, evaluation, and cost and performance. Part~II, from October~19, covers LLM serving: batching and memory management, speculative decoding, scheduling and prefix caching, quantization, KV-cache optimization, and routing and load balancing.
 The annotated reading pages and the two reference notes (agent evaluation and benchmarks, cost-effective agents) are worth reading on their own.
 The five assignments take one system apart in steps: watch the agent, build the loop, make every token count, serve the model yourself, optimize the full stack.
 \textbf{Access:} assignments 2 and 3 call a course model API whose keys go to enrolled students only. Outside the course you can run assignment~2 only against your own OpenAI-compatible endpoint, and assignment~3's leaderboard scoring is not available.
-When this guide was last updated (October~16, 2026), annotated reading pages for most Part~II sessions were online but not linked from the home page; no Part~II slides and no specs for assignments 4 and 5 were posted."""),
+When this guide was last updated (October~18, 2026), annotated reading pages for most Part~II sessions were online but not linked from the home page; no Part~II slides and no specs for assignments 4 and 5 were posted, and the Part~II schedule had just been reordered."""),
     dict(code="UB", short="Buffalo", file="buffalo-cse410.md", kind="std",
          title="CSE 410/510 Introduction to Agentic Engineering", inst="University at Buffalo", term="Fall 2026",
          people="Joaquin Carbonara, David Doermann",
@@ -110,14 +111,15 @@ The repository is MIT-licensed."""),
          best="Ties classic program synthesis to LLM coding agents, with two MCP lectures and a strong web-app agent assignment.",
          overview=r"""Treats code generation from both the symbolic side (enumerative search, types, specifications) and the LLM side (decoding, prompting, iterative refinement, agentic frameworks, MCP, pre- and post-training of code models).
 The assignments are the main attraction: an enumerative synthesizer with an LLM step (A1), a rigorous pass@k evaluation of coding LLMs across three languages and four prompting strategies (A2), and a tool-calling web-app agent with secure file tools that builds a chat room, a Tetris variant and a creative app (A3).
-The second half covers formal verification, security, HPC, neurosymbolic programming and six student-led paper sessions in which two students defend and attack each paper."""),
+The second half covers formal verification, security, HPC, neurosymbolic programming and six student-led paper sessions in which two students defend and attack each paper.
+The course's readings page is organised by topic, not by lecture, so the readings in its lecture table are topical matches rather than assigned readings."""),
     dict(code="CU", short="CU Boulder", file="colorado-csci7000.md", kind="std",
          title="CSCI 7000-005 Building AI Agents", inst="University of Colorado Boulder", term="Spring 2026",
          people="Danny Dig", url="https://danny.cs.colorado.edu/courses/csci7000-005_Sp26/index.html",
          level="Graduate seminar; competent SE assumed", archetype="Research seminar (agentic software engineering)",
          slides="4 instructor decks", video="none", codepub="none",
          best="Research reading on agentic software engineering: refactoring agents, SWE-agent, skills, memory, MCP design choices.",
-         overview=r"""A seminar with two papers per meeting, one-page critiques and a team research project with four milestones.
+         overview=r"""A seminar with two papers per meeting.
 Its reading list leans toward agentic software engineering, from agent surveys and an agentic-SE roadmap through refactoring agents and the classic patterns (ReAct, Reflexion, Toolformer, Gorilla, PAL, AutoGen, MetaGPT, debate) to 2025--2026 work on skills, memory, safety, coding-agent configuration and MCP design.
 The ``tool experience report'' (run a paper's tool on your own case and critique it) is a good habit to borrow."""),
     dict(code="MANN", short="Mannheim", file="mannheim-ie685.md", kind="std",
@@ -225,6 +227,10 @@ Code: \href{https://github.com/SqueezeAILab/TinyAgent}{SqueezeAILab/TinyAgent} (
     dict(key="sup-colab", name="Google Colab", url="https://colab.research.google.com/", tags=["DEPLOY"],
          body=r"""A hosted Jupyter runtime. Use it to run course notebooks (UChicago, Northeastern, Mannheim, UVA) without a local setup, and to keep experiments with downloaded code off your own machine."""),
 ]
+
+# Logistics-only (ORG) lectures that are kept because they carry teaching material; all other
+# ORG-only or untagged lectures (exams, presentations, project sessions) are dropped from the guide.
+LEC_KEEP_ORG = {"JHU:1", "CU:1", "MANN:7", "S329A:1", "UW:1"}
 
 # ---------------------------------------------------------------------------
 # Tags
@@ -373,7 +379,7 @@ concepts=r"""Apart from what the model learned in training, everything an agent 
 \begin{itemize}
 \item \textbf{Limits.} Models degrade on long inputs (``lost in the middle'', context rot), and every token costs money and latency. KV-cache reuse makes a stable prompt prefix cheap. CMU's long-context lecture uses real provider pricing and harness source code.
 \item \textbf{Compaction.} Summarize or fold old turns (model-generated compaction in CMU A1; AgentFold and context-folding in UVA and UW), and offload large observations to files.
-\item \textbf{Retrieval (RAG).} Chunk, embed, index, retrieve top-K, optionally rerank, then generate with citations. Treat chunk size, overlap, K, query rewriting and score thresholds as experimental variables (UVA Topic~5 runs 11 controlled experiments). Agentic RAG adds self-grading, correction and routing (Self-RAG, CRAG, Adaptive-RAG).
+\item \textbf{Retrieval (RAG).} Chunk, embed, index, retrieve top-K, optionally rerank, then generate with citations. Treat chunk size, overlap, K, query rewriting and score thresholds as experimental variables (UVA Topic~5 runs 11 controlled experiments; Northeastern's DADA2 adds metadata filters, multi-query fusion, reranking and hybrid lexical retrieval one change at a time, scored by recall@k and MRR). Agentic RAG adds self-grading, correction and routing (Self-RAG, CRAG, Adaptive-RAG).
 \item \textbf{Long-term memory and skills.} OS-style memory tiers (MemGPT), reflection-based memories (Generative Agents, Reflexion), workflow and skill induction (AWM, ASI). \emph{Skills} are SKILL.md bundles loaded on demand, the same progressive-disclosure idea Stanford '26 week~3 and CMU A1 teach.
 \end{itemize}""",
 sequence=[("[[CMU:3]]", "Context management for long-context agents: limits, compaction, KV-cache economics."),
@@ -388,7 +394,7 @@ readings=["Lewis et al., \\href{https://arxiv.org/abs/2005.11401}{\\emph{Retriev
           "Packer et al., \\href{https://arxiv.org/abs/2310.08560}{\\emph{MemGPT}} (2023)", "Park et al., \\href{https://arxiv.org/abs/2304.03442}{\\emph{Generative Agents}} (2023)",
           "Anthropic, \\href{https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents}{\\emph{Effective context engineering for AI agents}}",
           "Asai et al., \\href{https://arxiv.org/abs/2310.11511}{\\emph{Self-RAG}} (2023); Yan et al., \\href{https://arxiv.org/abs/2401.15884}{\\emph{Corrective RAG}} (2024)"],
-handson=["[[A:UVA:Topic 5]]", "[[A:UB:Lab 2]]", "[[A:STAN26:Week 3]]", "[[A:NEU:Husky]]", "[[A:MANN:Exercise: RAG]]",
+handson=["[[A:UVA:Topic 5]]", "[[A:NEU:DADA2]]", "[[A:UB:Lab 2]]", "[[A:STAN26:Week 3]]", "[[A:NEU:Husky]]", "[[A:MANN:Exercise: RAG]]",
          "Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}. In \\texttt{Local-Agent-Demo}, change the short-term window and the similarity threshold in \\texttt{config.py} and watch what the model is shown."]),
 
 dict(key="RSN", num=6, title="Reasoning, Planning, Reflection and Search", tags=["RSN"], mcp=None,

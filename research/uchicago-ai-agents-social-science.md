@@ -40,16 +40,15 @@ Each weekly notebook is both the tutorial and the homework. Students usually com
 | Week 6 notebook | Interpretability and steering (contents not read: file over 10 MB) | n/a | https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026/blob/main/Tutorials-Homework_Notebooks/week6_2026.ipynb | SAFE, FND |
 | Week 7 notebook (RL) | Bandits (epsilon-greedy, annealing, UCB), RL for alignment, then RL for reasoning or multi-agent RL; memo pilot | gymnasium, stable-baselines3, PPO/DQN/GRPO | https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026/blob/main/Tutorials-Homework_Notebooks/Week_7_RL.ipynb | TRAIN, MULTI |
 | Week 8 notebook (Multimodal) | Multimodal and embodied agents (contents not read: file over 10 MB) | n/a | https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026/blob/main/Tutorials-Homework_Notebooks/Week_8_Multimodal.ipynb | WEB, APP |
-| Week 9 notebook | Any 4 of 7 modules: safety judge, Constitutional AI, deception detection, moral geometry, automated red-teaming, AGrail guardrails; 150-300-word reflections (not AI-delegable) | Qwen2.5-7B-Instruct (4-bit), sentence-transformers, AGrail | https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026/blob/main/Tutorials-Homework_Notebooks/Week_9.ipynb | SAFE, EVAL |
-| Weekly memos and Ignite presentations | 300-500-word reading memos (from week 2) with peer upvoting; 5-minute code presentations | Critical reading, communication | n/a | ORG |
-| Final project | Agent project for social insight, solo or teams of up to 4: at least 3 data types and 3 model types from 3 weeks, qualitatively validated; Substack/Medium post (3,600 words and 13 visuals solo; 5,000 and 17 for groups) with an open repo, plus an Ignite talk | End-to-end applied agent research | n/a | APP, ORG |
+| Week 9 notebook | Any 4 of 7 modules: safety judge, Constitutional AI, deception detection, moral geometry, automated red-teaming, AGrail guardrails | Qwen2.5-7B-Instruct (4-bit), sentence-transformers, AGrail | https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026/blob/main/Tutorials-Homework_Notebooks/Week_9.ipynb | SAFE, EVAL |
+| Final project | Agent project for social insight: at least 3 data types and 3 model types from 3 weeks, qualitatively validated, with an open repo | End-to-end applied agent research | n/a | APP, ORG |
 
 ## Codebases & tools referenced
 
 - Course repo: https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026 (notebooks plus `Tutorials-Homework_Notebooks/data/`)
 - Python tutorial: https://docs.python.org/3/tutorial/
 - Named in the syllabus or notebooks without URLs: Claude Code, LangGraph, LangChain, AutoGen, Concordia (DeepMind), Faiss, ChromaDB, DSPy, AIOS, AFlow, Kubeflow, MLflow, OpenPipe ART, Agent Lightning, Neuronpedia, AGrail, PyTorch, Keras/TensorFlow, scikit-learn, gensim, spaCy, Hugging Face transformers, shap, gymnasium, stable-baselines3, Petals (Llama-2), OpenAI API, SWE-agent
-- Google Colab (Pro recommended); UChicago RCC; Canvas
+- Google Colab (Pro recommended)
 
 ## Notes
 

@@ -51,10 +51,7 @@ Slide URLs are resolved from the relative `./pdfs/...` links on the schedule pag
 
 | Name | What you build | Skills | Starter code URL | Tags |
 |---|---|---|---|---|
-| Paper critiques (20%) | One-page critique per paper (liked / disliked / future directions / open questions / discussion points / summary), due 12pm on the day of class | Critical reading of research | n/a | ORG |
 | Tool Experience Report (critique option #2) | Download the tool a paper introduces, run it on your own use case, and write a one-page reflection (experience, strengths, weaknesses, practical impact, recommendations) | Hands-on evaluation of agent tools | n/a | EVAL, CODE |
-| Paper presentation (20%) | Lead the discussion of an assigned paper | Presenting research | n/a | ORG |
-| Research project (50%, teams of 3-4) | A research-oriented or novel-industrial project on GenAI/agents in SE: proposal (02/02), M1 2-page ACM paper plus 10-min talk (RQs, challenges, approach, 5 or more related works), M2, M3, M4 (empirical evaluation), final conference-style paper (abstract, intro, 10 or more refs, conclusions, lessons learned) | Research design, agent implementation, empirical evaluation, scientific writing | n/a | CODE, EVAL, ORG |
 
 ## Codebases & tools referenced
 
@@ -62,8 +59,6 @@ Slide URLs are resolved from the relative `./pdfs/...` links on the schedule pag
 - OpenHands (paper): https://arxiv.org/pdf/2407.16741
 - SWE-agent (paper): https://arxiv.org/pdf/2405.15793 ; AutoCodeRover (paper): https://arxiv.org/pdf/2404.05427
 - AutoGen (paper): https://arxiv.org/pdf/2308.08155 ; MetaGPT (paper): https://arxiv.org/pdf/2308.00352
-- ACM proceedings template (milestones/final): https://www.acm.org/publications/proceedings-template
-- Piazza: https://piazza.com/colorado/spring2026/csci7000005 ; Canvas (submissions, login required)
 
 ## Notes
 

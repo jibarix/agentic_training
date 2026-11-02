@@ -223,7 +223,19 @@ def parse_tags(s):
     return [t for t in re.split(r"[,\s]+", s.upper()) if t in C.TAGS]
 
 
+# Course admin (marks, deadlines, release dates, units) is not part of the guide: strip it from names and topics.
+ASG_ADMIN_RE = re.compile(r"\s*\((?=[^()]*(?:%|\bdue\b|\bout\b|\breleased\b|\bpts\b|\bunits?\b|\bWk\b|buy-in|critique option|teams of))[^()]*\)", re.I)
+LEC_ADMIN_RE = re.compile(r"\s*\((?:A\d|HW\d|project proposal)[^()]*\b(?:due|out|released)\b[^()]*\)", re.I)
+LOGISTICS_RE = re.compile(r"^(?:course )?logistics[;,]\s*", re.I)
+
+
+def clean_topics(s):
+    s = LOGISTICS_RE.sub("", LEC_ADMIN_RE.sub("", s))
+    return s[:1].upper() + s[1:]
+
+
 def make_lecture(code, num, date, title, topics, readings, materials, tags):
+    title, topics = LEC_ADMIN_RE.sub("", title), clean_topics(topics)
     return dict(code=code, num=num, date=date, title=title, topics=topics, readings=readings,
                 materials=materials, tags=tags, anchor=f"lec-{code}-{num}")
 
@@ -310,6 +322,7 @@ def parse_assignments(code, text, subsection=None):
         for r in t["rows"]:
             name, build, skills, starter, tags = fit_row(code, r, 5, "assignments")
             check_tags(code, tags, f"assignment {name[:30]}")
+            name = ASG_ADMIN_RE.sub("", name).strip()
             out.append(dict(code=code, name=name, build=build, skills=skills, starter=starter,
                             tags=parse_tags(tags), anchor=f"asg-{code}-{len(out) + 1}"))
     if not out:
@@ -350,6 +363,10 @@ def load_courses():
         c["notes"] = bullets(section(text if c["kind"] == "std" else ctext, r"Notes"))
         if c["kind"] == "stan26":  # shares stanford-cs146s.md with STAN25; take notes from its own verified file
             c["codebases"], c["notes"] = [], bullets(section(text, r"Notes"))
+        # Drop exam, presentation and project-work sessions (ORG-only or untagged) after numbering, so lecture
+        # numbers and references stay stable; LEC_KEEP_ORG keeps the ones that carry teaching material.
+        c["lectures"] = [L for L in c["lectures"]
+                         if set(L["tags"]) - {"ORG"} or f"{L['code']}:{L['num']}" in C.LEC_KEEP_ORG]
     return {c["code"]: c for c in C.COURSES}
 
 
@@ -458,6 +475,12 @@ def is_mcp(L):
     return "TOOL" in L["tags"] and bool(MCP_RE.search(L["title"] + " " + L["topics"]))
 
 
+def first_sentence(s):
+    """First sentence of a build description; the full text is in the catalogue row the item links to."""
+    m = re.match(r"(.+?[.!?])\s+(?=[A-Z(])", s.strip())
+    return m.group(1) if m else s
+
+
 def starter_label(a):
     """What the links in an assignment's starter column are: code, a spec only, or other resources."""
     s = a["starter"].strip()
@@ -559,7 +582,7 @@ def stats():
 def part_intro(D):
     nl, na = stats()
     D(r"\part{Orientation}", r"\chapter{How to Use This Guide}")
-    D(r"""This guide compiles %d public university courses on LLM agents and agentic systems, plus %d supplementary resources, into one curriculum you can navigate. Most come from your \emph{CMU-Agentic} bookmarks folder; the rest were added after a targeted search for courses strong in evaluation, training and security.
+    D(r"""This guide compiles %d public university courses on LLM agents and agentic systems, plus %d supplementary resources, into one curriculum you can navigate.
 Every one of the %d catalogued lectures and %d assignments is classified with one shared set of topic tags, so the same subject can be followed across courses.""" % (len(C.COURSES), len(C.SUPPLEMENTS), nl, na))
     D(r"""\begin{infobox}[title=One set of three documents]
 \begin{enumerate}
@@ -579,14 +602,21 @@ The modules map onto the design phases: \hyperlink{mod-ARCH}{\tg{ARCH}} for Phas
 \end{infobox}""")
     D(r"""\section{Conventions}
 \begin{itemize}
-\item Lecture references look like \textbf{CMU~2} (course code and session number in that course's own schedule) and link to the row in the catalogue, which has dates, topics, readings and materials.
+\item Lecture references look like \textbf{CMU~2} (course code and session number in that course's own schedule) and link to the row in the catalogue, which has topics, readings and materials.
 \item Material links are labelled by type: \texttt{[slides]}, \texttt{[video]}, \texttt{[PDF]}, \texttt{[PPTX]}, \texttt{[GitHub]}, \texttt{[arXiv:\ldots]}, \texttt{[notebook zip]}, or the site's domain.
 \item In module lecture maps, $\star$ marks the lectures chosen for the curated sequence.
-\item Guest talks and purely logistical sessions stay in the catalogue but are left out of the module maps.
+\item Guest talks stay in the catalogue but are left out of the module maps. Exam, presentation and project-work sessions, and course grading and deadlines, are left out of the guide altogether.
 \item In hands-on lists, ``Starter code'' means the assignment has a public repository or download, ``Spec'' links to a written specification with no code, and ``Resources'' links to benchmarks or data sources the project builds on.
 \end{itemize}
 \section{A note on currency}
-The material spans Spring 2024 (TinyAgent) to courses still running in October 2026. Two things change fast. (1)~\textbf{MCP:} the 2026-07-28 revision made the protocol stateless (see \hyperref[sup-mcp]{the MCP supplement}), so earlier lectures teach the older handshake. (2)~\textbf{Model names and SDKs:} courses use whatever was current when they ran. Learn the concepts from the lectures and take API details from current documentation.""")
+The material spans Spring 2024 (TinyAgent) to courses still running in October 2026. Two things change fast. (1)~\textbf{MCP:} the 2026-07-28 revision made the protocol stateless (see \hyperref[sup-mcp]{the MCP supplement}), so earlier lectures teach the older handshake. (2)~\textbf{Model names and SDKs:} courses use whatever was current when they ran. Learn the concepts from the lectures and take API details from current documentation.
+\section{Caveats}
+\begin{itemize}
+\item Content was checked through October~16, 2026. The in-progress courses (CMU, Stanford '26, Northeastern, Harvard, JHU) will post more material after that.
+\item Tags were assigned from session titles, listed topics and readings. They are a navigation aid, and some sessions could reasonably be tagged differently.
+\item Some slide decks could not be read (several Mannheim PDFs, a few UVA PPTX files, JHU lectures 7, 8, 10, 13 and 14), so their topics are inferred from the titles.
+\item Only some repositories state a licence (UW CS 839, TinyAgent and OpenClaw are MIT). Check each licence before redistributing course material; linking is always safe.
+\end{itemize}""")
 
 
 def part_legend(D):
@@ -616,12 +646,11 @@ def part_glance(D):
 \item \textbf{Program synthesis} (JHU): the PL view of code generation, from classic search to LLM coding agents.
 \item \textbf{Applied social science} (UChicago): agents as simulated subjects and research instruments.
 \end{itemize}""")
-    D(r"{\footnotesize\begin{longtable}{P{2.2cm} P{3.0cm} P{2.9cm} P{1.6cm} P{5.2cm}}",
-      r"\toprule Course & Archetype / level & Public materials & Lectures / assignments & Best for\\ \midrule\endhead")
+    D(r"{\footnotesize\begin{longtable}{P{3.6cm} P{4.4cm} P{7.6cm}}",
+      r"\toprule Course & Archetype / level & Best for\\ \midrule\endhead")
     for c in C.COURSES:
-        D(r"\hyperlink{course-%s}{\textbf{%s}}\newline %s & %s\newline\emph{%s} & Slides: %s\newline Video: %s\newline Code: %s & %d / %d & %s\\ \midrule" % (
-            c["code"], esc(c["short"]), esc(c["title"]), esc(c["archetype"]), esc(c["level"]),
-            esc(c["slides"]), esc(c["video"]), esc(c["codepub"]), len(c["lectures"]), len(c["assignments"]), esc(c["best"])))
+        D(r"\hyperlink{course-%s}{\textbf{%s}}\newline %s & %s\newline\emph{%s} & %s\\ \midrule" % (
+            c["code"], esc(c["short"]), esc(c["title"]), esc(c["archetype"]), esc(c["level"]), esc(c["best"])))
     D(r"\end{longtable}}")
 
 
@@ -642,7 +671,7 @@ def part_matrix(D):
             row.append(r"\hyperlink{mod-%s}{{\setlength{\fboxsep}{1.5pt}\colorbox{blue!%d}{\makebox[1.1em]{%d}}}}" % (m["key"], min(5 + 7 * n, 45), n) if n else r"\textcolor{black!25}{0}")
         D(r"\hyperlink{course-%s}{%s} & %s & %d\\" % (c["code"], esc(c["short"]), " & ".join(row), len(c["lectures"])))
     D(r"\midrule Total & " + " & ".join(str(t) for t in tot) + r" & \\ \bottomrule\end{longtable}}")
-    D(r"A lecture can appear in several modules. Logistics rows and guest talks count toward \emph{All} but not toward any module.")
+    D(r"A lecture can appear in several modules. Guest talks and introductory sessions count toward \emph{All} but not toward any module.")
 
 
 def part_tracks(D):
@@ -727,7 +756,7 @@ def part_modules(D):
                 if a:
                     st = links_only(a["starter"], a["code"])
                     st = (r" \textit{%s:} %s" % (starter_label(a), st)) if st else r" \textit{(spec only)}"
-                    D(r"\item %s --- %s.%s" % (X(h), md2tex(a["build"]).rstrip("."), st))
+                    D(r"\item %s --- %s.%s" % (X(h), md2tex(first_sentence(a["build"])).rstrip("."), st))
                 else:
                     D(r"\item " + X(h))
             D(r"\end{itemize}")
@@ -745,19 +774,19 @@ def part_catalog(D):
     for c in C.COURSES:
         D(r"\chapter{%s: %s}\hypertarget{course-%s}{}" % (esc(c["short"]), esc(c["title"]), c["code"]))
         D(r"{\small\begin{tabularx}{\linewidth}{@{}>{\bfseries}l X@{}}\toprule")
-        for k, v in (("Institution", esc(c["inst"]) if "\\" not in c["inst"] else c["inst"]), ("Term", esc(c["term"])),
-                     ("Instructors", esc(c["people"])), ("Website", r"\href{%s}{%s}" % (url_esc(c["url"]), esc(c["url"]))),
+        inst = esc(c["inst"]) if "\\" not in c["inst"] else c["inst"]
+        for k, v in (("Institution", "%s (%s)" % (inst, esc(c["people"]))), ("Term", esc(c["term"])), ("Website", r"\href{%s}{%s}" % (url_esc(c["url"]), esc(c["url"]))),
                      ("Level", esc(c["level"])), ("Archetype", esc(c["archetype"])),
                      ("Public materials", "Slides: %s; video: %s; code: %s" % (esc(c["slides"]), esc(c["video"]), esc(c["codepub"]))),
                      ("Best for", esc(c["best"]))):
             D(r"%s & %s\\" % (k, v))
         D(r"\bottomrule\end{tabularx}}", "", X(c["overview"]))
         D(r"\section{Lectures}")
-        D(r"{\scriptsize\setlength{\tabcolsep}{2.5pt}\begin{longtable}{P{0.45cm} P{1.2cm} P{2.5cm} P{3.6cm} P{3.6cm} P{3.3cm} P{1.5cm}}",
-          r"\toprule \# & Date & Title & Key topics & Readings & Materials & Tags\\ \midrule\endhead")
+        D(r"{\scriptsize\setlength{\tabcolsep}{2.5pt}\begin{longtable}{P{0.45cm} P{2.9cm} P{4.0cm} P{3.9cm} P{3.5cm} P{1.5cm}}",
+          r"\toprule \# & Title & Key topics & Readings & Materials & Tags\\ \midrule\endhead")
         for L in c["lectures"]:
-            D(r"\hypertarget{%s}{}%s & %s & \textbf{%s} & %s & %s & %s & %s\\ \midrule" % (
-                L["anchor"], esc(L["num"]), md2tex(L["date"]), md2tex(L["title"]), md2tex(dash(L["topics"]), c["code"]),
+            D(r"\hypertarget{%s}{}%s & \textbf{%s} & %s & %s & %s & %s\\ \midrule" % (
+                L["anchor"], esc(L["num"]), md2tex(L["title"]), md2tex(dash(L["topics"]), c["code"]),
                 md2tex(dash(L["readings"]), c["code"]), md2tex(dash(L["materials"]), c["code"]), tag_boxes(L["tags"])))
         D(r"\end{longtable}}")
         if c["assignments"]:
@@ -770,7 +799,7 @@ def part_catalog(D):
                     md2tex(dash(a["starter"]), c["code"]), tag_boxes(a["tags"])))
             D(r"\end{longtable}}")
     D(r"\chapter{Supplementary Resources}\hypertarget{supplements}{}")
-    D(r"These non-course resources (from the bookmarks folder, plus later additions) are referenced throughout the modules.")
+    D(r"These non-course resources are referenced throughout the modules.")
     for s in C.SUPPLEMENTS:
         D(r"\section{%s}\label{%s}" % (esc(s["name"]), s["key"]),
           r"{\small \href{%s}{%s} \quad %s}\par" % (url_esc(s["url"]), esc(s["url"]), tag_boxes(s["tags"])),
@@ -780,15 +809,6 @@ def part_catalog(D):
 # ---------------------------------------------------------------------------
 # Part IV: appendices
 # ---------------------------------------------------------------------------
-PROVENANCE = r"""\begin{itemize}
-\item \textbf{Method.} The 20 links in the Chrome bookmarks folder \emph{CMU-Agentic} were each visited. Static pages were fetched directly. The JavaScript-rendered sites (CMU, Stanford) were read in a live browser. Course repositories were read through GitHub. Four more courses (Stanford CS329A, Berkeley Agentic AI Fall 2025, Berkeley Advanced LLM Agents Spring 2025, Stanford CS329T) and the MIT agent-security lecture were added on the same date from a targeted search for open 2025--2026 courses, with candidates found by a Codex consultant and each one then read directly. Each course was summarised into a Markdown table in \texttt{research/}, and this PDF is generated from those tables by \texttt{guide/build\_guide.py}.
-\item \textbf{Classification.} Tags were assigned from session titles, listed topics and readings. They are a navigation aid, not ground truth, and some sessions could reasonably be tagged differently.
-\item \textbf{CMU.} The lecture table comes from the rendered schedule (October 9, 2026). The assignment due dates (A1 Sep~14, A2 Oct~1, A3 Oct~29) come from the course site; the handouts give none. The site was rechecked on October 16, 2026. Recordings are linked from the schedule page because individual video URLs could not be extracted, and the YouTube playlist ID was not verified.
-\item \textbf{Stanford.} Fall 2026 is current: as of October 16, 2026, slides are posted for weeks 1--3 and the week~4 Tuesday session, and assignments for weeks 1--3. Most Thursday sessions from week 3 on are guest talks. Fall 2025 dates come from a translated copy of the syllabus and may be off by a day.
-\item \textbf{In-progress courses} (CMU, Stanford '26, Northeastern, JHU, Buffalo) will publish more material after this snapshot. Re-run the research step to refresh.
-\item \textbf{Unread items.} Some large slide decks could not be text-extracted (several Mannheim PDFs, a few UVA PPTX files), so their topics are inferred from titles. The UChicago week 6 and 8 notebooks were too large to inspect.
-\item \textbf{Licences.} Only some repositories state a licence (UW CS 839: MIT; TinyAgent: MIT; OpenClaw: MIT). Before redistributing course material in your own repository, check each licence. Linking is always safe.
-\end{itemize}"""
 
 
 def part_appendix(D):
@@ -808,41 +828,6 @@ def part_appendix(D):
     D(r"\item TinyAgent code: \href{https://github.com/SqueezeAILab/TinyAgent}{github.com/SqueezeAILab/TinyAgent}")
     D(r"\end{itemize}}")
 
-    D(r"\chapter{Canonical Reading Checklist}")
-    D(r"The key readings from every module in one checklist. Lecture-level readings are in the catalogue tables.")
-    D(r"\begin{multicols}{2}\small")
-    for m in C.MODULES:
-        if not m["readings"]:
-            continue
-        D(r"\par\medskip\noindent\textbf{\hyperlink{mod-%s}{M%d %s}}\par" % (m["key"], m["num"], m["title"]),
-          r"\begin{itemize}[label=$\square$]")
-        for r in m["readings"]:
-            D(r"\item " + X(r))
-        D(r"\end{itemize}")
-    D(r"\end{multicols}")
-
-    D(r"\chapter{Tag Matrix}")
-    D(r"Raw tag counts per course (a lecture can carry several tags), including logistics (\tg{ORG}).")
-    tags = list(C.TAGS)
-    D(r"{\small\setlength{\tabcolsep}{3.5pt}\begin{longtable}{l" + "c" * len(tags) + "}")
-    D(r"\toprule Course & " + " & ".join(tag_box(t) for t in tags) + r"\\ \midrule")
-    for c in C.COURSES:
-        cells = []
-        for t in tags:
-            n = sum(1 for L in c["lectures"] if t in L["tags"])
-            cells.append(str(n) if n else r"\textcolor{black!25}{0}")
-        D(r"\hyperlink{course-%s}{%s} & %s\\" % (c["code"], esc(c["short"]), " & ".join(cells)))
-    D(r"\bottomrule\end{longtable}}")
-
-    D(r"\chapter{Provenance and Caveats}", PROVENANCE)
-    D(r"\section{Per-course research notes}", r"These are the notes recorded while each course was being researched.")
-    for c in C.COURSES:
-        if c["notes"]:
-            D(r"\subsection{%s}" % esc(c["short"]), r"{\small\begin{itemize}")
-            for n in c["notes"]:
-                D(r"\item " + md2tex(n, c["code"]))
-            D(r"\end{itemize}}")
-
 
 def main():
     global CO
@@ -861,7 +846,7 @@ def main():
 CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Harvard CS 2680 $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Snapshot compiled October 9, 2026 and updated October 11, 12 and 16, 2026, from the \emph{CMU-Agentic} bookmarks folder plus a targeted course search.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Content checked through October 18, 2026.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}""" % ((len(C.COURSES),) + stats()))
     D(r"\hypertarget{toc}{}\tableofcontents")

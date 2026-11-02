@@ -37,10 +37,8 @@ The course page gives the project only as grading weights and a timeline. Phase 
 
 | Name | What you build | Skills | Starter code URL | Tags |
 |---|---|---|---|---|
-| Project Phase 1: Green agent (2 units 45%, 3/4 units 50%) | An evaluator ("green") agent on AgentBeats that wraps a benchmark or game as an agent. It defines tasks, environment and scoring, receives participant endpoints plus a config over A2A, runs the assessment and returns JSON results as artifacts. Deliverables: group formation (due 9/22), proposal (5%, due 10/8), early demo of a 2-minute video plus milestone report (10%, due 10/20), final green agent (30% or 35%, released 11/7, due 12/17) | Benchmark design, environment and scoring design, A2A agent servers, Docker packaging, reproducible evaluation | https://github.com/RDI-Foundation/agentbeats-tutorial | EVAL, MULTI, ARCH |
-| Project Phase 2: White agent (2 units 15%, 3/4 units 20%) | An agent under test ("white"; "purple" in current AgentBeats docs) that competes on green-agent benchmarks. Implementation (10% or 15%) plus a 1-2 page report (5%); released 11/24, due 12/17 | Agent design, tool use, A2A interoperability, performance on evaluator agents | https://github.com/RDI-Foundation/agentbeats-tutorial | ARCH, TOOL, EVAL |
-| Article (1 unit, 40%) | A written article, due 12/7. 1-unit students may instead do Phase 1 of the "Agent Track" (minimal coding, e.g. a simple prompt-engineered agent), also 40% | Technical writing | n/a | ORG |
-| Quizzes (10-20%) | Lecture quizzes (MOOC: completion-graded, usually 5 multiple-choice questions) | Lecture comprehension | n/a | ORG |
+| Project Phase 1: Green agent (2 units 45%, 3/4 units 50%) | An evaluator ("green") agent on AgentBeats that wraps a benchmark or game as an agent. It defines tasks, environment and scoring, receives participant endpoints plus a config over A2A, runs the assessment and returns JSON results as artifacts. | Benchmark design, environment and scoring design, A2A agent servers, Docker packaging, reproducible evaluation | https://github.com/RDI-Foundation/agentbeats-tutorial | EVAL, MULTI, ARCH |
+| Project Phase 2: White agent (2 units 15%, 3/4 units 20%) | An agent under test ("white"; "purple" in current AgentBeats docs) that competes on green-agent benchmarks. | Agent design, tool use, A2A interoperability, performance on evaluator agents | https://github.com/RDI-Foundation/agentbeats-tutorial | ARCH, TOOL, EVAL |
 
 ## Codebases & tools referenced
 
@@ -50,7 +48,6 @@ The course page gives the project only as grading weights and a timeline. Phase 
 - A2A (Agent-to-Agent) protocol: https://a2a-protocol.org ; A2A SDK or Google ADK for building agents
 - LLM providers named in the tutorial: Google Gemini, OpenAI, Anthropic, OpenRouter, Ollama
 - Benchmarks in the readings: SWE-bench Verified, BrowseComp, τ2-Bench
-- AgentX-AgentBeats competition: https://rdi.berkeley.edu/agentx-agentbeats
 
 ## Notes
 

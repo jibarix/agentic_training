@@ -1,4 +1,4 @@
-# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes)
+# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26)
 
 Authoritative; supersedes the lecture table in cmu-11768.md where they disagree.
 Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L9; links on https://www.cmu-agents.com/#/schedule
@@ -20,7 +20,7 @@ Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for
 | 13 | Tue Oct 6 | Safety 1: Agent Safety | Agent Safety | | (refs: OpenClaw incident report, CVE-2025-32711, Cline supply-chain postmortem) | lecture-13-agent-safety.pdf | N | SAFE |
 | 14 | Thu Oct 8 | Frameworks 1: OpenHands | Agent Frameworks | Graham Neubig | OpenHands Software Agent SDK report; SWE-agent; OpenDevin CodeAct 1.0; Don't Sleep on Single-agent Systems; OpenHands-Versa (refs: HumanEval, SWE-bench, CodeR, MetaGPT) | lecture-14-openhands.pdf | N | ARCH, CODE |
 | – | Oct 13/15 | Fall break | | | | | | |
-| 15 | Tue Oct 20 | Frameworks 2: LangGraph | Agent Frameworks | | | – | | ARCH |
+| 15 | Tue Oct 20 | Frameworks 2: Orchestration and Monitoring | Agent Frameworks | | Building effective agents (Anthropic); Thinking in LangGraph; Diagnosing a performance regression on Terminal-Bench with Docent; Hodoscope (refs: LangGraph workflows/persistence/interrupts/testing docs, LangSmith evaluation, OpenAI Agents SDK, AG2, DSPy, OpenHands SDK, Agent Skills spec, Embedding Atlas) | lecture-15-orchestration-and-monitoring.pdf | N | ARCH, DEPLOY |
 | 16 | Thu Oct 22 | Safety 2: Observability and Monitoring | Frameworks & Safety | Eric Wallace | | – | | SAFE, DEPLOY |
 | 17 | Tue Oct 27 | Agents and the Future of Work | Interaction & Projects | Zora Wang | | – | | APP |
 | 18 | Thu Oct 29 | Interaction 1: Multi-Agent Interaction | Interaction & Projects | Saujas Vaduguru | | – | | MULTI |

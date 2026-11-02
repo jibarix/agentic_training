@@ -35,10 +35,6 @@ Slide and video URLs come from the links on https://rdi.berkeley.edu/adv-llm-age
 |---|---|---|---|---|
 | Lab 1: Dataset contribution (Lean) | 2 verifiable coding problems, each with `description.txt`, `signature.json`, `test.json` (at least 5 tests with expected and "unexpected" values) and a `task.lean` holding a `_code` implementation and `_spec` theorems between fixed CODE/SPEC markers; implementations should be non-trivial (about 30+ lines) and the specs should fully constrain behavior | Lean 4 functional programming and tactic proofs (induction, simp, rw, cases), writing formal specs, test design | https://drive.google.com/file/d/1e5Q47rFHzrKS2jHK5WUCfUTSboa-jHtU/view (instructions); https://drive.google.com/file/d/1_GlMZgKbDq56Tsw6kCe-vLU6s2e2IF0q/view (lab1-datapoint.zip, not opened) | CODE, RSN, EVAL |
 | Lab 2: Verified Lean coding agent | `main_workflow` in `src/main.py`: from a task description and Lean template, return `"code"` and `"proof"`; suggested planning / generation / verification agents with Lean-error feedback loops and optional RAG over `documents/` (`src/embedding_db.py`); graded by compiling the code with the proof as `sorry`, then with the proof; `sorry`, trivial theorems and hard-coding get no credit; submit with `make zip`, plus an optional 2-page design PDF | Agent loop design, compiler-in-the-loop verification, retry/feedback, RAG, multi-agent decomposition, Lean proofs | https://drive.google.com/file/d/1_8ASqnVR99BTiKd-I7g8Ov7-UiXsJeHW/view (instructions); https://drive.google.com/file/d/1Yr99_WrQoqoO9DzwwPMmbyfwQaRPihD8/view (lab2-starter-code.zip, not opened) | ARCH, CODE, RSN, MULTI, MEM |
-| Course project (Berkeley, 2+ units) | Team project, applications track (3-4) or research track (2-3, by application): proposal (due 2/24), milestone (due 3/31), poster (5/5), recording and report (5/16); 3/4 units also graded on implementation | Research/product design, implementation, writing, presenting | n/a | ORG, APP |
-| AgentX competition (MOOC Ninja/Legendary tiers) | Entrepreneurship track (pitch deck, demo video, live product) or Research track (7-8 page paper, video, public GitHub repo); build period Mar 31 - May 31, 2025; Demo Day Aug 2, 2025 at the Agentic AI Summit | Building and pitching LLM agent products or research | n/a (https://rdi.berkeley.edu/agentx/) | APP, ORG |
-| Written article | About 500-word public post (lecture summary or AgentX write-up), pass/no pass | Technical writing | n/a | ORG |
-| Quizzes (12) | One completion-graded quiz per lecture, 5 multiple-choice questions each (Google Forms) | Lecture review | n/a | ORG |
 
 ## Codebases & tools referenced
 
@@ -48,7 +44,6 @@ Slide and video URLs come from the links on https://rdi.berkeley.edu/adv-llm-age
 - Lean learning resources named in Lab 1: Functional Programming in Lean, Theorem Proving in Lean 4, the mathlib4 "All Tactics in Lean 4" list, Natural Number Game (NNG4)
 - Problem sources suggested in Lab 1: LiveCodeBench, APPS, MBPP, LeetCode, HackerRank, Codeforces
 - Systems and benchmarks in the readings: LeanDojo, WebArena, VisualWebArena, Mind2Web, OSWorld, AGUVIS, Tulu 3/OLMo, HippoRAG, Big Sleep (Project Zero)
-- Community: Edstem https://edstem.org/us/join/QMmJkA (Berkeley), Discord https://discord.gg/NWVpQ9rBvd (MOOC); Agentic AI Summit https://rdi.berkeley.edu/events/agentic-ai-summit
 
 ## Notes
 

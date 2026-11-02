@@ -50,7 +50,6 @@ The weekly exercises are Jupyter notebooks distributed as zips. The IE686 projec
 | Project topic 7: Personas Reading the News | Persona agents browsing political news; study effects on memory/beliefs | Agent simulation, memory | Personas provided by instructors (not public) | MULTI, MEM, APP |
 | Project topic 8: Wikipedia Article Generation | RAG/agent system to generate Wikipedia articles, evaluated against real articles with rubrics | RAG, LLM-as-judge | WikiGenBench, WikiAutoGen (named, no URLs) | MEM, EVAL, APP |
 | Project topic 9: Skill-Mining from Public Data | RAG system that summarizes developer skills/roles from GitHub profiles | RAG, extraction | GitHub profiles | MEM, APP |
-| Project topic X: Own idea | Student-proposed topic, subject to approval | n/a | n/a | APP |
 
 ## Codebases & tools referenced
 
@@ -61,7 +60,6 @@ The weekly exercises are Jupyter notebooks distributed as zips. The IE686 projec
 - SmartPlay: https://github.com/microsoft/SmartPlay
 - WebArena: https://webarena.dev/ ; WebShop: https://webshop-pnlp.github.io/
 - BrowseComp: https://openai.com/index/browsecomp/ ; Meta CRAG (KDD Cup 2024): https://www.aicrowd.com/challenges/meta-comprehensive-rag-benchmark-kdd-cup-2024
-- Course evaluation PDFs: .../FSS2026/IE_685_Large_Language_Models_and_Agents_Lecture_Evaluation_FSS2026.pdf ; .../FSS2026/IE_686_Large_Language_Models_and_Agents_Project_Evaluation_FSS2026.pdf
 
 ## Notes
 

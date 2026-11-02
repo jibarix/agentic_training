@@ -59,7 +59,7 @@ All labs below are portfolio exercises, one GitHub subdirectory per topic. Start
 | Topic 6: VLM agents | Image-chat LangGraph agent; video-surveillance agent with OpenCV + LLaVA (optional TTS intruder alert) | VLMs, Ollama llava, Gradio | `gradio_quickstart.py` via .../Topic6VLM/vlm.html | WEB, APP |
 | Topic 7: MCP + A2A | MCP client for AI2 Asta tools; A2A agents, registry and trivia tournament over ngrok | MCP, A2A, networking | `a2a_agent_template.py` etc. via .../Topic7MCP/mcp.html | TOOL, MULTI |
 | Topic 8: Text-to-SQL fine-tuning | Fine-tune Llama on text-to-SQL with Tinker and score semantic SQL matches | LoRA/QLoRA, Tinker, eval | `sql_create_context_v4.json`, `sql_matches.py` via .../Topic8FineTuning/finetuning.html | TRAIN, EVAL |
-| Final project (55%) | Team project from a list of 20+ ideas (e.g., distillation, mini coding agent with sub-agents, MemGPT-style memory, debate agents, NL-to-PDDL planner, Lean/SAT assistants, misalignment replication); video, presentation, report | End-to-end agent design and evaluation | n/a | ARCH, EVAL, APP |
+| Final project (55%) | Team project from a list of 20+ ideas (e.g., distillation, mini coding agent with sub-agents, MemGPT-style memory, debate agents, NL-to-PDDL planner, Lean/SAT assistants, misalignment replication) | End-to-end agent design and evaluation | n/a | ARCH, EVAL, APP |
 
 ## Codebases & tools referenced
 

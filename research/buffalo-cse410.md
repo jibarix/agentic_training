@@ -42,11 +42,7 @@ The schedule is weekly and marked tentative. Each week is one Wednesday session.
 | Lab 4: Evaluation Harness (Wk 9-11) | Eval suite for a bounded task: test cases, success criteria, metrics, failure taxonomy, reproducible script | Agent evaluation | n/a | EVAL |
 | Lab 5: Human-in-the-Loop and Safety Boundaries (Wk 11-13) | Add human approval, structured outputs, guardrails or permission boundaries. Analyze where autonomy should be restricted | HITL, guardrails, permissions | n/a | SAFE |
 | Math mini-assignment 1 (Wk 3-5) | Linear algebra for ML: vectors, cosine similarity | Math for retrieval | n/a | FND, MEM |
-| Math mini-assignment 2 (Wk 5-8) | Content not specified | n/a | n/a | FND |
-| Reading/design notes 1-4 (Wk 1-4) | Weekly notes on readings (content not specified) | Reading, design writing | n/a | ORG |
-| Project proposal (Wk 7), Midterm architecture review (Wk 8-10), Project checkpoint (Wk 12), Draft report (before Wk 15) | Team project milestones | Design documentation | n/a | ORG, ARCH |
 | Final Team Project: Useful Bounded Agent | Working agent for a bounded task. Deliverables: problem statement, environment/tool inventory, architecture diagram, repo, eval dataset/script, results and error analysis, security/privacy/ethics risk assessment, demo, final report | End-to-end agent engineering | n/a | ARCH, EVAL, SAFE |
-| Final oral exam (10%) | Oral exam | n/a | n/a | ORG |
 
 ## Codebases & tools referenced
 

@@ -47,9 +47,6 @@ Main papers are listed first, and supplementary papers are marked "supp.".
 | Name | What you build | Skills | Starter code URL | Tags |
 |---|---|---|---|---|
 | Build a Coding Agent (buy-in, individual, 15%) | A CLI coding agent like Claude Code / Cursor CLI / Gemini CLI, using raw LLM API calls with no agent frameworks (LangChain, Strands, CrewAI banned; thin wrappers like litellm allowed). It must parse and execute tool calls, have a polished UI, a README, and one non-trivial program the agent built | Agent loop, function calling, tool execution, CLI UX | None. Spec: https://github.com/barghouthi/ai-agents/blob/main/assignment.md | CODE, TOOL, ARCH |
-| Paper presentation (10%) | 25-minute presentation of assigned paper(s) with literature context and critique | Critical reading | n/a | ORG |
-| Paper reviews (10%) | Written reviews submitted on Canvas | Critical reading | n/a | ORG |
-| Final research project (50%) | Research project on AI agents (pairs encouraged); one-page proposal due Feb 24; write-up and presentation | Research design, agent implementation, evaluation | n/a | ARCH, EVAL |
 
 ## Codebases & tools referenced
 
@@ -58,7 +55,6 @@ Main papers are listed first, and supplementary papers are marked "supp.".
 - litellm (allowed thin wrapper in the assignment); LangChain, Strands, CrewAI (named as disallowed)
 - Example coding-agent CLIs: Claude Code, Cursor CLI, Gemini CLI
 - Benchmarks/environments in the readings: SWE-bench, Terminal-Bench, AgentDojo, WebArena, BaxBench, RedCode, LiveResearchBench
-- Presentation advice: https://www.youtube.com/watch?v=aFT79TmffPk ; https://pages.graphics.cs.wisc.edu/777-S11/2011/04/08/advice-on-presentations/
 
 ## Notes
 
