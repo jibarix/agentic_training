@@ -49,7 +49,7 @@
 \title{\textbf{Screening Tasks for Agentic Automation}\\[4pt]
 \large A companion to the Agentic System Design Process: what to check between Phase~1 and Phase~2}
 \author{J. A. Arroyo}
-\date{Version 0.9.2 --- 14 October 2026}
+\date{Version 0.9.3 --- 2 November 2026}
 
 \begin{document}
 \maketitle
@@ -212,6 +212,7 @@ Say what the next decision requires someone to interpret, then compare it with t
 
 \textbf{B3. Handling the exceptions is worth more than it costs.}
 Estimate how often the non-routine path occurs, what an expert spends on it, what a miss costs, and what the agent adds in running cost and oversight.
+Estimate running cost from tokens measured per run on sample work, the provider's prices and the expected volume, and allow for the variation between runs of the same task; Phase~6 of the design process sets out the check\p{D}.
 Rare cases with large consequences can matter more than frequent minor ones.
 
 \begin{example}{where choosing the next step shows up}
@@ -294,6 +295,9 @@ The appendix of the design process\p{D} works three examples through this worksh
 
 \section{Screening worksheet}\label{sec:worksheet}
 
+\textbf{Comparing candidate tasks.}
+When several tasks compete, start from business problems rather than from the technology, and confirm that each activity happens often enough to justify the investment\p{29, ``AI use case identification''}. Score the candidates on value and effort, rank them\p{28, pp.\,25--28; 29, ``Prioritize AI use cases''}, and re-score periodically, since effort falls as capabilities change\p{28, p.\,28}. Neither source gives validated weights; treat the ranking as a way to choose which candidate to screen first, not as the screen \inferred.
+
 One page per candidate task. Carry forward the Phase~1 success measure and the limits on cost, delay and failure. Answer from work samples and existing records, and mark each answer as observed, estimated or unknown. Three to five samples are a first look, not a count of how often things happen.
 
 \begin{center}
@@ -310,7 +314,7 @@ A2 & Which operations can run under your constraints, and which stay with a pers
 A3 & What feedback is available during a run, and what is the final check? & For each: reference, proxy or judgment; coverage, cost, delay, owner; outcome on known-good and known-bad cases \\
 B1 & Which decisions does the best fixed procedure leave unresolved? & The procedure you wrote, and the decisions it does not cover \\
 B2 & Would an ordinary search or diagnostic routine make the next decision? & What the decision requires someone to interpret; the conventional method it was compared with \\
-B3 & Is handling the exceptions worth more than it costs? & Frequency from broader records where available; expert time, cost of a miss, added running and oversight cost \\
+B3 & Is handling the exceptions worth more than it costs? & Frequency from broader records where available; expert time, cost of a miss, added oversight cost; running cost from measured tokens per run, prices, expected volume and run-to-run variation \\
 B4 & What is the best fixed workflow, and how will it be compared? & Both arms, shared limits, untouched test cases \\
 \bottomrule
 \end{tabularx}
@@ -335,7 +339,7 @@ Reading the result \inferred:
 \item \emph{Not validated.} The screen has not been applied prospectively. Treat a pass as a reason to run the comparison, not as a prediction of its result.
 \end{itemize}
 
-\textbf{Attachment to the design process (v1.9)\p{D}.}
+\textbf{Attachment to the design process (v1.10)\p{D}.}
 Use the worksheet after the Phase~1 gate, as the input to Phase~2; Section~\ref{sec:recap} shows which phase reuses each row.
 Three parts of Phase~2 of the design process come from this document:
 \begin{enumerate}
@@ -349,7 +353,7 @@ Three parts of Phase~2 of the design process come from this document:
 
 I am the sole author. I used AI tools in preparing this document and disclose their role here.
 \begin{itemize}
-\item \emph{Claude} (Anthropic, through Claude Code) searched for and read the papers, and drafted and revised the text, the table and the figure under my direction.
+\item \emph{Claude} (Anthropic, through Claude Code) searched for and read the papers (and, for version~0.9.3, the guides on comparing candidate tasks), and drafted and revised the text, the table and the figure under my direction.
 \item \emph{Codex} (OpenAI) acted as a second reader. It checked the papers, quotations, numbers and citations, and some sentences follow its suggested corrections closely.
 \item The distinction in Section~\ref{sec:scope} started from a conversation I had with \emph{Gemini} (Google). The sources it cited were then checked against the originals.
 \end{itemize}
@@ -438,7 +442,7 @@ Bracketed numbers in the text refer to these entries; page numbers are PDF page 
 \textbf{The other two documents of this set.}
 {\small
 \begin{enumerate}[leftmargin=2.2em]
-\item[{[D]}] J.~A.~Arroyo, \emph{Agentic System Design Process} (v1.9, October 2026). File \texttt{design\_process/design\_process.pdf}.
+\item[{[D]}] J.~A.~Arroyo, \emph{Agentic System Design Process} (v1.10, November 2026). File \texttt{design\_process/design\_process.pdf}.
 \item[{[G]}] J.~A.~Arroyo, \emph{Learning to Build Agentic Systems: An instructional compilation guide built from public university courses} (October 2026). File \texttt{guide/agentic\_guide.pdf}.
 \end{enumerate}
 }
@@ -451,6 +455,14 @@ Bracketed numbers in the text refer to these entries; page numbers are PDF page 
 \item Y.~Lu et al., Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance. ICLR 2025; \href{https://arxiv.org/abs/2410.12361}{arXiv:2410.12361}.
 \item T.~R.~Sumers, S.~Yao, K.~Narasimhan and T.~L.~Griffiths, Cognitive Architectures for Language Agents. \emph{Transactions on Machine Learning Research}, 2024; \href{https://arxiv.org/abs/2309.02427}{arXiv:2309.02427}.
 \item R.~Parasuraman, T.~B.~Sheridan and C.~D.~Wickens, A Model for Types and Levels of Human Interaction with Automation. \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part A} 30(3), 286--297, 2000. \href{https://doi.org/10.1109/3468.844354}{doi:10.1109/3468.844354}.
+\end{enumerate}
+}
+
+\textbf{Background for comparing candidate tasks (Section~\ref{sec:worksheet}).} Checked on 2~November 2026.
+{\small
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.2em,start=28]
+\item OpenAI, Identifying and scaling AI use cases. \href{https://cdn.openai.com/business-guides-and-resources/identifying-and-scaling-ai-use-cases.pdf}{cdn.openai.com (PDF)}.
+\item Microsoft Learn, Cloud Adoption Framework, Plan for AI adoption. \url{https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/plan}
 \end{enumerate}
 }
 

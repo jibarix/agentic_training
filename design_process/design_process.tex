@@ -58,7 +58,7 @@
 \title{\textbf{Agentic System Design Process}\\[4pt]
 \large Nine phases from problem to production, assembled from the course materials and practitioner guides}
 \author{J. A. Arroyo}
-\date{Version 1.9 --- 14 October 2026 (appendix of worked examples)}
+\date{Version 1.10 --- 2 November 2026 (practices from provider docs and papers)}
 
 \begin{document}
 \maketitle
@@ -66,6 +66,7 @@
 \begin{abstract}
 \noindent I did not find a complete lifecycle process in the public materials reviewed from the fifteen courses indexed in the guide \cite{guide}.
 Individual courses cover some phases explicitly, through project templates, rubrics and slides, and the practitioner guides from Anthropic, OpenAI and Google cover most of the rest.
+Version~1.10 adds practices from official provider documentation and recent papers, read in full on 2~November 2026.
 This document combines those sourced practices with my synthesis.
 \textbf{The phase order, the gates and the resolutions between sources are inferred recommendations; the citations identify support for individual practices.}
 Places where the sources differ are stated, not hidden.
@@ -174,6 +175,7 @@ State what problem is being solved, for whom, and how you will know it is solved
 \item What data or inputs are available, and what constraints apply (cost, latency, privacy, regulation, deployment environment)?
 \item What observable result counts as success?
 \item Which failures are unacceptable (wrong irreversible action, data leak, confident wrong answer)? These seed the safety work in Phases 3, 5 and 8.
+\item For each class of unacceptable failure, what does it trigger: a block on release, a referral to a person, or a rollback? Who may pause or switch the system off? NIST's AI RMF playbook asks that responsibility to supersede, disengage or deactivate a system be assigned, with thresholds for doing so \cite[MANAGE~2.3--2.4]{nistmanage}. OpenAI rates each tool low, medium or high risk and uses the rating to pause for checks or escalate to a person \cite[p.~26]{openai}. Phases 8 and 9 apply this map \inferred.
 \end{itemize}
 
 \textbf{Evidence.}
@@ -183,7 +185,7 @@ Buffalo's final project begins with a problem statement and an environment and t
 OpenAI and Google both start from the use case and its business problem \cite[pp.~5--6]{openai}\cite[pp.~19--20]{gintro}.
 
 \begin{gate}
-A one-page brief exists that names the user, the task, the constraints, the success measure and the unacceptable failures.
+A one-page brief exists that names the user, the task, the constraints, the success measure, and the unacceptable failures with what each one triggers.
 \end{gate}
 
 % ---------------------------------------------------------------------------
@@ -327,6 +329,10 @@ Split the work into tasks and subtasks, and decide for each whether code, the mo
 
 \textbf{Single or multiple agents.} OpenAI recommends maximising a single agent first and considering a split when complex instructions or overlapping tools impair performance \cite[p.~16]{openai}. Anthropic describes additional patterns for parallel work and dynamic delegation \cite[``Parallelization'', ``Orchestrator-workers'']{bea}. Berkeley's Lab~2 recommends planning, generation and verification agents for its Lean task \cite{brkadv}; treat that as a design for that task, not a default.
 
+\textbf{Delegating to another agent.} Write a brief for each delegated task: objective, inputs, output format, tools and sources, bounds, how the result will be checked, and whom it reports to. Anthropic found that vague briefs led subagents to duplicate work and leave gaps \cite[``Prompt engineering and evaluations for research agents'']{anthmulti}. Grant only the permissions the task needs, within the delegator's own. DeepMind proposes splitting work whose result cannot be checked until it can, choosing the response to a failure by how reversible and how consequential the task is, and attenuating privileges at each hand-off; this is a proposed framework, not a tested method \cite[\S4.1, p.~9; \S4.4, p.~13; \S4.7, p.~18]{tomasev}. A verification agent needs explicit completion criteria or it takes shortcuts \cite[``The verification subagent pattern'']{claudemulti}, and MAST found that many verifiers in the systems it studied made only superficial checks \cite[\S4, pp.~7--8]{mast}; check both that the result is correct and that it meets the objective \inferred. Treat a subagent's report as data: instructions or approval claims inside it carry no authority from the user \cite[``Subagent output scanning'']{ccsubagents}.
+
+\textbf{Human control at each step.} Record for each step how much the system does alone and what the person sees and can change. PAIR advises automating tasks that are tedious, repetitive or dangerous, and augmenting where the stakes are high or personal responsibility matters \cite[``When to automate'', ``When to augment'']{pairneeds}. Escalate when retry or action limits are exceeded and on high-risk actions \cite[p.~31]{openai}. Show a confidence display only if it changes what the user does, and test the form of display early \cite[\S4 ``Manage influence on user decisions'']{pairexplain}. State what each kind of user feedback means and how the system responds to it \cite[``Collect explicit feedback'', ``Review implicit feedback'']{pairfeedback}. Where the model decides when to ask the user, evaluate that decision too: on HiL-Bench, models that did well with full information recovered only a fraction of it when they had to judge when to ask (best 38\% on SQL and 12\% on software tasks, against 86--91\% and 64--88\% with full information) \cite[\S4.2, Table~1]{hilbench}.
+
 \begin{gate}
 A task map lists every subtask with its owner (code, model, human), the stopping conditions, and the approval points.
 \end{gate}
@@ -345,6 +351,9 @@ Decide how success will be measured before building, so the prototype is judged 
 \item \textbf{Reliability, not only success rate.} Run each task several times to measure consistency; test robustness by injecting tool faults, changing tool-interface formats and paraphrasing prompts; and, if the agent reports confidence, measure its calibration. Rabanser et al.\ define such metrics in four groups (consistency, robustness, predictability, safety) and used five runs per task, a fault probability of 0.2 and five paraphrases \cite[\S3, Table~2; \S4.1]{reliab}. Five runs is their experimental setting, not a prescribed minimum; choose the count to balance estimation precision against cost \inferred.
 \item \textbf{The grader.} Prefer code checks, then model graders, with humans to calibrate \cite{anthevals}. An LLM judge is not always needed: verifiable tasks can be checked objectively \cite[pp.~17, 71]{brkeval}.
 \item \textbf{Development and held-out cases.} Use development cases for iteration and model selection, and keep held-out cases to check generalisation before release. Validate graders against known successes and failures, and reset environment and memory state between independent trials \cite[``Collaborating with agents'']{anthtools}\cite[steps~2, 4, 5]{anthevals}.
+\item \textbf{Consistent human labels.} A task is well specified when two domain experts would independently reach the same verdict \cite[step~2]{anthevals}. Give labellers examples for each score level and refine the rubric over several review rounds \cite[``Human evals'']{oaievalbp}; include cases that even humans would find hard to agree on \cite[``Example edge cases'']{claudetests}. When several people label, measure their agreement and record why each disagreement was settled \inferred. Agreement shows consistency, not validity: labellers can share the same error \cite[p.~27]{medjudge}.
+\item \textbf{Tone, where it matters.} Write criteria and examples for it and validate its grader against human judgments \cite[``Grade your evaluations'']{claudetests}. Anthropic's example rubric checks whether the agent showed empathy \cite[``Evaluating conversational agents'']{anthevals}.
+\item \textbf{Simulated users} for multi-turn tasks: give each simulator a persona and a conversation plan suited to the task, and a turn limit \cite[``User simulation'', ``User personas'']{adkusersim}. Check how faithful the simulator is and how much results move with the simulator chosen. Agent success varied by nearly 9 points across four simulator models in one study \cite[\S4.1, Table~1]{seshadri}; in another, simulators were more cooperative and uniform than 451 human participants and inflated success \cite[\S5]{zhou}. Confirm claims about real users with human data \inferred.
 \item \textbf{The baseline}: the simpler rung from Phase~2, run on the same set.
 \item \textbf{The release bar}: the threshold, on these metrics, that Phase~8 must confirm. For reliability, consider pass$^k$ (success on all $k$ attempts) rather than pass@$k$ \cite[p.~30]{brkdeploy}.
 \end{itemize}
@@ -377,6 +386,7 @@ Specify everything the model can touch and see, so that its actions are constrai
 \item For a recurring agent, track progress per source with a stored bookmark rather than a fixed time window. If a source cannot be read, keep its bookmark and say so in the output; never report it as ``nothing new'' \cite[Sources]{anthauto}.
 \item Record a side effect as done only after the destination confirms it, and check for an existing result before retrying to reduce duplicate effects \cite[Destination]{anthauto}.
 \item Keep the rules the agent must follow in a store it can read but not edit; have it re-read them every run and stop if it cannot \cite[Memory]{anthauto}.
+\item If agents share memory, map each store: owner, scope, who may read and write, provenance, how concurrent writes are handled, and retention and deletion \inferred. Claude Managed Agents memory stores are read-write by default; Anthropic warns that a successful prompt injection could write malicious content into one and advises read-only access for shared reference material \cite[access section]{mamemory}. ADK scopes state by prefix: session, user, app and temporary \cite[``Organizing State with Prefixes'']{adkstate}. Margalit et al.\ name the failure modes to design against: unauthorised leakage, stale propagation, persistent contradictions and lost provenance \cite[\S4, p.~4]{margalit}.
 \item Treat curated context as an owned asset. Notion separates data context (metrics, sources, required filters), business context and routing guidance, and assigns owners and review to keep them current \cite[``Connecting data and business context'', ``Keeping data and business context current'']{notion}.
 \end{itemize}
 
@@ -398,6 +408,13 @@ Get one path working end to end with full tracing, then choose models by measuri
 \item Build the simplest version of the chosen rung. Anthropic suggests starting with direct API calls rather than a framework, so the mechanics stay visible \cite{bea}; Google calls a production-grade framework essential \cite[p.~23]{gintro}. Resolution \inferred: specify the capabilities you need and choose a library only if it supplies them.
 \item Test each tool on its own before wiring it in, and write the system prompt last \cite{neudada}.
 \item Trace every run: prompts, tool calls, results, cost and latency. Phase~7 depends on it.
+\item Before building infrastructure, check the managed options. Microsoft's adoption framework favours the option with the least operational responsibility that meets the requirements \cite[\S3]{mscafstrat}. Providers now offer managed agent runtimes alongside SDKs and raw APIs, each with conditions: Claude Managed Agents is in beta and not eligible for zero data retention or HIPAA \cite[comparison table, ``Data handling'']{maoverview}; OpenAI compares its runtime options by integration effort \cite[``Compare agent runtime options'']{oaiagents}; Google recommends a managed runtime for Python agents that need minimal operations \cite[``Choose an agent runtime'']{gcloudarch}. These conditions change, so record the date checked and the provider's retirement schedule for the chosen models \cite[intro]{claudedeprec}.
+\end{itemize}
+
+\textbf{Cost and capacity at expected volume}
+\begin{itemize}
+\item Estimate cost from measured tokens per run, prices and expected traffic \cite[``Managing costs'']{oaiprod}, including the variation between runs of the same task: on agentic coding tasks the dearest run cost about twice the cheapest, on average per model \cite[Fig.~2]{bai}. Compare scenarios against the value of the work, and set notification thresholds and spend limits \cite[``Managing billing limits'']{oaiprod}. In Anthropic's data, agents used about 4 times the tokens of chat and multi-agent systems about 15 times \cite[``Benefits of a multi-agent system'']{anthmulti}.
+\item Check peak requests and input and output tokens against the provider's rate limits, counting cached input as that provider does \cite[``Cache-aware ITPM'']{claudelimits}. Treat a Retry-After value as a minimum, and do not retry quota or billing errors \cite[``Error mitigation'', ``Retrying with exponential backoff'']{oailimits}. On shared capacity, a 429 can mean temporary contention \cite[``Resource Exhausted (429) errors'']{vertexdsq}; if the requirement needs assured capacity, assess the provider's reserved options against it \inferred.
 \end{itemize}
 
 \textbf{Select models}
@@ -409,7 +426,7 @@ Get one path working end to end with full tracing, then choose models by measuri
 \end{itemize}
 
 \begin{gate}
-One traced path runs end to end, and a model table (quality, cost, latency on the development set) supports the chosen model or models.
+One traced path runs end to end, a model table (quality, cost, latency on the development set) supports the chosen model or models, and cost and rate limits have been checked at expected volume.
 \end{gate}
 
 % ---------------------------------------------------------------------------
@@ -470,6 +487,9 @@ Find out why the system fails, fix the causes, and confirm that the added comple
 \item CS329T's Agent GPA checks goal fulfilment, plan quality, plan adherence, tool selection, tool calling, execution efficiency and logical consistency \cite[slide~21]{cs329tl3}.
 \item Google: evaluate end-to-end outcomes first, then inspect trajectories to diagnose \cite[pp.~17--19]{gquality}. Chip Huyen catalogues planning and tool failure modes and recommends testing tools independently \cite{huyen}.
 \item Separate capability evals (can it do this?) from regression evals (did a change break it?) \cite{anthevals}.
+\item Treat an LLM judge as a versioned component: record its model and version, rubric and prompt, and re-check it against held-out human labels after any change \inferred. Control its known biases: position and verbosity \cite[``LLM-as-a-judge'']{oaievalbp}, and labels saying who wrote an answer, which shifted scores in both directions in one study, so hide authorship \cite[\S4.2]{chae}. A separate judge per dimension can help \cite[step~5]{anthevals}. A panel of judges from different model families agreed with humans better than one larger judge in one study \cite[\S4.2, Table~2]{verga}; test a panel against your single judge before adopting it. Calderon et al.\ give a statistical test for when judge labels can replace human ones \cite[\S3]{calderon}.
+\item Break results down by segments chosen from the application's workflows, user groups and observed failures, and report each with its uncertainty \cite[Recommendations~1--2]{anthstats}. An average can hide a weak segment: simulated-user success differed by dialect in one study \cite[\S4.3]{seshadri}.
+\item Choose the fix from the diagnosis. OpenAI separates missing context (the model lacks the knowledge: improve retrieval or the context) from inconsistent behaviour (format, tone or reasoning: improve the prompt and examples, or fine-tune), notes that a problem can be both, and starts from prompting with an evaluation set \cite[``LLM optimization context'', ``Understanding the tools'']{oaiaccuracy}. Try the simplest adequate intervention first and re-evaluate \inferred.
 \item A run without errors does not establish that its answer is correct. Notion found that a query could run cleanly and still answer the wrong question, with the meaning, routing, measurement or interpretation wrong, and that more retrieval or retries did not automatically help \cite[``Why working SQL isn't enough'', ``Seeing what the agent actually did'']{notion}.
 \end{itemize}
 
@@ -491,6 +511,7 @@ Show that the boundaries from Phases 3 and 5 hold under attack and misuse, and t
 \begin{itemize}
 \item Run adversarial and misuse cases: prompt injection through tool outputs and retrieved content, attempts to exceed permissions, and inputs that should be refused. Buffalo's Lab~5 asks where autonomy helps and where it should be restricted \cite{buffalo}; CMU covers sandboxing and approval points \cite{cmu13}.
 \item Layer guardrails: LLM-based checks, rules and moderation, added as edge cases appear; route high-risk actions and repeated failures to a human \cite[pp.~24--31]{openai}. Guardrails can run as separate parallel calls \cite{bea}.
+\item Test for leaks of sensitive data with controlled fixtures: planted records with stated authorised recipients and flows. Inspect internal channels as well as outputs. In AgentLeak's two-agent systems, messages between agents leaked more often than final outputs (68.8\% against 27.2\%, adversarial scenarios included), and 41.7\% of all traces leaked internally while the final output stayed clean \cite[Abstract; Table~11]{agentleak}. Include memory and cross-user cases where they apply \cite[access section]{mamemory}. Restrictions in the system prompt can be bypassed by injection \cite[intro]{owasp}, and an output filter for personal data is one layer, not the test \cite[p.~26]{openai}.
 \item Guardrails can miss attacks; Mannheim's safety deck covers their limits \cite[pp.~17--23]{mannheim8}. Measure their effectiveness against the system's threat model, rely on enforced permission boundaries, and explicitly assess residual risk \inferred.
 \item Production concerns listed by Sierra: guardrails and enforced determinism, regression testing, user simulation, staging and release, model migration and failover \cite[p.~10]{brkdeploy}.
 \item Treat safety results as hard constraints: report them separately instead of averaging them into an overall score \cite[\S3.5]{reliab}. Where the agent's output is the final action, with no human review, set a higher reliability bar than for an assistant \cite[\S5, Recommendation~4]{reliab}.
@@ -510,9 +531,14 @@ Release in stages with a way back, watch the system in use, and turn what you le
 \end{goal}
 
 \begin{itemize}
-\item Version prompts, tools, models and the test set together. Roll out in stages with a rollback path \cite[pp.~15--16, 24]{gprod}.
+\item Version prompts, tools, models and the test set together. Roll out in stages with a rollback path \cite[pp.~15--16, 24]{gprod}. Decide beforehand, from the Phase~1 map, what a failed canary triggers: pause, roll back, or refer to a person. Google's SRE guidance compares the canary with a control on a small set of metrics, and for non-interactive systems runs it for at least one complete unit of work \cite[ch.~16]{srecanary}; for an agent, that unit could be a session or a job \inferred.
 \item Monitor quality, cost, latency and safety events in production. Monitoring complements evals; it does not replace them \cite{anthevals}.
-\item Triage production failures and add representative regression cases to the Phase~4 set \cite[p.~24]{gprod}.
+\item For agents that run unattended, watch runtime events and also list sessions on a schedule, because an event delivery can be missed; an idle session is not necessarily finished, so read its stop reason before routing it \cite[``Monitor sessions and review retention'']{mamonitor}. Decide beforehand what happens at the spend cap \cite[``session.budget\_reached'']{macookbook}, how a failed run resumes \cite[``Production reliability'']{anthmulti}, and which model and agent version each run uses \inferred.
+\item Triage production failures and add representative regression cases to the Phase~4 set \cite[p.~24]{gprod}. When choosing traces to review, mix random traces into every batch with traces targeted at the question at hand \cite[``How can I efficiently sample production traces'']{hamel}; user-reported failures belong in the set too \cite[step~1]{anthevals}.
+\item Report on a schedule: what changed, likely causes and next actions, with comparable eval results and their uncertainty, operating metrics and links to example transcripts \inferred. If the test set changed, say so before comparing scores \inferred. Report standard errors, and paired differences when two versions ran on the same cases \cite[Recommendations~1, 4]{anthstats}.
+\item Keep a register of what will need maintenance: prompt versions, pinned model identifiers with their retirement dates, deprecated parameters, and the owner of the evaluation suite; re-run the suite on any migration \inferred. Anthropic gives at least 60 days' notice before retiring a model and advises testing replacements well before the date \cite[intro]{claudedeprec}. An eval suite is a living artifact that needs clear ownership \cite[step~8]{anthevals}. In one study of open-source projects, prompt debt was the most common LLM-specific kind of self-admitted technical debt \cite[RQ2, Table~3]{promptdebt}.
+\item Turn recurring corrections into rules deliberately. A repeated mistake or a review finding makes a candidate \cite[``When to add to CLAUDE.md'']{ccmemory}. Decide its scope, and whether it must be enforced: ``If something has to happen every time, make it a hook, a deny rule, or a managed setting'' \cite[``Enforce the rules that can't have exceptions'']{ccbest}. Test it against a baseline without the rule \cite[``Build evaluations first'']{skillsbp}, and review the rule set for stale or conflicting entries \cite[``Audit your instruction files'']{ccmemory}. Rules have a cost: in one study, repository context files generally did not raise coding-agent success and raised inference cost by over 20\% \cite[Abstract; \S4.2]{gloaguen}.
+\item If rules and skills must work in more than one coding harness, keep skill frontmatter to the shared standard \cite[``Frontmatter'']{skillspec}, since extra fields can cause hard errors in some tools \cite[``Using skill frontmatter outside Claude Code'']{ccskills}, and record how each harness finds its instructions. Codex concatenates AGENTS.md files from the repository root down, up to a configurable size limit \cite[``How Codex discovers guidance'']{codexagents}; Claude Code reads AGENTS.md only in some configurations \cite[``When Claude Code reads AGENTS.md'']{ccmemory}.
 \item Re-run the full evaluation on any model change \cite[p.~18]{gprod}. Sierra's development cycle is build, test, optimise, repeated \cite[p.~17]{brkdeploy}.
 \item Re-evaluate at regular intervals, not only after changes. Rabanser et al.\ call for periodic evaluation on evolving benchmarks, so that reliability that degrades silently is caught \cite[\S5 and App.~A, Recommendation~1]{reliab}. In deployment, apply this by regularly re-evaluating against cases and environments updated to reflect current conditions \inferred.
 \item Start small and validate with real users \cite[conclusion]{openai}. For a scheduled agent, trigger a run by hand before relying on the schedule \cite[Schedule]{anthauto}.
@@ -536,8 +562,10 @@ Question & Positions & How this process treats it \\
 Model order & Strongest first, then downsize \cite{openai}; cheap first, then escalate \cite{mannheim,cs329a} & Choose by budget; always compare on the development set (Phase~6) \\
 Evals or prototype first & Evals early \cite{anthevals}; evaluator-first project structure \cite[Grading, Project Timeline]{brkcourse}; prototype then evaluate \cite{anthtools} & Small set before building, grown from failures (Phase~4) \\
 One agent or several & Single agent first \cite[p.~16]{openai}; three agents for a Lean task \cite{brkadv} & Start simple; add agents when measured benefits justify the coordination cost \inferred{} (Phase~3) \\
-Frameworks & Direct API calls first \cite{bea}; framework essential \cite{gintro} & Specify capabilities, not a library (Phase~6) \\
+Frameworks and platforms & Direct API calls first \cite{bea}; framework essential \cite{gintro}; the option with the least operational responsibility that meets the requirements \cite[\S3]{mscafstrat}; a managed agent runtime \cite[``Choose an agent runtime'']{gcloudarch} & Specify capabilities, not a library; compare the managed options against them (Phase~6) \\
 LLM judges & Common in course rubrics \cite{cs329t}; objective checks for verifiable tasks \cite{brkeval} & Code checks first; validate judges against humans (Phases 4, 7) \\
+Rules: wording or enforcement & Write recurring corrections into instruction files \cite[``When to add to CLAUDE.md'']{ccmemory}; enforce rules that can't have exceptions with a hook, deny rule or managed setting \cite[``Enforce the rules that can't have exceptions'']{ccbest}; context files often don't help \cite[Abstract]{gloaguen} & Write the rule, test it against no rule, and enforce what must always happen (Phase~9) \\
+Failure response & A failed canary can be paused, rolled back or referred to a person \cite[ch.~16]{srecanary}; escalate per action on retry limits and high-risk actions \cite[p.~31]{openai} & The Phase~1 map decides the response for each class of failure (Phases 1, 9) \\
 Research framing & Mechanism $\rightarrow$ manipulation $\rightarrow$ measured behaviour \cite{neuresearch} & Research novelty is not a product requirement; mechanism-based experiments can still test design choices \inferred \\
 \bottomrule
 \end{tabularx}
@@ -549,6 +577,7 @@ Research framing & Mechanism $\rightarrow$ manipulation $\rightarrow$ measured b
 \begin{itemize}
 \item The evidence is the public material checked on 9 October 2026. Unpublished rubrics (CMU's project, Buffalo, Stanford CS146S's final project), JHU lecture PDFs over 10\,MB, Google Slides and PPTX decks, and lecture videos were not read. ``Not found'' means not found in that material.
 \item The Anthropic, OpenAI and Google guides were read through extracted text and summaries; page and section numbers come from those reads. The reliability paper \cite{reliab} was read in its arXiv HTML version (v3). The two practitioner posts \cite{anthauto,notion} each describe one system; Notion's outcome figures are self-reported.
+\item The version~1.10 additions come from official provider documentation and papers read in full on 2~November 2026. Each claim was checked against the full text by a reader and then by a second reviewer. Study figures are cited with their settings and do not generalise beyond them. Provider pages change; the bibliography records when each was checked.
 \item The phase order, the Phase~2 ladder, the gates and the resolutions of disagreements are my synthesis.
 \end{itemize}
 
@@ -559,6 +588,7 @@ I am the sole author. I used AI tools in preparing this document and disclose th
 \emph{Claude} (Anthropic, through Claude Code) read the course materials and practitioner guides, and drafted and revised the text and diagrams under my direction.
 \emph{Codex} (OpenAI) made an independent pass over the same sources and reviewed the citations; its corrections were applied.
 Claude also drafted the appendix examples and their diagrams under my direction, and Codex reviewed them against the phases and the screening worksheet.
+For version~1.10, Claude read the provider documentation and papers and drafted the additions, and Codex independently re-checked the evidence for each claim; claims the evidence did not support as written were narrowed or dropped.
 Words taken from a source are in quotation marks with the source. Practices taken from a source are cited to it, with a page or section reference where one is available. Statements marked \inferred{} are my own synthesis.
 I set the questions, decided what to include and am responsible for the content.
 
@@ -799,7 +829,7 @@ Phase~9 & Watch for the loop chasing views at the expense of leads, and re-evalu
 \bibitem{mannheim4} Universit\"at Mannheim IE685, deck~4 (LLM agents and tool use). \url{https://www.uni-mannheim.de/media/Einrichtungen/dws/Files_Teaching/Large_Language_Models_and_Agents/FSS2026/IE685_LA_04_LLMAgentsAndToolUse.pdf}
 \bibitem{mannheim8} Universit\"at Mannheim IE685, deck~8 (security and safety). \url{https://www.uni-mannheim.de/media/Einrichtungen/dws/Files_Teaching/Large_Language_Models_and_Agents/FSS2026/IE685_LA_08_SecurityAndSafety.pdf}
 \bibitem{guide} J.~A.~Arroyo, \emph{Learning to Build Agentic Systems: An instructional compilation guide built from public university courses} (October 2026). Document~1 of this set; indexes the courses cited here. File \texttt{guide/agentic\_guide.pdf}.
-\bibitem{screen} J.~A.~Arroyo, \emph{Screening Tasks for Agentic Automation} (v0.9.2, October 2026). Document~3 of this set. File \texttt{task\_screening/task\_screening.pdf}.
+\bibitem{screen} J.~A.~Arroyo, \emph{Screening Tasks for Agentic Automation} (v0.9.3, November 2026). Document~3 of this set. File \texttt{task\_screening/task\_screening.pdf}.
 \bibitem{mannheim} Universit\"at Mannheim IE686, ``Introduction to Student Projects'' (IE686\_LA\_07). \url{https://www.uni-mannheim.de/media/Einrichtungen/dws/Files_Teaching/Large_Language_Models_and_Agents/FSS2026/IE686_LA_07_IntroStudentProjects.pdf}
 \bibitem{colorado} CU Boulder CSCI 7000-005, project proposal. \url{https://danny.cs.colorado.edu/courses/csci7000-005_Sp26/projectProposal.html}
 \bibitem{jhu} JHU EN.601.727, Assignment~3 README (\S\S1.2--3.3). \url{https://github.com/machine-programming/assignment-3}
@@ -811,6 +841,55 @@ Phase~9 & Watch for the loop chasing views at the expense of leads, and re-evalu
 \bibitem{brkdeploy} UC Berkeley Agentic AI (Fall 2025), ``Practical Lessons from Deploying Real-World AI Agents'' (Sierra). \url{https://rdi.berkeley.edu/agentic-ai/slides/Practical_Lessons_AI_Agents.pdf}
 \bibitem{brkadv} UC Berkeley Advanced LLM Agents (Spring 2025), Lab~2 instructions, ``Recommended Implementation''. \url{https://drive.google.com/file/d/1_8ASqnVR99BTiKd-I7g8Ov7-UiXsJeHW/view}
 \bibitem{brkcourse} UC Berkeley Agentic AI (Fall 2025), course page, ``Grading'' and ``Project Timeline''. \url{https://rdi.berkeley.edu/agentic-ai/f25}
+% v1.10 additions: provider docs and papers read in full on 2 November 2026. Provider pages change; the date is when they were checked.
+\bibitem{anthstats} E.~Miller (Anthropic), ``A statistical approach to model evaluations'' (Nov 2024). \url{https://www.anthropic.com/research/statistical-approach-to-model-evals}
+\bibitem{oaievalbp} OpenAI, ``Evaluation best practices'', API docs (checked 2~Nov 2026). \url{https://developers.openai.com/api/docs/guides/evaluation-best-practices}
+\bibitem{claudetests} Anthropic, ``Define success criteria and build evaluations'', Claude Platform docs (checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/test-and-evaluate/develop-tests}
+\bibitem{medjudge} C.~Li et al., ``A Scoping Review of LLM-as-a-Judge in Healthcare and the MedJUDGE Framework'', arXiv:2604.25933. \url{https://arxiv.org/abs/2604.25933}
+\bibitem{adkusersim} Google, Agent Development Kit, ``User Simulation'' (checked 2~Nov 2026). \url{https://adk.dev/evaluate/user-sim/}
+\bibitem{seshadri} P.~Seshadri et al., ``Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations'', arXiv:2601.17087. \url{https://arxiv.org/abs/2601.17087}
+\bibitem{zhou} X.~Zhou et al., ``Mind the Sim2Real Gap in User Simulation for Agentic Tasks'', COLM 2026; arXiv:2603.11245. \url{https://arxiv.org/abs/2603.11245}
+\bibitem{chae} S.~Chae et al., ``Self- and Other-Labels Induce Bidirectional Bias in LLM Judges'', arXiv:2608.18091. \url{https://arxiv.org/abs/2608.18091}
+\bibitem{verga} P.~Verga et al., ``Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models'', arXiv:2404.18796. \url{https://arxiv.org/abs/2404.18796}
+\bibitem{calderon} N.~Calderon, R.~Reichart, R.~Dror, ``The Alternative Annotator Test for LLM-as-a-Judge'', arXiv:2501.10970. \url{https://arxiv.org/abs/2501.10970}
+\bibitem{oaiaccuracy} OpenAI, ``Optimizing LLM Accuracy'', API docs (checked 2~Nov 2026). \url{https://developers.openai.com/api/docs/guides/optimizing-llm-accuracy}
+\bibitem{nistmanage} NIST, AI RMF Playbook, ``Manage'' (checked 2~Nov 2026). \url{https://airc.nist.gov/airmf-resources/playbook/manage/}
+\bibitem{srecanary} Google, \emph{The Site Reliability Workbook}, ch.~16 ``Canarying Releases'' (2018). \url{https://sre.google/workbook/canarying-releases/}
+\bibitem{mamonitor} Anthropic, ``Review and monitor agent sessions'', Claude Managed Agents docs (beta; checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring}
+\bibitem{macookbook} Anthropic, ``Managed Agents tutorial: production setup'', Claude Cookbook (8~Apr 2026). \url{https://platform.claude.com/cookbook/managed-agents-cma-operate-in-production}
+\bibitem{anthmulti} Anthropic, ``How we built our multi-agent research system'' (13~Jun 2025). \url{https://www.anthropic.com/research/multi-agent-research-system}
+\bibitem{claudemulti} Anthropic, ``When to use multi-agent systems (and when not to)'' (23~Jan 2026). \url{https://claude.com/resources/articles/building-multi-agent-systems-when-and-how-to-use-them}
+\bibitem{tomasev} N.~Toma\v{s}ev, M.~Franklin, S.~Osindero (Google DeepMind), ``Intelligent AI Delegation'', arXiv:2602.11865. \url{https://arxiv.org/abs/2602.11865}
+\bibitem{mast} M.~Cemri et al., ``Why Do Multi-Agent LLM Systems Fail?'', NeurIPS 2025 Datasets and Benchmarks; arXiv:2503.13657v3. \url{https://arxiv.org/abs/2503.13657v3}
+\bibitem{ccsubagents} Anthropic, ``Create custom subagents'', Claude Code docs (checked 2~Nov 2026). \url{https://code.claude.com/docs/en/sub-agents}
+\bibitem{pairneeds} Google PAIR, \emph{People + AI Guidebook}, ``User Needs + Defining Success''. \url{https://pair.withgoogle.com/chapter/user-needs/}
+\bibitem{pairexplain} Google PAIR, \emph{People + AI Guidebook}, ``Explainability + Trust''. \url{https://pair.withgoogle.com/chapter/explainability-trust/}
+\bibitem{pairfeedback} Google PAIR, \emph{People + AI Guidebook}, ``Feedback + Control''. \url{https://pair.withgoogle.com/chapter/feedback-controls/}
+\bibitem{hilbench} T.~Trinh et al. (Scale AI), ``HiL-Bench: Do Agents Know When to Ask for Help?'', arXiv:2604.09408v4. \url{https://arxiv.org/abs/2604.09408v4}
+\bibitem{mamemory} Anthropic, ``Using agent memory'', Claude Managed Agents docs (beta; checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/managed-agents/memory}
+\bibitem{adkstate} Google, Agent Development Kit, ``State'' (checked 2~Nov 2026). \url{https://adk.dev/sessions/state/}
+\bibitem{margalit} Y.~Margalit et al., ``Governed Shared Memory for Multi-Agent LLM Systems'', arXiv:2606.24535. \url{https://arxiv.org/abs/2606.24535}
+\bibitem{mscafstrat} Microsoft Learn, Cloud Adoption Framework, ``AI adoption'' strategy (updated 15~Oct 2026). \url{https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/strategy}
+\bibitem{maoverview} Anthropic, ``Claude Managed Agents overview'' (beta; checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/managed-agents/overview}
+\bibitem{oaiagents} OpenAI, ``Agents'', API docs (checked 2~Nov 2026). \url{https://developers.openai.com/api/docs/guides/agents}
+\bibitem{gcloudarch} Google Cloud Architecture Center, ``Choose your agentic AI architecture components'' (reviewed 21~Apr 2026). \url{https://docs.cloud.google.com/architecture/choose-agentic-ai-architecture-components}
+\bibitem{claudedeprec} Anthropic, ``Model deprecations'', Claude Platform docs (checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/about-claude/model-deprecations}
+\bibitem{oaiprod} OpenAI, ``Production best practices'', API docs (checked 2~Nov 2026). \url{https://developers.openai.com/api/docs/guides/production-best-practices}
+\bibitem{bai} L.~Bai et al., ``How Do AI Agents Spend Your Money? Analyzing and Predicting Token Consumption in Agentic Coding Tasks'', arXiv:2604.22750v3. \url{https://arxiv.org/abs/2604.22750v3}
+\bibitem{claudelimits} Anthropic, ``Rate limits'', Claude API docs (checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/api/rate-limits}
+\bibitem{oailimits} OpenAI, ``Rate limits'', API docs (checked 2~Nov 2026). \url{https://developers.openai.com/api/docs/guides/rate-limits}
+\bibitem{vertexdsq} Google Cloud, Vertex AI, ``Standard PayGo'' (dynamic shared quota; checked 2~Nov 2026). \url{https://docs.cloud.google.com/vertex-ai/generative-ai/docs/dynamic-shared-quota}
+\bibitem{agentleak} F.~El~Yagoubi, G.~Badu-Marfo, R.~Al~Mallah, ``AgentLeak: A Benchmark for Internal-Channel Privacy Leakage in Multi-Agent LLM Systems'', IEEE Access (2026); arXiv:2602.11510. \url{https://arxiv.org/abs/2602.11510}
+\bibitem{owasp} OWASP GenAI Security Project, ``LLM02:2025 Sensitive Information Disclosure''. \url{https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/}
+\bibitem{hamel} H.~Husain and S.~Shankar, ``AI Evals: Everything You Need to Know'' (FAQ). \url{https://hamel.dev/blog/posts/evals-faq/}
+\bibitem{promptdebt} A.~Aljohani et al., ``PromptDebt: A Comprehensive Study of Technical Debt Across LLM Projects'', arXiv:2509.20497. \url{https://arxiv.org/abs/2509.20497}
+\bibitem{ccmemory} Anthropic, ``How Claude remembers your project'', Claude Code docs (checked 2~Nov 2026). \url{https://code.claude.com/docs/en/memory}
+\bibitem{ccbest} Anthropic, ``Best practices for Claude Code'', Claude Code docs (checked 2~Nov 2026). \url{https://code.claude.com/docs/en/best-practices}
+\bibitem{skillsbp} Anthropic, ``Skill authoring best practices'', Claude Platform docs (checked 2~Nov 2026). \url{https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices}
+\bibitem{gloaguen} T.~Gloaguen et al. (ETH Zurich), ``Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?'', arXiv:2602.11988v3. \url{https://arxiv.org/abs/2602.11988v3}
+\bibitem{skillspec} Agent Skills, ``Specification'' (checked 2~Nov 2026). \url{https://agentskills.io/specification}
+\bibitem{ccskills} Anthropic, ``Extend Claude with skills'', Claude Code docs (checked 2~Nov 2026). \url{https://code.claude.com/docs/en/skills}
+\bibitem{codexagents} OpenAI, ``Custom instructions with AGENTS.md'', Codex docs (checked 2~Nov 2026). \url{https://learn.chatgpt.com/docs/agent-configuration/agents-md}
 
 \end{thebibliography}
 \end{document}
