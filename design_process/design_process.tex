@@ -87,7 +87,7 @@
 \title{\textbf{Agentic System Design Process}\\[4pt]
 \large Nine phases from problem to production, assembled from the course materials and practitioner guides}
 \author{J. A. Arroyo}
-\date{Version 1.11 --- 5 November 2026 (appendix diagrams in a BPMN subset)}
+\date{Version 1.12 --- 7 November 2026 (appendix diagrams: one gateway per cap, the test for verified)}
 
 \begin{document}
 \maketitle
@@ -761,6 +761,7 @@ Given a list of companies, the system finds each one's owner and cites its sourc
 \node[card, text width=1.6cm] (c3) at (10.2,1.45) {Apply the outcome rule; record source and date};
 \node[bpgw] (g3) at (11.65,1.45) {};
 \node[bpq, anchor=south] at ([yshift=1pt]g3.north) {verified?};
+\node[bpnote, anchor=north west] (n1) at (12.35,2.08) {verified: two independent primary\\sources agree on entity, owner\\definition and date; a source that\\repeats another does not count};
 \node[card, text width=1.65cm] (h2) at (11.65,-0.45) {Requester gets verified owners with sources};
 \node[bpend] (e1) at (13.2,-0.45) {};
 \node[bpq, anchor=south] at ([yshift=1pt]e1.north) {delivered};
@@ -781,7 +782,8 @@ Given a list of companies, the system finds each one's owner and cites its sourc
 \draw[flow] (c3) -- (g3);
 \draw[flow] (g3) -- node[lab, pos=0.4, right] {yes} (h2);
 \draw[flow] (h2) -- (e1);
-\draw[flow] (g3) -| node[lab, pos=0.2, above] {no} (h1);
+\draw[flow] (g3.east) -- ++(0.2,0) |- node[lab, pos=0.75, above] {no} (14.4,0.75) -- (h1);
+\draw[bpassoc] (g3.north east) -- (n1.west);
 \draw[flow] (h1) -- (e3);
 \exlegend{legbox}{}
 \end{tikzpicture}
@@ -828,11 +830,14 @@ Each week the system proposes what content to make next, from the business's own
 \node[bpstore] (db) at (3.65,-0.45) {};
 \node[bpq, anchor=west, align=left] at ([xshift=3pt]db.east) {performance data:\\results of published\\items, weeks later};
 \node[card, focal, text width=2.9cm] (m1) at (5.45,2.9) {Choose the next analysis: metric cut, transcripts or competitor ads};
-\node[bpgw] (g1) at (5.45,1.45) {};
-\node[bpq, anchor=south west, align=left] at ([xshift=1pt]g1.north east) {caps\\left?};
-\node[bpnote, anchor=west] (n1) at (5.75,0.62) {no (caps reached): next\\step not stated in sources};
-\node[card, text width=1.3cm] (c2) at (7.85,1.45) {Run the query; return results};
-\node[card, text width=1.0cm] (m2) at (7.85,2.9) {Read the results};
+\node[bpgw] (g1) at (5.6,1.45) {};
+\node[bpq, anchor=east, align=right] at ([xshift=-1pt]g1.west) {queries\\left this\\run?};
+\node[bpnote, anchor=east] (n1) at (5.45,0.55) {no: next step not\\stated in sources};
+\node[bpgw] (g4) at (6.55,1.45) {};
+\node[bpq, anchor=south, inner sep=0pt] at ([yshift=1pt]g4.north) {spend left\\this run?};
+\node[bpnote, anchor=west] (n3) at (6.75,0.55) {no: next step not\\stated in sources};
+\node[card, text width=1.3cm] (c2) at (8.0,1.45) {Run the query; return results};
+\node[card, text width=1.0cm] (m2) at (8.0,2.9) {Read the results};
 \node[bpgw] (gm) at (9.15,2.9) {};
 \node[bpq, anchor=north west, align=left] at ([xshift=1pt]gm.south east) {analyse\\further?};
 \node[card, text width=1.0cm] (m3) at (10.85,2.9) {Propose the slate};
@@ -848,13 +853,15 @@ Each week the system proposes what content to make next, from the business's own
 \draw[flow] (s) -- (c1);
 \draw[bpdata] (db.north) -- (c1.south);
 \draw[flow] (c1.north) |- (m1.west);
-\draw[flow] (m1) -- (g1);
-\draw[flow] (g1) -- node[lab, below] {yes} (c2);
+\draw[flow] (m1.south -| g1) -- (g1);
+\draw[flow] (g1) -- node[lab, below] {yes} (g4);
+\draw[flow] (g4) -- node[lab, below] {yes} (c2);
 \draw[flow] (c2) -- (m2);
 \draw[flow] (m2) -- (gm);
 \draw[flow] (gm.north) -- ++(0,0.65) -| node[lab, pos=0.25, above] {yes} (m1.north);
 \draw[flow] (gm) -- node[lab, above] {no} (m3);
-\draw[bpassoc] (g1.south) |- (n1.west);
+\draw[bpassoc] (g1.south) |- (n1.east);
+\draw[bpassoc] (g4.south) |- (n3.west);
 \draw[flow] (m3.east) -| (h1.north);
 \draw[flow] (h1.east) -| (c3.south);
 \draw[flow] (c3.east) -| (h2.north);
