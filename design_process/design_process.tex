@@ -14,7 +14,7 @@
 \usepackage[colorlinks=true,linkcolor=blue!55!black,urlcolor=teal!55!black,citecolor=blue!55!black]{hyperref}
 
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,backgrounds,calc}
+\usetikzlibrary{arrows.meta,backgrounds,calc,shapes.geometric}
 
 \setlist{itemsep=1pt,topsep=2pt}
 
@@ -42,6 +42,35 @@
   hot/.style={->, draw=dpcoral, line width=0.7pt},
   lab/.style={font=\dpmono\tiny, text=dpmute, inner sep=1.5pt},
 }
+% BPMN subset for the example diagrams (skill: https://github.com/jibarix/bpmn-diagrams).
+% Circles are events, boxes are tasks, diamonds are decisions; the lane says who acts or decides.
+\tikzset{
+  bpev/.style={circle, draw=dpink, fill=white, line width=0.6pt, minimum size=0.42cm, inner sep=0pt},
+  bpend/.style={bpev, line width=1.6pt, minimum size=0.36cm},
+  bptimer/.style={bpev, path picture={\draw[dpink, line width=0.4pt]
+    (path picture bounding box.center) circle (0.12cm) ++(0,0.09) -- (path picture bounding box.center) -- ++(0.07,0);}},
+  bpmessage/.style={bpev, path picture={\draw[dpink, line width=0.4pt]
+    ([shift={(-0.11,-0.07)}]path picture bounding box.center) rectangle ([shift={(0.11,0.07)}]path picture bounding box.center)
+    ([shift={(-0.11,0.07)}]path picture bounding box.center) -- ([shift={(0,-0.01)}]path picture bounding box.center)
+    -- ([shift={(0.11,0.07)}]path picture bounding box.center);}},
+  bpx/.style={path picture={\draw[#1, line width=0.8pt]
+    ([shift={(-0.08,-0.08)}]path picture bounding box.center) -- ([shift={(0.08,0.08)}]path picture bounding box.center)
+    ([shift={(-0.08,0.08)}]path picture bounding box.center) -- ([shift={(0.08,-0.08)}]path picture bounding box.center);}},
+  bpgw/.style={diamond, draw=dpink, fill=white, line width=0.6pt, minimum size=0.62cm, inner sep=0pt, bpx=dpink},
+  bpopen/.style={bpgw, draw=dpcoral, fill=dpcoralbg, bpx=dpcoral},
+  bpstore/.style={cylinder, shape border rotate=90, aspect=0.6, draw=dpink, fill=white, line width=0.6pt,
+    minimum width=0.7cm, minimum height=0.55cm, inner sep=1pt},
+  bpdata/.style={-{Straight Barb[length=3pt,width=4pt]}, draw=dpmute, dotted, line width=0.7pt},
+  bpq/.style={lab, align=center},
+  % coral item in the legend: a box or a diamond, whichever the diagram uses
+  legbox/.style={focal, minimum width=0.45cm, minimum height=0.22cm, inner sep=0pt},
+  legopen/.style={bpopen, minimum size=0.42cm},
+  % text annotation joined by a dotted association; marks where the sources are silent
+  bpnote/.style={lab, align=left, inner sep=2.5pt, path picture={\draw[dpmute, line width=1pt]
+    ([xshift=3pt]path picture bounding box.north west) -- (path picture bounding box.north west)
+    -- (path picture bounding box.south west) -- ([xshift=3pt]path picture bounding box.south west);}},
+  bpassoc/.style={draw=dpmute, dotted, line width=0.6pt},
+}
 % \phbox{index}{x}{title}{style}: one phase card for the process map
 \newcommand{\phbox}[4]{%
   \node[#4, minimum width=1.5cm, minimum height=1.95cm] (p#1) at (#2,0) {};
@@ -58,7 +87,7 @@
 \title{\textbf{Agentic System Design Process}\\[4pt]
 \large Nine phases from problem to production, assembled from the course materials and practitioner guides}
 \author{J. A. Arroyo}
-\date{Version 1.10 --- 2 November 2026 (practices from provider docs and papers)}
+\date{Version 1.11 --- 5 November 2026 (appendix diagrams in a BPMN subset)}
 
 \begin{document}
 \maketitle
@@ -603,17 +632,33 @@ Three examples follow. Each takes one task through the process:
 \item the decisions recorded in the later phases.
 \end{itemize}
 A diagram in each example shows where the model chooses the next step, and where code and people keep control.
+The diagrams use a small subset of BPMN: a circle is an event (start, or a heavy ring for an end), a box is a task, and a diamond is a decision taken by whoever owns its lane. Every loop passes a decision in the code lane that enforces the cap. A bracketed note on a decision marks a branch the example does not describe; the drawing stops there because the example does.
 In all three, the strongest fixed workflow is built first. A bounded agent is kept only for the decision that the fixed workflow leaves open, and only if it wins the Phase~7 comparison.
 Two rules hold in every example and are not repeated in the tables. The acceptance check sits with code or a person, outside the model's control (row A3). Phase~8 ends, as in the main text, with the release bar confirmed and the release signed off.
 The examples are illustrations, not reports of built systems \inferred.
 
-% lanes for the example diagrams: model, code (runtime), human
+% lanes for the example diagrams: model (y 2.2-3.6), code (0.3-2.15; shapes on y 1.45,
+% return paths along y 0.45-0.8), human (-1.15-0.25; shapes on y -0.45)
 \newcommand{\exlanes}{%
-  \foreach \y/\t/\s in {2.9/MODEL/{chooses the next step}, 1.45/{CODE (RUNTIME)}/{rules, limits, tools}, 0/HUMAN/{approval, review}} {
-    \draw[dpline, line width=0.5pt, fill=white!60!dpbg] (0,\y-0.7) rectangle (15.4,\y+0.7);
-    \node[anchor=west, align=left, text width=1.9cm] at (0.1,\y) {\dptag{\t}\\[2pt]{\color{dpmute}\s}};
+  \foreach \yb/\yt/\t/\s in {2.2/3.6/MODEL/{chooses the next step}, 0.3/2.15/{CODE (RUNTIME)}/{rules, limits, tools}, -1.15/0.25/HUMAN/{approval, review}} {
+    \draw[dpline, line width=0.5pt, fill=white!60!dpbg] (0,\yb) rectangle (16.2,\yt);
+    \node[anchor=west, align=left, text width=1.9cm] at (0.1,{(\yb+\yt)/2}) {\dptag{\t}\\[2pt]{\color{dpmute}\s}};
   }
-  \draw[dpline, line width=0.5pt] (2.1,-0.7) -- (2.1,3.6);}
+  \draw[dpline, line width=0.5pt] (2.1,-1.15) -- (2.1,3.6);}
+% legend for the example diagrams; #1 is legbox or legopen (the coral shape used), #2 adds items
+\newcommand{\exlegend}[2]{%
+  \begin{scope}[yshift=-1.6cm]
+  \node[lab, anchor=west] at (0,0) {LEGEND};
+  \node[bpev, minimum size=0.3cm] at (1.35,0) {};
+  \node[bpend, minimum size=0.26cm] at (1.75,0) {};
+  \node[lab, anchor=west] at (1.95,0) {start, end};
+  \node[bpgw, minimum size=0.42cm] at (3.55,0) {};
+  \node[lab, anchor=west] at (3.8,0) {decision, taken in its lane};
+  \draw[flow] (6.75,0) -- ++(0.5,0) node[lab, right] {sequence};
+  \node[#1] at (8.85,0) {};
+  \node[lab, anchor=west] at (9.15,0) {the decision the fixed workflow leaves open};
+  #2
+  \end{scope}}
 
 % ---------------------------------------------------------------------------
 \clearpage
@@ -623,29 +668,46 @@ A small business wants its phone answered. The agent answers questions, books, m
 
 \begin{center}
 \makeatletter\def\@captype{figure}\makeatother
-\begin{tikzpicture}[dp, card/.style={box, text width=2.05cm, minimum height=0.9cm}]
+\begin{tikzpicture}[dp, card/.style={box, text width=1.85cm, minimum height=0.9cm}]
 \exlanes
-\node[card] (c1) at (3.4,1.45) {Call arrives; telephony starts a bounded job};
+\node[bpmessage] (s) at (2.55,1.45) {};
+\node[bpq, anchor=north] at ([yshift=-1pt]s.south) {call\\arrives};
+\node[card, text width=1.5cm] (c1) at (3.75,1.45) {Open a bounded job for the call};
 \node[card] (m1) at (5.9,2.9) {Interpret the request; propose a tool call};
-\node[card] (c2) at (8.4,1.45) {Check hours, slot lock, request key};
-\node[card] (c3) at (10.9,1.45) {Run calendar or CRM tool; return facts and a verdict};
-\node[card, focal] (m2) at (13.6,2.9) {Read the result: answer, book, transfer or end};
-\node[card] (h1) at (13.6,0) {Staff member takes the transfer};
+\node[bpgw] (g2) at (5.9,1.45) {};
+\node[bpq, anchor=north west, align=left] at ([xshift=1pt]g2.south east) {caller on and\\turns left?};
+\node[bpend] (e2) at (5.9,0.55) {};
+\node[bpq, anchor=east, align=right] at ([xshift=-2pt]e2.west) {ended\\by code};
+\node[card, text width=1.5cm] (ck) at (8.5,1.45) {Check hours, slot lock, request key};
+\node[bpgw] (g1) at (9.9,1.45) {};
+\node[bpq, anchor=north] at ([yshift=-1pt]g1.south) {pass?};
+\node[card] (c3) at (11.6,1.45) {Run the calendar or CRM tool; return facts and a verdict};
+\node[card] (m2) at (11.6,2.9) {Read the result; choose the next step};
+\node[bpopen] (gm) at (13.35,2.9) {};
+\node[bpq, anchor=north east] at ([xshift=-1pt]gm.south west) {next\\step?};
+\node[card, text width=1.1cm, minimum height=0.55cm] (a1) at (15.05,3.1) {Answer the caller};
+\node[bpend] (e1) at (15.05,2.42) {};
+\node[bpq, anchor=west] at ([xshift=1pt]e1.east) {call\\ended};
+\node[card, text width=1.25cm] (h1) at (13.35,-0.45) {Staff member takes the transfer};
+\node[bpend] (e3) at (14.75,-0.45) {};
+\node[bpq, anchor=south] at ([yshift=1pt]e3.north) {transferred};
+\draw[flow] (s) -- (c1);
 \draw[flow] (c1.north) |- (m1.west);
-\draw[flow] (m1.south) |- (c2.west);
-\draw[flow] (c2) -- (c3);
-\draw[flow] (c3.east) -| (m2.south);
-\draw[hot] (m2.east) -- ++(0.35,0) |- node[lab, pos=0.25, left] {transfer} (h1.east);
-\draw[back] (m2.north) -- ++(0,0.5) -| node[lab, pos=0.25, above] {next turn, until the caller hangs up or the turn cap in code ends the call} (m1.north);
-\draw[back] (c2.north) -- ++(0,0.45) -| node[lab, pos=0.3, above] {rejected} ([xshift=0.5cm]m1.south);
-\begin{scope}[yshift=-1.15cm]
-\node[lab, anchor=west] at (0,0) {LEGEND};
-\draw[flow] (1.2,0) -- ++(0.5,0) node[lab, right] {control flow};
-\draw[back] (3.6,0) -- ++(0.5,0) node[lab, right] {back to the model};
-\draw[hot] (6.5,0) -- ++(0.5,0) node[lab, right] {handoff to a person};
-\node[focal, minimum width=0.45cm, minimum height=0.22cm, inner sep=0pt] at (9.6,0) {};
-\node[lab, anchor=west] at (9.9,0) {the decision the fixed workflow leaves open};
-\end{scope}
+\draw[flow] (m1) -- (g2);
+\draw[flow] (g2) -- node[lab, above] {yes} (ck);
+\draw[flow] (g2) -- node[lab, left] {no} (e2);
+\draw[flow] (ck) -- (g1);
+\draw[flow] (g1) -- node[lab, above] {yes} (c3);
+\draw[flow] (g1.north) |- node[lab, pos=0.75, above] {no: rejected} (m1.east);
+\draw[flow] (c3) -- (m2);
+\draw[flow] (m2) -- (gm);
+\draw[flow] (gm.east) -- node[lab, above] {answer} (gm.east -| a1.west);
+\draw[flow] (gm.south east) |- node[lab, pos=0.75, below] {end} (e1.west);
+\draw[flow] (a1.north) -- ++(0,0.55) -| node[lab, pos=0.12, below] {next turn} ([xshift=-0.3cm]m1.north);
+\draw[flow] (gm.south) -- node[lab, pos=0.75, right] {transfer} (h1.north);
+\draw[flow] (h1) -- (e3);
+\draw[flow] (gm.north) -- ++(0,0.3) -| node[lab, pos=0.31, below] {book: next tool call} ([xshift=0.3cm]m1.north);
+\exlegend{legopen}{\node[bpmessage, minimum size=0.3cm] at (14.75,0) {}; \node[lab, anchor=west] at (14.95,0) {message};}
 \end{tikzpicture}
 \caption{Example~1. Code notices the call and enforces every booking rule; the model chooses the next tool call within the call; a person takes transfers. The arrangement is an illustration \inferred.}
 \label{fig:ex1}
@@ -682,32 +744,46 @@ Given a list of companies, the system finds each one's owner and cites its sourc
 
 \begin{center}
 \makeatletter\def\@captype{figure}\makeatother
-\begin{tikzpicture}[dp, card/.style={box, text width=2.05cm, minimum height=0.9cm}]
+\begin{tikzpicture}[dp, card/.style={box, text width=1.85cm, minimum height=0.9cm}]
 \exlanes
-\node[card] (c1) at (3.4,1.45) {Registry lookup and matching rules};
-\node[card, focal] (m1) at (6.1,2.9) {Read the records so far; propose the next source};
-\node[card] (c2) at (8.6,1.45) {Run the search within budget; record source and date};
-\node[card] (m2) at (11.3,2.9) {Read the evidence: search again or stop};
-\node[card] (c3) at (14.0,1.45) {Apply the outcome rule; record source and date};
-\node[card] (d1) at (11.0,0) {Requester gets verified owners with sources};
-\node[card, text width=1.55cm] (h1) at (14.45,0) {Person reviews the rest};
-\draw[flow] (c1.north) |- node[lab, pos=0.25, left, align=right] {conflict or\\no record} (m1.west);
-\draw[flow] (m1.south) |- (c2.west);
+\node[bpev] (s) at (2.55,1.45) {};
+\node[bpq, anchor=north] at ([yshift=-1pt]s.south) {list\\received};
+\node[card, text width=1.5cm] (c1) at (3.8,1.45) {Registry lookup and matching rules};
+\node[bpgw] (g1) at (5.2,1.45) {};
+\node[bpq, anchor=south west, align=left] at ([xshift=1pt]g1.north east) {clean\\match?};
+\node[card, focal] (m1) at (6.45,2.9) {Read the records so far; propose the next source};
+\node[bpgw] (g2) at (6.45,1.45) {};
+\node[bpq, anchor=north east, align=right] at ([xshift=-1pt]g2.south west) {budget\\left?};
+\node[card, text width=1.5cm] (c2) at (7.95,1.45) {Run the search; record source and date};
+\node[card, text width=1.3cm] (m2) at (9.0,2.9) {Read the evidence};
+\node[bpgw] (gm) at (10.2,2.9) {};
+\node[bpq, anchor=west, align=left] at ([xshift=2pt]gm.east) {search again\\or stop?};
+\node[card, text width=1.6cm] (c3) at (10.2,1.45) {Apply the outcome rule; record source and date};
+\node[bpgw] (g3) at (11.65,1.45) {};
+\node[bpq, anchor=south] at ([yshift=1pt]g3.north) {verified?};
+\node[card, text width=1.65cm] (h2) at (11.65,-0.45) {Requester gets verified owners with sources};
+\node[bpend] (e1) at (13.2,-0.45) {};
+\node[bpq, anchor=south] at ([yshift=1pt]e1.north) {delivered};
+\node[card, text width=1.2cm] (h1) at (14.4,-0.45) {Person reviews the rest};
+\node[bpend] (e3) at (15.7,-0.45) {};
+\node[bpq, anchor=south] at ([yshift=1pt]e3.north) {reviewed};
+\draw[flow] (s) -- (c1);
+\draw[flow] (c1) -- (g1);
+\draw[flow] (g1.north) |- node[lab, pos=0.4, left, align=right] {no: conflict\\or no record} (m1.west);
+\draw[flow] (m1) -- (g2);
+\draw[flow] (g2) -- node[lab, above] {yes} (c2);
 \draw[flow] (c2.north) |- (m2.west);
-\draw[flow] (c2.east) -- node[lab, below, align=center] {budget\\spent} (c3.west);
-\draw[flow] (m2.east) -| node[lab, pos=0.25, above] {stop} (c3.north);
-\draw[flow] (c1.south) -- ++(0,-0.25) -| node[lab, pos=0.2, below] {clean match} (12.55,1.45) -- (c3.west);
-\draw[flow] ([xshift=-0.7cm]c3.south) |- node[lab, pos=0.75, above] {verified} (d1.east);
-\draw[hot] ([xshift=0.6cm]c3.south) -- node[lab, right, align=left] {not\\verified} ([xshift=0.15cm]h1.north);
-\draw[back] (m2.north) -- ++(0,0.5) -| node[lab, pos=0.25, above] {next source, until the budget in code runs out} (m1.north);
-\begin{scope}[yshift=-1.15cm]
-\node[lab, anchor=west] at (0,0) {LEGEND};
-\draw[flow] (1.2,0) -- ++(0.5,0) node[lab, right] {control flow};
-\draw[back] (3.6,0) -- ++(0.5,0) node[lab, right] {back to the model};
-\draw[hot] (6.5,0) -- ++(0.5,0) node[lab, right] {handoff to a person};
-\node[focal, minimum width=0.45cm, minimum height=0.22cm, inner sep=0pt] at (9.6,0) {};
-\node[lab, anchor=west] at (9.9,0) {the decision the fixed workflow leaves open};
-\end{scope}
+\draw[flow] (m2) -- (gm);
+\draw[flow] (gm.north) -- ++(0,0.3) -| node[lab, pos=0.25, above] {search again} (m1.north);
+\draw[flow] (gm) -- node[lab, right] {stop} (c3);
+\draw[flow] (g2.south) -- (6.45,0.78) -- node[lab, pos=0.4, below] {no: budget spent} (9.7,0.78) -- ([xshift=-0.5cm]c3.south);
+\draw[flow] (g1.south) -- node[lab, pos=0.45, right] {yes} (5.2,0.45) -- (10.7,0.45) -- ([xshift=0.5cm]c3.south);
+\draw[flow] (c3) -- (g3);
+\draw[flow] (g3) -- node[lab, pos=0.4, right] {yes} (h2);
+\draw[flow] (h2) -- (e1);
+\draw[flow] (g3) -| node[lab, pos=0.2, above] {no} (h1);
+\draw[flow] (h1) -- (e3);
+\exlegend{legbox}{}
 \end{tikzpicture}
 \caption{Example~2. Code resolves clean matches, stops the search when the budget is spent and applies the outcome rule. The model chooses where to look next only when the registry gives no clean match. A person reviews every outcome that is not verified. The arrangement is an illustration \inferred.}
 \label{fig:ex2}
@@ -744,32 +820,50 @@ Each week the system proposes what content to make next, from the business's own
 
 \begin{center}
 \makeatletter\def\@captype{figure}\makeatother
-\begin{tikzpicture}[dp, card/.style={box, text width=2.05cm, minimum height=0.9cm}]
+\begin{tikzpicture}[dp, card/.style={box, text width=1.85cm, minimum height=0.9cm}]
 \exlanes
-\node[card] (c1) at (3.4,1.45) {Weekly schedule; standard analysis pack};
-\node[card, focal] (m1) at (6.1,2.9) {Choose the next analysis: a metric cut, transcripts, competitor ads};
-\node[card] (c2) at (8.8,1.45) {Run the query within the cap; return results};
-\node[card] (m2) at (11.5,2.9) {Read results: analyse further or propose the slate};
-\node[card] (h1) at (11.5,0) {Approve or edit the slate};
-\node[card] (c3) at (14.0,1.45) {Fixed production: draft items; publish approved drafts};
-\node[card] (h2) at (14.0,0) {Approve each draft before it is published};
+\node[bpev, bptimer] (s) at (2.45,1.45) {};
+\node[bpq, anchor=north] at ([yshift=-1pt]s.south) {weekly};
+\node[card, text width=1.3cm] (c1) at (3.65,1.45) {Build the standard analysis pack};
+\node[bpstore] (db) at (3.65,-0.45) {};
+\node[bpq, anchor=west, align=left] at ([xshift=3pt]db.east) {performance data:\\results of published\\items, weeks later};
+\node[card, focal, text width=2.9cm] (m1) at (5.45,2.9) {Choose the next analysis: metric cut, transcripts or competitor ads};
+\node[bpgw] (g1) at (5.45,1.45) {};
+\node[bpq, anchor=south west, align=left] at ([xshift=1pt]g1.north east) {caps\\left?};
+\node[bpnote, anchor=west] (n1) at (5.75,0.62) {no (caps reached): next\\step not stated in sources};
+\node[card, text width=1.3cm] (c2) at (7.85,1.45) {Run the query; return results};
+\node[card, text width=1.0cm] (m2) at (7.85,2.9) {Read the results};
+\node[bpgw] (gm) at (9.15,2.9) {};
+\node[bpq, anchor=north west, align=left] at ([xshift=1pt]gm.south east) {analyse\\further?};
+\node[card, text width=1.0cm] (m3) at (10.85,2.9) {Propose the slate};
+\node[card, text width=1.0cm] (h1) at (11.7,-0.45) {Approve or edit the slate};
+\node[card, text width=1.0cm] (c3) at (12.55,1.45) {Draft each item};
+\node[card, text width=1.0cm] (h2) at (13.4,-0.45) {Approve each draft};
+\node[bpgw] (gh) at (14.5,-0.45) {};
+\node[bpq, anchor=north] at ([yshift=-1pt]gh.south) {approved?};
+\node[card, text width=1.0cm] (c4) at (14.5,1.45) {Publish the approved draft};
+\node[bpend] (e1) at (15.65,1.45) {};
+\node[bpq, anchor=south] at ([yshift=1pt]e1.north) {published};
+\node[bpnote, anchor=west] (n2) at (15.0,-0.45) {no: next\\step not\\stated in\\sources};
+\draw[flow] (s) -- (c1);
+\draw[bpdata] (db.north) -- (c1.south);
 \draw[flow] (c1.north) |- (m1.west);
-\draw[flow] (m1.south) |- (c2.west);
-\draw[flow] (c2.north) |- (m2.west);
-\draw[hot] (m2.south) -- node[lab, right, pos=0.6] {slate} (h1.north);
-\draw[flow] (h1.east) -- ++(0.2,0) |- (c3.west);
-\draw[hot] ([xshift=-0.5cm]c3.south) -- node[lab, left] {drafts} ([xshift=-0.5cm]h2.north);
-\draw[flow] ([xshift=0.5cm]h2.north) -- node[lab, right] {approved} ([xshift=0.5cm]c3.south);
-\draw[back] (m2.north) -- ++(0,0.5) -| node[lab, pos=0.25, above] {another analysis, until the query cap in code} (m1.north);
-\draw[back] (h2.south) -- ++(0,-0.18) -| node[lab, pos=0.25, below] {results, once they mature, feed later planning packs} (c1.south);
-\begin{scope}[yshift=-1.15cm]
-\node[lab, anchor=west] at (0,0) {LEGEND};
-\draw[flow] (1.2,0) -- ++(0.5,0) node[lab, right] {control flow};
-\draw[back] (3.6,0) -- ++(0.5,0) node[lab, right] {feedback};
-\draw[hot] (6.5,0) -- ++(0.5,0) node[lab, right] {approval point};
-\node[focal, minimum width=0.45cm, minimum height=0.22cm, inner sep=0pt] at (9.6,0) {};
-\node[lab, anchor=west] at (9.9,0) {the decision the fixed workflow leaves open};
-\end{scope}
+\draw[flow] (m1) -- (g1);
+\draw[flow] (g1) -- node[lab, below] {yes} (c2);
+\draw[flow] (c2) -- (m2);
+\draw[flow] (m2) -- (gm);
+\draw[flow] (gm.north) -- ++(0,0.65) -| node[lab, pos=0.25, above] {yes} (m1.north);
+\draw[flow] (gm) -- node[lab, above] {no} (m3);
+\draw[bpassoc] (g1.south) |- (n1.west);
+\draw[flow] (m3.east) -| (h1.north);
+\draw[flow] (h1.east) -| (c3.south);
+\draw[flow] (c3.east) -| (h2.north);
+\draw[flow] (h2) -- (gh);
+\draw[flow] (gh) -- node[lab, pos=0.6, left] {yes} (c4);
+\draw[bpassoc] (gh) -- (n2);
+\draw[flow] (c4) -- (e1);
+\exlegend{legbox}{\node[bpev, bptimer, minimum size=0.3cm] at (13.95,0) {}; \node[lab, anchor=west] at (14.15,0) {timer};
+  \draw[bpdata] (14.85,0) -- ++(0.45,0) node[lab, right] {data};}
 \end{tikzpicture}
 \caption{Example~3. The agent sits inside one step of a fixed weekly workflow. Within the planning run it chooses the next analysis. A person approves the slate and then each draft; production stays fixed. Results mature weeks later and inform later runs, not the current one. The arrangement is an illustration \inferred.}
 \label{fig:ex3}
