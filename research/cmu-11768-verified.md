@@ -1,7 +1,7 @@
-# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26)
+# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26; lectures 16-18, Nov 3 and recordings for L10-L14 updated from the page data and the YouTube playlist 2026-11-11)
 
 Authoritative; supersedes the lecture table in cmu-11768.md where they disagree.
-Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L9; links on https://www.cmu-agents.com/#/schedule
+Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L14: L1-L9 are linked on https://www.cmu-agents.com/#/schedule; L10-L14 are on the course's YouTube channel (Graham Neubig) but not yet linked on the site; their Rec cells hold the video URLs (titles checked by oEmbed, 2026-11-11)
 
 | # | Date | Title | Module | Lecturer | Readings | Slides file | Rec | Tags |
 |---|---|---|---|---|---|---|---|---|
@@ -14,17 +14,18 @@ Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for
 | 7 | Tue Sep 15 | Computer Use Agents | Domains | JY Koh | WebArena; VisualWebArena; OSWorld; OpenCUA; CUA-Gym; MACU | lecture-07-computer-use-agents.pdf | Y | WEB |
 | 8 | Thu Sep 17 | Training 1: SFT | Training | Yueqi Song | (refs: DeepSeek-R1, Kimi, Nemotron) | lecture-08-sft.pdf | Y | TRAIN |
 | 9 | Tue Sep 22 | Training 2: RL Basics | Training | | ReST; ReST-EM; DeepSeekMath; DrGRPO | lecture-09-rl-basics.pdf | Y | TRAIN |
-| 10 | Thu Sep 24 | Domains 3: Deep Research Agents | Domains | Akari Asai | OpenScholar; BrowseComp; DeepResearch Bench; Tongyi DeepResearch; DR Tulu; AgentIR | lecture-10-deep-research-agents.pdf | N | APP, MEM |
-| 11 | Tue Sep 29 | Training 3: Advanced RL Algorithms | Training | | (refs: InstructGPT, GAE, Let's Verify Step by Step, AReaL) | lecture-11-rl-advanced.pdf | N | TRAIN |
-| 12 | Thu Oct 1 | Training 4: RL Systems | Training | Apurva Gandhi | | lecture-12-rl-systems.pdf | N | TRAIN, DEPLOY |
-| 13 | Tue Oct 6 | Safety 1: Agent Safety | Agent Safety | | (refs: OpenClaw incident report, CVE-2025-32711, Cline supply-chain postmortem) | lecture-13-agent-safety.pdf | N | SAFE |
-| 14 | Thu Oct 8 | Frameworks 1: OpenHands | Agent Frameworks | Graham Neubig | OpenHands Software Agent SDK report; SWE-agent; OpenDevin CodeAct 1.0; Don't Sleep on Single-agent Systems; OpenHands-Versa (refs: HumanEval, SWE-bench, CodeR, MetaGPT) | lecture-14-openhands.pdf | N | ARCH, CODE |
+| 10 | Thu Sep 24 | Domains 3: Deep Research Agents | Domains | Akari Asai | OpenScholar; BrowseComp; DeepResearch Bench; Tongyi DeepResearch; DR Tulu; AgentIR | lecture-10-deep-research-agents.pdf | https://www.youtube.com/watch?v=nKUBrXFQBUM | APP, MEM |
+| 11 | Tue Sep 29 | Training 3: Advanced RL Algorithms | Training | | (refs: InstructGPT, GAE, Let's Verify Step by Step, AReaL) | lecture-11-rl-advanced.pdf | https://www.youtube.com/watch?v=jKx7_fOZRzg | TRAIN |
+| 12 | Thu Oct 1 | Training 4: RL Systems | Training | Apurva Gandhi | | lecture-12-rl-systems.pdf | https://www.youtube.com/watch?v=dwR6NP9nI-8 | TRAIN, DEPLOY |
+| 13 | Tue Oct 6 | Safety 1: Agent Safety | Agent Safety | | (refs: OpenClaw incident report, CVE-2025-32711, Cline supply-chain postmortem) | lecture-13-agent-safety.pdf | https://www.youtube.com/watch?v=Mbonnq-PUGM | SAFE |
+| 14 | Thu Oct 8 | Frameworks 1: OpenHands | Agent Frameworks | Graham Neubig | OpenHands Software Agent SDK report; SWE-agent; OpenDevin CodeAct 1.0; Don't Sleep on Single-agent Systems; OpenHands-Versa (refs: HumanEval, SWE-bench, CodeR, MetaGPT) | lecture-14-openhands.pdf | https://www.youtube.com/watch?v=VAzZkT68h2Q | ARCH, CODE |
 | – | Oct 13/15 | Fall break | | | | | | |
 | 15 | Tue Oct 20 | Frameworks 2: Orchestration and Monitoring | Agent Frameworks | | Building effective agents (Anthropic); Thinking in LangGraph; Diagnosing a performance regression on Terminal-Bench with Docent; Hodoscope (refs: LangGraph workflows/persistence/interrupts/testing docs, LangSmith evaluation, OpenAI Agents SDK, AG2, DSPy, OpenHands SDK, Agent Skills spec, Embedding Atlas) | lecture-15-orchestration-and-monitoring.pdf | N | ARCH, DEPLOY |
-| 16 | Thu Oct 22 | Safety 2: Observability and Monitoring | Frameworks & Safety | Eric Wallace | | – | | SAFE, DEPLOY |
-| 17 | Tue Oct 27 | Agents and the Future of Work | Interaction & Projects | Zora Wang | | – | | APP |
-| 18 | Thu Oct 29 | Interaction 1: Multi-Agent Interaction | Interaction & Projects | Saujas Vaduguru | | – | | MULTI |
-| – | Nov 3/5 | Project hours | | | | | | ORG |
+| 16 | Thu Oct 22 | Safety 2: Observability and Monitoring | Frameworks & Safety | Eric Wallace | Securing our frontier model training environment (OpenAI) | – | N | SAFE, DEPLOY |
+| 17 | Tue Oct 27 | Agents and the Future of Work | Interaction & Projects | Zora Wang | How Well Does Agent Development Reflect Real-World Work?; GDPval; CollabSkill; Efficient Test-Time Adaptation through Human-AI Interaction; Future of Work with AI Agents (refs: How AI is transforming work at Anthropic, METR long-task horizon, Remote Labor Index, TheAgentCompany, Gym-Anything, Humans are Missing from AI Coding Agent Research, GPTs are GPTs, Canaries in the Coal Mine; 31 in all) | 2026-10-27-zora-wang.pdf | N | APP, EVAL |
+| 18 | Thu Oct 29 | Interaction 1: Multi-Agent Interaction | Interaction & Projects | Saujas Vaduguru | Multiagent Debate; Multi-Agent Computer Use; Scaling Discovery through Test-Time Communication; SWEET-RL; Don't lie to your friends (collaborative self-play); Debating with More Persuasive LLMs (refs: MARL book, ChatDev, LangChain subagents, Recursive Agent Optimization, Asynchronous SWE Agents, Blackboard multi-agent system, GitSwarm, Generative Agents, Magentic Marketplace; 17 in all) | lecture-18-multi-agent-systems.pdf | N | MULTI |
+| – | Tue Nov 3 | University holiday (no class) | | | | | | |
+| – | Thu Nov 5 | Project hours | | | | | | ORG |
 | 19 | Tue Nov 10 | Interaction 2: Human-Agent Interaction | Interaction & Projects | Valerie Chen | | – | | APP, EVAL |
 | 20 | Thu Nov 12 | Search 1: Reranking and Critic Models | Search & Inference | | | – | | RSN, EVAL |
 | 21 | Tue Nov 17 | Search 2: Tree Search | Search & Inference | JY Koh | | – | | RSN |

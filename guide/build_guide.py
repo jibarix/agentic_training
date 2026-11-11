@@ -283,6 +283,8 @@ def parse_cmu_lectures(text):
             mats.append(f"[slides]({CMU_SLIDES}{slides})")
         if rec.strip().upper() == "Y":
             mats.append(f"[video]({CMU_SCHEDULE})")
+        elif rec.strip().startswith("https://"):        # a recording not yet linked on the schedule page
+            mats.append(f"[video]({rec.strip()})")
         lecs.append(make_lecture("CMU", num, date, title, topics, readings, " ".join(mats), parse_tags(tags)))
     return lecs
 
@@ -485,7 +487,7 @@ def starter_label(a):
     """What the links in an assignment's starter column are: code, a spec only, or other resources."""
     s = a["starter"].strip()
     if re.match(r"(none|n/a)\b", s, re.I):
-        return "Spec"
+        return "Slides" if re.search(r"\bslides:", s, re.I) else "Spec"   # Michigan's labs: a deck, no starter
     if re.match(r"project topic", a["name"], re.I):  # Mannheim: benchmarks and data sources, not starter code
         return "Resources"
     return "Starter code"
@@ -609,10 +611,10 @@ The modules map onto the design phases: \hyperlink{mod-ARCH}{\tg{ARCH}} for Phas
 \item In hands-on lists, ``Starter code'' means the assignment has a public repository or download, ``Spec'' links to a written specification with no code, and ``Resources'' links to benchmarks or data sources the project builds on.
 \end{itemize}
 \section{A note on currency}
-The material spans Spring 2024 (TinyAgent) to courses still running in October 2026. Two things change fast. (1)~\textbf{MCP:} the 2026-07-28 revision made the protocol stateless (see \hyperref[sup-mcp]{the MCP supplement}), so earlier lectures teach the older handshake. (2)~\textbf{Model names and SDKs:} courses use whatever was current when they ran. Learn the concepts from the lectures and take API details from current documentation.
+The material spans Spring 2024 (TinyAgent) to courses still running in November 2026. Two things change fast. (1)~\textbf{MCP:} the 2026-07-28 revision made the protocol stateless (see \hyperref[sup-mcp]{the MCP supplement}), so earlier lectures teach the older handshake. (2)~\textbf{Model names and SDKs:} courses use whatever was current when they ran. Learn the concepts from the lectures and take API details from current documentation.
 \section{Caveats}
 \begin{itemize}
-\item Content was checked through October~16, 2026. The in-progress courses (CMU, Stanford '26, Northeastern, Harvard, JHU) will post more material after that.
+\item Content was checked through November~11, 2026. The in-progress courses (CMU, Stanford '26, Stanford 329Z, Michigan, Northeastern, Harvard, Buffalo, JHU) will post more material after that.
 \item Tags were assigned from session titles, listed topics and readings. They are a navigation aid, and some sessions could reasonably be tagged differently.
 \item Some slide decks could not be read (several Mannheim PDFs, a few UVA PPTX files, JHU lectures 7, 8, 10, 13 and 14), so their topics are inferred from the titles.
 \item Only some repositories state a licence (UW CS 839, TinyAgent and OpenClaw are MIT). Check each licence before redistributing course material; linking is always safe.
@@ -640,8 +642,9 @@ def part_glance(D):
     D(r"""The courses fall into a few archetypes, and knowing which kind you are reading tells you how to use it:
 \begin{itemize}
 \item \textbf{Systems and training} (CMU): the backbone, from harnesses to RL, with the best assignments.
-\item \textbf{Builder courses} (Northeastern, UVA, Buffalo, Mannheim): framework-based, hands-on and lab-driven.
+\item \textbf{Builder courses} (Northeastern, UVA, Buffalo, Mannheim, Stanford CS 329Z): hands-on and lab- or homework-driven; Stanford CS 329Z builds each component from scratch before using a framework.
 \item \textbf{Coding-agent practice} (Stanford CS146S, both years): how practitioners work with and around coding agents.
+\item \textbf{Coding-agent internals} (Michigan EECS 498): real harnesses taken apart, then extended.
 \item \textbf{Research seminars} (UW--Madison, CU Boulder): curated paper lists, for depth and for the research frontier.
 \item \textbf{Program synthesis} (JHU): the PL view of code generation, from classic search to LLM coding agents.
 \item \textbf{Applied social science} (UChicago): agents as simulated subjects and research instruments.
@@ -843,10 +846,10 @@ def main():
 {\large J. A. Arroyo\par}\vspace{0.8cm}
 {\large %d courses $\cdot$ %d lectures $\cdot$ %d assignments $\cdot$ 15 modules $\cdot$ 3 learning tracks\par}\vspace{1.5cm}
 \begin{minipage}{0.8\linewidth}\centering\small
-CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Harvard CS 2680 $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
+CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Harvard CS 2680 $\cdot$ Stanford CS 329Z $\cdot$ Michigan EECS 498 $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Content checked through October 18, 2026.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Content checked through November 11, 2026.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}""" % ((len(C.COURSES),) + stats()))
     D(r"\hypertarget{toc}{}\tableofcontents")

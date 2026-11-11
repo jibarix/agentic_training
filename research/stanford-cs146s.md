@@ -1,7 +1,7 @@
 # CS146S — The Modern Software Developer (Stanford University, Fall 2025; Fall 2026 offering in progress)
 
 - **URLs:** https://themodernsoftware.dev/ (current, Fall 2026) · https://themodernsoftware.dev/fall2025 (archived Fall 2025 page) · assignments repo https://github.com/mihail911/modern-software-dev-assignments (branch `master` = Fall 2026, branch `fall2025` = Fall 2025) · Korean translation https://kr.themodernsoftware.dev/
-- **Instructor:** Mihail Eric. TAs: Fall 2025 Febie Lin, Brent Ju; Fall 2026 Isaac Kan, plus one TBD (Vijay Daita also holds office hours, and the GitHub handle `vdaita` is a grading collaborator).
+- **Instructor:** Mihail Eric. TAs: Fall 2025 Febie Lin, Brent Ju; Fall 2026 Isaac Kan (head TA), Vijay Daita and Patrick Hua (team grid, 2026-11-11; the GitHub handle `vdaita` is a grading collaborator).
 - **Level/prereqs:** 3 units. CS111/CS161-equivalent programming experience; CS221/229 recommended.
 - **Format:** Tue/Thu 5:30-6:20 PM, room 370-370. Weekly lectures, hands-on coding sessions, and industry guest speakers, with a final project. Per a third-party study guide, grading is 80% final project, 15% weekly assignments, 5% participation (not verified on the official site).
 - **Public materials:** Google Slides decks for most Fall 2025 lectures, two completed in-class exercises (Google Drive), and assignment starter code on GitHub. No lecture videos seen.
@@ -84,4 +84,4 @@ All schedule rows are from the **Fall 2025** offering. The official syllabus tab
 - **Assignment URL drift:** the Fall 2025 syllabus links to `master/week4..8`, but `master` now holds only the Fall 2026 weeks (1-5 as of 2026-10-26). Use the `fall2025` branch URLs given above, which I confirmed via the GitHub tree API. Names in parentheses are the syllabus names, which differ from the titles in the assignment.md files.
 - Fall 2025 week 1 also included a `week1/README.md`, and week 5 and week 7 had README.md files plus `docs/TASKS.md`. I did not read those READMEs in full.
 - The Unit42 reading link on the source page is wrapped in a Google redirect; I extracted the underlying URL.
-- The Fall 2026 office-hours listing includes Vijay Daita, but the team grid lists one TA as "TBD".
+- The Fall 2026 office-hours listing includes Vijay Daita, but the team grid lists one TA as "TBD". Recheck 2026-11-11 (site bundle read with curl): the team grid now lists Isaac Kan (head TA), Vijay Daita and Patrick Hua.
