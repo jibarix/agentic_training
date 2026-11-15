@@ -49,3 +49,4 @@ Read after the basics of tool use and function calling (e.g. CMU 11-768 Lecture 
 ## Notes
 
 - The blog and the repo loaded fully. The post's Table 1 lists basic RAG as "top 3, 0.949 recall," while the text says top-6 at 0.968 recall. The two are inconsistent in the source.
+- 2026-11-14: the demo video's captions were read. It has no narration, only spoken commands to the assistant (a meeting, a reminder, an email with an attachment, directions by SMS, a note summarizing a PDF), so it adds nothing to the post.

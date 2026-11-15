@@ -227,15 +227,18 @@ def parse_tags(s):
 ASG_ADMIN_RE = re.compile(r"\s*\((?=[^()]*(?:%|\bdue\b|\bout\b|\breleased\b|\bpts\b|\bunits?\b|\bWk\b|buy-in|critique option|teams of))[^()]*\)", re.I)
 LEC_ADMIN_RE = re.compile(r"\s*\((?:A\d|HW\d|project proposal)[^()]*\b(?:due|out|released)\b[^()]*\)", re.I)
 LOGISTICS_RE = re.compile(r"^(?:course )?logistics[;,]\s*", re.I)
+ADMIN_CLAUSE_RE = re.compile(r"[;,]\s*(?:(?:course|AgentBeats) project overview|midterm review)\s*(?=$|;)", re.I)
+AND_ADMIN_RE = re.compile(r"\s*(?:\band\b|\\?&)\s*(?:project overview|logistics)\b", re.I)
 
 
 def clean_topics(s):
-    s = LOGISTICS_RE.sub("", LEC_ADMIN_RE.sub("", s))
+    s = ADMIN_CLAUSE_RE.sub("", LOGISTICS_RE.sub("", LEC_ADMIN_RE.sub("", s)))
+    s = AND_ADMIN_RE.sub("", s)
     return s[:1].upper() + s[1:]
 
 
 def make_lecture(code, num, date, title, topics, readings, materials, tags):
-    title, topics = LEC_ADMIN_RE.sub("", title), clean_topics(topics)
+    title, topics = AND_ADMIN_RE.sub("", LEC_ADMIN_RE.sub("", title)), clean_topics(topics)
     return dict(code=code, num=num, date=date, title=title, topics=topics, readings=readings,
                 materials=materials, tags=tags, anchor=f"lec-{code}-{num}")
 
@@ -614,7 +617,7 @@ The modules map onto the design phases: \hyperlink{mod-ARCH}{\tg{ARCH}} for Phas
 The material spans Spring 2024 (TinyAgent) to courses still running in November 2026. Two things change fast. (1)~\textbf{MCP:} the 2026-07-28 revision made the protocol stateless (see \hyperref[sup-mcp]{the MCP supplement}), so earlier lectures teach the older handshake. (2)~\textbf{Model names and SDKs:} courses use whatever was current when they ran. Learn the concepts from the lectures and take API details from current documentation.
 \section{Caveats}
 \begin{itemize}
-\item Content was checked through November~11, 2026. The in-progress courses (CMU, Stanford '26, Stanford 329Z, Michigan, Northeastern, Harvard, Buffalo, JHU) will post more material after that.
+\item Content was checked through November~11, 2026, and CMU and Stanford 329Z through November~14. The in-progress courses (CMU, Stanford '26, Stanford 329Z, Michigan, Northeastern, Harvard, Buffalo, JHU) will post more material after that.
 \item Tags were assigned from session titles, listed topics and readings. They are a navigation aid, and some sessions could reasonably be tagged differently.
 \item Some slide decks could not be read (several Mannheim PDFs, a few UVA PPTX files, JHU lectures 7, 8, 10, 13 and 14), so their topics are inferred from the titles.
 \item Only some repositories state a licence (UW CS 839, TinyAgent and OpenClaw are MIT). Check each licence before redistributing course material; linking is always safe.

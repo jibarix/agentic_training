@@ -55,3 +55,4 @@ Slide and video URLs come from the links on https://rdi.berkeley.edu/adv-llm-age
 - Lab specs were read through WebFetch, which displays text. The ZIPs were not opened. Neither instruction file gives a Lean version, a due date or a numeric pass threshold. The Berkeley page gives the lab window as released 3/31, due 4/28; the MOOC deadline was May 31, 2025. The Lab FAQ Google Doc did not render without sign-in.
 - Quiz links (12 Google Forms), the quiz archive doc and certificate forms are on the MOOC page and are not listed here.
 - No license is stated anywhere. Both sites are GitHub Pages builds, but no source repo is linked.
+- 2026-11-14: all 12 recordings were read in full from their auto-generated captions (transcripts kept off the repos). Each speaker in the table is confirmed from the recording. Lecture 6's caption track ends at 1:18:14, before the end of the livestream; the rest was not read. The course is finished; no recheck is due.

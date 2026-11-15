@@ -21,13 +21,13 @@ COURSES = [
          url="https://www.cmu-agents.com/#/schedule",
          level="Graduate; assumes you have trained neural LMs",
          archetype="Systems + training (build, evaluate, RL-train)",
-         slides="L1--14, L17--18", video="L1--14", codepub="A1--A3 public",
+         slides="L1--15, L17--18, L20", video="L1--14", codepub="A1--A3 public",
          best="The backbone course: harness engineering, evals, SFT/RL, safety, search.",
          overview=r"""The most complete public agents course in the collection, and the one this guide is built around.
 It goes from capabilities (tool use, long-context management, skills and memory, planning) to domains (coding, computer use, deep research), then to training (SFT, RL basics, advanced RL, RL systems), safety and observability, frameworks (OpenHands, LangGraph), interaction and search.
 The readings are taken from production systems: harness source code, provider KV-cache pricing pages and the MCP spec.
 The three assignments form one pipeline: build a harness (A1), evaluate an agent with an LLM judge (A2), then RL-train an agentic policy (A3).
-Slides for lectures 1--14, 17 and 18 are public on the schedule page, with recordings for lectures 1--9 there and for lectures 10--14 on YouTube."""),
+Slides for lectures 1--15, 17, 18 and 20 are public on the schedule page (checked November~14, 2026), with recordings for lectures 1--9 there and for lectures 10--14 on YouTube."""),
     dict(code="STAN26", short="Stanford '26", file="stanford-cs146s-fall2026-verified.md", kind="stan26",
          asg_file="stanford-cs146s.md", asg_section="Fall 2026",
          title="CS146S The Modern Software Developer", inst="Stanford University", term="Fall 2026 (current)",
@@ -65,13 +65,13 @@ When this guide was last updated (November~11, 2026), lectures 20--28 had no pub
          people="Diyi Yang, Michael Ryan, John Yang", url="https://cs329z.stanford.edu/",
          level="Prereq CS224N/U/V or CS336, or NLP background",
          archetype="Engineering discipline (build from scratch, then frameworks; eval-first)",
-         slides="L1--13 so far", video="L1--2 (YouTube)", codepub="HW1, HW2, framework notebook (MIT)",
+         slides="L1--13, L15 so far", video="L1--5 (YouTube)", codepub="HW1, HW2, framework notebook (MIT)",
          best="A harness built with no framework, then authoring and validating a benchmark task.",
          overview=r"""Teaches how to engineer agentic systems along the whole range from simple LLM pipelines to compound systems (models, retrievers, tools, optimizers) to autonomous agents: choosing and decomposing problems, selecting components, curating data, building evaluations and reasoning about trade-offs.
 Core components (RAG, tool use, the agent loop) are built from scratch first, then shown as abstractions in DSPy and LangGraph.
 The schedule runs from foundations and LLM internals through RAG, tool use and MCP, frameworks, design patterns, memory, multi-agent systems and optimization, then data for agents, evaluation and LLM-as-judge, safety and guardrails, and coding and proactive agents, with guest sessions on Terminal-Bench and SWE-bench.
 The first homework builds a harness with no framework (tools, a terminal sandbox, compaction, memory, human approval, guardrails, simulated-user evaluation). The second authors and validates a benchmark task in the Harbor framework and reviews classmates' tasks.
-When this guide was last updated (November~11, 2026), slides were posted through lecture~13 and the schedule for the remaining sessions was marked tentative."""),
+When this guide was last updated (November~14, 2026), slides were posted for lectures 1--13 and 15, recordings for lectures 1--5, and the schedule for the remaining sessions was marked tentative."""),
     dict(code="NEU", short="Northeastern", file="northeastern-agentic-ai.md", kind="std",
          title="Agentic AI", inst="Northeastern University (Khoury)", term="Fall 2026 (in progress)",
          people="Caglar Yildirim", url="https://agenticllms.github.io/",
@@ -324,7 +324,7 @@ dict(key="ARCH", num=2, title="The Agent Loop and Agent Architectures", tags=["A
 objectives=["Define an agent (model + loop + tools + environment + stopping rule) and distinguish workflows from agents.",
             "Implement a ReAct-style loop from scratch, without a framework.",
             "Judge when a graph framework (LangGraph) or an agent SDK earns its complexity."],
-concepts=r"""Anthropic's \emph{Building Effective Agents}, assigned by Northeastern, Buffalo and UW, draws the key distinction. A \textbf{workflow} orchestrates LLM calls along predefined code paths (chaining, routing, parallelization, orchestrator--workers, evaluator--optimizer). An \textbf{agent} lets the model choose its own next action in a loop until a stopping condition holds.
+concepts=r"""Anthropic's \emph{Building Effective Agents}, assigned by Northeastern, Buffalo and UW, draws the key distinction. A \textbf{workflow} orchestrates LLM calls along predefined code paths (chaining, routing, parallelization, orchestrator--workers, evaluator--optimizer). An \textbf{agent} lets the model choose its own next action in a loop until a stopping condition holds. The lecturers treat this as a choice made per task along a spectrum of agency: Ryan (Stanford 329Z lecture~5) gives copying every email into a calendar as a good fit for a workflow, and Fried (CMU lecture~5) notes that scaffolding can be replaced as models get stronger, at some cost in reliability.
 \begin{itemize}
 \item \textbf{The loop.} Build the prompt (system + history + tool specs), call the model, parse any tool calls, execute them in the environment, append the observations, and repeat until the model answers or a step or token budget runs out. That is a \emph{harness}. CMU A1, JHU A3 and the UW assignment all make you write one.
 \item \textbf{State} is the message history plus anything external (files, a scratchpad, a database). Explicit state machines and graphs (Buffalo Lab~3, LangGraph in Northeastern, UVA and CMU) make control flow inspectable, resumable (checkpointing) and testable.
@@ -340,7 +340,7 @@ sequence=[("[[CMU:1]]", "What an agent is, the agent loop and the course map (sl
           ("[[NEU:16]]", "A long-running harness built by hand (a to-do list, files in graph state, a subagent task tool), then the same agent with the \\texttt{deepagents} library."),
           ("Supplement: \\hyperref[sup-barkley]{Barkley local agent demos}", "The same small agent as a hand-written loop and as a LangGraph graph, on a local 4B model."),
           ("[[S329Z:1]] and [[S329Z:6]]", "From LLM pipelines to compound systems to agents, then design patterns and scaffolds (ReAct, Reflexion, CodeAct)."),
-          ("[[S329Z:5]]", "Components built from scratch, then the same ones as DSPy and LangGraph abstractions (public notebook).")],
+          ("[[S329Z:5]]", "Components built from scratch, then the same ones as DSPy and LangGraph abstractions (slides + video, public notebook).")],
 readings=["Anthropic, \\href{https://www.anthropic.com/engineering/building-effective-agents}{\\emph{Building Effective Agents}}",
           "Yao et al., \\href{https://arxiv.org/abs/2210.03629}{\\emph{ReAct}} (2022)", "Sumers et al., \\href{https://arxiv.org/abs/2309.02427}{\\emph{CoALA: Cognitive Architectures for Language Agents}} (2023)",
           "Chip Huyen, \\href{https://huyenchip.com/2025/01/07/agents.html}{\\emph{Agents}} (2025)",
@@ -354,8 +354,8 @@ objectives=["Explain how tool calls are encoded in chat templates and parsed by 
             "Implement manual tool dispatch, then framework tool nodes, and measure tool-selection accuracy."],
 concepts=r"""Tools are how an agent acts. Three layers matter:
 \begin{itemize}
-\item \textbf{Encoding.} The model emits a structured call (name + JSON arguments) inside its chat template, the harness executes it, and the result returns as a tool message. Constrained decoding (e.g.\ XGrammar) can guarantee well-formed calls. Benchmarks such as BFCL measure function-calling accuracy.
-\item \textbf{Design.} Tools are an interface for a non-human user. Prefer a few high-level, composable tools with clear names, typed parameters and \emph{informative errors} that tell the model how to recover. ``Code as action'' (CodeAct) replaces many tools with one interpreter. Stanford's readings include Anthropic's \emph{Writing effective tools for agents} and ``APIs don't make good MCP tools''.
+\item \textbf{Encoding.} The model emits a structured call (name + JSON arguments) inside its chat template, the harness executes it, and the result returns as a tool message. Constrained decoding (e.g.\ XGrammar) can guarantee well-formed calls, but a well-formed call can still be the wrong one. Diyi Yang (Stanford 329Z lecture~4) describes checking calls against the API by syntax tree, by running them, and by the state after multi-turn calls. Benchmarks such as BFCL measure function-calling accuracy.
+\item \textbf{Design.} Tools are an interface for a non-human user. Prefer a few high-level, composable tools with clear names, typed parameters and \emph{informative errors} that tell the model how to recover. ``Code as action'' (CodeAct) replaces many tools with one interpreter, and a shell or code tool is now a common way for agents to act (Ryan, Stanford 329Z lecture~2). Prepared tools still help: Neubig (CMU lecture~6) says one Bash tool is in theory enough for a coding agent, yet competitive agents add a file-editing tool, because sed edits need exact escaping and edit formats that use line numbers often fail. Stanford's readings include Anthropic's \emph{Writing effective tools for agents} and ``APIs don't make good MCP tools''.
 \item \textbf{Selection at scale.} With dozens of tools, retrieval over tool descriptions, or a small classifier as in TinyAgent, keeps prompts short and accurate. For hundreds of tools see the code-execution pattern in [[M:MCP]].
 \end{itemize}
 The research lineage runs from Toolformer (self-taught API calls) to Gorilla (API retrieval), PAL (program-aided reasoning), MRKL and ``What are tools anyway?''.""",
@@ -365,7 +365,7 @@ sequence=[("[[CMU:2]]", "Tool use end to end: APIs, chat templates, CodeAct, con
           ("[[NEU:5]]", "ReAct support agent, tools-versus-model design rules, deploy to HF Spaces."),
           ("[[CU:11]] and [[CU:12]]", "Research reading: Reflexion/Toolformer, then Gorilla/PAL."),
           ("Supplement: \\hyperref[sup-tinyagent]{TinyAgent}", "Tool RAG and small-model function calling at the edge."),
-          ("[[S329Z:4]]", "From REST APIs to function calling to MCP, measured with BFCL and $\\tau$-bench."),
+          ("[[S329Z:4]]", "From REST APIs to function calling to MCP, measured with BFCL and $\\tau$-bench (slides + video)."),
           ("[[UMICH:7]]", "A Chat Completions request on the wire: messages, streaming and tool calls (slides with speaker notes).")],
 readings=["Schick et al., \\href{https://arxiv.org/abs/2302.04761}{\\emph{Toolformer}} (2023)", "Patil et al., \\href{https://arxiv.org/abs/2305.15334}{\\emph{Gorilla}} (2023)",
           "Wang et al., \\href{https://arxiv.org/abs/2402.01030}{\\emph{CodeAct: Executable Code Actions}} (2024)", "Gao et al., \\href{https://arxiv.org/abs/2211.10435}{\\emph{PAL}} (2022)",
@@ -381,7 +381,7 @@ concepts=r"""The \textbf{Model Context Protocol} standardizes how tools and cont
 \begin{itemize}
 \item \textbf{Primitives:} tools, resources and prompts on the server side, and elicitation on the client side. Transports are stdio (local) and Streamable HTTP (remote, OAuth).
 \item \textbf{Server craft:} typed, composable tools; dry-run modes for write tools; \texttt{readOnlyHint}; structured errors; rate-limit handling; protocol-level tests (Stanford '26 week~2).
-\item \textbf{Security:} an MCP server is a trust boundary. See also [[M:SAFE]].
+\item \textbf{Security:} an MCP server is a trust boundary. Discovery lists each tool with a description and input schema; choosing the right one is the client's job, and the server can add checks on which tools each agent may call (Diyi Yang, Stanford 329Z lecture~4). See also [[M:SAFE]].
 \item \textbf{Scale:} with many servers, loading every tool schema is wasteful. Anthropic's \hyperref[sup-codeexec]{code-execution pattern} and CU Boulder's MCP design-choice paper argue for progressive discovery and code-based orchestration.
 \item \textbf{Agent-to-agent:} A2A (agent cards, registries) connects whole agents rather than tools. UVA runs an A2A trivia tournament.
 \end{itemize}""",
@@ -406,7 +406,7 @@ objectives=["Manage a finite context window: selection, compression/compaction, 
 concepts=r"""Apart from what the model learned in training, everything an agent can use at step $t$ is in its context: the information supplied for that inference. \textbf{Context engineering} decides what goes in.
 \begin{itemize}
 \item \textbf{Limits.} Models degrade on long inputs (``lost in the middle'', context rot), and every token costs money and latency. KV-cache reuse makes a stable prompt prefix cheap. CMU's long-context lecture uses real provider pricing and harness source code.
-\item \textbf{Compaction.} Summarize or fold old turns (model-generated compaction in CMU A1; AgentFold and context-folding in UVA and UW), and offload large observations to files.
+\item \textbf{Compaction.} Summarize or fold old turns (model-generated compaction in CMU A1; AgentFold and context-folding in UVA and UW), and offload large observations to files. Decide what must survive: the OpenHands condenser summarizes older events but keeps the original instructions (Neubig, CMU lecture~14), and Diyi Yang (Stanford 329Z lecture~1) describes an agent that dropped a ``confirm before acting'' instruction when compressing its memory, then deleted a user's emails.
 \item \textbf{Retrieval (RAG).} Chunk, embed, index, retrieve top-K, optionally rerank, then generate with citations. Treat chunk size, overlap, K, query rewriting and score thresholds as experimental variables (UVA Topic~5 runs 11 controlled experiments; Northeastern's DADA2 adds metadata filters, multi-query fusion, reranking and hybrid lexical retrieval one change at a time, scored by recall@k and MRR). Agentic RAG adds self-grading, correction and routing (Self-RAG, CRAG, Adaptive-RAG).
 \item \textbf{Long-term memory and skills.} OS-style memory tiers (MemGPT), reflection-based memories (Generative Agents, Reflexion), workflow and skill induction (AWM, ASI). \emph{Skills} are SKILL.md bundles loaded on demand, the same progressive-disclosure idea Stanford '26 week~3 and CMU A1 teach.
 \end{itemize}""",
@@ -418,7 +418,7 @@ sequence=[("[[CMU:3]]", "Context management for long-context agents: limits, com
           ("[[STAN26:5]]", "Agent skills, including web skills (then author one in the Week~3 assignment)."),
           ("[[UW:21]] and [[UW:22]]", "Research reading: MemGPT, CoALA, A-Mem, context folding."),
           ("Supplement: \\hyperref[sup-notion]{Notion Data Scout}", "Curated, owned context for a production data agent."),
-          ("[[S329Z:3]] and [[S329Z:7]]", "Retrieval-augmented generation, then agent memory architectures."),
+          ("[[S329Z:3]] and [[S329Z:7]]", "Retrieval-augmented generation (slides + video), then agent memory architectures."),
           ("[[UMICH:15]]--[[UMICH:17|short]]", "Compaction and prompt caching, agent memory, and knowledge bases compared with RAG.")],
 readings=["Lewis et al., \\href{https://arxiv.org/abs/2005.11401}{\\emph{Retrieval-Augmented Generation}} (2020)", "Liu et al., \\href{https://arxiv.org/abs/2307.03172}{\\emph{Lost in the Middle}} (2023)",
           "Packer et al., \\href{https://arxiv.org/abs/2310.08560}{\\emph{MemGPT}} (2023)", "Park et al., \\href{https://arxiv.org/abs/2304.03442}{\\emph{Generative Agents}} (2023)",
@@ -433,15 +433,15 @@ objectives=["Choose between ReAct-style interleaving, plan-then-execute and deco
             "Use search (best-of-N, critics/verifiers, tree search) to trade compute for reliability."],
 concepts=r"""\begin{itemize}
 \item \textbf{Thinking in tokens.} CoT and self-consistency let the model compute before answering. UVA's CoT lecture looks at why this works and at latent (hidden) reasoning.
-\item \textbf{Planning.} Plan-and-execute, least-to-most and decomposed prompting split long tasks. Code-as-policies and DAG plans (LLMCompiler, used in TinyAgent) make plans executable and parallel. CMU's planning lecture asks \emph{when} to plan (``Thinking vs.\ Doing'', ``Calibrate-Then-Act'').
+\item \textbf{Planning.} Plan-and-execute, least-to-most and decomposed prompting split long tasks. Code-as-policies and DAG plans (LLMCompiler, used in TinyAgent) make plans executable and parallel. CMU's planning lecture asks \emph{when} to plan (``Thinking vs.\ Doing'', ``Calibrate-Then-Act''). Fried (CMU lecture~5) reports a finding that, for a given token budget, taking more actions usually beat longer reasoning, as long as the actions do not lead to a bad state (one lecturer's report).
 \item \textbf{Reflection.} Reflexion and Self-Refine critique and retry. Northeastern's self-grading RAG loop is a concrete build. Reflection only helps when the feedback signal carries real information (tests, tools, retrieval scores), so measure it.
-\item \textbf{Search.} Sample many candidates, then pick with a verifier or critic (CMU Search~1), or explore a tree of states (ToT, LATS, CMU Search~2). AlphaCode, AlphaEvolve and ShinkaEvolve (UW) scale this to evolutionary program search. JHU starts from the classic version: enumerative program synthesis.
+\item \textbf{Search.} Sample many candidates, then pick with a verifier or critic (CMU Search~1), or explore a tree of states (ToT, LATS, CMU Search~2). Keeping an answer that a hard verifier accepts differs from a majority vote: Ryan (Stanford 329Z lecture~2) makes the point for tasks with hard verifiers, and Brown (Berkeley '25 lecture~7) notes that best-of-$n$ often beats a majority vote but needs answers that are easy to verify. AlphaCode, AlphaEvolve and ShinkaEvolve (UW) scale this to evolutionary program search. JHU starts from the classic version: enumerative program synthesis.
 \end{itemize}""",
 sequence=[("[[CMU:5]]", "Planning, task decomposition and multi-agent coordination (slides + video)."),
           ("[[UW:3]] and [[UW:4]]", "CoT/ReAct, then Toolformer/ToT, with supplementary papers."),
           ("[[NEU:9]] and [[NEU:10]]", "Reflection and self-critique, then planning with skill libraries (Voyager) and ToT."),
           ("[[UVA:16]]", "Understanding chain of thought, including latent CoT."),
-          ("[[CMU:20]] and [[CMU:21]]", "Reranking and critic models, then tree search."),
+          ("[[CMU:20]] and [[CMU:21]]", "Repeated sampling, reranking and selection, and self-refinement (slides), then tree search."),
           ("[[UW:17]] and [[UW:18]]", "Searching the solution space: AlphaCode, AlphaGeometry, evolutionary search."),
           ("[[JHU:2]]--[[JHU:4|short]]", "Program synthesis as search (the foundation for A1).")],
 readings=["Wang et al., \\href{https://arxiv.org/abs/2203.11171}{\\emph{Self-Consistency}} (2022)", "Yao et al., \\href{https://arxiv.org/abs/2305.10601}{\\emph{Tree of Thoughts}} (2023)",
@@ -457,7 +457,7 @@ objectives=["Implement handoffs, routers, orchestrator--worker and debate patter
 concepts=r"""Multiple agents can parallelize work, isolate context (sub-agents with fresh windows) and specialize roles. They also multiply cost and add new failure modes: role confusion, lost information at handoffs, and endless loops.
 \begin{itemize}
 \item \textbf{Patterns:} router/handoff, orchestrator--workers (Anthropic's multi-agent research system), role-based SOPs (MetaGPT, CAMEL), conversation frameworks (AutoGen), debate, and planner/implementer/reviewer sub-agents in coding tools (Stanford '26 week~4).
-\item \textbf{Evidence:} \emph{Why do multi-agent LLM systems fail?} (Northeastern reads it twice) and \emph{Towards a Science of Scaling Agent Systems} (UW) set this against OpenHands' ``don't sleep on single-agent systems''. Start with one agent and add more only when a measurement says so.
+\item \textbf{Evidence:} \emph{Why do multi-agent LLM systems fail?} (Northeastern reads it twice) and \emph{Towards a Science of Scaling Agent Systems} (UW) set this against OpenHands' ``don't sleep on single-agent systems''. The lecturers do not agree on when extra agents pay off. Diyi Yang (Stanford 329Z lecture~1) says several agents may add little accuracy with today's strong models but can still help with efficiency and with keeping access to sensitive data separate. Neubig (CMU lecture~14) reports one experiment on long coding tasks where multiple agents succeeded more often and cost more. Debate, routing and context isolation are different mechanisms, so judge each on its own. Start with one agent and add more only when a measurement says so.
 \item \textbf{Simulation:} populations of agents as social-science instruments (Generative Agents, Concordia, UChicago week~3).
 \end{itemize}""",
 sequence=[("[[NEU:12]]--[[NEU:14|short]]", "Three sessions: failure modes and handoffs, role-based MAS, the LangGraph runtime and agent swarms."),
@@ -481,7 +481,7 @@ objectives=["Explain the architecture of production coding agents (system prompt
 concepts=r"""Coding is the domain where agents work best today, because the environment provides dense, verifiable feedback (compilers, tests, linters).
 \begin{itemize}
 \item \textbf{Anatomy.} A long system prompt, a small core toolset (read, write, edit, bash, search), a sandbox, compaction, TODO/plan tools, and optionally sub-agents. Stanford '26 dissects real system prompts and traces. JHU A3 makes you implement path-validated file tools and TODO tools.
-\item \textbf{Interfaces matter.} SWE-agent showed that agent--computer interface design (viewer windows, linting edits) moves benchmark scores. Agentless showed that a fixed pipeline can be competitive, so keep a simple baseline.
+\item \textbf{Interfaces matter.} SWE-agent showed that agent--computer interface design (viewer windows, linting edits) moves benchmark scores. Agentless showed that a fixed pipeline could be competitive. Neubig (CMU lecture~6) explains this by models then being trained heavily for single-step code fixes and much less for agentic tool calling (one lecturer's account). Keep a simple baseline anyway.
 \item \textbf{Benchmarks.} SWE-bench (and SWE-Gym, R2E-Gym for training), Terminal-Bench, BaxBench and RedCode (security). See [[M:EVAL]].
 \item \textbf{Practice.} Spec-driven development, context files (AGENTS.md/CLAUDE.md), hooks as lint/test gates, agentic code review, background agents, and ``agent readiness'' of a codebase (Stanford '26 weeks~2--8).
 \item \textbf{Research frontier.} Refactoring agents (CU Boulder), coding-agent configuration studies, and evolutionary coding agents (AlphaEvolve, Live-SWE-agent).
@@ -526,8 +526,8 @@ objectives=["Design task-level evals with success criteria, failure taxonomies a
 concepts=r"""Evaluation separates agent engineering from demo-building, and every serious course in this collection weights it heavily.
 \begin{itemize}
 \item \textbf{Levels.} Unit tests for tools, trajectory and intermediate-step checks, end-to-end task success, and human judgments of usefulness.
-\item \textbf{Verifiers.} Deterministic tests where possible (SWE-bench, Harbor tasks with reference solutions and \emph{mutants} in CMU A2). LLM-as-judge where not, \emph{validated against human labels} (CMU A2 scores judges by MCC).
-\item \textbf{Statistics and cost.} Agents are stochastic: report pass@k over repeated runs (JHU A2), confidence intervals and dollars per task. \emph{AI Agents That Matter} criticizes leaderboards that ignore cost and overfitting.
+\item \textbf{Verifiers.} Deterministic tests where possible (SWE-bench, Harbor tasks with reference solutions and \emph{mutants} in CMU A2). LLM-as-judge where not, \emph{validated against human labels} (CMU A2 scores judges by MCC). Outcome checks ignore the steps, so an agent can pass by gaming the checker, for example by adding many items to a shopping cart; also check that it respected the task's constraints (Koh, CMU lecture~7). Keep answers out of reach: lecturers report agents reading Git history left in a coding benchmark, writing code to fit tests they could see or editing the tests, and retrieving benchmark answers from the web (Neubig, CMU lecture~11; Diyi Yang, Stanford 329Z lecture~1; Asai, CMU lecture~10).
+\item \textbf{Statistics and cost.} Agents are stochastic: report results over repeated runs (JHU A2) and say which statistic you mean: pass@k asks whether any of $k$ attempts succeeds, while pass$^k$, used with $\tau$-bench, asks whether all $k$ do (Neubig, CMU lecture~6; Diyi Yang, Stanford 329Z lecture~4; Bavor, Berkeley '25 lecture~10). Add confidence intervals and dollars per task. \emph{AI Agents That Matter} criticizes leaderboards that ignore cost and overfitting.
 \item \textbf{Error analysis.} A failure taxonomy (Buffalo Lab~4; CMU A2's four error families) turns logs into engineering decisions.
 \item \textbf{Benchmarks:} SWE-bench, $\tau$-bench, AgentBench, WebArena, AgentDojo (security), BrowseComp and DeepResearch Bench (research agents), and METR's time-horizon measurements.
 \end{itemize}""",
@@ -536,7 +536,7 @@ sequence=[("[[A:CMU:A2]]", "The single best exercise here: author tasks, label r
           ("[[UB:9]]", "From single-prompt to task-level evals (then Lab~4)."),
           ("[[HARV:8]]", "Benchmark by benchmark: what each one tests and what its grader inspects, plus leakage and saturation (slides and a reference note)."),
           ("[[A:JHU:A2]]", "A rigorous pass@k study across languages, models and prompting strategies."),
-          ("[[CMU:20]]", "Critic models: evaluation used at inference time."),
+          ("[[CMU:20]]", "Reranking and selecting among sampled candidates: evaluation used at inference time (slides)."),
           ("[[UW:22]]", "Includes METR's \\emph{Measuring AI Ability to Complete Long Tasks}."),
           ("[[S329Z:13]] and [[S329Z:15]]", "Evaluation fundamentals and benchmark design, then LLM-as-judge and evaluation infrastructure.")],
 readings=["Zheng et al., \\href{https://arxiv.org/abs/2306.05685}{\\emph{Judging LLM-as-a-Judge}} (2023)", "Yao et al., \\href{https://arxiv.org/abs/2406.12045}{\\emph{$\\tau$-bench}} (2024)",
@@ -551,8 +551,8 @@ objectives=["Fine-tune a model on agent trajectories (SFT, LoRA/QLoRA) and know 
             "Optimize prompts and programs automatically (DSPy, TextGrad, GEPA)."],
 concepts=r"""\begin{itemize}
 \item \textbf{SFT and distillation.} Collect or synthesize high-quality trajectories from a strong model, filter them with verifiers, and fine-tune a smaller model (TinyAgent, CMU Training~1, UVA's Tinker text-to-SQL lab). LoRA and QLoRA make this cheap.
-\item \textbf{RL from verifiable rewards.} The policy generates trajectories in an environment and receives a reward (tests passed, task solved). Advantages are computed by REINFORCE baselines, PPO with GAE, or GRPO's group-relative normalization (DeepSeekMath, DeepSeek-R1, Dr.~GRPO). Multi-turn agent RL adds credit assignment across tool calls and requires masking tool-output tokens.
-\item \textbf{RL systems.} Rollouts dominate cost, so asynchronous producer--consumer training with off-policy corrections (importance weighting) is standard. CMU A3 makes you build both sync and async GRPO on Tinker with a SkyRL server.
+\item \textbf{RL from verifiable rewards.} The policy generates trajectories in an environment and receives a reward (tests passed, task solved). Advantages are computed by REINFORCE baselines, PPO with GAE, or GRPO's group-relative normalization (DeepSeekMath, DeepSeek-R1, Dr.~GRPO). Multi-turn agent RL adds credit assignment across tool calls and requires masking tool-output tokens. If the initial policy produces no rewarding trajectories, sparse-reward RL may need demonstrations, a curriculum or intermediate rewards first (Fried, CMU lecture~9), one reason training pipelines run SFT before RL (Asai, CMU lecture~10). Track the training reward, but also check unseen tasks and watch behavior, since rewards can be gamed (Neubig, CMU lecture~11).
+\item \textbf{RL systems.} Rollouts dominate cost, so asynchronous producer--consumer training with off-policy corrections (importance weighting) is common. Neubig (CMU lecture~11) explains why the corrections are approximate: rollouts come from an older policy, and importance weights can grow very large over long trajectories, so practical systems use weights that are not exact but good enough. CMU A3 makes you build both sync and async GRPO on Tinker with a SkyRL server.
 \item \textbf{Optimizing without gradients.} DSPy compiles LM programs. TextGrad, GEPA, ADAS and Promptbreeder evolve prompts or whole agent designs (UW weeks on optimizing and self-improving agents).
 \end{itemize}""",
 sequence=[("[[CMU:8]]", "Supervised fine-tuning for agents (slides + video)."),
@@ -576,7 +576,7 @@ objectives=["Threat-model an agent: prompt injection, tool misuse, data exfiltra
 concepts=r"""An agent with tools is a confused-deputy risk. Simon Willison's \textbf{lethal trifecta} (UW reading) names the dangerous combination: access to private data, exposure to untrusted content, and an exfiltration channel.
 \begin{itemize}
 \item \textbf{Attacks.} Indirect prompt injection through web pages, documents, tool outputs or MCP servers. Jailbreaks. Malicious or compromised tools and packages. CMU's safety lecture works through real incidents: the OpenClaw incident report, a database-deletion incident, CVE-2025-32711, and the Cline supply-chain compromise.
-\item \textbf{Defenses.} Sandboxed execution and credential isolation; least-privilege tools and permission modes; human-in-the-loop approval for irreversible actions (Buffalo Lab~5); capability-based designs that separate control flow from untrusted data (CaMeL); guardrails; layered ``Swiss cheese'' safety.
+\item \textbf{Defenses.} Sandboxed execution and credential isolation; least-privilege tools and permission modes; human-in-the-loop approval for irreversible actions (Buffalo Lab~5); capability-based designs that separate control flow from untrusted data (CaMeL); guardrails; layered ``Swiss cheese'' safety. The lecturers put enforcement outside the model: the fewest permissions and short-lived keys for each agent, and monitors on tool calls that can pause or block an action (CMU lecture~13); Bavor (Berkeley '25 lecture~10) lets agents reach business systems only through deterministic software with access controls.
 \item \textbf{Oversight.} Tracing, monitoring and anomaly detection (CMU Safety~2). Static analysis of agent-written code (Semgrep, Stanford weeks on security).
 \item \textbf{Alignment.} Sleeper agents, misalignment after narrow fine-tuning, representation engineering (UChicago week~9, UVA project ideas).
 \end{itemize}""",
@@ -611,6 +611,7 @@ sequence=[("[[NEU:5]] and [[NEU:6]]", "Deploy to Hugging Face Spaces, then Rende
           ("[[STAN26:15]] and [[STAN26:19]]", "Background agents, then coding agents in big teams (gateways, routing, cost)."),
           ("[[STAN25:17]]", "Incident response and DevOps with agents (slides)."),
           ("[[CMU:12]]", "RL systems: the systems side of agent training."),
+          ("[[S329Z:5]]", "Durable orchestration and telemetry: stored execution history, retries when parts fail, cost and reliability (slides + video)."),
           ("Supplements: \\hyperref[sup-openclaw]{OpenClaw}, \\hyperref[sup-tinyagent]{TinyAgent}", "Always-on gateway architecture; edge deployment."),
           ("Supplements: \\hyperref[sup-anthauto]{Anthropic agent automations}, \\hyperref[sup-notion]{Notion Data Scout}", "Durable state and guardrails for a scheduled agent; operating a production data agent.")],
 readings=["Google, \\href{https://sre.google/sre-book/introduction/}{\\emph{SRE book, introduction}}",
@@ -624,7 +625,7 @@ dict(key="APP", num=14, title="Applications: Deep Research, Science and Society"
 objectives=["Understand how deep-research and scientific-discovery agents are built and evaluated.",
             "Scope an application agent for a bounded domain with a measurable outcome."],
 concepts=r"""\begin{itemize}
-\item \textbf{Deep research agents} combine search, browsing, reading and synthesis over many steps (STORM, PaperQA, OpenScholar, Tongyi DeepResearch, DR Tulu). They are evaluated on BrowseComp, DeepResearch Bench and LiveResearchBench.
+\item \textbf{Deep research agents} combine search, browsing, reading and synthesis over many steps (STORM, PaperQA, OpenScholar, Tongyi DeepResearch, DR Tulu). They are evaluated on BrowseComp, DeepResearch Bench and LiveResearchBench. Asai (CMU lecture~10) separates whether a citation supports its claim from whether the source is good, and suggests also testing whether a report helps people do the task it was meant for (an open research question in that lecture).
 \item \textbf{Agents for science} range from AI Scientist and autonomous chemistry to the AI co-scientist, sequential falsification, HEPTAPOD for particle physics, and Lean-based mathematics (UVA's guest lecture).
 \item \textbf{Society.} Simulated subjects and digital doubles, mixed human--AI experiments, persuasion, the future of work (CMU), and human--agent interaction design (CMU Interaction~2).
 \item \textbf{Scoping your own.} Mannheim's nine project briefs and Buffalo's ``useful bounded agent'' spec are good templates: a narrow domain, explicit tools, a benchmark and a risk assessment.

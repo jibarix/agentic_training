@@ -36,7 +36,7 @@ Schedule, dates and readings come from the home page. Video URLs are the officia
 | 18 | Fri Nov 21 | Guest: Misha Laskin (Reflection AI), Building Agentic Systems for Autonomy | Autonomous agentic systems (from title only) | n/a | n/a | ORG, ARCH |
 | — | Mon Nov 24 / Fri Nov 28 | Holidays (no class) | — | — | — | — |
 | 19 | Mon Dec 1 | Guest: Danny Driess (Physical Intelligence), Multimodal AI Agents in Robotics | Multimodal robot agents (from title only) | n/a | n/a | ORG, APP |
-| 20 | Fri Dec 5 | Future Research Areas | Open problems in self-improving agents (from title only) | n/a | https://www.youtube.com/watch?v=AyO6wyu4DEg | FND |
+| 20 | Fri Dec 5 | Future Research Areas | Open problems: generator and critic models for synthetic training data, checking a verifier's own analyses, self-generated executable tasks, transfer from RL, efficient and local inference, continual learning (from the recording) | n/a | https://www.youtube.com/watch?v=AyO6wyu4DEg | FND |
 | — | Wed Dec 10 | Final project due (EoD) | — | — | — | — |
 | — | Fri Dec 12 | Final project poster presentation | — | — | — | — |
 
@@ -64,6 +64,7 @@ Schedule, dates and readings come from the home page. Video URLs are the officia
 - The schedule is static content on the home page, which WebFetch could read. WebFetch returns converted text, so I could not confirm the HTML markup; the page shows columns #, Date, Description, Paper Readings*, Deadlines. The footnote says readings "may be updated closer to the class date." The site numbers the midterm sessions as one row ("10-12"), split here into lectures 10, 11 and 12.
 - The HW2 due date conflicts: the schedule says Oct 22, the grading section says Oct 23. The notebooks give no due dates; the dates in the table come from the course site. HW2 and HW3 point totals are summed from the notebooks' part values.
 - I read the homework details from the READMEs and the raw notebooks (`student_homework1.ipynb`, `homework.ipynb`, `homework3.ipynb`). I did not open the package source folders. The HW3 notebook text names `deep_research_agent.py`, but its code imports `cs329a_hw3.DeepResearchAgent`.
-- "Key topics" for guest talks and lecture 20 come from titles only. For other lectures they come from titles and listed readings, not from watching the videos.
+- "Key topics" for guest talks come from titles only. For other lectures they come from titles and listed readings; lecture 20's come from its recording.
+- 2026-11-14: all 9 recordings were read in full from their auto-generated captions (transcripts kept off the repos). Speakers: Chowdhery and Mirhoseini both speak in Part 1 (lecture 1) and Part 9 (lecture 20); the other seven recordings carry no usable self-introduction, so their individual lecturer is not stated here. The course is finished; no recheck is due.
 - Prerequisites come from the Stanford bulletin, not the course site. The Stanford Online course page (https://online.stanford.edu/courses/cs329a-self-improving-ai-agents) returned no content.
 - Past-project papers and posters are relative links under `winter2025projects/` on the course site. I did not open them.

@@ -1,4 +1,4 @@
-# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26; lectures 16-18, Nov 3 and recordings for L10-L14 updated from the page data and the YouTube playlist 2026-11-11)
+# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26; lectures 16-18, Nov 3 and recordings for L10-L14 updated from the page data and the YouTube playlist 2026-11-11; lecture 20 slides and readings from the page data, and the lecturers of L5, L6, L9 and L11 from the recordings, 2026-11-14)
 
 Authoritative; supersedes the lecture table in cmu-11768.md where they disagree.
 Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L14: L1-L9 are linked on https://www.cmu-agents.com/#/schedule; L10-L14 are on the course's YouTube channel (Graham Neubig) but not yet linked on the site; their Rec cells hold the video URLs (titles checked by oEmbed, 2026-11-11)
@@ -9,13 +9,13 @@ Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for
 | 2 | Thu Aug 27 | Capabilities 1: Tool Use | Intro & Capabilities | | What Are Tools Anyway?; CodeAct; Toolformer; XGrammar (refs: OpenAI Chat Completions, HF chat templates, BFCL V4) | lecture-02-tool-use.pdf | Y | TOOL |
 | 3 | Tue Sep 1 | Capabilities 2: Context Management for Long-Context Agents | Intro & Capabilities | | (refs: DistServe, Needle in a Haystack, Longformer) | lecture-03-long-context.pdf | Y | MEM |
 | 4 | Thu Sep 3 | Capabilities 3: Skills and Memory | Intro & Capabilities | | OpenHands Agent Skills; SkillsBench; MemGPT; AWM; ASI; ReasoningBank (refs: Mem0, Reflexion, ExpeL) | lecture-04-memory-and-skills.pdf | Y | MEM |
-| 5 | Tue Sep 8 | Capabilities 4: Planning, Task Decomposition, Multi-Agent Coordination | Intro & Capabilities | | Cursor Plan Mode; Least-to-Most; Decomposed Prompting; Code as Policies; SayCan; Plan-and-Act; Thinking vs. Doing; Calibrate-Then-Act; RAO; MACU | lecture-05-planning.pdf | Y | RSN, MULTI |
-| 6 | Thu Sep 10 | Domains 1: Coding Agents | Domains | | (refs: OLMo, StarCoder, Code Llama) | lecture-06-coding-agents.pdf | Y | CODE |
+| 5 | Tue Sep 8 | Capabilities 4: Planning, Task Decomposition, Multi-Agent Coordination | Intro & Capabilities | Daniel Fried | Cursor Plan Mode; Least-to-Most; Decomposed Prompting; Code as Policies; SayCan; Plan-and-Act; Thinking vs. Doing; Calibrate-Then-Act; RAO; MACU | lecture-05-planning.pdf | Y | RSN, MULTI |
+| 6 | Thu Sep 10 | Domains 1: Coding Agents | Domains | Graham Neubig | (refs: OLMo, StarCoder, Code Llama) | lecture-06-coding-agents.pdf | Y | CODE |
 | 7 | Tue Sep 15 | Computer Use Agents | Domains | JY Koh | WebArena; VisualWebArena; OSWorld; OpenCUA; CUA-Gym; MACU | lecture-07-computer-use-agents.pdf | Y | WEB |
 | 8 | Thu Sep 17 | Training 1: SFT | Training | Yueqi Song | (refs: DeepSeek-R1, Kimi, Nemotron) | lecture-08-sft.pdf | Y | TRAIN |
-| 9 | Tue Sep 22 | Training 2: RL Basics | Training | | ReST; ReST-EM; DeepSeekMath; DrGRPO | lecture-09-rl-basics.pdf | Y | TRAIN |
+| 9 | Tue Sep 22 | Training 2: RL Basics | Training | Daniel Fried | ReST; ReST-EM; DeepSeekMath; DrGRPO | lecture-09-rl-basics.pdf | Y | TRAIN |
 | 10 | Thu Sep 24 | Domains 3: Deep Research Agents | Domains | Akari Asai | OpenScholar; BrowseComp; DeepResearch Bench; Tongyi DeepResearch; DR Tulu; AgentIR | lecture-10-deep-research-agents.pdf | https://www.youtube.com/watch?v=nKUBrXFQBUM | APP, MEM |
-| 11 | Tue Sep 29 | Training 3: Advanced RL Algorithms | Training | | (refs: InstructGPT, GAE, Let's Verify Step by Step, AReaL) | lecture-11-rl-advanced.pdf | https://www.youtube.com/watch?v=jKx7_fOZRzg | TRAIN |
+| 11 | Tue Sep 29 | Training 3: Advanced RL Algorithms | Training | Graham Neubig | (refs: InstructGPT, GAE, Let's Verify Step by Step, AReaL) | lecture-11-rl-advanced.pdf | https://www.youtube.com/watch?v=jKx7_fOZRzg | TRAIN |
 | 12 | Thu Oct 1 | Training 4: RL Systems | Training | Apurva Gandhi | | lecture-12-rl-systems.pdf | https://www.youtube.com/watch?v=dwR6NP9nI-8 | TRAIN, DEPLOY |
 | 13 | Tue Oct 6 | Safety 1: Agent Safety | Agent Safety | | (refs: OpenClaw incident report, CVE-2025-32711, Cline supply-chain postmortem) | lecture-13-agent-safety.pdf | https://www.youtube.com/watch?v=Mbonnq-PUGM | SAFE |
 | 14 | Thu Oct 8 | Frameworks 1: OpenHands | Agent Frameworks | Graham Neubig | OpenHands Software Agent SDK report; SWE-agent; OpenDevin CodeAct 1.0; Don't Sleep on Single-agent Systems; OpenHands-Versa (refs: HumanEval, SWE-bench, CodeR, MetaGPT) | lecture-14-openhands.pdf | https://www.youtube.com/watch?v=VAzZkT68h2Q | ARCH, CODE |
@@ -27,7 +27,7 @@ Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for
 | – | Tue Nov 3 | University holiday (no class) | | | | | | |
 | – | Thu Nov 5 | Project hours | | | | | | ORG |
 | 19 | Tue Nov 10 | Interaction 2: Human-Agent Interaction | Interaction & Projects | Valerie Chen | | – | | APP, EVAL |
-| 20 | Thu Nov 12 | Search 1: Reranking and Critic Models | Search & Inference | | | – | | RSN, EVAL |
+| 20 | Thu Nov 12 | Search 1: Reranking and Critic Models | Search & Inference | | Large Language Monkeys; Rethinking Thinking Tokens (PDR); Scaling Test-Time Compute for Agentic Coding; Meta-Harness (refs: Self-Consistency, Reflexion, Self-Refine, Large Language Models Cannot Self-Correct Reasoning Yet, Darwin Gödel Machine, Tree Search for Language Model Agents; 23 in all) | lecture-20-search-basics.pdf | N | RSN, EVAL |
 | 21 | Tue Nov 17 | Search 2: Tree Search | Search & Inference | JY Koh | | – | | RSN |
 | 22 | Thu Nov 19 | Guest Lecture | Advanced Topics | Karthik Narasimhan | | – | | – |
 | 23 | Tue Nov 24 | Guest Lecture | Advanced Topics | Sasha Rush | | – | | – |
