@@ -49,7 +49,7 @@
 \title{\textbf{Screening Tasks for Agentic Automation}\\[4pt]
 \large A companion to the Agentic System Design Process: what to check between Phase~1 and Phase~2}
 \author{J. A. Arroyo}
-\date{Version 0.9.3 --- 2 November 2026}
+\date{Version 0.9.4 --- 15 November 2026}
 
 \begin{document}
 \maketitle
@@ -144,6 +144,7 @@ Four other questions are often folded into this one. They are separate, and each
 \item \emph{Who approves.} How much the system may decide and do without a person is set on a scale, and separately for gathering information, analysing it, choosing an action and carrying it out\p{27, \S III, Table~I}. An on-demand system can act without approval, and an always-on one can be required to ask.
 \end{itemize}
 Always on also need not mean that a language model runs all the time. Ordinary code can do the watching and call a model only when something needs interpreting \inferred.
+Anthropic's practitioner guide to always-on agents describes the same arrangement. In that guide, ``always on'' describes the user's experience. The agent is mostly idle. An event or a timer starts a run. The run reads stored memory, acts within its permissions, updates the memory and ends\p{28, ``The cycle behind the always-on agent'', ``How everything fits together''}. It keeps memory and permissions as separate parts of the design\p{28, ``Memory'', ``Permissions''}. It is a description of practice, not a taxonomy, and it does not say when the noticing itself needs a language model.
 
 \begin{example}{a monitor that starts a job (an illustration, not from the 22 papers)}
 A service watches a stream of readings with fixed thresholds. When a reading drifts out of range, it starts a bounded investigation that gathers evidence, tests explanations and drafts a response. If the response exceeds what the system is authorized to do, it waits for a person. The watching is code; the investigation is a job that ends; the approval rule is a separate decision.
@@ -296,7 +297,7 @@ The appendix of the design process\p{D} works three examples through this worksh
 \section{Screening worksheet}\label{sec:worksheet}
 
 \textbf{Comparing candidate tasks.}
-When several tasks compete, start from business problems rather than from the technology, and confirm that each activity happens often enough to justify the investment\p{29, ``AI use case identification''}. Score the candidates on value and effort, rank them\p{28, pp.\,25--28; 29, ``Prioritize AI use cases''}, and re-score periodically, since effort falls as capabilities change\p{28, p.\,28}. Neither source gives validated weights; treat the ranking as a way to choose which candidate to screen first, not as the screen \inferred.
+When several tasks compete, start from business problems rather than from the technology, and confirm that each activity happens often enough to justify the investment\p{30, ``AI use case identification''}. Score the candidates on value and effort, rank them\p{29, pp.\,25--28; 30, ``Prioritize AI use cases''}, and re-score periodically, since effort falls as capabilities change\p{29, p.\,28}. Neither source gives validated weights; treat the ranking as a way to choose which candidate to screen first, not as the screen \inferred.
 
 One page per candidate task. Carry forward the Phase~1 success measure and the limits on cost, delay and failure. Answer from work samples and existing records, and mark each answer as observed, estimated or unknown. Three to five samples are a first look, not a count of how often things happen.
 
@@ -353,7 +354,7 @@ Three parts of Phase~2 of the design process come from this document:
 
 I am the sole author. I used AI tools in preparing this document and disclose their role here.
 \begin{itemize}
-\item \emph{Claude} (Anthropic, through Claude Code) searched for and read the papers (and, for version~0.9.3, the guides on comparing candidate tasks), and drafted and revised the text, the table and the figure under my direction.
+\item \emph{Claude} (Anthropic, through Claude Code) searched for and read the papers (and, for version~0.9.3, the guides on comparing candidate tasks; for version~0.9.4, the guide to always-on agents), and drafted and revised the text, the table and the figure under my direction.
 \item \emph{Codex} (OpenAI) acted as a second reader. It checked the papers, quotations, numbers and citations, and some sentences follow its suggested corrections closely.
 \item The distinction in Section~\ref{sec:scope} started from a conversation I had with \emph{Gemini} (Google). The sources it cited were then checked against the originals.
 \end{itemize}
@@ -455,12 +456,13 @@ Bracketed numbers in the text refer to these entries; page numbers are PDF page 
 \item Y.~Lu et al., Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance. ICLR 2025; \href{https://arxiv.org/abs/2410.12361}{arXiv:2410.12361}.
 \item T.~R.~Sumers, S.~Yao, K.~Narasimhan and T.~L.~Griffiths, Cognitive Architectures for Language Agents. \emph{Transactions on Machine Learning Research}, 2024; \href{https://arxiv.org/abs/2309.02427}{arXiv:2309.02427}.
 \item R.~Parasuraman, T.~B.~Sheridan and C.~D.~Wickens, A Model for Types and Levels of Human Interaction with Automation. \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part A} 30(3), 286--297, 2000. \href{https://doi.org/10.1109/3468.844354}{doi:10.1109/3468.844354}.
+\item W.~Hu (Anthropic), Building always-on agents. 13~November 2026; checked on 15~November 2026. \url{https://claude.com/resources/articles/building-always-on-agents}
 \end{enumerate}
 }
 
 \textbf{Background for comparing candidate tasks (Section~\ref{sec:worksheet}).} Checked on 2~November 2026.
 {\small
-\begin{enumerate}[label={[\arabic*]},leftmargin=2.2em,start=28]
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.2em,start=29]
 \item OpenAI, Identifying and scaling AI use cases. \href{https://cdn.openai.com/business-guides-and-resources/identifying-and-scaling-ai-use-cases.pdf}{cdn.openai.com (PDF)}.
 \item Microsoft Learn, Cloud Adoption Framework, Plan for AI adoption. \url{https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/plan}
 \end{enumerate}
