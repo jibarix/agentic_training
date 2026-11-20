@@ -11,3 +11,7 @@ Three documents and a draft book by J. A. Arroyo on designing and building agent
 | `research/` | The course tables the guide is built from. |
 
 The four document folders have READMEs; the first three include their rebuild command. The Big Book's LaTeX source is not published, so its README explains the companion code instead. The documents state their own sources, limits and use of AI tools.
+
+## Licence
+
+My original text and code in this repository are released under the MIT licence (see `LICENSE`), except the Big Book draft in `bigbook/`, whose text is not covered; its companion code has its own MIT licence (`bigbook/code/LICENSE`). Third-party quotations, illustrations and other source material are excluded from this grant; their existing terms or public-domain status are unchanged. Sources are credited in the documents.
