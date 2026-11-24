@@ -1,7 +1,7 @@
-# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26; lectures 16-18, Nov 3 and recordings for L10-L14 updated from the page data and the YouTube playlist 2026-11-11; lecture 20 slides and readings from the page data, and the lecturers of L5, L6, L9 and L11 from the recordings, 2026-11-14)
+# CMU 11-768 AI Agents — VERIFIED schedule (rendered in Chrome, 2026-10-09; lecture 14 updated from the site's page data, 2026-10-11; rechecked against the page data 2026-10-16, no changes; lecture 15 updated from the page data 2026-10-26; lectures 16-18, Nov 3 and recordings for L10-L14 updated from the page data and the YouTube playlist 2026-11-11; lecture 20 slides and readings from the page data, and the lecturers of L5, L6, L9 and L11 from the recordings, 2026-11-14; lectures 19 and 21-23 and the schedule's recording links from the page data, 2026-11-24)
 
 Authoritative; supersedes the lecture table in cmu-11768.md where they disagree.
-Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L14: L1-L9 are linked on https://www.cmu-agents.com/#/schedule; L10-L14 are on the course's YouTube channel (Graham Neubig) but not yet linked on the site; their Rec cells hold the video URLs (titles checked by oEmbed, 2026-11-11)
+Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for L1-L14, and all 14 are linked on https://www.cmu-agents.com/#/schedule (checked 2026-11-24; until 2026-11-14 the site linked only L1-L9). L10-L14 are on the course's YouTube channel (Graham Neubig); their Rec cells hold the video URLs (titles checked by oEmbed, 2026-11-11)
 
 | # | Date | Title | Module | Lecturer | Readings | Slides file | Rec | Tags |
 |---|---|---|---|---|---|---|---|---|
@@ -26,11 +26,11 @@ Slides: https://www.cmu-agents.com/slides/<file>. Recordings (YouTube) exist for
 | 18 | Thu Oct 29 | Interaction 1: Multi-Agent Interaction | Interaction & Projects | Saujas Vaduguru | Multiagent Debate; Multi-Agent Computer Use; Scaling Discovery through Test-Time Communication; SWEET-RL; Don't lie to your friends (collaborative self-play); Debating with More Persuasive LLMs (refs: MARL book, ChatDev, LangChain subagents, Recursive Agent Optimization, Asynchronous SWE Agents, Blackboard multi-agent system, GitSwarm, Generative Agents, Magentic Marketplace; 17 in all) | lecture-18-multi-agent-systems.pdf | N | MULTI |
 | – | Tue Nov 3 | University holiday (no class) | | | | | | |
 | – | Thu Nov 5 | Project hours | | | | | | ORG |
-| 19 | Tue Nov 10 | Interaction 2: Human-Agent Interaction | Interaction & Projects | Valerie Chen | | – | | APP, EVAL |
+| 19 | Tue Nov 10 | Interaction 2: Human-Agent Interaction | Interaction & Projects | Valerie Chen | Guidelines for Human-AI Interaction; Completion ≠ Collaboration; How can we assess human-agent interactions?; Code with Me or for Me?; (Im)Paired Programming (10 refs) | 2026-11-10-valerie-chen.pdf | N | APP, EVAL |
 | 20 | Thu Nov 12 | Search 1: Reranking and Critic Models | Search & Inference | | Large Language Monkeys; Rethinking Thinking Tokens (PDR); Scaling Test-Time Compute for Agentic Coding; Meta-Harness (refs: Self-Consistency, Reflexion, Self-Refine, Large Language Models Cannot Self-Correct Reasoning Yet, Darwin Gödel Machine, Tree Search for Language Model Agents; 23 in all) | lecture-20-search-basics.pdf | N | RSN, EVAL |
-| 21 | Tue Nov 17 | Search 2: Tree Search | Search & Inference | JY Koh | | – | | RSN |
-| 22 | Thu Nov 19 | Guest Lecture | Advanced Topics | Karthik Narasimhan | | – | | – |
-| 23 | Tue Nov 24 | Guest Lecture | Advanced Topics | Sasha Rush | | – | | – |
+| 21 | Tue Nov 17 | Search 2: Tree Search | Search & Inference | JY Koh | Tree of Thoughts; Stream of Search; Tree Search for Language Model Agents; WebDreamer; Recursive Language Models; Multi-Agent Computer Use (20 refs) | 2026-11-17-jy-koh.pdf | N | RSN, WEB |
+| 22 | Thu Nov 19 | How to Trust Your AI Agents | Advanced Topics | Karthik Narasimhan | WebShop; SWE-bench; τ-bench; Agentic Benchmark Checklist; Trust in Automation (Lee & See) (refs: WebArena, OSWorld-Verified, GDPval, SWE-Bench Pro, Terminal-Bench 2.0; 22 in all) | 2026-11-19-karthik-narasimhan.pdf | N | EVAL |
+| 23 | Tue Nov 24 | Lessons in Building a Coding Agent | Advanced Topics | Sasha Rush | | – | | – |
 | – | Dec 1/3 | Final presentations (posters) | | | | | | ORG |
 
 Milestones: A1 Harness due Mon Sep 14; A2 Eval due Oct 1; A3 Training due Oct 29.

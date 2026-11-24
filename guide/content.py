@@ -21,20 +21,20 @@ COURSES = [
          url="https://www.cmu-agents.com/#/schedule",
          level="Graduate; assumes you have trained neural LMs",
          archetype="Systems + training (build, evaluate, RL-train)",
-         slides="L1--15, L17--18, L20", video="L1--14", codepub="A1--A3 public",
+         slides="L1--15, L17--22", video="L1--14", codepub="A1--A3 public",
          best="The backbone course: harness engineering, evals, SFT/RL, safety, search.",
          overview=r"""The most complete public agents course in the collection, and the one this guide is built around.
 It goes from capabilities (tool use, long-context management, skills and memory, planning) to domains (coding, computer use, deep research), then to training (SFT, RL basics, advanced RL, RL systems), safety and observability, frameworks (OpenHands, LangGraph), interaction and search.
 The readings are taken from production systems: harness source code, provider KV-cache pricing pages and the MCP spec.
 The three assignments form one pipeline: build a harness (A1), evaluate an agent with an LLM judge (A2), then RL-train an agentic policy (A3).
-Slides for lectures 1--15, 17, 18 and 20 are public on the schedule page (checked November~14, 2026), with recordings for lectures 1--9 there and for lectures 10--14 on YouTube."""),
+The November~24 schedule links slides for lectures 1--15 and 17--22 and recordings for lectures 1--14."""),
     dict(code="STAN26", short="Stanford '26", file="stanford-cs146s-fall2026-verified.md", kind="stan26",
          asg_file="stanford-cs146s.md", asg_section="Fall 2026",
          title="CS146S The Modern Software Developer", inst="Stanford University", term="Fall 2026 (current)",
          people="Mihail Eric", url="https://themodernsoftware.dev/",
          level="Undergrad/grad; CS111/CS161-level programming",
          archetype="Coding-agent practice (practitioner)",
-         slides="Weeks 1--3 and most instructor sessions of weeks 4--8", video="none", codepub="Weeks 1--5 assignments",
+         slides="Weeks 1--3 and most instructor sessions of weeks 4--8", video="Lee Robinson's Oct 8 guest lecture", codepub="Weeks 1--6 assignments",
          best="How production coding agents work and how to set up a repo and a team around them.",
          overview=r"""A practitioner course about building software with coding agents, with an industry guest in most weeks.
 The Fall 2026 version focuses on agents. Week~1 builds ``Claude Code in 200 lines'' and dissects production system prompts. Later weeks cover context engineering and MCP, agent skills, CLAUDE.md/AGENTS.md and hooks, agent-ready codebases, agentic code review, security, background agents, and the ``software factory''.
@@ -53,50 +53,50 @@ The lecture dates come from an authorized translation and may be off by a day, s
          people="Marcus Darden", url="https://eecs498-aase.github.io/",
          level="Upper-level undergrad; EECS 281 and 201 (no ML background assumed)",
          archetype="Coding-agent internals (use, dissect, extend a harness)",
-         slides="L1--11, L13--19 (PDF, PPTX, Slidev)", video="none public", codepub="Lecture demos and EGM skills; project repos private",
+         slides="L1--11, L13--20 (PDF, PPTX, Slidev)", video="none public", codepub="Lecture demos and EGM skills; project repos private",
          best="Taking real coding-agent harnesses (Aider, Codex, Claude Code) apart, then extending one.",
          overview=r"""Teaches software engineering with coding agents in three phases: use one, take it apart, build on one.
 \emph{Apply} drives Aider with a small local model and has students specify and build their own terminal pair-programmer, diagnosing sessions through context, model and prompt.
 \emph{Analyze} opens production harnesses (Aider, Codex, Claude Code): the request and stream on the wire, the tool loop and stop conditions, approvals and guardrails, skills, shell, MCP and browser tools, prompt injection and subagents. The second project extends a copy of Aider with a skills loader, a model-driven tool loop, an approval-gated shell tool and an MCP client, each designed first in a design document reviewed by a fresh-context session.
 \emph{Create} builds on an existing harness: compaction and prompt caching, agent memory, knowledge bases, multiple model providers, and coordinator-and-thread setups, with a lab on the Codex app-server.
-When this guide was last updated (November~11, 2026), lectures 20--28 had no published topics."""),
+The L20 deck, \emph{How Our Hand-Drawn Lectures Are Built}, was published November~17. The November~24 check found no published topics for lectures 21--28."""),
     dict(code="S329Z", short="Stanford 329Z", file="stanford-cs329z.md", kind="std",
          title="CS 329Z Engineering AI Agents", inst="Stanford University", term="Fall 2026 (in progress)",
          people="Diyi Yang, Michael Ryan, John Yang", url="https://cs329z.stanford.edu/",
          level="Prereq CS224N/U/V or CS336, or NLP background",
          archetype="Engineering discipline (build from scratch, then frameworks; eval-first)",
-         slides="L1--13, L15 so far", video="L1--5 (YouTube)", codepub="HW1, HW2, framework notebook (MIT)",
+         slides="L1--13, L15 and L17", video="L1--10 (YouTube)", codepub="HW1, HW2, framework notebook (MIT)",
          best="A harness built with no framework, then authoring and validating a benchmark task.",
          overview=r"""Teaches how to engineer agentic systems along the whole range from simple LLM pipelines to compound systems (models, retrievers, tools, optimizers) to autonomous agents: choosing and decomposing problems, selecting components, curating data, building evaluations and reasoning about trade-offs.
 Core components (RAG, tool use, the agent loop) are built from scratch first, then shown as abstractions in DSPy and LangGraph.
 The schedule runs from foundations and LLM internals through RAG, tool use and MCP, frameworks, design patterns, memory, multi-agent systems and optimization, then data for agents, evaluation and LLM-as-judge, safety and guardrails, and coding and proactive agents, with guest sessions on Terminal-Bench and SWE-bench.
 The first homework builds a harness with no framework (tools, a terminal sandbox, compaction, memory, human approval, guardrails, simulated-user evaluation). The second authors and validates a benchmark task in the Harbor framework and reviews classmates' tasks.
-When this guide was last updated (November~14, 2026), slides were posted for lectures 1--13 and 15, recordings for lectures 1--5, and the schedule for the remaining sessions was marked tentative."""),
+Public slides: lectures 1--13, 15 and 17. Public recordings: lectures 1--10. No public recording was found for lectures 11--17; the course directs enrolled students to Canvas. The schedule for the remaining sessions is marked tentative."""),
     dict(code="NEU", short="Northeastern", file="northeastern-agentic-ai.md", kind="std",
          title="Agentic AI", inst="Northeastern University (Khoury)", term="Fall 2026 (in progress)",
          people="Caglar Yildirim", url="https://agenticllms.github.io/",
          level="Gentle on-ramp (Python primer provided)", archetype="Builder (LangChain/LangGraph stack)",
-         slides="3 HTML decks", video="none", codepub="Notebooks W02b--W10a, DADA1--DADA3",
+         slides="3 HTML decks", video="none", codepub="Notebooks through W12a, DADA1--DADA3",
          best="Best guided, notebook-by-notebook path from an LLM API call to a deployed LangGraph agent.",
          overview=r"""Pairs one seminal paper with the matching LangChain/LangGraph documentation in every session.
 One running example, the ``Husky Tech'' customer-support agent, grows week by week: a notebook prototype, then a project skeleton, then a Hugging Face Spaces deployment, a LangGraph rewrite, RAG, a self-grading retrieval loop, and then a plan-search-review-replan loop and agentic RAG behind its policy-search tool.
-Later sessions cover planning, agentic RAG, three multi-agent sessions (ending with handoffs and agent swarms), two on deep agents (a long-running harness built by hand and then with the \texttt{deepagents} library, then file backends, permissions and sandboxes), evaluation, and optimization with DSPy and cost controls.
+Later sessions cover planning, agentic RAG, three multi-agent sessions (ending with handoffs and agent swarms), two on deep agents (a long-running harness built by hand and then with the \texttt{deepagents} library, then file backends, permissions and sandboxes), and evaluation. For W10b the schedule lists DSPy and cost controls; the published class compares two prompts on 16 tasks, with five runs per prompt.
 The third take-home (DADA3) builds a bug-fixing team for a GitHub repository (triage, then a fixer and a sandboxed verifier per bug, in parallel) and compares it with a single deep agent on hidden tests. The second (DADA2) is an ablation study of agentic RAG over SEC filings: retrieval strategies measured one at a time with recall@k and MRR, then a routed agent with failure diagnosis compared against a baseline agent on accuracy, calls and time.
-Sessions after F~11/13 were not posted when this guide was compiled. Which notebooks belong to which session is inferred: Tuesday notebooks may run one session ahead of or behind the lecture topic."""),
+Class materials were verified through November~24. The published schedule runs through December~18. Which notebooks belong to which session is inferred: Tuesday notebooks may run one session ahead of or behind the lecture topic."""),
     dict(code="HARV", short="Harvard", file="harvard-cs2680.md", kind="std",
          title="CS 2680 Modern AI Systems: Agents and System Optimizations", inst="Harvard University (SEAS, MaDSys)",
          term="Fall 2026 (in progress)",
          people="Juncheng Yang", url="https://cs2680.seas.harvard.edu/",
          level="Graduate systems course; CS61 plus a graduate systems course",
          archetype="Agent systems and serving (use, build, optimize, serve)",
-         slides="Part I and Part II through Nov 4", video="none (not recorded)", codepub="A2--A4 starter archives (no license); A5 unreleased",
+         slides="Part I and Part II through Nov 11", video="none (not recorded)", codepub="A2--A5 starter archives (no license); A5 handout, briefing slides and leaderboard public",
          best="Treating an agent as a system to measure: harness design, evaluation, and cost per solved task, then the serving stack underneath.",
          overview=r"""Follows one agentic system from the agent loop down through the serving stack.
 Part~I uses a coding agent (Claude Code), then designs one: context management and tool design, multi-agent architecture and communication, memory and reliability, evaluation, and cost and performance. Part~II, from October~19, covers LLM serving: LLM and GPU basics, batching, paging and parallelism, speculative decoding, KV-cache optimization, pruning and quantization, scheduling and prefix caching, and routing and load balancing.
 The annotated reading pages and the two reference notes (agent evaluation and benchmarks, cost-effective agents) are worth reading on their own.
 The five assignments take one system apart in steps: watch the agent, build the loop, make every token count, serve the model yourself, optimize the full stack.
 \textbf{Access:} assignments 2 and 3 call a course model API whose keys go to enrolled students only. Outside the course you can run assignment~2 only against your own OpenAI-compatible endpoint, and assignment~3's leaderboard scoring is not available.
-When this guide was last updated (November~11, 2026), slides were posted for Part~I and for Part~II through November~4; the later serving lectures, which run to December~2, had reading lists but no slides, and the assignment~5 spec had not been released. The Part~II schedule has been reordered several times."""),
+Slides are public for Part~I and for Part~II through the November~11 speculative-decoding deck. The November~18 showcase links a deck whose contents could not be read, and the later serving lectures, which run to December~2, have reading lists. Assignment~5 has a public handout, briefing slides, starter-archive link and leaderboard. Starter archives are linked for assignments 2--5. The Part~II schedule has been reordered several times."""),
     dict(code="UB", short="Buffalo", file="buffalo-cse410.md", kind="std",
          title="CSE 410/510 Introduction to Agentic Engineering", inst="University at Buffalo", term="Fall 2026",
          people="Joaquin Carbonara, David Doermann",
@@ -110,7 +110,7 @@ No slides or code are public. What makes it useful is the lab sequence: a minima
          title="CS 6501 Workshop on Building AI Agents", inst="University of Virginia", term="Spring 2026",
          people="Henry Kautz", url="https://www.cs.virginia.edu/~rmw7my/Courses/AgenticAISpring2026/agenticAI.html",
          level="Graduate workshop; Python", archetype="Hands-on lab workshop (small/open models)",
-         slides="PPTX per topic", video="1 + podcasts", codepub="Starter scripts per topic",
+         slides="PPTX per topic", video="no public class recording found; Topic 15 links a paper video, and the calendar links two generated paper podcasts", codepub="Starter scripts per topic",
          best="The richest set of runnable lab exercises: local LLMs, LangGraph, tools, RAG, VLMs, MCP/A2A, Tinker fine-tuning.",
          overview=r"""A workshop where most of the programming happens in class.
 Each topic page has learning goals, an exercise sheet of measurable experiments, PPTX slides and starter scripts.
@@ -160,7 +160,7 @@ The nine project briefs (multi-agent gaming, QA agents, job hunting, a shopping 
          people="James A. Evans",
          url="https://github.com/KnowledgeLab/AI-Agents-for-Social-Science-and-Society-2026",
          level="Grad / advanced undergrad (computational social science)", archetype="Applied: agents as research instruments",
-         slides="none", video="none", codepub="9 weekly notebooks",
+         slides="none", video="three public James Evans recordings: one matches Week 3, one probably matches Week 8, and one has no confirmed week", codepub="9 weekly notebooks",
          best="Agents as simulated subjects and research assistants; notebooks on multi-agent simulation, LoRA, RL, steering and red-teaming.",
          overview=r"""Treats LLM agents as tools for social science: simulated subjects and ``digital doubles'', research assistants and automated scientists.
 Agent-engineering content is concentrated in week~3 (prompted multi-agent simulation with AutoGen and Concordia, RAG) and week~5 (LoRA fine-tuning, benchmarking, tools and MCP). Other weeks cover deep-learning foundations, causal designs, interpretability and steering, RL, multimodal agents, and alignment.
@@ -608,9 +608,9 @@ concepts=r"""\begin{itemize}
 \item \textbf{Observability.} Traces of every step are the raw material for evaluation ([[M:EVAL]]), debugging and safety monitoring ([[M:SAFE]]).
 \end{itemize}""",
 sequence=[("[[NEU:5]] and [[NEU:6]]", "Deploy to Hugging Face Spaces, then Render."),
-          ("[[NEU:19]]", "DSPy plus cost tracking, caching, fallbacks and spend policies."),
+          ("[[NEU:19]]", "The schedule lists DSPy and cost controls. The published class compares two prompts on 16 tasks, with five runs per prompt."),
           ("[[HARV:10]]", "Where an agent's cost and latency come from and how to cut each part (slides and the cost-effective agents note)."),
-          ("[[HARV:12|short]]--[[HARV:24|short]]", "LLM serving, from LLM and GPU basics through batching and paging, speculative decoding, KV-cache, quantization and prefix caching to routing and load balancing. Slides through November~4 at the last update; later sessions have reading lists."),
+          ("[[HARV:12|short]]--[[HARV:24|short]]", "LLM serving, from LLM and GPU basics through batching and paging, speculative decoding, KV-cache, quantization and prefix caching to routing and load balancing. The November~11 speculative-decoding deck is public; the November~18 showcase links a deck whose contents could not be read; later sessions have reading lists."),
           ("[[STAN26:15]] and [[STAN26:19]]", "Background agents, then coding agents in big teams (gateways, routing, cost)."),
           ("[[STAN25:17]]", "Incident response and DevOps with agents (slides)."),
           ("[[CMU:12]]", "RL systems: the systems side of agent training."),

@@ -617,7 +617,7 @@ The modules map onto the design phases: \hyperlink{mod-ARCH}{\tg{ARCH}} for Phas
 The material spans Spring 2024 (TinyAgent) to courses still running in November 2026. Two things change fast. (1)~\textbf{MCP:} the 2026-07-28 revision made the protocol stateless (see \hyperref[sup-mcp]{the MCP supplement}), so earlier lectures teach the older handshake. (2)~\textbf{Model names and SDKs:} courses use whatever was current when they ran. Learn the concepts from the lectures and take API details from current documentation.
 \section{Caveats}
 \begin{itemize}
-\item Content was checked through November~11, 2026, and CMU and Stanford 329Z through November~14. The in-progress courses (CMU, Stanford '26, Stanford 329Z, Michigan, Northeastern, Harvard, Buffalo, JHU) will post more material after that.
+\item The latest public-source recheck was November~24, 2026. Each course's research notes give its last check and coverage. The in-progress courses (CMU, Stanford '26, Stanford 329Z, Michigan, Northeastern, Harvard, Buffalo, JHU) will post more material after that.
 \item Tags were assigned from session titles, listed topics and readings. They are a navigation aid, and some sessions could reasonably be tagged differently.
 \item Some slide decks could not be read (several Mannheim PDFs, a few UVA PPTX files, JHU lectures 7, 8, 10, 13 and 14), so their topics are inferred from the titles.
 \item Only some repositories state a licence (UW CS 839, TinyAgent and OpenClaw are MIT). Check each licence before redistributing course material; linking is always safe.
@@ -852,7 +852,7 @@ def main():
 CMU 11-768 $\cdot$ Stanford CS146S (2025, 2026) $\cdot$ Northeastern Agentic AI $\cdot$ Harvard CS 2680 $\cdot$ Stanford CS 329Z $\cdot$ Michigan EECS 498 $\cdot$ Buffalo CSE 410/510 $\cdot$ UVA CS 6501 $\cdot$ UW--Madison CS 839 $\cdot$ JHU Machine Programming $\cdot$ CU Boulder CSCI 7000 $\cdot$ Mannheim IE 685/686 $\cdot$ UChicago AI Agents for Social Science\\[4pt]
 plus MCP, Anthropic Engineering, OpenClaw, Berkeley TinyAgent and Colab
 \end{minipage}\vfill
-{\small Content checked through November 11, 2026.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
+{\small Latest course recheck: November 24, 2026.\\ All materials belong to their respective authors. This guide only links to them.\\[6pt]
 \emph{Use of AI tools.} I am the sole author. Claude (Anthropic, through Claude Code) searched for the courses, read their public pages and drafted the summaries and structure under my direction. The descriptions are summaries, each linked to its source; titles are the sources' own. I am responsible for the content.\par}
 \end{titlepage}""" % ((len(C.COURSES),) + stats()))
     D(r"\hypertarget{toc}{}\tableofcontents")

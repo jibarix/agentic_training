@@ -44,9 +44,10 @@ Read after the basics of tool use and function calling (e.g. CMU 11-768 Lecture 
 - LLM2LLM: https://arxiv.org/pdf/2403.15042
 - Self-Instruct: https://arxiv.org/pdf/2212.10560
 - Quantization survey: https://arxiv.org/pdf/2103.13630
-- llama.cpp: https://github.com/ggerganov/llama.cpp ; whisper.cpp: https://github.com/ggerganov/whisper.cpp
+- llama.cpp: https://github.com/ggml-org/llama.cpp ; whisper.cpp: https://github.com/ggml-org/whisper.cpp
 
 ## Notes
 
 - The blog and the repo loaded fully. The post's Table 1 lists basic RAG as "top 3, 0.949 recall," while the text says top-6 at 0.968 recall. The two are inconsistent in the source.
 - 2026-11-14: the demo video's captions were read. It has no narration, only spoken commands to the assistant (a meeting, a reminder, an email with an attachment, directions by SMS, a note summarizing a PDF), so it adds nothing to the post.
+- **Recheck 2026-11-24.** Read through a consultant's web reader and the GitHub API. Links only: the BAIR post, paper, code, six Hugging Face resources and the linked background papers resolved. Changed: the llama.cpp and whisper.cpp links now point to `ggml-org`; the old `ggerganov` URLs redirect there. Not verified: the demo player (YouTube cache miss); the demo is already in the recording inventory. Next recheck suggested in the reply: 2027-02-23.

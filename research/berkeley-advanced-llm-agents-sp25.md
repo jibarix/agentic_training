@@ -56,3 +56,4 @@ Slide and video URLs come from the links on https://rdi.berkeley.edu/adv-llm-age
 - Quiz links (12 Google Forms), the quiz archive doc and certificate forms are on the MOOC page and are not listed here.
 - No license is stated anywhere. Both sites are GitHub Pages builds, but no source repo is linked.
 - 2026-11-14: all 12 recordings were read in full from their auto-generated captions (transcripts kept off the repos). Each speaker in the table is confirmed from the recording. Lecture 6's caption track ends at 1:18:14, before the end of the livestream; the rest was not read. The course is finished; no recheck is due.
+- Recheck 2026-11-24. Compared the Berkeley and MOOC schedules and lab links with the November 14 check using the web reader. No change found to the 12 lecture rows, their readings or the two Lean lab listings. The Drive file listing and FAQ body could not be fetched. Next recheck: 2027-01-12.
