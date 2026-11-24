@@ -49,7 +49,7 @@
 \title{\textbf{Screening Tasks for Agentic Automation}\\[4pt]
 \large A companion to the Agentic System Design Process: what to check between Phase~1 and Phase~2}
 \author{J. A. Arroyo}
-\date{Version 0.9.4 --- 15 November 2026}
+\date{Version 0.9.5 --- 24 November 2026}
 
 \begin{document}
 \maketitle
@@ -175,12 +175,16 @@ Expect most of the surrounding work to be mechanical.
 
 \textbf{A2. The operations can run under your constraints.}
 List the operations on each side of the connecting step and how each is reached, including any wrapper, screen interaction or human handoff. Record licence, cost, data access and delay, and which actions the model would be allowed to take. Some physical steps stay with people: RocketSmith leaves fabrication, assembly and flight-readiness work to them, and the laser-sintering study\p{5} leaves handling and physical testing to them alongside its machine-control tools\p{2, pp.\,19--21,\,27,\,31; 5, pp.\,11--13}.
+Also ask what new work the system would send to whom, and whether those people have confirmed they can take it on \inferred.
+In one interview study, a law firm's new conflict-checking workflow left the conflict staff to resolve difficult cases they had previously passed to attorneys; the staff pushed back and the firm shelved the agent. An equipment manufacturer dropped, before release, a feature that translated its product text into ten languages, because nobody could answer the phone in those languages\p{31, ``Top-down automation'', ``Bottom-up experimentation''}.
 
 \textbf{A3. Something checks the result.}
 Name two things, which may differ: the feedback available \emph{while the system runs}, and the \emph{final acceptance check}.
 For each, say what kind it is: a \emph{reference} (a test, a measurement, a published value), a \emph{proxy} (a learned predictor), or a \emph{judgment} (a model judge or a human reviewer).
 Record what it covers, what it costs, how long it takes and who owns it; try it on a few results you already know to be good and bad; and make sure the final check is something the system cannot alter.
 The kind of check limits what the finished system can claim.
+If a person makes the final check, multiply the time per item by the number of items needing review each week, and compare the result with the reviewer time available that week \inferred.
+In the same study, the volume of AI output ``swamped scarce human attention'', and at one company some reviewers took about two minutes per submission while others took ten or more\p{31, ``Bottom-up experimentation'', ``Top-down automation''}.
 
 \begin{example}{the three conditions in an economics task}
 \textbf{Scaling Reproducibility}\p{12} re-runs the replication packages of published studies. \emph{Connecting step:} working out how a package is meant to run and matching its output to the coefficients in the paper's tables. \emph{Tools:} R, Stata and Python already execute the analyses. \emph{Check:} the published coefficients, which are ground truth for reproduction, though not for whether the study's conclusions are right. Of the 254 executable papers, 82\% finished without calling the system's adaptive coordinator. That path still uses model calls to extract metadata and coefficients, so the figure is about adaptive coordination, not all model use\p{12, pp.\,7,\,24}.
@@ -298,6 +302,7 @@ The appendix of the design process\p{D} works three examples through this worksh
 
 \textbf{Comparing candidate tasks.}
 When several tasks compete, start from business problems rather than from the technology, and confirm that each activity happens often enough to justify the investment\p{30, ``AI use case identification''}. Score the candidates on value and effort, rank them\p{29, pp.\,25--28; 30, ``Prioritize AI use cases''}, and re-score periodically, since effort falls as capabilities change\p{29, p.\,28}. Neither source gives validated weights; treat the ranking as a way to choose which candidate to screen first, not as the screen \inferred.
+In the interview study, deployments that interviewees described as more valuable tended to involve changes to processes or roles\p{31, ``How are businesses adapting to AI?''}. Include any such changes, and the expert time they would take, in the effort estimate \inferred.
 
 One page per candidate task. Carry forward the Phase~1 success measure and the limits on cost, delay and failure. Answer from work samples and existing records, and mark each answer as observed, estimated or unknown. Three to five samples are a first look, not a count of how often things happen.
 
@@ -311,8 +316,8 @@ S & Does a request start the work, or must the system notice it? (Section~\ref{s
 0a & Would a script, a conventional model or an optimizer meet the target? & The strongest such option; evidence that it meets or misses the target, or ``unknown'' \\
 0b & Would one model call with the right context meet it? & Evidence on one call's accuracy and reliability, or the smallest test that would show it \\
 A1 & Where does an expert interpret one result to decide the next input? & The step, marked on 3--5 real work samples \\
-A2 & Which operations can run under your constraints, and which stay with a person? & Tools and how they are reached; access, cost, delay; human handoffs; permitted actions \\
-A3 & What feedback is available during a run, and what is the final check? & For each: reference, proxy or judgment; coverage, cost, delay, owner; outcome on known-good and known-bad cases \\
+A2 & Which operations can run under your constraints, and which stay with a person? & Tools and how they are reached; access, cost, delay; human handoffs; added work, and whether those receiving it confirm they can take it on \inferred; permitted actions \\
+A3 & What feedback is available during a run, and what is the final check? & For each: reference, proxy or judgment; coverage, cost, delay, owner; for a human final check, review hours needed and available at expected volume \inferred; outcome on known-good and known-bad cases \\
 B1 & Which decisions does the best fixed procedure leave unresolved? & The procedure you wrote, and the decisions it does not cover \\
 B2 & Would an ordinary search or diagnostic routine make the next decision? & What the decision requires someone to interpret; the conventional method it was compared with \\
 B3 & Is handling the exceptions worth more than it costs? & Frequency from broader records where available; expert time, cost of a miss, added oversight cost; running cost from measured tokens per run, prices, expected volume and run-to-run variation \\
@@ -354,7 +359,7 @@ Three parts of Phase~2 of the design process come from this document:
 
 I am the sole author. I used AI tools in preparing this document and disclose their role here.
 \begin{itemize}
-\item \emph{Claude} (Anthropic, through Claude Code) searched for and read the papers (and, for version~0.9.3, the guides on comparing candidate tasks; for version~0.9.4, the guide to always-on agents), and drafted and revised the text, the table and the figure under my direction.
+\item \emph{Claude} (Anthropic, through Claude Code) searched for and read the papers (and, for version~0.9.3, the guides on comparing candidate tasks; for version~0.9.4, the guide to always-on agents; for version~0.9.5, the interview study~[31]), and drafted and revised the text, the table and the figure under my direction.
 \item \emph{Codex} (OpenAI) acted as a second reader. It checked the papers, quotations, numbers and citations, and some sentences follow its suggested corrections closely.
 \item The distinction in Section~\ref{sec:scope} started from a conversation I had with \emph{Gemini} (Google). The sources it cited were then checked against the originals.
 \end{itemize}
@@ -465,6 +470,13 @@ Bracketed numbers in the text refer to these entries; page numbers are PDF page 
 \begin{enumerate}[label={[\arabic*]},leftmargin=2.2em,start=29]
 \item OpenAI, Identifying and scaling AI use cases. \href{https://cdn.openai.com/business-guides-and-resources/identifying-and-scaling-ai-use-cases.pdf}{cdn.openai.com (PDF)}.
 \item Microsoft Learn, Cloud Adoption Framework, Plan for AI adoption. \url{https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/plan}
+\end{enumerate}
+}
+
+\textbf{Background for rows A2 and A3 and for comparing candidate tasks.} Qualitative evidence from outside the 22 systems; cited only for the cases and findings attributed to it.
+{\small
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.2em,start=31]
+\item N.~Wilmers, M.~Massenkoff and P.~McCrory, Working with AI. The Anthropic Institute, technical report, 23~November 2026; checked on 24~November 2026. 66 interviews at 58 US companies, all Anthropic enterprise customers, selected for range and not representative; the value of each use is as reported by interviewees, and an automated coder classified the transcripts. \url{https://www.anthropic.com/research/working-with-ai}
 \end{enumerate}
 }
 
