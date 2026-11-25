@@ -87,7 +87,7 @@
 \title{\textbf{Agentic System Design Process}\\[4pt]
 \large Nine phases from problem to production, assembled from the course materials and practitioner guides}
 \author{J. A. Arroyo}
-\date{Version 1.13 --- 24 November 2026 (practitioner report from Uber on tool context, ablation and maintenance)}
+\date{Version 1.14 --- 25 November 2026 (Google Workspace permission checks and quotas for tool calls)}
 
 \begin{document}
 \maketitle
@@ -421,7 +421,7 @@ Specify everything the model can touch and see, so that its actions are constrai
 \item Treat curated context as an owned asset. Notion separates data context (metrics, sources, required filters), business context and routing guidance, and assigns owners and review to keep them current \cite[``Connecting data and business context'', ``Keeping data and business context current'']{notion}.
 \end{itemize}
 
-\textbf{Permission boundaries.} Least privilege for every tool and credential, sandboxed execution, and paths confined to a working directory \cite{jhu}\cite{cmu13}. Minimal OAuth scopes, each with a stated reason \cite{cs146s2}. When the agent acts for a user, let it use that user's own credentials so existing access controls apply, and have it report denied access instead of working around it \cite[``Governing the agent and its data access'', ``Clear instructions for repeatable analysis'']{notion}.
+\textbf{Permission boundaries.} Least privilege for every tool and credential, sandboxed execution, and paths confined to a working directory \cite{jhu}\cite{cmu13}. Minimal OAuth scopes, each with a stated reason \cite{cs146s2}. When the agent acts for a user, let it use that user's own credentials so existing access controls apply, and have it report denied access instead of working around it \cite[``Governing the agent and its data access'', ``Clear instructions for repeatable analysis'']{notion}. On 24~November 2026, Google named the Workspace MCP servers and the Workspace CLI as the interfaces for AI agents accessing Workspace data. Google says technical enforcement begins on 1~February 2027. Both interfaces check each request against the organisation's Workspace permissions, data loss prevention (DLP) rules and classification labels. They require explicit user confirmation before an agent sends email, changes Drive sharing permissions or makes bulk edits \cite[``Consistent controls across every agent workflow'']{gwsagents}. When choosing a tool interface, record which checks the platform enforces and which the system must implement \inferred{}.
 
 \begin{gate}
 Every tool has a contract (inputs, outputs, errors, side effects, permission level); the state model and error paths are written; permissions are listed.
@@ -446,6 +446,7 @@ Get one path working end to end with full tracing, then choose models by measuri
 \begin{itemize}
 \item Estimate cost from measured tokens per run, prices and expected traffic \cite[``Managing costs'']{oaiprod}, including the variation between runs of the same task: on agentic coding tasks the dearest run cost about twice the cheapest, on average per model \cite[Fig.~2]{bai}. Compare scenarios against the value of the work, and set notification thresholds and spend limits \cite[``Managing billing limits'']{oaiprod}. In Anthropic's data, agents used about 4 times the tokens of chat and multi-agent systems about 15 times \cite[``Benefits of a multi-agent system'']{anthmulti}.
 \item Check peak requests and input and output tokens against the provider's rate limits, counting cached input as that provider does \cite[``Cache-aware ITPM'']{claudelimits}. Treat a Retry-After value as a minimum, and do not retry quota or billing errors \cite[``Error mitigation'', ``Retrying with exponential backoff'']{oailimits}. On shared capacity, a 429 can mean temporary contention \cite[``Resource Exhausted (429) errors'']{vertexdsq}; if the requirement needs assured capacity, assess the provider's reserved options against it \inferred.
+\item Estimate how many requests each tool makes to each service. Check peak and daily totals against that service's quotas \inferred{}. Google Workspace counts some MCP tool calls as several requests because they invoke the underlying API more than once \cite[``Tier and billing policies'']{gwsquota}.
 \end{itemize}
 
 \textbf{Select models}
@@ -457,7 +458,7 @@ Get one path working end to end with full tracing, then choose models by measuri
 \end{itemize}
 
 \begin{gate}
-One traced path runs end to end, a model table (quality, cost, latency on the development set) supports the chosen model or models, and cost and rate limits have been checked at expected volume.
+One traced path runs end to end, a model table (quality, cost, latency on the development set) supports the chosen model or models, and the expected volume has been checked against the cost estimate, model rate limits and quotas for the services each tool calls.
 \end{gate}
 
 % ---------------------------------------------------------------------------
@@ -622,7 +623,7 @@ I am the sole author. I used AI tools in preparing this document and disclose th
 \emph{Codex} (OpenAI) made an independent pass over the same sources and reviewed the citations; its corrections were applied.
 Claude also drafted the appendix examples and their diagrams under my direction, and Codex reviewed them against the phases and the screening worksheet.
 For version~1.10, Claude read the provider documentation and papers and drafted the additions, and Codex independently re-checked the evidence for each claim; claims the evidence did not support as written were narrowed or dropped.
-For version~1.13, Gemini (Google, through Antigravity) critiqued the plan. Claude drafted the additions from Uber's post and Codex checked them against that post.
+For version~1.13, Gemini (Google, through Antigravity) critiqued the plan. Claude drafted the additions from Uber's post and Codex checked them against that post. For version~1.14, Claude drafted the Google Workspace additions. Codex checked the claims against Google's announcement, quota guide and Workspace AI Tools Addendum before inclusion.
 Words taken from a source are in quotation marks with the source. Practices taken from a source are cited to it, with a page or section reference where one is available. Statements marked \inferred{} are my own synthesis.
 I set the questions, decided what to include and am responsible for the content.
 
@@ -998,6 +999,9 @@ Phase~9 & Watch for the loop chasing views at the expense of leads, and re-evalu
 \bibitem{codexagents} OpenAI, ``Custom instructions with AGENTS.md'', Codex docs (checked 2~Nov 2026). \url{https://learn.chatgpt.com/docs/agent-configuration/agents-md}
 % v1.13 addition
 \bibitem{uberskills} Uber Engineering, ``How Uber Evals 1 Million Agent Skill Invocations a Month'', Uber blog (Nov 2026; checked 24~Nov 2026). \url{https://www.uber.com/us/en/blog/optimizing-ubers-agent-skills/}
+% v1.14 additions
+\bibitem{gwsagents} C.~Thota and B.~Calder, ``Built for trust and control: Powering the next wave of AI agents across Google Workspace and Google Cloud'', Google Cloud Blog (24~Nov 2026, checked 25~Nov 2026). \url{https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise}
+\bibitem{gwsquota} Google Workspace, ``Usage tiers and quotas for Google Workspace APIs and MCP servers'', developer documentation (updated 24~Nov 2026, checked 25~Nov 2026). \url{https://developers.google.com/workspace/guides/quota-usage-tiers}
 
 \end{thebibliography}
 \end{document}
